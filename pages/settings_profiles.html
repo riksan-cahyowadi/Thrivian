@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+      /* Gaya CSS tambahan */
+.nav-item:hover .nav-link {
+text-decoration: underline;
+}
+
+.profile-info {
+display: none;
+position: absolute;
+top: 40px;
+right: 0;
+background-color: #fff;
+border: 1px solid #ccc;
+padding: 10px;
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+z-index: 1;
+}
+
+.nav-item .profile:hover .profile-info {
+display: block;
+}
+
+.profile-info a {
+text-decoration: none;
+color: #333;
+display: block;
+}
+
+.profile-info a:hover {
+text-decoration: underline;
+}
+.profile-info p {
+margin: 5px 0;
+color: #333;
+}
+
+.icon.user.outline {
+color: black;
+}
+
+.hidden {
+display: none;
+}
+
+.navbar-bawah .nav-item .nav-link.active {
+    text-decoration: underline; 
+    color: #13005A !important; 
+}
+
+  </style>
+</head>
+
+<body>
+  <header>
+      <nav class="navbar navbar-light bg-light fixed-top">
+          <div class="container">
+              <a class="navbar-brand" href="#">
+                  <img src="../img/Thrivian.org.png" alt="" width="180" height="35">
+              </a>
+              <ul class="nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-secondary" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-secondary" href="#">Community</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-secondary" href="#">Event & Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-secondary" href="#">E-Learning</a>
+                </li>
+            </ul>            
+              <div class="navbar-text ms-auto">
+                  <ul class="nav">
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">
+                              <i class="fas fa-search"></i> 
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">
+                              <i class="fas fa-users"></i> 
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">
+                              <i class="far fa-envelope"></i> 
+                          </a>
+                      </li>                     
+                      <li class="nav-item">
+                        <div id="profileLink" class="nav-link profile">
+                            <div class="rounded-circle overflow-hidden me-2" style="width: 25px; height: 25px; background-color: #f0f0f0;">
+                                <img id="userImage" src="../img/img-thrivian/compressed-images/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div id="profileInfo" class="profile-info">
+                                <p class="username">Christopher Kim</p>
+                                <p class="account">@johhnyray</p>
+                                <a href="profile.html" class="view-profile">View my profile</a>
+                                <a href="my-events.html" class="my-events">My Events</a>
+                                <a href="manage-communities.html" class="manage-communities">Manage your communities</a>
+                                <a href="settings.html" class="settings">Settings</a>
+                                <a href="log-out.html" class="log-out">Log Out</a>
+                            </div>
+                        </div>
+                    </li>                                                                                 
+                  </ul>
+              </div>                
+          </div>
+      </nav>
+  </header>
+
+  <div class="container">
+    <h2 style="margin-top: 69px;">Settings</h2>
+        <ul class="nav justify-content-center navbar-bawah"> <!-- Tambahkan kelas 'navbar-bawah' untuk membedakan -->
+            <li class="nav-item">
+                <a class="nav-link text-secondary active" href="#" style="margin-right: 9px; margin-left: 9px;" onclick="showPosts('editprofile')">Edit Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-secondary" href="#" style="margin-right: 9px; margin-left: 9px;" onclick="showPosts('account')">Account</a>
+            </li>                        
+            <li class="nav-item">
+                <a class="nav-link text-secondary" href="#" style="margin-right: 9px; margin-left: 9px;" onclick="showPosts('notification')">Notificatian</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-secondary" href="#" style="margin-right: 9px; margin-left: 9px;" onclick="showPosts('privacy')">Privacy & Security</a>
+            </li>
+        </ul>
+</div>
+  <main class="container-fluid border" style="margin-top: 4px;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4 border-start border-end" style="max-height: 500px; overflow-y: auto;">
+                <div class="profile-container">
+                    <div class="profile-header bg-light">
+                        <div class="d-flex justify-content-center align-items-center pt-5" style="height: 450px; position: relative;">
+                            <div style="position: relative; text-align: center; z-index: 1;">
+                                <h2>Profile</h2>
+                                <div style="position: relative; display: inline-block;">
+                                    <div class="rounded-circle overflow-hidden border border-dark shadow" style="width: 140px; height: 140px;">
+                                        <img id="profileImage" src="../img/img-thrivian/compressed-images/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
+                                    <button id="changeImageButton" class="ui icon button circular pencil btn-light" style="position: absolute; bottom: 0; right: 0; border: 1px solid black;">
+                                        <i class="pencil icon"></i>
+                                    </button>                                    
+                                    <input type="file" id="imageInput" accept="image/*" style="display: none;">
+                                </div>
+                                
+                                <div style="text-align: center; margin-top: 20px;"> <!-- Adjusted margin-top to push the content below the centered profile picture -->
+                                    <h2 class="mt-3 mb-2">Christoper Kim</h2>
+                                    <span class="mt-3 mb-2">@stoperkim</span>
+                                    <p class="fs-6 mt-2 mb-2">
+                                        <span style="color: orange; margin-right: 8px;">Business </span> • <span style="color: #9747FF; margin-left: 8px;"> Finance</span>
+                                    </p>
+                                    <div class="user-stats">
+                                        <div class="d-flex justify-content-center fs-6" style="margin-top: 30px;">
+                                            <div style="padding: 0 8px; border-right: 2px solid black;">
+                                                <div class="mb-2">4</div>
+                                                <div style="color: #13005A;">Posts</div>
+                                            </div>
+                                            <div style="padding: 0 8px; border-right: 2px solid black;">
+                                                <div class="mb-2">270</div>
+                                                <div style="color: #13005A;">Followers</div>
+                                            </div>
+                                            <div style="padding: 0 8px; border-right: 2px solid black;">
+                                                <div class="mb-2">40</div>
+                                                <div style="color: #13005A;">Following</div>
+                                            </div>
+                                            <div style="padding: 0 8px;">
+                                                <div class="mb-2">3</div>
+                                                <div style="color: #13005A;">Communities</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="fs-6 mt-3 mb-2">If you don’t take risks, you can’t create a future</p>                                    
+                                </div>                         
+                            </div>
+                        </div>
+                        <hr class="mt-1" style="border-top: 4px solid #E5E5E5;">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-7 border-start border-end">
+                <div class="edit-profile" style="margin-bottom: 40px;">
+                    <h2 style="margin-top: 40px; margin-left: 40px;">Edit Profile</h2>
+                    <hr class="mt-1" style="border-top: 4px solid #E5E5E5; width: 80%; margin-left: 40px;">
+                    <div style="display: flex; align-items: center; margin-left: 40px; margin-top: 25px;">
+                        <div style="flex: 1;">
+                            <span style="font-weight: bold;">Name</span>
+                        </div>
+                        <div style="flex: 1; text-align: right; margin-right: 80px;">
+                            <span>Christopher Kim</span>
+                            <i class="angle right icon" style="margin-left: 10px;"></i>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-left: 40px; margin-top: 15px;">
+                        <div style="flex: 1;">
+                            <span style="font-weight: bold;">Username</span>
+                        </div>
+                        <div style="flex: 1; text-align: right; margin-right: 80px;">
+                            <span>@stoper kim</span>
+                            <i class="angle right icon" style="margin-left: 10px;"></i>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; margin-left: 40px; margin-top: 15px;">
+                        <div style="flex: 1;">
+                            <span style="font-weight: bold;">Interest</span>
+                        </div>
+                        <div style="flex: 1; text-align: right; margin-right: 80px;">
+                            <span>Business</span>
+                            <i class="angle right icon" style="margin-left: 10px;"></i>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-left: 40px; margin-top: 15px;">
+                        <div style="flex: 1;">
+                            <span style="font-weight: bold;">Bio</span>
+                        </div>
+                        <div style="flex: 1; text-align: right; margin-right: 70px;">
+                            <button type="button" class="btn btn-link text-dark" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#bioModal">
+                                <span id="userBio">If you don't take a risk..</span>
+                                <i class="angle right icon" style="margin-left: 10px;"></i>
+                            </button>
+                        </div>
+                         <!-- Modal untuk bio -->
+                        <div class="modal fade" id="bioModal" tabindex="-1" aria-labelledby="bioModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="bioModalLabel">Change Bio</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h5>Bio</h5>
+                                        <textarea class="form-control" id="bioTextarea" rows="3">If you don't take a risk, you can't create a future</textarea>
+                                    </div>
+                                    <div class="modal-footer d-flex justify-content-center">
+                                        <button type="button" class="btn btn-light me-2 border-dark" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-secondary" onclick="saveBio()">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; margin-left: 40px; margin-top: 15px;">
+                        <div style="flex: 1;">
+                            <span style="font-weight: bold;">Gender</span>
+                        </div>
+                        <div style="flex: 1; text-align: right; margin-right: 70px;">
+                            <button type="button" class="btn btn-link text-dark" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#genderModal">
+                                <span id="selectedGender">Male</span>
+                                <i class="angle right icon" style="margin-left: 10px;"></i>
+                            </button>
+                        </div>                        
+                        <!-- Modal untuk memilih gender -->
+                        <div class="modal fade" id="genderModal" tabindex="-1" aria-labelledby="genderModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="genderModalLabel">Select Gender</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h5>Gender</h5>
+                                        <select class="form-select" id="genderSelect">
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="modal-footer d-flex justify-content-center">
+                                        <button type="button" class="btn btn-light me-2 border-dark" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-secondary" onclick="saveGender()">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+         </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Ambil elemen input file dan tombol untuk mengubah gambar
+        const imageInput = document.getElementById('imageInput');
+        const changeImageButton = document.getElementById('changeImageButton');
+        
+        // Tambahkan event listener untuk mengubah gambar saat input file berubah
+        imageInput.addEventListener('change', function () {
+            const file = imageInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('profileImage').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+        
+        // Tambahkan event listener untuk memicu klik pada input file saat ikon pensil diklik
+        changeImageButton.addEventListener('click', function () {
+            imageInput.click();
+        });
+    });
+
+    function saveGender() {
+        var selectedGender = document.getElementById('genderSelect').value;
+        document.getElementById('selectedGender').textContent = selectedGender;
+        
+        // Menutup modal
+        var myModal = new bootstrap.Modal(document.getElementById('genderModal'));
+        myModal.hide();
+    }
+
+    function saveBio() {
+    var bioText = document.getElementById('bioTextarea').value;
+    document.getElementById('userBio').textContent = bioText;
+    
+    // Menutup modal
+    var bioModal = new bootstrap.Modal(document.getElementById('bioModal'));
+    bioModal.hide();
+}
+</script>>
+
+
+</body>
+</html>
