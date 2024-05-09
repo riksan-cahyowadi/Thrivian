@@ -6,12 +6,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thrivian</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="./js/index.js"></script>
+    <style>
+        /* Gaya CSS tambahan */
+.nav-item:hover .nav-link {
+  text-decoration: underline;
+}
+
+.profile-info {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.nav-item .profile:hover .profile-info {
+  display: block;
+}
+
+.profile-info a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+.profile-info a:hover {
+  text-decoration: underline;
+}
+.profile-info p {
+  margin: 5px 0;
+  color: #333;
+}
+
+.icon.user.outline {
+  color: black;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .smaller-image {
+    max-width: 200px; /* Sesuaikan dengan ukuran yang Anda inginkan */
+    height: auto; /* Biarkan tinggi otomatis */
+  }
+}
+
+    </style>
 </head>
 
 <body>
@@ -23,7 +74,7 @@
                 </a>
                 <ul class="nav me-auto">
                   <li class="nav-item">
-                      <a class="nav-link text-secondary active text-decoration-underline" style="color: #13005A !important;" href="./index.html">Home</a>
+                      <a class="nav-link text-secondary active text-decoration-underline" style="color: #13005A !important;" href="../index.html">Home</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link text-secondary" href="#">Community</a>
@@ -63,8 +114,8 @@
                                   <a href="./pages/profile.html" class="view-profile">View my profile</a>
                                   <a href="my-events.html" class="my-events">My Events</a>
                                   <a href="manage-communities.html" class="manage-communities">Manage your communities</a>
-                                  <a href="settings.html" class="settings">Settings</a>
-                                  <a href="log-out.html" class="log-out">Log Out</a>
+                                  <a href="./pages/settings_profiles.html" class="settings">Settings</a>
+                                  <a href="./pages/login.html" class="log-out">Log Out</a>
                               </div>
                           </div>
                       </li>                                                                                 
@@ -76,7 +127,7 @@
 
     <main class="container-fluid border" style="margin-top: 78px;">
         <div class="row justify-content-center">
-            <div class="col-md-3 border-start border-end ml-3 d-none d-md-block" style="max-height: 500px; overflow-y: auto;">
+            <div class="col-md-3 border-start border-end ml-3 d-none d-md-block" style="overflow-y: auto;">
                 <button type="button" class="btn btn-outline-light" style="width: 280px; margin-top: 9px; border-radius: 30px; border-color: #13005A; color: #13005A;">
                     <i class="add circle icon" style="font-size: 15px; color: #13005A;"></i>
                     Create New Post
@@ -130,7 +181,7 @@
                         <div class="col-md-2">
                             <img src="./img/waiting-room-with-monitors.jpg" alt="..." class="rounded" style="width: 130px; height: 130px;">
                         </div>
-                        <div class="col-md-10 d-flex align-items-start">
+                        <div class="col-md-10 d-flex align-items-start"> <!-- Menggunakan d-flex dan align-items-start -->
                             <div class="card-body" style="margin-left: 77px;">
                                 <span class="badge rounded-pill badge-custom mb-2" style="background-color: #13005A;">September 10th</span>
                                 <h6 class="card-title text-sm">Stocks market reope...</h6>
@@ -146,7 +197,7 @@
                         <div class="col-md-2">
                             <img src="./img/waiting-room-with-monitors.jpg" alt="..." class="rounded" style="width: 130px; height: 130px;">
                         </div>
-                        <div class="col-md-10 d-flex align-items-start">
+                        <div class="col-md-10 d-flex align-items-start"> <!-- Menggunakan d-flex dan align-items-start -->
                             <div class="card-body" style="margin-left: 77px;">
                                 <span class="badge rounded-pill badge-custom mb-2" style="background-color: #13005A;">September 10th</span>
                                 <h6 class="card-title text-sm">Stocks market reope...</h6>
@@ -180,7 +231,7 @@
                     </div>
                 </div>             
                 
-                <div class="all-posts overflow-auto" style="max-height: 80vh;">
+                <div class="all-posts overflow-auto" style="max-height: 1000px;">
                 <div class="post mt-4 me-5" data-category="Business">
                     <div class="d-flex align-items-center mb-2">
                         <div class="rounded-circle overflow-hidden me-2" style="width: 50px; height: 50px; background-color: #f0f0f0;">
@@ -526,5 +577,79 @@
             </div>
         </div>
     </main>
+    
+    <script>
+        function showPosts(category) {
+    var posts = document.getElementsByClassName('post');
+    for (var i = 0; i < posts.length; i++) {
+        var post = posts[i];
+        var postCategory = post.getAttribute('data-category');
+        if (category === 'All' || postCategory === category) {
+            post.style.display = 'block';
+        } else {
+            post.style.display = 'none';
+        }
+    }
+
+   // Reset background colors and text colors for all badges
+document.getElementById('allBtn').classList.remove('active', 'bg-secondary', 'text-light');
+document.getElementById('allBtn').classList.add('bg-light', 'text-dark');
+document.getElementById('businessBtn').classList.remove('active', 'bg-secondary', 'text-light');
+document.getElementById('businessBtn').classList.add('bg-light', 'text-dark');
+document.getElementById('financeBtn').classList.remove('active', 'bg-secondary', 'text-light');
+document.getElementById('financeBtn').classList.add('bg-light', 'text-dark');
+
+// Set background color and text color for clicked button
+var btn = document.getElementById(category.toLowerCase() + 'Btn');
+btn.classList.add('active');
+btn.classList.remove('bg-light', 'text-dark');
+btn.style.backgroundColor = '#13005A'; // Set your desired background color here
+btn.classList.add('text-light');
+
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const profileLink = document.getElementById('profileLink');
+    const userOutlineIcon = document.getElementById('userOutlineIcon');
+    const userIcon = document.getElementById('userIcon');
+    const profileInfo = document.getElementById('profileInfo');
+
+    profileLink.addEventListener('click', function() {
+        // Toggle icon
+        if (userOutlineIcon.style.display === 'none') {
+            userOutlineIcon.style.display = 'inline';
+            userIcon.style.display = 'none';
+            profileInfo.style.display = 'none'; // Hide profile-info when switching back to outline icon
+        } else {
+            userOutlineIcon.style.display = 'none';
+            userIcon.style.display = 'inline';
+            profileInfo.style.display = 'block'; // Show profile-info when switching to user icon
+        }
+    });
+});
+
+function toggleIcon(event, outlineId, solidId, countId) {
+    var likeIconOutline = document.getElementById(outlineId);
+    var likeIconSolid = document.getElementById(solidId);
+    var likeCountSpan = document.getElementById(countId);
+
+    // Mengubah ikon saat tombol ditekan
+    if (likeIconOutline.style.display === 'none') {
+        likeIconOutline.style.display = 'inline';
+        likeIconSolid.style.display = 'none';
+        likeCountSpan.textContent = parseInt(likeCountSpan.textContent) - 1; // Mengurangi angka saat tombol ditekan
+    } else {
+        likeIconOutline.style.display = 'none';
+        likeIconSolid.style.display = 'inline';
+        likeCountSpan.textContent = parseInt(likeCountSpan.textContent) + 1; // Menambah angka saat tombol ditekan
+    }
+
+    // Mencegah perubahan default (scrolling ke atas) saat tombol ditekan
+    event.preventDefault();
+}
+
+
+
+    </script>
 </body>
 </html>

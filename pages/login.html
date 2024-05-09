@@ -24,7 +24,7 @@
     <div class="container d-flex justify-content-center align-items-center min-vh-100" style="background-color: white;">
         <header>
             <nav class="navbar navbar-light bg-light fixed-top">
-                <div class="container d-flex justify-content-center">
+                <div class="container d-flex justify-content-center"> <!-- Menggunakan flexbox untuk pengaturan posisi -->
                     <a class="navbar-brand" href="#">
                         <img src="../img/Thrivian.org.png" alt="" width="180" height="40" style="display: block; margin: 0 auto;">
                     </a>
@@ -75,8 +75,8 @@
                     <div class="input-group mb-3 mx-auto" style="width: 400px">
                         <button class="btn btn-lg btn-primary w-100 fs-6" style="border-radius: 30px;">Login</button>
                     </div>
-                    <div class="my-4 ms-1" style="padding-left: 120px;">
-                    ----------------  or continue with  ----------------
+                    <div class="my-4 ms-1" style="padding-left: 75px;">
+                    -----------------  or continue with  -----------------
                     </div>
                     <div class="input-group mb-3 mx-auto" style="width: 400px">
                         <button class="btn btn-lg btn-light w-100 fs-6 border-dark" style="border-radius: 30px;"><img src="../img/logo-google.png" style="width:20px" class="me-2"><small>Log In with Google</small></button>
@@ -137,8 +137,8 @@
                     <div class="input-group mb-3 mx-auto" style="width: 400px">
                         <button class="btn btn-lg btn-primary w-100 fs-6" style="border-radius: 30px;">Sign Up</button>
                     </div>
-                    <div class="my-4 ms-1" style="padding-left: 140px;">
-                        -----------------  or continue with  ----------------
+                    <div class="my-4 ms-1" style="padding-left: 95px;">
+                        -----------------  or continue with  -----------------
                     </div>
                     <div class="input-group mb-3 mx-auto" style="width: 400px">
                         <button class="btn btn-lg btn-light w-100 fs-6 border-dark" style="border-radius: 30px;"><img src="../img/logo-google.png" style="width:20px" class="me-2"><small>Sign Up with Google</small></button>
@@ -183,7 +183,7 @@
             togglePassword.addEventListener('click', function () {
                 const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
                 passwordInput.setAttribute('type', type);
-                
+                // Toggle eye icon
                 togglePassword.innerHTML = type === 'password' ? '<i class="bi bi-eye"></i>' : '<i class="bi bi-eye-slash"></i>';
             });
         });
