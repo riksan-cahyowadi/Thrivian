@@ -1,3 +1,9 @@
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        document.getElementById('splash-screen').style.display = 'none';
+    }, 2000); 
+});
+
 function showPosts(category) {
     var posts = document.getElementsByClassName('post');
     for (var i = 0; i < posts.length; i++) {

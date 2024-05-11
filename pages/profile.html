@@ -9,117 +9,136 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-      /* Gaya CSS tambahan */
-.nav-item:hover .nav-link {
-text-decoration: underline;
-}
-
-.profile-info {
-display: none;
-position: absolute;
-top: 40px;
-right: 0;
-background-color: #fff;
-border: 1px solid #ccc;
-padding: 10px;
-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-z-index: 1;
-}
-
-.nav-item .profile:hover .profile-info {
-display: block;
-}
-
-.profile-info a {
-text-decoration: none;
-color: #333;
-display: block;
-}
-
-.profile-info a:hover {
-text-decoration: underline;
-}
-.profile-info p {
-margin: 5px 0;
-color: #333;
-}
-
-.icon.user.outline {
-color: black;
-}
-
-.hidden {
-display: none;
-}
-
-.navbar-bawah .nav-item .nav-link.active {
-    text-decoration: underline; 
-    color: #13005A !important; 
-}
-
-  </style>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/index.js"></script>
 </head>
 
 <body>
-  <header>
-      <nav class="navbar navbar-light bg-light fixed-top">
-          <div class="container">
-              <a class="navbar-brand" href="#">
-                  <img src="../img/Thrivian.org.png" alt="" width="180" height="35">
-              </a>
-              <ul class="nav me-auto">
+   <!-- Navbar untuk Desktop -->
+   <nav class="navbar navbar-light bg-light fixed-top d-none d-lg-block">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="../img/Thrivian.org.png" alt="Thrivian.org" width="180" height="35">
+        </a>
+        <ul class="nav me-auto">
+            <li class="nav-item">
+                <a class="nav-link text-secondary active text-decoration-underline" style="color: #13005A !important;" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-secondary" href="#">Community</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-secondary" href="#">Event & Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-secondary" href="#">E-Learning</a>
+            </li>
+        </ul>
+        <div class="navbar-text ms-auto">
+            <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link text-secondary" href="../index.html">Home</a>
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-search"></i> 
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-secondary" href="#">Community</a>
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-users"></i> 
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-secondary" href="#">Event & Blog</a>
+                    <a class="nav-link" href="#">
+                        <i class="far fa-envelope"></i> 
+                    </a>
+                </li>                     
+                <li class="nav-item">
+                  <div id="profileLink" class="nav-link profile">
+                      <div class="rounded-circle overflow-hidden me-2" style="width: 25px; height: 25px; background-color: #f0f0f0;">
+                          <img id="userImage" src="../img/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                      </div>
+                      <div id="profileInfo" class="profile-info">
+                          <p class="username">Christopher Kim</p>
+                          <p class="account">@johhnyray</p>
+                          <a href="./profile.html" class="view-profile">View my profile</a>
+                          <a href="my-events.html" class="my-events">My Events</a>
+                          <a href="manage-communities.html" class="manage-communities">Manage your communities</a>
+                          <a href="./settings_profiles.html" class="settings">Settings</a>
+                          <a href="./login.html" class="log-out">Log Out</a>
+                      </div>
+                  </div>
+              </li>                                                                                 
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Navbar untuk Mobile -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-lg-none">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="flex-grow: 1;">
+            <img src="../img/Thrivian.org.png" alt="Thrivian.org" width="150">
+        </a>
+        <a href="#" class="search-icon ms-auto me-4">
+            <i class="fas fa-search"></i> 
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobileContent" aria-controls="navbarMobileContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMobileContent">
+            <ul class="navbar-nav me-auto mb-lg-0 mt-3">
+                <button class="close-button ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobileContent">✖</button>
+                <li class="nav-item">
+                    <a class="nav-link" href="community.html">Community</a>
+                    <hr class="my-2 custom-hr-mobile">
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-secondary" href="#">E-Learning</a>
+                    <a class="nav-link" href="events.html">Events</a>
+                    <hr class="my-2 custom-hr-mobile">
                 </li>
-            </ul>            
-              <div class="navbar-text ms-auto">
-                  <ul class="nav">
-                      <li class="nav-item">
-                          <a class="nav-link" href="#">
-                              <i class="fas fa-search"></i> 
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="#">
-                              <i class="fas fa-users"></i> 
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="#">
-                              <i class="far fa-envelope"></i> 
-                          </a>
-                      </li>                     
-                      <li class="nav-item">
-                        <div id="profileLink" class="nav-link profile">
-                            <div class="rounded-circle overflow-hidden me-2" style="width: 25px; height: 25px; background-color: #f0f0f0;">
-                                <img id="userImage" src="../img/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
-                            </div>
-                            <div id="profileInfo" class="profile-info">
-                                <p class="username">Christopher Kim</p>
-                                <p class="account">@johhnyray</p>
-                                <a href="profile.html" class="view-profile">View my profile</a>
-                                <a href="my-events.html" class="my-events">My Events</a>
-                                <a href="manage-communities.html" class="manage-communities">Manage your communities</a>
-                                <a href="settings_profiles.html" class="settings">Settings</a>
-                                <a href="login.html" class="log-out">Log Out</a>
-                            </div>
-                        </div>
-                    </li>                                                                                 
-                  </ul>
-              </div>                
-          </div>
-      </nav>
-  </header>
+                <li class="nav-item">
+                    <a class="nav-link" href="e-learning.html">E-Learning</a>
+                    <hr class="my-2 custom-hr-mobile">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="settings_profiles.html">Settings</a>
+                    <hr class="my-2 custom-hr-mobile">
+                </li>
+            </ul>
+            <div class="navbar-footer">
+                <div class="d-flex justify-content-center text-align-center mt-4">
+                    <span class="text-muted small fs-9" style="text-align: center; text-decoration: none;">
+                        <a href="about_us.html" class="text-muted">About Us</a> • 
+                        <a href="privacy_terms.html" class="text-muted">Privacy & Terms</a> • 
+                        <a href="more.html" class="text-muted">More</a>
+                        <p class="text-muted fs-9">Thrivian.org © 2024</p>
+                    </span>
+                  </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Sticky Bottom Navbar for Mobile -->
+    <nav class="navbar fixed-bottom navbar-expand d-lg-none bottom-nav border border-dark" style="background-color: #fcfafa;">
+        <ul class="navbar-nav nav-justified w-100">
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="../index.html"><i class="fa fa-home"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#"><i class="far fa-envelope"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#"><i class="bell outline icon"></i></a>
+            </li>            
+            <li class="nav-item">
+                <a href="./profile.html">
+                    <div class="rounded-circle overflow-hidden ms-3 mt-1" style="width: 25px; height: 25px; background-color: #f0f0f0;">
+                        <img id="userImage" src="../img/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </nav>
 
   <main class="container-fluid border" style="margin-top: 69px;">
     <div class="container">
@@ -162,7 +181,7 @@ display: none;
                         <hr class="mt-1" style="border-top: 4px solid #E5E5E5;">
                     </div>
 
-                     <div class="mt-3">
+                    <div class="mt-3">
                     <h6 style="color: #13005A;">My Communities</h6>
                     <div class="d-flex align-items-center mt-2">
                         <div class="rounded-circle overflow-hidden" style="width: 30px; height: 30px; background-color: #f0f0f0;">
@@ -241,20 +260,29 @@ display: none;
                 </div>
 
                 <div class="row justify-content-end mt-3 me-2">
-                    <div class="col-auto ">
-                        <a class="link-posts me-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_4', 'likeIconSolid_4', 'likeCount_4')">
-                            <i id="likeIconOutline_4" class="thumbs up outline black icon" style="font-size: 20px;"></i>
-                            <i id="likeIconSolid_4" class="thumbs up black icon" style="font-size: 20px; display: none;"></i>
-                            <span id="likeCount_4" style="margin-left: 5px; color: black;">5</span>
+                    <div class="col-auto">
+                        <a class="link-posts me-3 me-md-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
+                            <i id="likeIconOutline_6" class="thumbs up outline black icon" style="font-size: 20px;"></i>
+                            <i id="likeIconSolid_6" class="thumbs up black icon" style="font-size: 20px; display: none;"></i>
+                            <span id="likeCount_6" style="margin-left: 5px; color: black;">5</span>
                         </a>                            
                         
-                        <a class="link-posts me-5" href="#"><i class="comment alternate outline black icon" style="font-size: 20px;"></i><span style="margin-left: 5px; color: black;">5</span></a>
+                        <a class="link-posts me-3 me-md-5" href="#">
+                            <i class="comment alternate outline black icon" style="font-size: 20px;"></i>
+                            <span style="margin-left: 5px; color: black;">5</span>
+                        </a>
                 
-                        <a class="link-posts me-5" href="#"><i class="bookmark outline black icon" style="font-size: 20px;"></i><span style="margin-left: 5px; color: black;">5</span></a>
+                        <a class="link-posts me-3 me-md-5" href="#">
+                            <i class="bookmark outline black icon" style="font-size: 20px;"></i>
+                            <span style="margin-left: 5px; color: black;">5</span>
+                        </a>
                 
-                        <a class="link-posts me-1" href="#"><i class="share black icon" style="font-size: 20px;"></i><span style="margin-left: 5px; color: black;">5</span></a>
+                        <a class="link-posts me-1" href="#">
+                            <i class="share black icon" style="font-size: 20px;"></i>
+                            <span style="margin-left: 5px; color: black;">5</span>
+                        </a>
                     </div>
-                </div>   
+                </div>       
                 <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
             </div>
 
@@ -286,24 +314,33 @@ display: none;
                 </div>
 
                 <div class="row justify-content-end mt-3 me-2">
-                    <div class="col-auto ">
-                        <a class="link-posts me-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_4', 'likeIconSolid_4', 'likeCount_4')">
-                            <i id="likeIconOutline_4" class="thumbs up outline black icon" style="font-size: 20px;"></i>
-                            <i id="likeIconSolid_4" class="thumbs up black icon" style="font-size: 20px; display: none;"></i>
-                            <span id="likeCount_4" style="margin-left: 5px; color: black;">5</span>
+                    <div class="col-auto">
+                        <a class="link-posts me-3 me-md-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
+                            <i id="likeIconOutline_6" class="thumbs up outline black icon" style="font-size: 20px;"></i>
+                            <i id="likeIconSolid_6" class="thumbs up black icon" style="font-size: 20px; display: none;"></i>
+                            <span id="likeCount_6" style="margin-left: 5px; color: black;">5</span>
                         </a>                            
                         
-                        <a class="link-posts me-5" href="#"><i class="comment alternate outline black icon" style="font-size: 20px;"></i><span style="margin-left: 5px; color: black;">5</span></a>
+                        <a class="link-posts me-3 me-md-5" href="#">
+                            <i class="comment alternate outline black icon" style="font-size: 20px;"></i>
+                            <span style="margin-left: 5px; color: black;">5</span>
+                        </a>
                 
-                        <a class="link-posts me-5" href="#"><i class="bookmark outline black icon" style="font-size: 20px;"></i><span style="margin-left: 5px; color: black;">5</span></a>
+                        <a class="link-posts me-3 me-md-5" href="#">
+                            <i class="bookmark outline black icon" style="font-size: 20px;"></i>
+                            <span style="margin-left: 5px; color: black;">5</span>
+                        </a>
                 
-                        <a class="link-posts me-1" href="#"><i class="share black icon" style="font-size: 20px;"></i><span style="margin-left: 5px; color: black;">5</span></a>
+                        <a class="link-posts me-1" href="#">
+                            <i class="share black icon" style="font-size: 20px;"></i>
+                            <span style="margin-left: 5px; color: black;">5</span>
+                        </a>
                     </div>
-                </div>   
+                </div>    
                 <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
             </div>
 
-            <div class="post mt-4 me-5" data-category="Posts">
+            <div class="post mt-4 me-5 mb-5" data-category="Posts">
                 <div class="d-flex align-items-center mb-2">
                     <div class="rounded-circle overflow-hidden me-2" style="width: 50px; height: 50px; background-color: #f0f0f0;">
                         <img src="../img/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
@@ -320,8 +357,8 @@ display: none;
                 </div>
                 <div class="row mb-0 ms-5">
                     <div class="col">
-                        <img src="../img/freepik-export-20240423071858bC0K.png" class="img-fluid" style="border-radius: 15px; width: 300%; height: 300px;" alt="Image">
-                        <p class="mb-0" style="text-align: justify;">
+                        <img src="../img/freepik-export-20240423071858bC0K.png" class="img-fluid " style="border-radius: 15px;" alt="Image">
+                            <p class="mb-0 mt-1" style="text-align: justify;">
                             My top 5. And I’m glad we learned early on. Plan for it. Many people rarely take time to plan out their finances. 
                             They spend hours planning vacations but rarely five minutes planning their financial future. 
                             And it shows. Instead, take time to plan out what you actually need, what you can affor<a href="" class="full-posts" style="text-decoration: none;">....</a>
@@ -330,20 +367,29 @@ display: none;
                 </div>
 
                 <div class="row justify-content-end mt-3 me-2">
-                    <div class="col-auto ">
-                        <a class="link-posts me-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_4', 'likeIconSolid_4', 'likeCount_4')">
-                            <i id="likeIconOutline_4" class="thumbs up outline black icon" style="font-size: 20px;"></i>
-                            <i id="likeIconSolid_4" class="thumbs up black icon" style="font-size: 20px; display: none;"></i>
-                            <span id="likeCount_4" style="margin-left: 5px; color: black;">5</span>
+                    <div class="col-auto">
+                        <a class="link-posts me-3 me-md-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
+                            <i id="likeIconOutline_6" class="thumbs up outline black icon" style="font-size: 20px;"></i>
+                            <i id="likeIconSolid_6" class="thumbs up black icon" style="font-size: 20px; display: none;"></i>
+                            <span id="likeCount_6" style="margin-left: 5px; color: black;">5</span>
                         </a>                            
                         
-                        <a class="link-posts me-5" href="#"><i class="comment alternate outline black icon" style="font-size: 20px;"></i><span style="margin-left: 5px; color: black;">5</span></a>
+                        <a class="link-posts me-3 me-md-5" href="#">
+                            <i class="comment alternate outline black icon" style="font-size: 20px;"></i>
+                            <span style="margin-left: 5px; color: black;">5</span>
+                        </a>
                 
-                        <a class="link-posts me-5" href="#"><i class="bookmark outline black icon" style="font-size: 20px;"></i><span style="margin-left: 5px; color: black;">5</span></a>
+                        <a class="link-posts me-3 me-md-5" href="#">
+                            <i class="bookmark outline black icon" style="font-size: 20px;"></i>
+                            <span style="margin-left: 5px; color: black;">5</span>
+                        </a>
                 
-                        <a class="link-posts me-1" href="#"><i class="share black icon" style="font-size: 20px;"></i><span style="margin-left: 5px; color: black;">5</span></a>
+                        <a class="link-posts me-1" href="#">
+                            <i class="share black icon" style="font-size: 20px;"></i>
+                            <span style="margin-left: 5px; color: black;">5</span>
+                        </a>
                     </div>
-                </div>   
+                </div>    
                 <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
             </div>
 
@@ -374,17 +420,27 @@ display: none;
                 </div>
 
                 <div class="row justify-content-end mt-3 me-2">
-                    <div class="col-auto ">
-                        <a class="link-posts me-5" href="#">
-                            <i class="thumbs up icon" style="font-size: 20px; color: #13005A;"></i>
-                            <span style="margin-left: 5px; color: black;">5</span>
-                        </a>                              
+                    <div class="col-auto">
+                        <a class="link-posts me-3 me-md-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
+                            <i id="likeIconOutline_6" class="thumbs up icon" style="font-size: 20px; color: #13005A;"></i>
+                            <i id="likeIconSolid_6" class="thumbs up black icon" style="font-size: 20px; display: none;"></i>
+                            <span id="likeCount_6" style="margin-left: 5px; color: black;">5</span>
+                        </a>                            
                         
-                        <a class="link-posts me-5" href="#"><i class="comment alternate outline black icon" style="font-size: 20px;"></i><span style="margin-left: 5px; color: black;">5</span></a>
+                        <a class="link-posts me-3 me-md-5" href="#">
+                            <i class="comment alternate outline black icon" style="font-size: 20px;"></i>
+                            <span style="margin-left: 5px; color: black;">5</span>
+                        </a>
                 
-                        <a class="link-posts me-5" href="#"><i class="bookmark icon" style="font-size: 20px; color: orange;"></i><span style="margin-left: 5px; color: black;">5</span></a>
+                        <a class="link-posts me-3 me-md-5" href="#">
+                            <i class="bookmark icon" style="font-size: 20px; color: orange;"></i>
+                            <span style="margin-left: 5px; color: black;">5</span>
+                        </a>
                 
-                        <a class="link-posts me-1" href="#"><i class="share black icon" style="font-size: 20px;"></i><span style="margin-left: 5px; color: black;">5</span></a>
+                        <a class="link-posts me-1" href="#">
+                            <i class="share black icon" style="font-size: 20px;"></i>
+                            <span style="margin-left: 5px; color: black;">5</span>
+                        </a>
                     </div>
                 </div>   
                 <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
@@ -418,18 +474,80 @@ display: none;
                     </div>
                 </div>
 
-                <div class="row justify-content-end mt-3 me-2">
-                    <div class="col-auto ">
-                        <a class="link-posts me-5" href="#">
-                            <i class="thumbs up icon" style="font-size: 20px; color: #13005A;"></i>
-                            <span style="margin-left: 5px; color: black;">5</span>
-                        </a>                          
+                <div class="row justify-content-end mt-3 me-2 mb-5">
+                    <div class="col-auto">
+                        <a class="link-posts me-3 me-md-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
+                            <i id="likeIconOutline_6" class="thumbs up icon" style="font-size: 20px; color: #13005A;"></i>
+                            <i id="likeIconSolid_6" class="thumbs up black icon" style="font-size: 20px; display: none;"></i>
+                            <span id="likeCount_6" style="margin-left: 5px; color: black;">5</span>
+                        </a>                            
                         
-                        <a class="link-posts me-5" href="#"><i class="comment alternate outline black icon" style="font-size: 20px;"></i><span style="margin-left: 5px; color: black;">5</span></a>
+                        <a class="link-posts me-3 me-md-5" href="#">
+                            <i class="comment alternate outline black icon" style="font-size: 20px;"></i>
+                            <span style="margin-left: 5px; color: black;">5</span>
+                        </a>
                 
-                        <a class="link-posts me-5" href="#"><i class="bookmark outline black icon" style="font-size: 20px;"></i><span style="margin-left: 5px; color: black;">5</span></a>
+                        <a class="link-posts me-3 me-md-5" href="#">
+                            <i class="bookmark icon" style="font-size: 20px; color: orange;"></i>
+                            <span style="margin-left: 5px; color: black;">5</span>
+                        </a>
                 
-                        <a class="link-posts me-1" href="#"><i class="share black icon" style="font-size: 20px;"></i><span style="margin-left: 5px; color: black;">5</span></a>
+                        <a class="link-posts me-1" href="#">
+                            <i class="share black icon" style="font-size: 20px;"></i>
+                            <span style="margin-left: 5px; color: black;">5</span>
+                        </a>
+                    </div>
+                </div>     
+                <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
+            </div>
+
+            <div class="post mt-4 me-5" data-category="Saves">
+                <div class="d-flex align-items-center mb-2">
+                    <div class="rounded-circle overflow-hidden me-2" style="width: 50px; height: 50px; background-color: #f0f0f0;">
+                        <img src="../img/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div>
+                        <h6 class="mb-0">Christoper Kim <span class="text-muted"> @stoperkim • 2 hours ago</span></h6>
+                        <p class="fs-6" style="color: #9747FF; margin-bottom: 0;"> > Finance</p>
+                    </div>
+                </div>
+                <div class="row mb-0 ms-5 mb-2">
+                    <div class="col">
+                        <h5 class="mb-0">What are the 5 habits to develop financial stability?</h5>
+                    </div>
+                </div>
+                <div class="row mb-0 ms-5">
+                    <div class="col">
+                        <p class="mb-0" style="text-align: justify;">
+                            My top 5. And I’m glad we learned early on. Plan for it. Many people rarely take time to plan out their finances. 
+                            They spend hours planning vacations but rarely five minutes planning their financial future. 
+                            And it shows. Instead, take time to plan out what you actually need, what you can affor<a href="" class="full-posts" style="text-decoration: none;">....</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row justify-content-end mt-3 me-2">
+                    <div class="col-auto">
+                        <a class="link-posts me-3 me-md-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
+                            <i id="likeIconOutline_6" class="thumbs up outline black icon" style="font-size: 20px;"></i>
+                            <i id="likeIconSolid_6" class="thumbs up black icon" style="font-size: 20px; display: none;"></i>
+                            <span id="likeCount_6" style="margin-left: 5px; color: black;">5</span>
+                        </a>                            
+                        
+                        <a class="link-posts me-3 me-md-5" href="#">
+                            <i class="comment alternate outline black icon" style="font-size: 20px;"></i>
+                            <span style="margin-left: 5px; color: black;">5</span>
+                        </a>
+                
+                        <a class="link-posts me-3 me-md-5" href="#">
+                            <i class="bookmark icon" style="font-size: 20px; color: orange;"></i>
+                            <span style="margin-left: 5px; color: black;">5</span>
+                        </a>
+                
+                        <a class="link-posts me-1" href="#">
+                            <i class="share black icon" style="font-size: 20px;"></i>
+                            <span style="margin-left: 5px; color: black;">5</span>
+                        </a>
                     </div>
                 </div>   
                 <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
@@ -460,62 +578,30 @@ display: none;
                     </div>
                 </div>
 
-                <div class="row justify-content-end mt-3 me-2">
-                    <div class="col-auto ">
-                        <a class="link-posts me-5" href="#">
-                            <i class="thumbs up outline black icon" style="font-size: 20px;"></i>
-                            <span style="margin-left: 5px; color: black;">5</span>
-                        </a>                              
+                <div class="row justify-content-end mt-3 me-2 mb-5">
+                    <div class="col-auto">
+                        <a class="link-posts me-3 me-md-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
+                            <i id="likeIconOutline_6" class="thumbs up outline black icon" style="font-size: 20px;"></i>
+                            <i id="likeIconSolid_6" class="thumbs up black icon" style="font-size: 20px; display: none;"></i>
+                            <span id="likeCount_6" style="margin-left: 5px; color: black;">5</span>
+                        </a>                            
                         
-                        <a class="link-posts me-5" href="#"><i class="comment alternate outline black icon" style="font-size: 20px;"></i><span style="margin-left: 5px; color: black;">5</span></a>
-                
-                        <a class="link-posts me-5" href="#"><i class="bookmark icon" style="font-size: 20px; color: orange;"></i><span style="margin-left: 5px; color: black;">5</span></a>
-                
-                        <a class="link-posts me-1" href="#"><i class="share black icon" style="font-size: 20px;"></i><span style="margin-left: 5px; color: black;">5</span></a>
-                    </div>
-                </div>   
-                <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
-            </div>
-
-            <div class="post mt-4 me-5" data-category="Saves">
-                <div class="d-flex align-items-center mb-2">
-                    <div class="rounded-circle overflow-hidden me-2" style="width: 50px; height: 50px; background-color: #f0f0f0;">
-                        <img src="../img/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div>
-                        <h6 class="mb-0">Christoper Kim <span class="text-muted"> @stoperkim • 2 hours ago</span></h6>
-                        <p class="fs-6" style="color: #9747FF; margin-bottom: 0;"> > Finance</p>
-                    </div>
-                </div>
-                <div class="row mb-0 ms-5 mb-2">
-                    <div class="col">
-                        <h5 class="mb-0">What are the 5 habits to develop financial stability?</h5>
-                    </div>
-                </div>
-                <div class="row mb-0 ms-5">
-                    <div class="col">
-                        <p class="mb-0" style="text-align: justify;">
-                            My top 5. And I’m glad we learned early on. Plan for it. Many people rarely take time to plan out their finances. 
-                            They spend hours planning vacations but rarely five minutes planning their financial future. 
-                            And it shows. Instead, take time to plan out what you actually need, what you can affor<a href="" class="full-posts" style="text-decoration: none;">....</a>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="row justify-content-end mt-3 me-2">
-                    <div class="col-auto ">
-                        <a class="link-posts me-5" href="#">
-                            <i class="thumbs up outline black icon" style="font-size: 20px;"></i>
+                        <a class="link-posts me-3 me-md-5" href="#">
+                            <i class="comment alternate outline black icon" style="font-size: 20px;"></i>
                             <span style="margin-left: 5px; color: black;">5</span>
-                        </a>                              
-                        
-                        <a class="link-posts me-5" href="#"><i class="comment alternate outline black icon" style="font-size: 20px;"></i><span style="margin-left: 5px; color: black;">5</span></a>
+                        </a>
                 
-                        <a class="link-posts me-5" href="#"><i class="bookmark icon" style="font-size: 20px; color: orange;"></i><span style="margin-left: 5px; color: black;">5</span></a>
+                        <a class="link-posts me-3 me-md-5" href="#">
+                            <i class="bookmark icon" style="font-size: 20px; color: orange;"></i>
+                            <span style="margin-left: 5px; color: black;">5</span>
+                        </a>
                 
-                        <a class="link-posts me-1" href="#"><i class="share black icon" style="font-size: 20px;"></i><span style="margin-left: 5px; color: black;">5</span></a>
+                        <a class="link-posts me-1" href="#">
+                            <i class="share black icon" style="font-size: 20px;"></i>
+                            <span style="margin-left: 5px; color: black;">5</span>
+                        </a>
                     </div>
-                </div>   
+                </div>    
                 <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
             </div>
 
