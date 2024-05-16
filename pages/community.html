@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/index.js"></script>
+  <style>
+      /* Gaya CSS tambahan */
+.nav-item:hover .nav-link {
+text-decoration: underline;
+}
+
+.profile-info {
+display: none;
+position: absolute;
+top: 40px;
+right: 0;
+background-color: #fff;
+border: 1px solid #ccc;
+padding: 10px;
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+z-index: 1;
+}
+
+.nav-item .profile:hover .profile-info {
+display: block;
+}
+
+.profile-info a {
+text-decoration: none;
+color: #333;
+display: block;
+}
+
+.profile-info a:hover {
+text-decoration: underline;
+}
+.profile-info p {
+margin: 5px 0;
+color: #333;
+}
+
+.icon.user.outline {
+color: black;
+}
+
+.hidden {
+display: none;
+}
+
+.navbar-bawah .nav-item .nav-link.active {
+    text-decoration: underline; 
+    color: #13005A !important; 
+}
+
+.col-md-9 {
+    background-color: #F4F4F4;
+}
+
+.community-background {
+    background-image: url('../img/bg.png'); /* Replace with the path to your image */
+    background-size: cover; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-color: #B4E8CE; /* Fallback color in case the image doesn't load */
+    padding: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+
+}
+
+        .card-custom {
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            height: 95%;
+        }
+        .card-custom .card-body {
+            position: relative;
+            z-index: 2;
+        }
+        .card-custom .card-img-top {
+            border-radius: 50%;
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            border: 1px solid white;
+        }
+        .card-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 27%;
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+  </style>
+</head>
+
+<body>
+   <!-- Navbar untuk Desktop -->
+   <nav class="navbar navbar-light bg-light fixed-top d-none d-lg-block">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="../img/Thrivian.org.png" alt="Thrivian.org" width="180" height="35">
+        </a>
+        <ul class="nav me-auto">
+            <li class="nav-item">
+                <a class="nav-link text-secondary" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-secondary  active text-decoration-underline" style="color: #13005A !important;" href="#">Community</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-secondary" href="#">Event & Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-secondary" href="#">E-Learning</a>
+            </li>
+        </ul>
+        <div class="navbar-text ms-auto">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-search"></i> 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-users"></i> 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="far fa-envelope"></i> 
+                    </a>
+                </li>                     
+                <li class="nav-item">
+                  <div id="profileLink" class="nav-link profile">
+                      <div class="rounded-circle overflow-hidden me-2" style="width: 25px; height: 25px; background-color: #f0f0f0;">
+                          <img id="userImage" src="../img/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                      </div>
+                      <div id="profileInfo" class="profile-info">
+                          <p class="username">Christopher Kim</p>
+                          <p class="account">@johhnyray</p>
+                          <a href="./profile.html" class="view-profile">View my profile</a>
+                          <a href="my-events.html" class="my-events">My Events</a>
+                          <a href="manage-communities.html" class="manage-communities">Manage your communities</a>
+                          <a href="./settings_profiles.html" class="settings">Settings</a>
+                          <a href="./pages/login.html" class="log-out">Log Out</a>
+                      </div>
+                  </div>
+              </li>                                                                                 
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Navbar untuk Mobile -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-lg-none">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="flex-grow: 1;">
+            <img src="../img/Thrivian.org.png" alt="Thrivian.org" width="150">
+        </a>
+        <a href="#" class="search-icon ms-auto me-4">
+            <i class="fas fa-search"></i> 
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobileContent" aria-controls="navbarMobileContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMobileContent">
+            <ul class="navbar-nav me-auto mb-lg-0 mt-3">
+                <button class="close-button ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobileContent">✖</button>
+                <li class="nav-item">
+                    <a class="nav-link" href="community.html">Community</a>
+                    <hr class="my-2 custom-hr-mobile">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="events.html">Events</a>
+                    <hr class="my-2 custom-hr-mobile">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="e-learning.html">E-Learning</a>
+                    <hr class="my-2 custom-hr-mobile">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="settings_profiles.html">Settings</a>
+                    <hr class="my-2 custom-hr-mobile">
+                </li>
+            </ul>
+            <div class="navbar-footer">
+                <div class="d-flex justify-content-center text-align-center mt-4">
+                    <span class="text-muted small fs-9" style="text-align: center; text-decoration: none;">
+                        <a href="about_us.html" class="text-muted">About Us</a> • 
+                        <a href="privacy_terms.html" class="text-muted">Privacy & Terms</a> • 
+                        <a href="more.html" class="text-muted">More</a>
+                        <p class="text-muted fs-9">Thrivian.org © 2024</p>
+                    </span>
+                  </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Sticky Bottom Navbar for Mobile -->
+    <nav class="navbar fixed-bottom navbar-expand d-lg-none bottom-nav border border-dark" style="background-color: #fcfafa;">
+        <ul class="navbar-nav nav-justified w-100">
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="../index.html"><i class="fa fa-home"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#"><i class="far fa-envelope"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#"><i class="bell outline icon"></i></a>
+            </li>            
+            <li class="nav-item">
+                <a href="./profile.html">
+                    <div class="rounded-circle overflow-hidden ms-3 mt-1" style="width: 25px; height: 25px; background-color: #f0f0f0;">
+                        <img id="userImage" src="../img/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="container-fluid border" style="margin-top: 69px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9" style="overflow-y: auto;">
+                    <div class="community-container">
+                        <div class="community-background text-center">
+                            <h2>Welcome to Community Page</h2>
+                            <p>Temukan dan ikuti Komunitas yang kamu inginkan</p>
+                            <div>
+                                <button type="button" class="btn btn-light w-40 mt-2 me-2" style="border-radius: 10px; border-color: #13005A; color: #13005A;">
+                                    <i class="fas fa-plus-circle" style="font-size: 15px; color: #13005A;"></i>
+                                    Create New Community
+                                </button>
+                                <button type="button" class="btn btn-light w-45 mt-2 ms-2" style="border-radius: 10px; border-color: #13005A; color: #13005A;">
+                                    <i class="fas fa-search" style="font-size: 15px; color: #13005A;"></i>
+                                    Find Your Community
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h3>Sustainable Development Goals</h3>
+                            <a href="your-link-here.html" class="text-decoration-none">See All</a>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="card card-custom">
+                                    <div class="card-bg" style="background-image: url('../img/Rectangle\ 25.png');"></div>
+                                    <img src="../img/Ellipse 37.png" class="card-img-top border-dark" alt="Card image">
+                                    <div class="card-body text-center mt-5 pt-5">
+                                        <h5 class="card-title mt-5">Level Up Learners</h5>
+                                        <p class="card-text">Level Up Learners: Elevate your skills, empower your future.</p>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="card card-custom">
+                                    <div class="card-bg" style="background-image: url('../img/business-people-casual-meeting.jpg');"></div>
+                                    <img src="../img/3582.jpg" class="card-img-top border-dark" alt="Card image">
+                                    <div class="card-body text-center mt-5 pt-5">
+                                        <h5 class="card-title mt-5">Thrive Collective</h5>
+                                        <p class="card-text">A supportive network for entrepreneurs to succeed.</p>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="card card-custom">
+                                    <div class="card-bg" style="background-image: url('../img/business-people-casual-meeting.jpg');"></div>
+                                    <img src="../img/3582.jpg" class="card-img-top border-dark" alt="Card image">
+                                    <div class="card-body text-center mt-5 pt-5">
+                                        <h5 class="card-title mt-5">The Financials - TF</h5>
+                                        <p class="card-text">Financial insights and connections for savvy individuals.</p>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h3>Recommended Communities</h3>
+                            <a href="your-link-here.html" class="text-decoration-none">See All</a>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="card card-custom">
+                                    <div class="card-bg" style="background-image: url('../img/business-people-casual-meeting.jpg');"></div>
+                                    <img src="../img/3582.jpg" class="card-img-top border-dark" alt="Card image">
+                                    <div class="card-body text-center mt-5 pt-5">
+                                        <h5 class="card-title mt-5">The Visionaries</h5>
+                                        <p class="card-text">Pioneers shaping the future with bold ideas.</p>
+                                        <div class="d-flex justify-content-center mt-5">
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="card card-custom">
+                                    <div class="card-bg" style="background-image: url('../img/business-people-casual-meeting.jpg');"></div>
+                                    <img src="../img/3582.jpg" class="card-img-top border-dark" alt="Card image">
+                                    <div class="card-body text-center mt-5 pt-5">
+                                        <h5 class="card-title mt-5">English Hub</h5>
+                                        <p class="card-text"> Offers a variety of speaking activities</p>
+                                        <div class="d-flex justify-content-center mt-5">
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="card card-custom">
+                                    <div class="card-bg" style="background-image: url('../img/business-people-casual-meeting.jpg');"></div>
+                                    <img src="../img/3582.jpg" class="card-img-top border-dark" alt="Card image">
+                                    <div class="card-body text-center mt-5 pt-5">
+                                        <h5 class="card-title mt-5">The Changemakers</h5>
+                                        <p class="card-text">Uniting changemakers to make a difference</p>
+                                        <div class="d-flex justify-content-center mt-5">
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h3>Bussines</h3>
+                            <a href="your-link-here.html" class="text-decoration-none">See All</a>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="card card-custom">
+                                    <div class="card-bg" style="background-image: url('../img/business-people-casual-meeting.jpg');"></div>
+                                    <img src="../img/3582.jpg" class="card-img-top border-dark" alt="Card image">
+                                    <div class="card-body text-center mt-5 pt-5">
+                                        <h5 class="card-title mt-5">Business Club</h5>
+                                        <p class="card-text">Mari belajar berbisnis bersama kami</p>
+                                        <div class="d-flex justify-content-center mt-5">
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="card card-custom">
+                                    <div class="card-bg" style="background-image: url('../img/business-people-casual-meeting.jpg');"></div>
+                                    <img src="../img/3582.jpg" class="card-img-top border-dark" alt="Card image">
+                                    <div class="card-body text-center mt-5 pt-5">
+                                        <h5 class="card-title mt-5">Thrive Collective</h5>
+                                        <p class="card-text">A supportive network for entrepreneurs to succeed.</p>
+                                        <div class="d-flex justify-content-center mt-4">
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="card card-custom">
+                                    <div class="card-bg" style="background-image: url('../img/business-people-casual-meeting.jpg');"></div>
+                                    <img src="../img/3582.jpg" class="card-img-top border-dark" alt="Card image">
+                                    <div class="card-body text-center mt-5 pt-5">
+                                        <h5 class="card-title mt-5">The Visionaries</h5>
+                                        <p class="card-text">Pioneers shaping the future with bold ideas.</p>
+                                        <div class="d-flex justify-content-center mt-5">
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h3>Finance</h3>
+                            <a href="your-link-here.html" class="text-decoration-none">See All</a>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="card card-custom">
+                                    <div class="card-bg" style="background-image: url('../img/business-people-casual-meeting.jpg');"></div>
+                                    <img src="../img/3582.jpg" class="card-img-top border-dark" alt="Card image">
+                                    <div class="card-body text-center mt-5 pt-5">
+                                        <h5 class="card-title mt-5">Wealth Builders - WB</h5>
+                                        <p class="card-text">Wealth Builders - WB: Financial freedom starts here.</p>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="card card-custom">
+                                    <div class="card-bg" style="background-image: url('../img/business-people-casual-meeting.jpg');"></div>
+                                    <img src="../img/3582.jpg" class="card-img-top border-dark" alt="Card image">
+                                    <div class="card-body text-center mt-5 pt-5">
+                                        <h5 class="card-title mt-5">The Financials - TF</h5>
+                                        <p class="card-text">Financial insights and connections for savvy individuals.</p>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="card card-custom">
+                                    <div class="card-bg" style="background-image: url('../img/business-people-casual-meeting.jpg');"></div>
+                                    <img src="../img/3582.jpg" class="card-img-top border-dark" alt="Card image">
+                                    <div class="card-body text-center mt-5 pt-5">
+                                        <h5 class="card-title mt-5">The Fiscal Network - TFN</h5>
+                                        <p class="card-text">Connecting finance professionals for knowledge and growth.</p>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h3>Personal Development</h3>
+                            <a href="your-link-here.html" class="text-decoration-none">See All</a>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="card card-custom">
+                                    <div class="card-bg" style="background-image: url('../img/business-people-casual-meeting.jpg');"></div>
+                                    <img src="../img/3582.jpg" class="card-img-top border-dark" alt="Card image">
+                                    <div class="card-body text-center mt-5 pt-5">
+                                        <h5 class="card-title mt-5">The Changemakers</h5>
+                                        <p class="card-text">Uniting changemakers to make a difference</p>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="card card-custom">
+                                    <div class="card-bg" style="background-image: url('../img/business-people-casual-meeting.jpg');"></div>
+                                    <img src="../img/3582.jpg" class="card-img-top border-dark" alt="Card image">
+                                    <div class="card-body text-center mt-5 pt-5">
+                                        <h5 class="card-title mt-5">The Dream Chasers</h5>
+                                        <p class="card-text">Support for ambitious dreamers</p>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 mb-4">
+                                <div class="card card-custom">
+                                    <div class="card-bg" style="background-image: url('../img/business-people-casual-meeting.jpg');"></div>
+                                    <img src="../img/3582.jpg" class="card-img-top border-dark" alt="Card image">
+                                    <div class="card-body text-center mt-5 pt-5">
+                                        <h5 class="card-title mt-5">The Phoenix Rising</h5>
+                                        <p class="card-text">Empowering individuals to rise above.</p>
+                                        <div class="d-flex justify-content-center mt-3">
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
+                                            <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Content for the left column -->
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="card mt-3 text-center">
+                        <h5 class="card-header" style="background-color: #B8EDFD;">Invited Community</h5>
+                        <div class="card-body">
+                          <p class="card-text">Look, someone seems to have invited you </p>
+                          <div class="d-flex justify-content-center align-items-center mt-3">
+                            <img src="../img/3582.jpg" alt="Small Image" class="rounded-circle me-2" style="width: 30px; height: 30px;">
+                            <span><strong>The Financials - TF</strong></span>
+                         </div>
+                          <div class="d-flex justify-content-center mt-3">
+                            <button type="button" class="btn btn-danger border-dark me-2 btn-sm" style="border-radius: 10px;">Reject</button>
+                            <button type="button" class="btn btn-success border-dark me-2 btn-sm" style="border-radius: 10px;">Accept</button>
+                         </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+  
+  <script>
+    // Fungsi untuk menghapus kelas active dari semua elemen nav-link
+    function removeActiveClass() {
+        var navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(function(link) {
+            link.classList.remove('active');
+        });
+    }
+
+    // Fungsi untuk menambahkan kelas active ke teks yang diklik
+    function setActiveLink(link) {
+        removeActiveClass(); // Hapus kelas active dari semua elemen nav-link
+        link.classList.add('active'); // Tambahkan kelas active ke teks yang diklik
+    }
+
+    // Ambil semua elemen anchor dengan kelas nav-link
+    var navLinks = document.querySelectorAll('.nav-link');
+
+    // Tambahkan event listener ke setiap elemen anchor
+    navLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+            setActiveLink(link); // Ketika teks navigasi diklik, atur teks yang diklik sebagai aktif
+        });
+    });
+
+    function showPosts(category) {
+        var posts = document.getElementsByClassName('post');
+        for (var i = 0; i < posts.length; i++) {
+            var post = posts[i];
+            var postCategory = post.getAttribute('data-category');
+            if (category === 'All' || postCategory === category) {
+                post.style.display = 'block';
+            } else {
+                post.style.display = 'none';
+            }
+        }
+    }
+</script>
+
+
+</body>
+</html>
