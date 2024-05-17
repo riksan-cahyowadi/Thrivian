@@ -11,6 +11,62 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="../css/style.css">
   <script src="../js/index.js"></script>
+  <style>
+      /* Gaya CSS tambahan */
+.nav-item:hover .nav-link {
+text-decoration: underline;
+}
+
+.profile-info {
+display: none;
+position: absolute;
+top: 40px;
+right: 0;
+background-color: #fff;
+border: 1px solid #ccc;
+padding: 10px;
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+z-index: 1;
+}
+
+.nav-item .profile:hover .profile-info {
+display: block;
+}
+
+.profile-info a {
+text-decoration: none;
+color: #333;
+display: block;
+}
+
+.profile-info a:hover {
+text-decoration: underline;
+}
+.profile-info p {
+margin: 5px 0;
+color: #333;
+}
+
+.icon.user.outline {
+color: black;
+}
+
+.hidden {
+display: none;
+}
+
+.navbar-bawah .nav-item .nav-link.active {
+    text-decoration: underline; 
+    color: #13005A !important; 
+}
+
+@media (max-width: 576px) {
+  .community {
+    display: none;
+  }
+}
+
+  </style>
 </head>
 
 <body>
@@ -63,7 +119,7 @@
                           <a href="my-events.html" class="my-events">My Events</a>
                           <a href="manage-communities.html" class="manage-communities">Manage your communities</a>
                           <a href="./settings_profiles.html" class="settings">Settings</a>
-                          <a href="./login.html" class="log-out">Log Out</a>
+                          <a href="./pages/login.html" class="log-out">Log Out</a>
                       </div>
                   </div>
               </li>                                                                                 
@@ -181,7 +237,7 @@
                         <hr class="mt-1" style="border-top: 4px solid #E5E5E5;">
                     </div>
 
-                    <div class="mt-3">
+                    <div class="community mt-3">
                     <h6 style="color: #13005A;">My Communities</h6>
                     <div class="d-flex align-items-center mt-2">
                         <div class="rounded-circle overflow-hidden" style="width: 30px; height: 30px; background-color: #f0f0f0;">
@@ -340,7 +396,7 @@
                 <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
             </div>
 
-            <div class="post mt-4 me-5 mb-5" data-category="Posts">
+            <div class="post mt-4 me-5" data-category="Posts">
                 <div class="d-flex align-items-center mb-2">
                     <div class="rounded-circle overflow-hidden me-2" style="width: 50px; height: 50px; background-color: #f0f0f0;">
                         <img src="../img/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
@@ -474,7 +530,7 @@
                     </div>
                 </div>
 
-                <div class="row justify-content-end mt-3 me-2 mb-5">
+                <div class="row justify-content-end mt-3 me-2">
                     <div class="col-auto">
                         <a class="link-posts me-3 me-md-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
                             <i id="likeIconOutline_6" class="thumbs up icon" style="font-size: 20px; color: #13005A;"></i>
@@ -578,7 +634,7 @@
                     </div>
                 </div>
 
-                <div class="row justify-content-end mt-3 me-2 mb-5">
+                <div class="row justify-content-end mt-3 me-2">
                     <div class="col-auto">
                         <a class="link-posts me-3 me-md-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
                             <i id="likeIconOutline_6" class="thumbs up outline black icon" style="font-size: 20px;"></i>
