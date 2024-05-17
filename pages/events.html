@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+      /* Gaya CSS tambahan */
+.nav-item:hover .nav-link {
+text-decoration: underline;
+}
+
+.profile-info {
+display: none;
+position: absolute;
+top: 40px;
+right: 0;
+background-color: #fff;
+border: 1px solid #ccc;
+padding: 10px;
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+z-index: 1;
+}
+
+.nav-item .profile:hover .profile-info {
+display: block;
+}
+
+.profile-info a {
+text-decoration: none;
+color: #333;
+display: block;
+}
+
+.profile-info a:hover {
+text-decoration: underline;
+}
+.profile-info p {
+margin: 5px 0;
+color: #333;
+}
+
+.icon.user.outline {
+color: black;
+}
+
+.hidden {
+display: none;
+}
+
+.navbar-bawah .nav-item .nav-link.active {
+    text-decoration: underline; 
+    color: #13005A !important; 
+}
+
+#selectedCategories .btn {
+        border-radius: 15px;
+    }
+
+    .custom-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%; /* Atur tinggi card */
+        border-radius: 8px;
+        width: 18rem; /* Lebar default card */
+    }
+
+    .card-img-container {
+        position: relative;
+        height: 100%; /* Sesuaikan tinggi gambar */
+        overflow: hidden;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .custom-card img {
+        object-fit: cover; /* Atur bagaimana gambar diatur di dalam card */
+        width: 100%;
+        height: 100%; /* Atur tinggi gambar */
+    }
+
+    .card-body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .card-text {
+        flex-grow: 1;
+    }
+
+    .badge-custom {
+        position: absolute;
+        top: 10px; /* Sesuaikan dengan posisi yang diinginkan */
+        right: 10px; /* Sesuaikan dengan posisi yang diinginkan */
+        z-index: 1; /* Pastikan badge tampil di atas gambar */
+        background-color: #13005A;
+    }
+
+    .badge-secondary {
+        background-color: #13005A;
+    }
+
+    /* Media query untuk layar kecil */
+    @media (max-width: 767px) {
+        .col-sm-6 {
+            flex: 0 0 25%;
+            max-width: 50%;
+            padding: 5px; /* Menambahkan jarak antar card */
+        }
+
+        .custom-card {
+            width: 9rem; /* Lebar card di layar kecil */
+            height: auto; /* Atur tinggi card */
+            margin-bottom: 10px; /* Menambahkan jarak antar card */
+        }
+
+        .card-img-container {
+            height: 120px; /* Sesuaikan tinggi gambar di mobile */
+        }
+
+        .card-body {
+            padding: 10px; /* Mengurangi padding di dalam card */
+        }
+
+        .card-title {
+            font-size: 10px; /* Mengurangi ukuran font judul */
+        }
+
+        .card-text {
+            font-size: 8px; /* Mengurangi ukuran font deskripsi */
+        }
+
+        .location-icon {
+            font-size: 7px; /* Ukuran font ikon lokasi di layar kecil */
+        }
+
+        .location-text {
+            font-size: 7px; /* Ukuran font teks lokasi di layar kecil */
+        }
+        .badge-secondary {
+            font-size: 7px;
+        }
+
+        .badge-custom {
+            font-size: 8px;
+        }
+    }
+
+  </style>
+</head>
+
+<body>
+   <!-- Navbar untuk Desktop -->
+   <nav class="navbar navbar-light bg-light fixed-top d-none d-lg-block">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="../img/Thrivian.org.png" alt="Thrivian.org" width="180" height="35">
+        </a>
+        <ul class="nav me-auto">
+            <li class="nav-item">
+                <a class="nav-link text-secondary" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-secondary" href="./community.html">Community</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-secondary active text-decoration-underline" style="color: #13005A !important;" href="./events.html">Events</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-secondary" href="#">E-Learning</a>
+            </li>
+        </ul>
+        <div class="navbar-text ms-auto">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-search"></i> 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-users"></i> 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="far fa-envelope"></i> 
+                    </a>
+                </li>                     
+                <li class="nav-item">
+                  <div id="profileLink" class="nav-link profile">
+                      <div class="rounded-circle overflow-hidden me-2" style="width: 25px; height: 25px; background-color: #f0f0f0;">
+                          <img id="userImage" src="../img/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                      </div>
+                      <div id="profileInfo" class="profile-info">
+                          <p class="username">Christopher Kim</p>
+                          <p class="account">@johhnyray</p>
+                          <a href="./profile.html" class="view-profile">View my profile</a>
+                          <a href="my-events.html" class="my-events">My Events</a>
+                          <a href="manage-communities.html" class="manage-communities">Manage your communities</a>
+                          <a href="./settings_profiles.html" class="settings">Settings</a>
+                          <a href="./pages/login.html" class="log-out">Log Out</a>
+                      </div>
+                  </div>
+              </li>                                                                                 
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Navbar untuk Mobile -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-lg-none">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="flex-grow: 1;">
+            <img src="../img/Thrivian.org.png" alt="Thrivian.org" width="150">
+        </a>
+        <a href="#" class="search-icon ms-auto me-4">
+            <i class="fas fa-search"></i> 
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobileContent" aria-controls="navbarMobileContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMobileContent">
+            <ul class="navbar-nav me-auto mb-lg-0 mt-3">
+                <button class="close-button ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobileContent">✖</button>
+                <li class="nav-item">
+                    <a class="nav-link" href="./community.html">Community</a>
+                    <hr class="my-2 custom-hr-mobile">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./events.html">Events</a>
+                    <hr class="my-2 custom-hr-mobile">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="e-learning.html">E-Learning</a>
+                    <hr class="my-2 custom-hr-mobile">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./settings_profiles.html">Settings</a>
+                    <hr class="my-2 custom-hr-mobile">
+                </li>
+            </ul>
+            <div class="navbar-footer">
+                <div class="d-flex justify-content-center text-align-center mt-4">
+                    <span class="text-muted small fs-9" style="text-align: center; text-decoration: none;">
+                        <a href="about_us.html" class="text-muted">About Us</a> • 
+                        <a href="privacy_terms.html" class="text-muted">Privacy & Terms</a> • 
+                        <a href="more.html" class="text-muted">More</a>
+                        <p class="text-muted fs-9">Thrivian.org © 2024</p>
+                    </span>
+                  </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Sticky Bottom Navbar for Mobile -->
+    <nav class="navbar fixed-bottom navbar-expand d-lg-none bottom-nav border border-dark" style="background-color: #fcfafa;">
+        <ul class="navbar-nav nav-justified w-100">
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="../index.html"><i class="fa fa-home"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#"><i class="far fa-envelope"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#"><i class="bell outline icon"></i></a>
+            </li>            
+            <li class="nav-item">
+                <a href="./profile.html">
+                    <div class="rounded-circle overflow-hidden ms-3 mt-1" style="width: 25px; height: 25px; background-color: #f0f0f0;">
+                        <img id="userImage" src="../img/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="container-fluid" style="margin-top: 69px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form class="d-flex mt-3 mb-3">
+                        <div class="input-group w-50 w-md-25">
+                            <span class="input-group-text" style="border-top-left-radius: 15px; border-bottom-left-radius: 15px; background-color: transparent; border-right: none;">
+                                <i class="fas fa-search"></i>
+                            </span>
+                            <input class="form-control" type="search" placeholder="Search Events..." aria-label="Search" style="border-top-right-radius: 15px; border-bottom-right-radius: 15px; border-left: none;">
+                        </div>
+                        <button class="btn btn-outline-secondary btn-sm ms-2" type="button" style="border-radius: 10px;">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </button>
+                    </form>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 15px; background-color: #13005A;">
+                            <i class="fas fa-bars custom-bars-icon"></i> Filter
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="addCategory('Kategori 1')">Kategori 1</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="addCategory('Kategori 2')">Kategori 2</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="addCategory('Kategori 3')">Kategori 3</a></li>
+                            <!-- Tambahkan lebih banyak kategori sesuai kebutuhan -->
+                        </ul>
+                        <div id="selectedCategories" class="ms-2 btn-sm"></div> <!-- Tambahkan kelas "btn-sm" di sini -->
+                    </div>
+                    <div class="col-auto text-end mb-2">
+                        <div class="dropdown">
+                            <span id="sortByLatest" class="dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" style="color: #13005A;">
+                                Sort by: Latest
+                            </span>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="#" onclick="selectSort('Latest')">Latest</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectSort('Oldest')">Oldest</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="eventCards" class="row">
+                    <!-- Di sini akan ditampilkan card sesuai dengan kategori yang dipilih -->
+                </div>                
+                
+            </div>
+        </div>
+    </main>
+  
+    <script>
+    var categories = {
+    "Kategori 1": [
+        {
+            "time":"September 10th",
+            "title": "Event 1",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "../img/WB1.jpg",
+            "price": "Rp. 100.000",
+            "location": "Jakarta",
+            "link": "halaman_event_1.html"
+        },
+        {
+            "time":"August 10th",
+            "title": "Event 2",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "../img/WB2.jpg",
+            "price": "Rp. 150.000",
+            "location": "Surabaya",
+            "link": "halaman_event_2.html"
+        },
+        {
+            "time":"September 10th",
+            "title": "Event 1",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "../img/WB1.jpg",
+            "price": "Rp. 100.000",
+            "location": "Jakarta",
+            "link": "halaman_event_1.html"
+        },
+        {
+            "time":"August 10th",
+            "title": "Event 2",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "../img/WB2.jpg",
+            "price": "Rp. 150.000",
+            "location": "Surabaya",
+            "link": "halaman_event_2.html"
+        },
+        {
+            "time":"August 10th",
+            "title": "Event 2",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "../img/WB2.jpg",
+            "price": "Rp. 150.000",
+            "location": "Surabaya",
+            "link": "halaman_event_2.html"
+        },
+        {
+            "time":"September 10th",
+            "title": "Event 1",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "../img/WB1.jpg",
+            "price": "Rp. 100.000",
+            "location": "Jakarta",
+            "link": "halaman_event_1.html"
+        },
+        // Daftar card lainnya untuk Kategori 1
+    ],
+    "Kategori 2": [
+        {
+            "time":"August 10th",
+            "title": "Event 2",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "../img/WB2.jpg",
+            "price": "Rp. 150.000",
+            "location": "Surabaya",
+            "link": "halaman_event_2.html"
+        },
+        {
+            "time":"August 10th",
+            "title": "Event 2",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "../img/WB2.jpg",
+            "price": "Rp. 150.000",
+            "location": "Surabaya",
+            "link": "halaman_event_2.html"
+        },
+        {
+            "time":"September 10th",
+            "title": "Event 1",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "../img/WB1.jpg",
+            "price": "Rp. 100.000",
+            "location": "Jakarta",
+            "link": "halaman_event_1.html"
+        },
+        {
+            "time":"August 10th",
+            "title": "Event 2",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "../img/WB2.jpg",
+            "price": "Rp. 150.000",
+            "location": "Surabaya",
+            "link": "halaman_event_2.html"
+        },
+        {
+            "time":"September 10th",
+            "title": "Event 1",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "../img/WB1.jpg",
+            "price": "Rp. 100.000",
+            "location": "Jakarta",
+            "link": "halaman_event_1.html"
+        },
+        // Daftar card lainnya untuk Kategori 2
+    ],
+    "Kategori 3": [
+        {
+            "time":"August 10th",
+            "title": "Event 2",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "../img/WB2.jpg",
+            "price": "Rp. 150.000",
+            "location": "Surabaya",
+            "link": "halaman_event_2.html"
+        },
+        {
+            "time":"September 10th",
+            "title": "Event 1",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "../img/WB1.jpg",
+            "price": "Rp. 100.000",
+            "location": "Jakarta",
+            "link": "halaman_event_1.html"
+        },
+        {
+            "time":"August 10th",
+            "title": "Event 2",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "../img/WB2.jpg",
+            "price": "Rp. 150.000",
+            "location": "Surabaya",
+            "link": "halaman_event_2.html"
+        },
+        {
+            "time":"August 10th",
+            "title": "Event 2",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "../img/WB2.jpg",
+            "price": "Rp. 150.000",
+            "location": "Surabaya",
+            "link": "halaman_event_2.html"
+        },
+        {
+            "time":"September 10th",
+            "title": "Event 1",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "../img/WB1.jpg",
+            "price": "Rp. 100.000",
+            "location": "Jakarta",
+            "link": "halaman_event_1.html"
+        },
+    ],
+};
+
+
+// Variabel untuk menyimpan kategori yang dipilih
+var selectedCategories = [];
+
+// Fungsi untuk menampilkan semua kartu saat halaman dimuat
+function showAllCards() {
+    var allCards = [];
+
+    // Gabungkan semua kartu dari berbagai kategori
+    Object.values(categories).forEach(function(categoryCards) {
+        allCards = allCards.concat(categoryCards);
+    });
+
+    // Sort kartu berdasarkan opsi yang dipilih
+    if (currentSortOption === 'Latest') {
+        allCards.sort(function(a, b) {
+            return new Date(b.time) - new Date(a.time);
+        });
+    } else if (currentSortOption === 'Oldest') {
+        allCards.sort(function(a, b) {
+            return new Date(a.time) - new Date(b.time);
+        });
+    }
+
+    // Render kartu yang sudah disortir
+    var allCardsHTML = '';
+    allCards.forEach(function(card) {
+        var cardHTML = `
+            <div class="col-md-3 col-sm-6 mt-3 mb-2">
+                <a href="${card.link}" class="card-link text-dark w-100">
+                    <div class="card custom-card">
+                        <div class="card-img-container">
+                            <img src="${card.image}" class="card-img-top" alt="${card.title}">
+                            <span class="badge rounded-pill badge-custom">${card.time}</span>
+                        </div>
+                        <div class="card-body mt-1">
+                            <h5 class="card-title">${card.title}</h5>
+                            <p class="card-text text-justify">${card.description}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge rounded-pill badge-secondary">${card.price}</span>
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-map-marker-alt location-icon"></i>
+                                    <span class="ms-1 location-text">${card.location}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        `;
+        allCardsHTML += cardHTML;
+    });
+
+    document.getElementById("eventCards").innerHTML = allCardsHTML;
+}
+
+
+// Panggil fungsi showAllCards saat halaman dimuat pertama kali
+window.onload = function() {
+    showAllCards();
+};
+
+function addCategory(categoryName) {
+    var selectedCategoriesDiv = document.getElementById("selectedCategories");
+
+    // Toggle kategori yang dipilih
+    if (selectedCategories.includes(categoryName)) {
+        // Hapus kategori jika sudah dipilih sebelumnya
+        var index = selectedCategories.indexOf(categoryName);
+        selectedCategories.splice(index, 1);
+    } else {
+        // Tambahkan kategori jika belum dipilih
+        selectedCategories.push(categoryName);
+    }
+
+    // Jika tidak ada kategori yang dipilih, tampilkan semua kartu
+    if (selectedCategories.length === 0) {
+        showAllCards();
+        return;
+    }
+
+    // Hapus semua card yang ditampilkan sebelumnya
+    document.getElementById("eventCards").innerHTML = "";
+
+    // Tampilkan card sesuai dengan kategori yang dipilih
+    selectedCategories.forEach(function(category) {
+        categories[category].forEach(function(card) {
+            var cardHTML = `
+                <div class="col-md-3 col-sm-6 mt-3 mb-2">
+                    <a href="${card.link}" class="card-link text-dark">
+                        <div class="card custom-card">
+                            <div class="card-img-container">
+                                <img src="${card.image}" class="card-img-top" alt="...">
+                                <span class="badge rounded-pill badge-custom" style="background-color: #13005A;">${card.time}</span>
+                            </div>
+                            <div class="card-body mt-1">
+                                <h5 class="card-title">${card.title}</h5>
+                                <p class="card-text text-justify">${card.description}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge rounded-pill badge-secondary" style="background-color: #13005A;">${card.price}</span>
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-map-marker-alt location-icon"></i>
+                                        <span class="ms-1 location-text">${card.location}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            `;
+            document.getElementById("eventCards").innerHTML += cardHTML;
+        });
+    });
+
+    // Perbarui tampilan kategori yang dipilih
+    renderSelectedCategories();
+}
+
+function renderSelectedCategories() {
+    var selectedCategoriesDiv = document.getElementById("selectedCategories");
+    selectedCategoriesDiv.innerHTML = "";
+
+    // Buat elemen untuk setiap kategori yang dipilih
+    selectedCategories.forEach(function(category) {
+        var categoryItem = document.createElement("span");
+        categoryItem.classList.add("btn", "btn-outline-secondary", "btn-sm", "me-2", "mb-2");
+        categoryItem.innerText = category;
+
+        // Buat tombol "x" untuk menghapus kategori
+        var removeIcon = document.createElement("span");
+        removeIcon.classList.add("remove-category", "me-1");
+        removeIcon.innerHTML = "&times;";
+        removeIcon.onclick = function() {
+            addCategory(category); // Toggle kategori ketika tombol "x" diklik
+            renderSelectedCategories(); // Perbarui tampilan kategori yang dipilih
+        };
+
+        // Tambahkan tombol "x" sebelum teks kategori
+        categoryItem.insertBefore(removeIcon, categoryItem.firstChild);
+
+        // Tambahkan kategori ke dalam div
+        selectedCategoriesDiv.appendChild(categoryItem);
+    });
+}
+
+var currentSortOption = 'Latest';
+
+function selectSort(sortOption) {
+    currentSortOption = sortOption;
+    var sortByLatestElement = document.getElementById("sortByLatest");
+    sortByLatestElement.innerText = "Sort by: " + sortOption;
+    showAllCards(); // Panggil ulang fungsi showAllCards untuk memperbarui tampilan kartu
+}
+    </script>
+    
+
+
+</body>
+</html>
