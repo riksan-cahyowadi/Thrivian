@@ -10,6 +10,80 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="../css/events.css">
+  <style>
+            .banner {
+            position: relative;
+            width: 100%;
+            height: 200px; /* Adjust the height as needed */
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(0);
+            transition: filter 0.3s;
+        }
+
+        .image-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 100%);
+        }
+
+        .text {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff; /* Adjust text color as needed */
+            padding-right: 20px; /* Adjust padding as needed */
+            width: 40%; /* Adjust width as needed */
+            text-align: right;
+        }
+        #footer {
+            color: white;
+            background-color: #2F80A3;
+            padding: 2rem 0;
+        }
+        #footer .footer-col {
+            margin-bottom: 1rem;
+        }
+        #footer .footer-col h6 {
+            font-weight: bold;
+        }
+        #footer .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+        #footer .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+        #footer .social-icons i {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+            color: white;
+        }
+        #footer .app-buttons img {
+            height: 40px;
+            margin-right: 0.5rem;
+        }
+        #footer .footer-bottom {
+            border-top: 1px solid #dee2e6;
+            padding-top: 1rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        #footer .footer-logo {
+            max-width: 100px;
+            height: auto;
+        }
+  </style>
 </head>
 
 <body>
@@ -165,7 +239,7 @@
                     <a href="./events.html" class="card-link text-dark w-100">
                         <div class="card custom-card">
                             <div class="card-img-container">
-                                <img src="../img/WB1.jpg" class="card-img-top" alt="Finance Meet-Up">
+                                <img src="../img/event-1.png" class="card-img-top" alt="Finance Meet-Up">
                                 <span class="badge rounded-pill badge-custom">September 10th</span>
                             </div>
                             <div class="card-body mt-1">
@@ -187,7 +261,7 @@
                     <a href="./events.html" class="card-link text-dark w-100">
                         <div class="card custom-card">
                             <div class="card-img-container">
-                                <img src="../img/WB2.jpg" class="card-img-top" alt="Tech Innovation Summit">
+                                <img src="../img/event-2.png" class="card-img-top" alt="Tech Innovation Summit">
                                 <span class="badge rounded-pill badge-custom">October 5th</span>
                             </div>
                             <div class="card-body mt-1">
@@ -209,7 +283,7 @@
                     <a href="./events.html" class="card-link text-dark w-100">
                         <div class="card custom-card">
                             <div class="card-img-container">
-                                <img src="../img/WB2.jpg" class="card-img-top" alt="Health & Wellness Fair">
+                                <img src="../img/event-3.png" class="card-img-top" alt="Health & Wellness Fair">
                                 <span class="badge rounded-pill badge-custom">November 12th</span>
                             </div>
                             <div class="card-body mt-1">
@@ -231,7 +305,7 @@
                     <a href="./events.html" class="card-link text-dark w-100">
                         <div class="card custom-card">
                             <div class="card-img-container">
-                                <img src="../img/WB1.jpg" class="card-img-top" alt="Finance Meet-Up">
+                                <img src="../img/event-4.png" class="card-img-top" alt="Finance Meet-Up">
                                 <span class="badge rounded-pill badge-custom">September 10th</span>
                             </div>
                             <div class="card-body mt-1">
@@ -253,7 +327,7 @@
                     <a href="./events.html" class="card-link text-dark w-100">
                         <div class="card custom-card">
                             <div class="card-img-container">
-                                <img src="../img/WB1.jpg" class="card-img-top" alt="Tech Innovation Summit">
+                                <img src="../img/event-5.png" class="card-img-top" alt="Tech Innovation Summit">
                                 <span class="badge rounded-pill badge-custom">October 5th</span>
                             </div>
                             <div class="card-body mt-1">
@@ -275,7 +349,7 @@
                     <a href="./events.html" class="card-link text-dark w-100">
                         <div class="card custom-card">
                             <div class="card-img-container">
-                                <img src="../img/WB2.jpg" class="card-img-top" alt="Health & Wellness Fair">
+                                <img src="../img/event-6.png" class="card-img-top" alt="Health & Wellness Fair">
                                 <span class="badge rounded-pill badge-custom">November 12th</span>
                             </div>
                             <div class="card-body mt-1">
@@ -295,18 +369,21 @@
             </div>
         </div>
     </div>
-    <div class="d-flex justify-content-center mt-1">
+    <div class="d-flex justify-content-center mt-1 mb-4">
         <a href="../pages/events.html" class="btn btn-outline-secondary" style="margin-left: 9px; color: #13005A;">Load More</a>
     </div>
 
     <div class="container-fluid banner">
         <div class="image-container">
-            <img src="../img/banner.jpg" alt="Banner Image"> <!-- Replace with your image URL -->
+            <img src="../img/banner.jpg" alt="Banner Image"> 
         </div>
-        <div class="text">
+        <div class="text mt-5">
             <div>
-                <h1>Your Heading Here</h1>
-                <p>Your text here. You can add more content as needed.</p>
+                <h1>Make your own Event</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur <br>adipiscing elit, sed do eiusmod tempor <br>incididunt ut labore et dolore magna aliqua.</p>
+                <a href="#" class="d-flex justify-content-center text-align-center button px-5 py-3" style="border-radius: 15px; border: 2px solid black; background-color: #13005A; color: #fff;">
+                    Create Event
+                </a>
             </div>
         </div>
     </div>
@@ -345,6 +422,67 @@
           </div>
         </div>
       </div>
+
+      <footer id="footer">
+        <div class="container">
+            <div class="row text-center text-md-start">
+                <div class="col-md-12 d-flex justify-content-center justify-content-md-start align-items-center mb-3">
+                    <img src="../img/Thrivian.org.png" alt="logo-thrivian" class="footer-logo">
+                </div>
+                <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
+                <div class="col-md-3 footer-col">
+                    <h6>Column One</h6>
+                    <ul>
+                        <li>Twenty One</li>
+                        <li>Thirty Two</li>
+                        <li>Fourty Three</li>
+                        <li>Fifty Four</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-col">
+                    <h6>Column Two</h6>
+                    <ul>
+                        <li>Sixty Five</li>
+                        <li>Seventy Six</li>
+                        <li>Eighty Seven</li>
+                        <li>Ninety Eight</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-col">
+                    <h6>Column Three</h6>
+                    <ul>
+                        <li>One Two</li>
+                        <li>Three Four</li>
+                        <li>Five Six</li>
+                        <li>Seven Eight</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 footer-col">
+                    <h6 class="mb-3">Column Four</h6>
+                    <div class="app-buttons">
+                        <img src="../img/app-store.png" alt="App Store">
+                        <img src="../img/g-play.png" alt="Google Play">
+                    </div>
+                    <h6 class="py-3">Join Us</h6>
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <p>Thrivian.org @ 2024. All rights reserved.</p>
+                <p class="p-footer">
+                    <a href="#">Eleven</a> |
+                    <a href="#">Twelve</a> |
+                    <a href="#">Thirteen</a>
+                </p>
+            </div>
+        </div>
+    </footer>
     
 
 <script>
