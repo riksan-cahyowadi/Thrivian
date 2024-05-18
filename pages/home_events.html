@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Events</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../css/events.css">
+</head>
+
+<body>
+   <!-- Navbar untuk Desktop -->
+   <nav class="navbar navbar-light bg-light fixed-top d-none d-lg-block">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="../img/Thrivian.org.png" alt="Thrivian.org" width="180" height="35">
+        </a>
+        <ul class="nav me-auto">
+            <li class="nav-item">
+                <a class="nav-link text-secondary" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-secondary" href="./community.html">Community</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-secondary active text-decoration-underline" style="color: #13005A !important;" href="./events.html">Events</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-secondary" href="#">E-Learning</a>
+            </li>
+        </ul>
+        <div class="navbar-text ms-auto">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-search"></i> 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-users"></i> 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="far fa-envelope"></i> 
+                    </a>
+                </li>                     
+                <li class="nav-item">
+                  <div id="profileLink" class="nav-link profile">
+                      <div class="rounded-circle overflow-hidden me-2" style="width: 25px; height: 25px; background-color: #f0f0f0;">
+                          <img id="userImage" src="../img/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                      </div>
+                      <div id="profileInfo" class="profile-info">
+                          <p class="username">Christopher Kim</p>
+                          <p class="account">@johhnyray</p>
+                          <a href="./profile.html" class="view-profile">View my profile</a>
+                          <a href="my-events.html" class="my-events">My Events</a>
+                          <a href="manage-communities.html" class="manage-communities">Manage your communities</a>
+                          <hr class="my-2" style="border-top: 3px solid #E5E5E5;">
+                          <a href="./settings_profiles.html" class="settings">Settings</a>
+                          <a href="./pages/login.html" class="log-out">Log Out</a>
+                      </div>
+                  </div>
+              </li>                                                                                 
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Navbar untuk Mobile -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-lg-none">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="flex-grow: 1;">
+            <img src="../img/Thrivian.org.png" alt="Thrivian.org" width="150">
+        </a>
+        <a href="#" class="search-icon ms-auto me-4">
+            <i class="fas fa-search"></i> 
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobileContent" aria-controls="navbarMobileContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMobileContent">
+            <ul class="navbar-nav me-auto mb-lg-0 mt-3">
+                <button class="close-button ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobileContent">✖</button>
+                <li class="nav-item">
+                    <a class="nav-link" href="./community.html">Community</a>
+                    <hr class="my-2 custom-hr-mobile">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./events.html">Events</a>
+                    <hr class="my-2 custom-hr-mobile">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="e-learning.html">E-Learning</a>
+                    <hr class="my-2 custom-hr-mobile">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./settings_profiles.html">Settings</a>
+                    <hr class="my-2 custom-hr-mobile">
+                </li>
+            </ul>
+            <div class="navbar-footer">
+                <div class="d-flex justify-content-center text-align-center mt-4">
+                    <span class="text-muted small fs-9" style="text-align: center; text-decoration: none;">
+                        <a href="about_us.html" class="text-muted">About Us</a> • 
+                        <a href="privacy_terms.html" class="text-muted">Privacy & Terms</a> • 
+                        <a href="more.html" class="text-muted">More</a>
+                        <p class="text-muted fs-9">Thrivian.org © 2024</p>
+                    </span>
+                  </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Sticky Bottom Navbar for Mobile -->
+    <nav class="navbar fixed-bottom navbar-expand d-lg-none bottom-nav border border-dark" style="background-color: #fcfafa;">
+        <ul class="navbar-nav nav-justified w-100">
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="../index.html"><i class="fa fa-home"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#"><i class="far fa-envelope"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#"><i class="bell outline icon"></i></a>
+            </li>            
+            <li class="nav-item">
+                <a href="./profile.html">
+                    <div class="rounded-circle overflow-hidden ms-3 mt-1" style="width: 25px; height: 25px; background-color: #f0f0f0;">
+                        <img id="userImage" src="../img/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="hero d-flex align-items-center" style="background-image: url('../img/bg-event.jpg'); background-size: cover; background-position: center;">
+        <div class="container">
+            <div class="row justify-content-end align-items-center mt-5"> <!-- Mengubah posisi teks ke kanan dan ke atas -->
+                <div class="col-lg-6">
+                    <div class="text-start bg-overlay p-4"> <!-- Mengubah agar teks menjadi rata kiri -->
+                        <h1>THRIVIAN <br> NATIONAL <br>CONFERENCE <br> 2024</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <a href="#" class="btn btn-primary me-md-4">Get Ticket</a>
+                        <a href="#" class="btn btn-secondary" style="margin-left: 9px;">More Info</a>
+                        <div id="countdown"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="upcoming-events py-5 d-flex justify-content-center" style="margin-left: 7%;">
+        <div class="container mx-auto">
+            <h2 class="text-start mb-4" style="color: #13005A;">Upcoming Events</h2>
+            <div class="row">
+                <!-- Card 1 -->
+                <div class="col-md-4 col-sm-6 mt-3 mb-3">
+                    <a href="./events.html" class="card-link text-dark w-100">
+                        <div class="card custom-card">
+                            <div class="card-img-container">
+                                <img src="../img/WB1.jpg" class="card-img-top" alt="Finance Meet-Up">
+                                <span class="badge rounded-pill badge-custom">September 10th</span>
+                            </div>
+                            <div class="card-body mt-1">
+                                <h5 class="card-title">Finance Meet-Up</h5>
+                                <p class="card-text text-justify">Join us for an in-depth session on the latest trends in finance, featuring expert speakers from the industry. This event offers networking opportunities and insights into financial strategies and market trends.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge rounded-pill badge-secondary">Rp. 100.000</span>
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-map-marker-alt location-icon"></i>
+                                        <span class="ms-1 location-text">Jakarta</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-md-4 col-sm-6 mt-3 mb-3">
+                    <a href="./events.html" class="card-link text-dark w-100">
+                        <div class="card custom-card">
+                            <div class="card-img-container">
+                                <img src="../img/WB2.jpg" class="card-img-top" alt="Tech Innovation Summit">
+                                <span class="badge rounded-pill badge-custom">October 5th</span>
+                            </div>
+                            <div class="card-body mt-1">
+                                <h5 class="card-title">Programmer Conference 2024</h5>
+                                <p class="card-text text-justify">Explore the future of technology at the Tech Innovation Summit. This event will cover cutting-edge innovations, and provide a platform for startups to showcase their ideas.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge rounded-pill badge-secondary">Rp. 200.000</span>
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-map-marker-alt location-icon"></i>
+                                        <span class="ms-1 location-text">Bandung</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-md-4 col-sm-6 mt-3 mb-3">
+                    <a href="./events.html" class="card-link text-dark w-100">
+                        <div class="card custom-card">
+                            <div class="card-img-container">
+                                <img src="../img/WB2.jpg" class="card-img-top" alt="Health & Wellness Fair">
+                                <span class="badge rounded-pill badge-custom">November 12th</span>
+                            </div>
+                            <div class="card-body mt-1">
+                                <h5 class="card-title">Health & Wellness Fair</h5>
+                                <p class="card-text text-justify">Discover the latest in health and wellness at our fair. Attend workshops and explore a variety of products aimed at enhancing your well-being.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge rounded-pill badge-secondary">Rp. 50.000</span>
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-map-marker-alt location-icon"></i>
+                                        <span class="ms-1 location-text">Surabaya</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                 <!-- Card 1 -->
+                 <div class="col-md-4 col-sm-6 mt-3 mb-3">
+                    <a href="./events.html" class="card-link text-dark w-100">
+                        <div class="card custom-card">
+                            <div class="card-img-container">
+                                <img src="../img/WB1.jpg" class="card-img-top" alt="Finance Meet-Up">
+                                <span class="badge rounded-pill badge-custom">September 10th</span>
+                            </div>
+                            <div class="card-body mt-1">
+                                <h5 class="card-title">Finance Meet-Up</h5>
+                                <p class="card-text text-justify">Join us for an in-depth session on the latest trends in finance, featuring expert speakers from the industry. This event offers networking opportunities.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge rounded-pill badge-secondary">Rp. 100.000</span>
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-map-marker-alt location-icon"></i>
+                                        <span class="ms-1 location-text">Jakarta</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-md-4 col-sm-6 mt-3 mb-3">
+                    <a href="./events.html" class="card-link text-dark w-100">
+                        <div class="card custom-card">
+                            <div class="card-img-container">
+                                <img src="../img/WB1.jpg" class="card-img-top" alt="Tech Innovation Summit">
+                                <span class="badge rounded-pill badge-custom">October 5th</span>
+                            </div>
+                            <div class="card-body mt-1">
+                                <h5 class="card-title">Tech Innovation Summit</h5>
+                                <p class="card-text text-justify">Explore the future of technology at the Tech Innovation Summit. This event will cover cutting-edge innovations, AI advancements, and provide a platform for startups to showcase their ideas.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge rounded-pill badge-secondary">Rp. 200.000</span>
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-map-marker-alt location-icon"></i>
+                                        <span class="ms-1 location-text">Bandung</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-md-4 col-sm-6 mt-3 mb-3">
+                    <a href="./events.html" class="card-link text-dark w-100">
+                        <div class="card custom-card">
+                            <div class="card-img-container">
+                                <img src="../img/WB2.jpg" class="card-img-top" alt="Health & Wellness Fair">
+                                <span class="badge rounded-pill badge-custom">November 12th</span>
+                            </div>
+                            <div class="card-body mt-1">
+                                <h5 class="card-title">Health & Wellness Fair</h5>
+                                <p class="card-text text-justify">Discover the latest in health and wellness at our fair. Attend workshops, meet health experts, and explore a variety of products aimed at enhancing your well-being.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="badge rounded-pill badge-secondary">Rp. 50.000</span>
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-map-marker-alt location-icon"></i>
+                                        <span class="ms-1 location-text">Surabaya</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center mt-1">
+        <a href="../pages/events.html" class="btn btn-outline-secondary" style="margin-left: 9px; color: #13005A;">Load More</a>
+    </div>
+
+    <div class="container-fluid banner">
+        <div class="image-container">
+            <img src="../img/banner.jpg" alt="Banner Image"> <!-- Replace with your image URL -->
+        </div>
+        <div class="text">
+            <div>
+                <h1>Your Heading Here</h1>
+                <p>Your text here. You can add more content as needed.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto mt-5 text-center">
+        <h2 class="text-2xl font-semibold mb-4" style="color: #13005A;">Our Sponsorship</h2>
+        <p style="color: #13005A; margin-bottom: 45px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <br>eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <div class="row justify-content-center align-items-start">
+          <!-- Gambar-gambar partner -->
+          <div class="col-6 col-md-4 col-lg-2 partner-col">
+            <img src="../img/bg-event.jpg" alt="Partner 1" class="partner-img">
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 partner-col">
+            <img src="../img/bg-event.jpg" alt="Partner 2" class="partner-img">
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 partner-col">
+            <img src="../img/bg-event.jpg" alt="Partner 3" class="partner-img">
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 partner-col">
+            <img src="../img/bg-event.jpg" alt="Partner 4" class="partner-img">
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 partner-col">
+            <img src="../img/bg-event.jpg" alt="Partner 5" class="partner-img">
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 partner-col">
+            <img src="../img/bg-event.jpg" alt="Partner 6" class="partner-img">
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 partner-col">
+            <img src="../img/bg-event.jpg" alt="Partner 7" class="partner-img">
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 partner-col">
+            <img src="../img/bg-event.jpg" alt="Partner 8" class="partner-img">
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 partner-col">
+            <img src="../img/bg-event.jpg" alt="Partner 9" class="partner-img">
+          </div>
+        </div>
+      </div>
+    
+
+<script>
+// Target tanggal akhir event
+var countdownDate = new Date("May 31, 2024 00:00:00").getTime();
+
+// Memperbarui penghitung setiap 1 detik
+var x = setInterval(function() {
+    // Dapatkan tanggal dan waktu sekarang
+    var now = new Date().getTime();
+
+    // Hitung selisih waktu antara sekarang dan tanggal akhir event
+    var distance = countdownDate - now;
+
+    // Hitung hari, jam, menit, dan detik
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Tampilkan hasil dalam elemen dengan id "countdown"
+    document.getElementById("countdown").innerHTML = "<div style='display: inline-block; text-align: center;'><span class='countdown-number'>" + days + "</span><br>Days</div>" +
+                                                     "<div style='display: inline-block; text-align: center; margin-left: 40px;'><span class='countdown-number'>" + hours + "</span><br>Hours</div>" +
+                                                     "<div style='display: inline-block; text-align: center; margin-left: 40px;'><span class='countdown-number'>" + minutes + "</span><br>Minutes</div>" +
+                                                     "<div style='display: inline-block; text-align: center; margin-left: 40px;'><span class='countdown-number'>" + seconds + "</span><br>Seconds</div>"; // Mengatur ukuran teks countdown dan menempatkan tanda di samping waktu
+
+    // Jika waktu sudah habis, tampilkan pesan
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "<span style='font-size: 40px;'>EXPIRED</span>"; // Mengatur ukuran teks countdown
+    }
+}, 1000);
+
+</script>
+    
+
+
+</body>
+</html>
