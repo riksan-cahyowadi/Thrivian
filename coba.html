@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Posts</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .comments {
+            display: none;
+        }
+        .active-post .comments {
+            display: block;
+        }
+        .inactive-post {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-4">
+    <div class="all-posts">
+        <div class="post mt-4 me-5" data-category="Business">
+            <div class="d-flex align-items-center mb-2">
+                <div class="rounded-circle overflow-hidden me-2" style="width: 50px; height: 50px; background-color: #f0f0f0;">
+                    <img src="./img/cheerful-confident-man-standing-arms-folded-plaid-shirt.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div>
+                    <h6 class="mb-0">Ray John <span class="text-muted"> @johhnyray • 3 minutes ago</span></h6>
+                    <p class="fs-6" style="color: orange; margin-bottom: 0;"> > Business</p>
+                </div>
+            </div>
+            <div class="row mb-0 ms-5 mb-2">
+                <div class="col">
+                    <h5 class="mb-0">What are the most important things to know about business?</h5>
+                </div>
+            </div>
+            <div class="row mb-0 ms-5">
+                <div class="col">
+                    <p class="mb-0" style="text-align: justify;">
+                        You've heard it many times before but it’s so true. Without capital, you won’t survive. Be super cheap in the beginning 
+                        as you’ll make a lot of mistakes and then spend a lot once you know you’re right. This goes for everything from hiring 
+                        people to marketing budgets. | used to think corporate culture stuff was fluffy babble until | started a business and 
+                        saw how important it is to have a distinct culture. It’s what binds people together. If a person is not a good cultural fit, 
+                        it’s better they leave than try to “make it work.”It is so super easy to be doing a lot of things and thinking you are 
+                        making progress because it feels good to be busy. Meanwhile, you are addressin<a href="javascript:void(0);" class="full-post" style="text-decoration: none;">....</a>
+                    </p>
+                </div>
+            </div>
+            <div class="comments">
+                <div class="row mb-0 ms-5 mt-3">
+                    <div class="col">
+                        <h6>Comments</h6>
+                        <p>John Doe: This is a very insightful post!</p>
+                        <p>Jane Smith: I completely agree with your points.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Additional posts go here -->
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const posts = document.querySelectorAll('.post');
+        posts.forEach(post => {
+            post.querySelector('.full-post').addEventListener('click', function() {
+                posts.forEach(p => p.classList.remove('active-post', 'inactive-post'));
+                post.classList.add('active-post');
+                posts.forEach(p => {
+                    if (p !== post) p.classList.add('inactive-post');
+                });
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
