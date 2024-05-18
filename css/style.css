@@ -12,7 +12,7 @@
   padding: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   z-index: 1;
-}
+  }
 
 .nav-item .profile:hover .profile-info {
   display: block;
@@ -67,7 +67,7 @@
 }
 
 .bottom-nav {
-  background-color: #f7efef; /* Warna latar belakang sesuai dengan gambar yang Anda berikan */
+  background-color: #f7efef;
 }
 
 @media (min-width: 992px) {
@@ -137,11 +137,18 @@
     border-radius: 15px;
     object-fit: cover;
   }
+<<<<<<< HEAD
 
   .community {
     display: none;
   }
 
+=======
+  
+  .community {
+    display: none;
+  }
+>>>>>>> d0b8452c00057655ce78d031050e3a3911d1a8ed
 }
 
 @media (max-width: 940px) {
