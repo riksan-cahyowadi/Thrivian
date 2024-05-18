@@ -6,6 +6,7 @@
   <title>Events </title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -154,7 +155,43 @@ display: none;
             font-size: 8px;
         }
     }
-
+    #footer {
+            background-color: #2F80A3;
+            color: white;
+            padding: 2rem 0;
+        }
+        #footer .footer-col {
+            margin-bottom: 1rem;
+        }
+        #footer .footer-col h6 {
+            font-weight: bold;
+        }
+        #footer .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+        #footer .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+        #footer .social-icons i {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+            color: white;
+        }
+        #footer .app-buttons img {
+            height: 40px;
+            margin-right: 0.5rem;
+        }
+        #footer .footer-bottom {
+            border-top: 1px solid #dee2e6;
+            padding-top: 1rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        #footer .footer-logo {
+            max-width: 100px;
+            height: auto;
+        }
   </style>
 </head>
 
@@ -332,6 +369,67 @@ display: none;
                 
             </div>
         </div>
+
+        <footer id="footer">
+            <div class="container">
+                <div class="row text-center text-md-start">
+                    <div class="col-md-12 d-flex justify-content-center justify-content-md-start align-items-center mb-3">
+                        <img src="../img/Thrivian.org.png" alt="logo-thrivian" class="footer-logo">
+                    </div>
+                    <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
+                    <div class="col-md-3 footer-col">
+                        <h6>Column One</h6>
+                        <ul>
+                            <li>Twenty One</li>
+                            <li>Thirty Two</li>
+                            <li>Fourty Three</li>
+                            <li>Fifty Four</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 footer-col">
+                        <h6>Column Two</h6>
+                        <ul>
+                            <li>Sixty Five</li>
+                            <li>Seventy Six</li>
+                            <li>Eighty Seven</li>
+                            <li>Ninety Eight</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 footer-col">
+                        <h6>Column Three</h6>
+                        <ul>
+                            <li>One Two</li>
+                            <li>Three Four</li>
+                            <li>Five Six</li>
+                            <li>Seven Eight</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3 footer-col">
+                        <h6 class="mb-3">Column Four</h6>
+                        <div class="app-buttons">
+                            <img src="../img/app-store.png" alt="App Store">
+                            <img src="../img/g-play.png" alt="Google Play">
+                        </div>
+                        <h6 class="py-3">Join Us</h6>
+                        <div class="social-icons">
+                            <a href="#"><i class="bi bi-youtube"></i></a>
+                            <a href="#"><i class="bi bi-facebook"></i></a>
+                            <a href="#"><i class="bi bi-twitter"></i></a>
+                            <a href="#"><i class="bi bi-instagram"></i></a>
+                            <a href="#"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
+                    <p>Thrivian.org @ 2024. All rights reserved.</p>
+                    <p class="p-footer">
+                        <a href="#">Eleven</a> |
+                        <a href="#">Twelve</a> |
+                        <a href="#">Thirteen</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
     </main>
   
     <script>
@@ -339,54 +437,54 @@ display: none;
     "Kategori 1": [
         {
             "time":"September 10th",
-            "title": "Event 1",
+            "title": "Finance Meet-Up",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/WB1.jpg",
+            "image": "../img/event-1.png",
             "price": "Rp. 100.000",
-            "location": "Jakarta",
+            "location": "Surabaya",
             "link": "halaman_event_1.html"
         },
         {
             "time":"August 10th",
-            "title": "Event 2",
+            "title": "Programmer Conference 2024",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/WB2.jpg",
+            "image": "../img/event-2.png",
             "price": "Rp. 150.000",
-            "location": "Surabaya",
+            "location": "Jakarta",
             "link": "halaman_event_2.html"
         },
         {
             "time":"September 10th",
-            "title": "Event 1",
+            "title": "Smart Bussiness Expo",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/WB1.jpg",
+            "image": "../img/event-3.png",
             "price": "Rp. 100.000",
-            "location": "Jakarta",
+            "location": "Bandung",
             "link": "halaman_event_1.html"
         },
         {
             "time":"August 10th",
-            "title": "Event 2",
+            "title": "Festival Startup",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/WB2.jpg",
+            "image": "../img/event-4.png",
             "price": "Rp. 150.000",
-            "location": "Surabaya",
+            "location": "Jakarta",
             "link": "halaman_event_2.html"
         },
         {
             "time":"August 10th",
-            "title": "Event 2",
+            "title": "Tech Innovator Conference",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/WB2.jpg",
+            "image": "../img/event-5.png",
             "price": "Rp. 150.000",
-            "location": "Surabaya",
+            "location": "Semarang",
             "link": "halaman_event_2.html"
         },
         {
             "time":"September 10th",
-            "title": "Event 1",
+            "title": "Networking Night",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/WB1.jpg",
+            "image": "../img/event-6.png",
             "price": "Rp. 100.000",
             "location": "Jakarta",
             "link": "halaman_event_1.html"
@@ -394,52 +492,61 @@ display: none;
         // Daftar card lainnya untuk Kategori 1
     ],
     "Kategori 2": [
-        {
-            "time":"August 10th",
-            "title": "Event 2",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/WB2.jpg",
-            "price": "Rp. 150.000",
-            "location": "Surabaya",
-            "link": "halaman_event_2.html"
-        },
-        {
-            "time":"August 10th",
-            "title": "Event 2",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/WB2.jpg",
-            "price": "Rp. 150.000",
-            "location": "Surabaya",
-            "link": "halaman_event_2.html"
-        },
-        {
+    {
             "time":"September 10th",
-            "title": "Event 1",
+            "title": "Finance Meet-Up",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/WB1.jpg",
+            "image": "../img/event-1.png",
             "price": "Rp. 100.000",
-            "location": "Jakarta",
+            "location": "Surabaya",
             "link": "halaman_event_1.html"
         },
         {
             "time":"August 10th",
-            "title": "Event 2",
+            "title": "Programmer Conference 2024",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/WB2.jpg",
+            "image": "../img/event-2.png",
             "price": "Rp. 150.000",
-            "location": "Surabaya",
+            "location": "Jakarta",
             "link": "halaman_event_2.html"
         },
         {
             "time":"September 10th",
-            "title": "Event 1",
+            "title": "Smart Bussiness Expo",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/WB1.jpg",
+            "image": "../img/event-3.png",
+            "price": "Rp. 100.000",
+            "location": "Bandung",
+            "link": "halaman_event_1.html"
+        },
+        {
+            "time":"August 10th",
+            "title": "Festival Startup",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "../img/event-4.png",
+            "price": "Rp. 150.000",
+            "location": "Jakarta",
+            "link": "halaman_event_2.html"
+        },
+        {
+            "time":"August 10th",
+            "title": "Tech Innovator Conference",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "../img/event-5.png",
+            "price": "Rp. 150.000",
+            "location": "Semarang",
+            "link": "halaman_event_2.html"
+        },
+        {
+            "time":"September 10th",
+            "title": "Networking Night",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "../img/event-6.png",
             "price": "Rp. 100.000",
             "location": "Jakarta",
             "link": "halaman_event_1.html"
         },
-        // Daftar card lainnya untuk Kategori 2
+
     ],
     "Kategori 3": [
         {
@@ -452,40 +559,31 @@ display: none;
             "link": "halaman_event_2.html"
         },
         {
-            "time":"September 10th",
-            "title": "Event 1",
+            "time":"August 10th",
+            "title": "Programmer Conference 2024",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/WB1.jpg",
-            "price": "Rp. 100.000",
+            "image": "../img/event-2.png",
+            "price": "Rp. 150.000",
             "location": "Jakarta",
-            "link": "halaman_event_1.html"
-        },
-        {
-            "time":"August 10th",
-            "title": "Event 2",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/WB2.jpg",
-            "price": "Rp. 150.000",
-            "location": "Surabaya",
-            "link": "halaman_event_2.html"
-        },
-        {
-            "time":"August 10th",
-            "title": "Event 2",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/WB2.jpg",
-            "price": "Rp. 150.000",
-            "location": "Surabaya",
             "link": "halaman_event_2.html"
         },
         {
             "time":"September 10th",
-            "title": "Event 1",
+            "title": "Smart Bussiness Expo",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/WB1.jpg",
+            "image": "../img/event-3.png",
             "price": "Rp. 100.000",
-            "location": "Jakarta",
+            "location": "Bandung",
             "link": "halaman_event_1.html"
+        },
+        {
+            "time":"August 10th",
+            "title": "Festival Startup",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "image": "../img/event-4.png",
+            "price": "Rp. 150.000",
+            "location": "Jakarta",
+            "link": "halaman_event_2.html"
         },
     ],
 };
