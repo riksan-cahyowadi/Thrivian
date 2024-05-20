@@ -137,18 +137,11 @@
     border-radius: 15px;
     object-fit: cover;
   }
-<<<<<<< HEAD
 
   .community {
     display: none;
   }
 
-=======
-  
-  .community {
-    display: none;
-  }
->>>>>>> d0b8452c00057655ce78d031050e3a3911d1a8ed
 }
 
 @media (max-width: 940px) {
