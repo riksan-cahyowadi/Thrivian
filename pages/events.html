@@ -343,12 +343,12 @@ display: none;
                             <i class="fas fa-bars custom-bars-icon"></i> Filter
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#" onclick="addCategory('Kategori 1')">Kategori 1</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="addCategory('Kategori 2')">Kategori 2</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="addCategory('Kategori 3')">Kategori 3</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="addCategory('finance')">Finance</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="addCategory('business')">Business</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="addCategory('self-development')">Self Development</a></li>
                             <!-- Tambahkan lebih banyak kategori sesuai kebutuhan -->
                         </ul>
-                        <div id="selectedCategories" class="ms-2 btn-sm"></div> <!-- Tambahkan kelas "btn-sm" di sini -->
+                        <div id="selectedCategories" class="ms-2 btn-sm"></div>
                     </div>
                     <div class="col-auto text-end mb-2">
                         <div class="dropdown">
@@ -364,386 +364,419 @@ display: none;
                 </div>
                 
                 <div id="eventCards" class="row">
-                    <!-- Di sini akan ditampilkan card sesuai dengan kategori yang dipilih -->
-                </div>                
-                
-            </div>
-        </div>
-
-        <footer id="footer">
-            <div class="container">
-                <div class="row text-center text-md-start">
-                    <div class="col-md-12 d-flex justify-content-center justify-content-md-start align-items-center mb-3">
-                        <img src="../img/thrivan-logo.png" alt="logo-thrivian" class="footer-logo">
-                    </div>
-                    <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
-                    <div class="col-md-3 footer-col">
-                        <h6>Column One</h6>
-                        <ul>
-                            <li>Twenty One</li>
-                            <li>Thirty Two</li>
-                            <li>Fourty Three</li>
-                            <li>Fifty Four</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3 footer-col">
-                        <h6>Column Two</h6>
-                        <ul>
-                            <li>Sixty Five</li>
-                            <li>Seventy Six</li>
-                            <li>Eighty Seven</li>
-                            <li>Ninety Eight</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3 footer-col">
-                        <h6>Column Three</h6>
-                        <ul>
-                            <li>One Two</li>
-                            <li>Three Four</li>
-                            <li>Five Six</li>
-                            <li>Seven Eight</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3 footer-col">
-                        <h6 class="mb-3">Column Four</h6>
-                        <div class="app-buttons">
-                            <img src="../img/app-store.png" alt="App Store">
-                            <img src="../img/g-play.png" alt="Google Play">
-                        </div>
-                        <h6 class="py-3">Join Us</h6>
-                        <div class="social-icons">
-                            <a href="#"><i class="bi bi-youtube"></i></a>
-                            <a href="#"><i class="bi bi-facebook"></i></a>
-                            <a href="#"><i class="bi bi-twitter"></i></a>
-                            <a href="#"><i class="bi bi-instagram"></i></a>
-                            <a href="#"><i class="bi bi-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
-                    <p>Thrivian.org @ 2024. All rights reserved.</p>
-                    <p class="p-footer">
-                        <a href="#">Eleven</a> |
-                        <a href="#">Twelve</a> |
-                        <a href="#">Thirteen</a>
-                    </p>
-                </div>
-            </div>
-        </footer>
-    </main>
-  
-    <script>
-    var categories = {
-    "Kategori 1": [
-        {
-            "time":"September 10th",
-            "title": "Finance Meet-Up",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/event-1.png",
-            "price": "Rp. 100.000",
-            "location": "Surabaya",
-            "link": "halaman_event_1.html"
-        },
-        {
-            "time":"August 10th",
-            "title": "Programmer Conference 2024",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/event-2.png",
-            "price": "Rp. 150.000",
-            "location": "Jakarta",
-            "link": "halaman_event_2.html"
-        },
-        {
-            "time":"September 10th",
-            "title": "Smart Bussiness Expo",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/event-3.png",
-            "price": "Rp. 100.000",
-            "location": "Bandung",
-            "link": "halaman_event_1.html"
-        },
-        {
-            "time":"August 10th",
-            "title": "Festival Startup",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/event-4.png",
-            "price": "Rp. 150.000",
-            "location": "Jakarta",
-            "link": "halaman_event_2.html"
-        },
-        {
-            "time":"August 10th",
-            "title": "Tech Innovator Conference",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/event-5.png",
-            "price": "Rp. 150.000",
-            "location": "Semarang",
-            "link": "halaman_event_2.html"
-        },
-        {
-            "time":"September 10th",
-            "title": "Networking Night",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/event-6.png",
-            "price": "Rp. 100.000",
-            "location": "Jakarta",
-            "link": "halaman_event_1.html"
-        },
-        // Daftar card lainnya untuk Kategori 1
-    ],
-    "Kategori 2": [
-    {
-            "time":"September 10th",
-            "title": "Finance Meet-Up",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/event-1.png",
-            "price": "Rp. 100.000",
-            "location": "Surabaya",
-            "link": "halaman_event_1.html"
-        },
-        {
-            "time":"August 10th",
-            "title": "Programmer Conference 2024",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/event-2.png",
-            "price": "Rp. 150.000",
-            "location": "Jakarta",
-            "link": "halaman_event_2.html"
-        },
-        {
-            "time":"September 10th",
-            "title": "Smart Bussiness Expo",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/event-3.png",
-            "price": "Rp. 100.000",
-            "location": "Bandung",
-            "link": "halaman_event_1.html"
-        },
-        {
-            "time":"August 10th",
-            "title": "Festival Startup",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/event-4.png",
-            "price": "Rp. 150.000",
-            "location": "Jakarta",
-            "link": "halaman_event_2.html"
-        },
-        {
-            "time":"August 10th",
-            "title": "Tech Innovator Conference",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/event-5.png",
-            "price": "Rp. 150.000",
-            "location": "Semarang",
-            "link": "halaman_event_2.html"
-        },
-        {
-            "time":"September 10th",
-            "title": "Networking Night",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/event-6.png",
-            "price": "Rp. 100.000",
-            "location": "Jakarta",
-            "link": "halaman_event_1.html"
-        },
-
-    ],
-    "Kategori 3": [
-        {
-            "time":"August 10th",
-            "title": "Event 2",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/WB2.jpg",
-            "price": "Rp. 150.000",
-            "location": "Surabaya",
-            "link": "halaman_event_2.html"
-        },
-        {
-            "time":"August 10th",
-            "title": "Programmer Conference 2024",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/event-2.png",
-            "price": "Rp. 150.000",
-            "location": "Jakarta",
-            "link": "halaman_event_2.html"
-        },
-        {
-            "time":"September 10th",
-            "title": "Smart Bussiness Expo",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/event-3.png",
-            "price": "Rp. 100.000",
-            "location": "Bandung",
-            "link": "halaman_event_1.html"
-        },
-        {
-            "time":"August 10th",
-            "title": "Festival Startup",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "image": "../img/event-4.png",
-            "price": "Rp. 150.000",
-            "location": "Jakarta",
-            "link": "halaman_event_2.html"
-        },
-    ],
-};
-
-
-// Variabel untuk menyimpan kategori yang dipilih
-var selectedCategories = [];
-
-// Fungsi untuk menampilkan semua kartu saat halaman dimuat
-function showAllCards() {
-    var allCards = [];
-
-    // Gabungkan semua kartu dari berbagai kategori
-    Object.values(categories).forEach(function(categoryCards) {
-        allCards = allCards.concat(categoryCards);
-    });
-
-    // Sort kartu berdasarkan opsi yang dipilih
-    if (currentSortOption === 'Latest') {
-        allCards.sort(function(a, b) {
-            return new Date(b.time) - new Date(a.time);
-        });
-    } else if (currentSortOption === 'Oldest') {
-        allCards.sort(function(a, b) {
-            return new Date(a.time) - new Date(b.time);
-        });
-    }
-
-    // Render kartu yang sudah disortir
-    var allCardsHTML = '';
-    allCards.forEach(function(card) {
-        var cardHTML = `
-            <div class="col-md-3 col-sm-6 mt-3 mb-2">
-                <a href="${card.link}" class="card-link text-dark w-100">
-                    <div class="card custom-card">
-                        <div class="card-img-container">
-                            <img src="${card.image}" class="card-img-top" alt="${card.title}">
-                            <span class="badge rounded-pill badge-custom">${card.time}</span>
-                        </div>
-                        <div class="card-body mt-1">
-                            <h5 class="card-title">${card.title}</h5>
-                            <p class="card-text text-justify">${card.description}</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="badge rounded-pill badge-secondary">${card.price}</span>
-                                <div class="d-flex align-items-center">
-                                    <i class="fas fa-map-marker-alt location-icon"></i>
-                                    <span class="ms-1 location-text">${card.location}</span>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance">
+                        <a href="halaman_event_1.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-1.png" class="card-img-top" alt="Finance Meet-Up">
+                                    <span class="badge rounded-pill badge-custom">September 10th</span>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        `;
-        allCardsHTML += cardHTML;
-    });
-
-    document.getElementById("eventCards").innerHTML = allCardsHTML;
-}
-
-
-// Panggil fungsi showAllCards saat halaman dimuat pertama kali
-window.onload = function() {
-    showAllCards();
-};
-
-function addCategory(categoryName) {
-    var selectedCategoriesDiv = document.getElementById("selectedCategories");
-
-    // Toggle kategori yang dipilih
-    if (selectedCategories.includes(categoryName)) {
-        // Hapus kategori jika sudah dipilih sebelumnya
-        var index = selectedCategories.indexOf(categoryName);
-        selectedCategories.splice(index, 1);
-    } else {
-        // Tambahkan kategori jika belum dipilih
-        selectedCategories.push(categoryName);
-    }
-
-    // Jika tidak ada kategori yang dipilih, tampilkan semua kartu
-    if (selectedCategories.length === 0) {
-        showAllCards();
-        return;
-    }
-
-    // Hapus semua card yang ditampilkan sebelumnya
-    document.getElementById("eventCards").innerHTML = "";
-
-    // Tampilkan card sesuai dengan kategori yang dipilih
-    selectedCategories.forEach(function(category) {
-        categories[category].forEach(function(card) {
-            var cardHTML = `
-                <div class="col-md-3 col-sm-6 mt-3 mb-2">
-                    <a href="${card.link}" class="card-link text-dark">
-                        <div class="card custom-card">
-                            <div class="card-img-container">
-                                <img src="${card.image}" class="card-img-top" alt="...">
-                                <span class="badge rounded-pill badge-custom" style="background-color: #13005A;">${card.time}</span>
-                            </div>
-                            <div class="card-body mt-1">
-                                <h5 class="card-title">${card.title}</h5>
-                                <p class="card-text text-justify">${card.description}</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="badge rounded-pill badge-secondary" style="background-color: #13005A;">${card.price}</span>
-                                    <div class="d-flex align-items-center">
-                                        <i class="fas fa-map-marker-alt location-icon"></i>
-                                        <span class="ms-1 location-text">${card.location}</span>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Finance Meet-Up</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 100.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Surabaya</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 bussiness">
+                        <a href="halaman_event_2.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-2.png" class="card-img-top" alt="Business Meetup">
+                                    <span class="badge rounded-pill badge-custom">October 12th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Business Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 200.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Jakarta</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance business">
+                        <a href="halaman_event_3.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-3.png" class="card-img-top" alt="Technology Meetup">
+                                    <span class="badge rounded-pill badge-custom">November 14th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Technology Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 300.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Bandung</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 kategori-1 self-development">
+                        <a href="halaman_event_4.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-4.png" class="card-img-top" alt="Health Meetup">
+                                    <span class="badge rounded-pill badge-custom">December 16th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Health Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 400.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Yogyakarta</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance">
+                        <a href="halaman_event_1.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-1.png" class="card-img-top" alt="Finance Meet-Up">
+                                    <span class="badge rounded-pill badge-custom">September 10th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Finance Meet-Up</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 100.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Surabaya</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 bussiness">
+                        <a href="halaman_event_2.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-2.png" class="card-img-top" alt="Business Meetup">
+                                    <span class="badge rounded-pill badge-custom">October 12th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Business Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 200.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Jakarta</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance business">
+                        <a href="halaman_event_3.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-3.png" class="card-img-top" alt="Technology Meetup">
+                                    <span class="badge rounded-pill badge-custom">November 14th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Technology Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 300.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Bandung</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 kategori-1 self-development">
+                        <a href="halaman_event_4.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-4.png" class="card-img-top" alt="Health Meetup">
+                                    <span class="badge rounded-pill badge-custom">December 16th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Health Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 400.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Yogyakarta</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance">
+                        <a href="halaman_event_1.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-1.png" class="card-img-top" alt="Finance Meet-Up">
+                                    <span class="badge rounded-pill badge-custom">September 10th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Finance Meet-Up</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 100.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Surabaya</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 bussiness">
+                        <a href="halaman_event_2.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-2.png" class="card-img-top" alt="Business Meetup">
+                                    <span class="badge rounded-pill badge-custom">October 12th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Business Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 200.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Jakarta</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance business">
+                        <a href="halaman_event_3.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-3.png" class="card-img-top" alt="Technology Meetup">
+                                    <span class="badge rounded-pill badge-custom">November 14th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Technology Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 300.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Bandung</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 kategori-1 self-development">
+                        <a href="halaman_event_4.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-4.png" class="card-img-top" alt="Health Meetup">
+                                    <span class="badge rounded-pill badge-custom">December 16th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Health Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 400.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Yogyakarta</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance">
+                        <a href="halaman_event_1.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-1.png" class="card-img-top" alt="Finance Meet-Up">
+                                    <span class="badge rounded-pill badge-custom">September 10th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Finance Meet-Up</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 100.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Surabaya</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 bussiness">
+                        <a href="halaman_event_2.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-2.png" class="card-img-top" alt="Business Meetup">
+                                    <span class="badge rounded-pill badge-custom">October 12th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Business Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 200.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Jakarta</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance business">
+                        <a href="halaman_event_3.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-3.png" class="card-img-top" alt="Technology Meetup">
+                                    <span class="badge rounded-pill badge-custom">November 14th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Technology Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 300.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Bandung</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 kategori-1 self-development">
+                        <a href="halaman_event_4.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-4.png" class="card-img-top" alt="Health Meetup">
+                                    <span class="badge rounded-pill badge-custom">December 16th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Health Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 400.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Yogyakarta</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            `;
-            document.getElementById("eventCards").innerHTML += cardHTML;
+            </div>
+            
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        
+        </div>
+    </main>
+    
+    <script>
+      // Array untuk menyimpan kategori yang dipilih
+      let selectedCategories = [];
+    
+      // Fungsi untuk menambah kategori
+      function addCategory(category) {
+        if (!selectedCategories.includes(category)) {
+          selectedCategories.push(category);
+          updateSelectedCategories();
+          filterCards();
+        }
+      }
+    
+      // Fungsi untuk menghapus kategori
+      function removeCategory(category) {
+        selectedCategories = selectedCategories.filter(cat => cat !== category);
+        updateSelectedCategories();
+        filterCards();
+      }
+    
+      // Fungsi untuk memperbarui tampilan kategori yang dipilih
+      function updateSelectedCategories() {
+        const selectedCategoriesContainer = document.getElementById('selectedCategories');
+        selectedCategoriesContainer.innerHTML = '';
+        selectedCategories.forEach(category => {
+          const categoryBadge = document.createElement('span');
+          categoryBadge.className = 'badge bg-secondary me-2';
+          categoryBadge.style.cursor = 'pointer';
+          categoryBadge.innerHTML = `${category} <i class="fas fa-times"></i>`;
+          categoryBadge.onclick = () => removeCategory(category);
+          selectedCategoriesContainer.appendChild(categoryBadge);
         });
-    });
-
-    // Perbarui tampilan kategori yang dipilih
-    renderSelectedCategories();
-}
-
-function renderSelectedCategories() {
-    var selectedCategoriesDiv = document.getElementById("selectedCategories");
-    selectedCategoriesDiv.innerHTML = "";
-
-    // Buat elemen untuk setiap kategori yang dipilih
-    selectedCategories.forEach(function(category) {
-        var categoryItem = document.createElement("span");
-        categoryItem.classList.add("btn", "btn-outline-secondary", "btn-sm", "me-2", "mb-2");
-        categoryItem.innerText = category;
-
-        // Buat tombol "x" untuk menghapus kategori
-        var removeIcon = document.createElement("span");
-        removeIcon.classList.add("remove-category", "me-1");
-        removeIcon.innerHTML = "&times;";
-        removeIcon.onclick = function() {
-            addCategory(category); // Toggle kategori ketika tombol "x" diklik
-            renderSelectedCategories(); // Perbarui tampilan kategori yang dipilih
-        };
-
-        // Tambahkan tombol "x" sebelum teks kategori
-        categoryItem.insertBefore(removeIcon, categoryItem.firstChild);
-
-        // Tambahkan kategori ke dalam div
-        selectedCategoriesDiv.appendChild(categoryItem);
-    });
-}
-
-var currentSortOption = 'Latest';
-
-function selectSort(sortOption) {
-    currentSortOption = sortOption;
-    var sortByLatestElement = document.getElementById("sortByLatest");
-    sortByLatestElement.innerText = "Sort by: " + sortOption;
-    showAllCards(); // Panggil ulang fungsi showAllCards untuk memperbarui tampilan kartu
-}
+      }
+    
+      // Fungsi untuk menyaring kartu berdasarkan kategori yang dipilih
+      function filterCards() {
+        const cards = document.querySelectorAll('#eventCards .col-md-3');
+        cards.forEach(card => {
+          const cardCategories = Array.from(card.classList);
+          const hasCategory = selectedCategories.some(category => cardCategories.includes(category));
+          if (hasCategory || selectedCategories.length === 0) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+    
+      // Inisialisasi filter pada saat halaman dimuat
+      document.addEventListener('DOMContentLoaded', () => {
+        filterCards();
+      });
     </script>
     
-
-
 </body>
 </html>
