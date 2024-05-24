@@ -8,6 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="../css/style.css">
   <script src="../js/index.js"></script>
@@ -93,20 +94,26 @@ display: none;
         <div class="navbar-text ms-auto">
             <ul class="nav">
                 <li class="nav-item">
+                    <div class="d-flex">
+                        <!-- Hidden search input -->
+                        <input type="text" class="form-control ms-2" style="display: none;" id="searchInput" placeholder="Type to search...">
+                        
+                        <!-- Button to toggle search input -->
+                        <button id="toggleSearch" class="btn" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="fas fa-search"></i> 
+                        <i class="bi bi-envelope"></i> 
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
-                        <i class="fas fa-users"></i> 
+                        <i class="bi bi-bell"></i> 
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="far fa-envelope"></i> 
-                    </a>
-                </li>                     
+                </li>                            
                 <li class="nav-item">
                   <div id="profileLink" class="nav-link profile">
                       <div class="rounded-circle overflow-hidden me-2" style="width: 25px; height: 25px; background-color: #f0f0f0;">
@@ -674,6 +681,19 @@ display: none;
   </main>
   
   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var toggleButton = document.getElementById('toggleSearch');
+    var searchInput = document.getElementById('searchInput');
+  
+    toggleButton.addEventListener('click', function() {
+      var isVisible = searchInput.style.display === 'block';
+      searchInput.style.display = isVisible ? 'none' : 'block';
+  
+      if (!isVisible) {
+        searchInput.focus(); // Focus on the input when shown
+      }
+    });
+  });
     // Fungsi untuk menghapus kelas active dari semua elemen nav-link
     function removeActiveClass() {
         var navLinks = document.querySelectorAll('.nav-link');
