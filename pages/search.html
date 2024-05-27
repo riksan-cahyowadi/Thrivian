@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Page</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* Gaya CSS tambahan */
+    .nav-item:hover .nav-link {
+      text-decoration: underline;
+    }
+
+    .profile-info {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 10px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+
+    .nav-item .profile:hover .profile-info {
+      display: block;
+    }
+
+    .profile-info a {
+      text-decoration: none;
+      color: #333;
+      display: block;
+    }
+
+    .profile-info a:hover {
+      text-decoration: underline;
+    }
+
+    .profile-info p {
+      margin: 5px 0;
+      color: #333;
+    }
+
+    .icon.user.outline {
+      color: black;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .navbar-bawah .nav-item .nav-link.active {
+      text-decoration: underline;
+      color: #13005A !important;
+    }
+
+    .nav-link.active {
+      color: #13005A !important;
+      position: relative;
+    }
+
+    .nav-link.active::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: #13005A;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+    }
+
+    .hero-section {
+      background: linear-gradient(to right, #d16ba5, #86a8e7, #5ffbf1);
+      height: 40vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+    .search-bar {
+      width: 50%;
+      max-width: 600px;
+      border-radius: 25px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .search-bar input {
+      border: none;
+      border-radius: 25px 0 0 25px;
+    }
+
+    .search-bar button {
+      border: none;
+      border-radius: 0 25px 25px 0;
+    }
+
+    .user-section {
+      margin: 20px;
+    }
+
+    .user-card {
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .user-avatar {
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      overflow: hidden;
+      margin-right: 15px;
+    }
+
+    .user-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .user-info {
+      flex-grow: 1;
+    }
+
+    .user-info h5 {
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .user-info p {
+      margin: 0;
+      color: #666;
+    }
+
+    .user-tags {
+      margin-top: 10px;
+    }
+
+    .user-tags span {
+      font-size: 0.85rem;
+      color: #999;
+      margin-right: 10px;
+    }
+
+    .community-card {
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      padding: 15px;
+      margin-bottom: 15px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .community-bg {
+      width: 100%;
+      height: 150px;
+      background-size: cover;
+      background-position: center;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+
+    .community-avatar {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+      margin: -50px auto 15px;
+      border: 5px solid white;
+      position: relative;
+      background-color: white;
+    }
+
+    .community-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .event-card {
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 15px;
+      padding: 15px;
+    }
+
+    .event-card img {
+      width: 100%;
+      height: auto;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+
+    .event-date {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar untuk Desktop -->
+  <nav class="navbar navbar-light bg-light fixed-top d-none d-lg-block">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="../img/thrivan-logo.png" alt="Thrivian.org" width="180" height="35">
+      </a>
+      <ul class="nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary active text-decoration-underline" style="color: #13005A !important;" href="./community.html">Community</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="./home_events.html">Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-secondary" href="#">E-Learning</a>
+        </li>
+      </ul>
+      <div class="navbar-text ms-auto">
+        <ul class="nav">
+          <li class="nav-item">
+            <div class="d-flex">
+              <!-- Hidden search input -->
+              <input type="text" class="form-control ms-2" style="display: none;" id="searchInput" placeholder="Type to search...">
+
+              <!-- Button to toggle search input -->
+              <button id="toggleSearch" class="btn" type="button">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="bi bi-envelope"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="bi bi-bell"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <div id="profileLink" class="nav-link profile">
+              <div class="rounded-circle overflow-hidden ms-2" style="width: 25px; height: 25px; background-color: #f0f0f0;">
+                <img id="userImage" src="../img/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+              </div>
+              <div id="profileInfo" class="profile-info">
+                <p class="username">Christopher Kim</p>
+                <p class="account">@johhnyray</p>
+                <a href="./profile.html" class="view-profile">View my profile</a>
+                <a href="my-events.html" class="my-events">My Events</a>
+                <a href="manage-communities.html" class="manage-communities">Manage your communities</a>
+                <hr class="my-2" style="border-top: 3px solid #E5E5E5;">
+                <a href="./settings_profiles.html" class="settings">Settings</a>
+                <a href="./pages/login.html" class="log-out">Log Out</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Navbar untuk Mobile -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-lg-none">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="flex-grow: 1;">
+        <img src="../img/thrivan-logo.png" alt="Thrivian.org" width="150">
+      </a>
+      <a href="#" class="search-icon ms-auto me-4">
+        <i class="fas fa-search"></i>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobileContent" aria-controls="navbarMobileContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMobileContent">
+        <ul class="navbar-nav me-auto mb-lg-0 mt-3">
+          <button class="close-button ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobileContent">✖</button>
+          <li class="nav-item">
+            <a class="nav-link" href="community.html">Community</a>
+            <hr class="my-2 custom-hr-mobile">
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="events.html">Events</a>
+            <hr class="my-2 custom-hr-mobile">
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="e-learning.html">E-Learning</a>
+            <hr class="my-2 custom-hr-mobile">
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="settings_profiles.html">Settings</a>
+            <hr class="my-2 custom-hr-mobile">
+          </li>
+        </ul>
+        <div class="navbar-footer">
+          <div class="d-flex justify-content-center text-align-center mt-4">
+            <span class="text-muted small fs-9" style="text-align: center; text-decoration: none;">
+              <a href="about_us.html" class="text-muted">About Us</a> •
+              <a href="privacy_terms.html" class="text-muted">Privacy & Terms</a> •
+              <a href="more.html" class="text-muted">More</a>
+              <p class="text-muted fs-9">Thrivian.org © 2024</p>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sticky Bottom Navbar for Mobile -->
+  <nav class="navbar fixed-bottom navbar-expand d-lg-none bottom-nav border border-dark" style="background-color: #fcfafa;">
+    <ul class="navbar-nav nav-justified w-100">
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="../index.html"><i class="fa fa-home"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="#"><i class="far fa-envelope"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="#"><i class="bell outline icon"></i></a>
+      </li>
+      <li class="nav-item">
+        <a href="./profile.html">
+          <div class="rounded-circle overflow-hidden ms-3 mt-1" style="width: 25px; height: 25px; background-color: #f0f0f0;">
+            <img id="userImage" src="../img/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <section class="hero-section">
+    <h1>Discover What You Need!</h1>
+    <div class="search-bar d-flex">
+      <input type="text" class="form-control py-3" placeholder="    Search...">
+      <button class="btn btn-light"><i class="fas fa-search"></i></button>
+    </div>
+  </section>
+
+  <div class="container">
+    <ul class="nav justify-content-center pt-3" id="settings-nav">
+      <li class="nav-item">
+        <a class="nav-link text-secondary active px-5" href="#" onclick="showSection('all')">All</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-secondary px-5" href="#" onclick="showSection('user')">User</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-secondary px-5" href="#" onclick="showSection('community')">Communities</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-secondary px-5" href="#" onclick="showSection('event')">Event</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-secondary px-5" href="#" onclick="showSection('post')">Post</a>
+      </li>
+    </ul>
+  </div>
+  <hr class="mb-0">
+
+  <div class="container user-section" id="user-section" style="margin-left: 6%;">
+    <h4 class="mb-4">Users</h4>
+    <div class="user-card">
+      <div class="user-avatar">
+        <img src="../img/cheerful-confident-man-standing-arms-folded-plaid-shirt.jpg" alt="User Avatar">
+      </div>
+      <div class="user-info">
+        <h5>Ray John <span class="text-muted">@johnnyray</span></h5>
+        <p>Founder & CEO at Marika Ikanika x KJUP Indonesia | Head of Research Data Security at PT Marina Indonesia</p>
+        <div class="user-tags">
+          <span style="color: #FFA500;">Business</span>
+          <span style="color: #9747FF;">Finance</span>
+          <span style="color: #00CC66;">Self Development</span>
+        </div>
+      </div>
+      <button class="bg-transparent rounded px-5 py-2" style="border-color: #13005A; color: #13005A;">Follow</button>
+    </div>
+    <div class="user-card">
+      <div class="user-avatar">
+        <img src="../img/cheerful-confident-man-standing-arms-folded-plaid-shirt.jpg" alt="User Avatar">
+      </div>
+      <div class="user-info">
+        <h5>Ray John <span class="text-muted">@johnnyray</span></h5>
+        <p>Founder & CEO at Marika Ikanika x KJUP Indonesia | Head of Research Data Security at PT Marina Indonesia</p>
+        <div class="user-tags">
+          <span style="color: #FFA500;">Business</span>
+          <span style="color: #9747FF;">Finance</span>
+          <span style="color: #00CC66;">Self Development</span>
+        </div>
+      </div>
+      <button class="bg-transparent rounded px-5 py-2" style="border-color: #13005A; color: #13005A;">Follow</button>
+    </div>
+    <div class="user-card">
+      <div class="user-avatar">
+        <img src="../img/cheerful-confident-man-standing-arms-folded-plaid-shirt.jpg" alt="User Avatar">
+      </div>
+      <div class="user-info">
+        <h5>Ray John <span class="text-muted">@johnnyray</span></h5>
+        <p>Founder & CEO at Marika Ikanika x KJUP Indonesia | Head of Research Data Security at PT Marina Indonesia</p>
+        <div class="user-tags">
+          <span style="color: #FFA500;">Business</span>
+          <span style="color: #9747FF;">Finance</span>
+          <span style="color: #00CC66;">Self Development</span>
+        </div>
+      </div>
+      <button class="bg-transparent rounded px-5 py-2" style="border-color: #13005A; color: #13005A;">Follow</button>
+    </div>
+    <div class="d-flex justify-content-end">
+      <button class="bg-transparent rounded px-3 py-2" style="border-color: #13005A; color: #13005A;">See More</button>
+    </div>
+  </div>
+  <hr class="mb-0">
+
+  <div class="container my-4 community-section" id="community-section">
+    <h4 class="mb-4">Communities</h4>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="community-card">
+          <div class="community-bg" style="background-image: url('../img/Rectangle\ 25.png');"></div>
+          <div class="community-avatar">
+            <img src="../img/Ellipse 37.png" alt="Community Avatar">
+          </div>
+          <div class="community-info">
+            <h5>Level Up Learners</h5>
+            <p>Level Up Learners: Elevate your skills, empower your future.</p>
+          </div>
+          <div class="d-grid gap-2 d-md-block">
+            <button class="bg-transparent rounded-pill px-4 py-2" style="color: #2F80A3; border-color: #2F80A3;">About Community</button>
+            <button class="rounded-pill px-5 py-2" style="background-color: #2F80A3; color: white;">Join</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="community-card">
+          <div class="community-bg" style="background-image: url('../img/Rectangle\ 25.png');"></div>
+          <div class="community-avatar">
+            <img src="../img/Ellipse 37.png" alt="Community Avatar">
+          </div>
+          <div class="community-info">
+            <h5>Level Up Learners</h5>
+            <p>Level Up Learners: Elevate your skills, empower your future.</p>
+          </div>
+          <div class="d-grid gap-2 d-md-block">
+            <button class="bg-transparent rounded-pill px-4 py-2" style="color: #2F80A3; border-color: #2F80A3;">About Community</button>
+            <button class="rounded-pill px-5 py-2" style="background-color: #2F80A3; color: white;">Join</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="community-card">
+          <div class="community-bg" style="background-image: url('../img/Rectangle\ 25.png');"></div>
+          <div class="community-avatar">
+            <img src="../img/Ellipse 37.png" alt="Community Avatar">
+          </div>
+          <div class="community-info">
+            <h5>Level Up Learners</h5>
+            <p>Level Up Learners: Elevate your skills, empower your future.</p>
+          </div>
+          <div class="d-grid gap-2 d-md-block">
+            <button class="bg-transparent rounded-pill px-4 py-2" style="color: #2F80A3; border-color: #2F80A3;">About Community</button>
+            <button class="rounded-pill px-5 py-2" style="background-color: #2F80A3; color: white;">Join</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="community-card">
+          <div class="community-bg" style="background-image: url('../img/Rectangle\ 25.png');"></div>
+          <div class="community-avatar">
+            <img src="../img/Ellipse 37.png" alt="Community Avatar">
+          </div>
+          <div class="community-info">
+            <h5>Level Up Learners</h5>
+            <p>Level Up Learners: Elevate your skills, empower your future.</p>
+          </div>
+          <div class="d-grid gap-2 d-md-block">
+            <button class="bg-transparent rounded-pill px-4 py-2" style="color: #2F80A3; border-color: #2F80A3;">About Community</button>
+            <button class="rounded-pill px-5 py-2" style="background-color: #2F80A3; color: white;">Join</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-end">
+      <button class="bg-transparent rounded px-3 py-2" style="border-color: #13005A; color: #13005A;">See More</button>
+    </div>
+  </div>
+  <hr class="mb-0">
+
+  <div class="container my-4 event-section" id="event-section">
+    <h4 class="mb-4">Events</h4>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="event-card">
+          <img src="../img/event-1.png" alt="Event Image">
+          <div class="event-date">September 10th</div>
+          <h5 class="mt-3">Finance Meet-Up</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p> <span><i class="bi bi-geo-alt"></i></span> Surabaya
+            <span class="rounded-pill text-light px-4 py-2" style="margin-left: 30%; background-color: #13005A;">Rp 100.000</span></p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="event-card">
+          <img src="../img/event-1.png" alt="Event Image">
+          <div class="event-date">September 10th</div>
+          <h5 class="mt-3">Finance Meet-Up</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p> <span><i class="bi bi-geo-alt"></i></span> Surabaya
+            <span class="rounded-pill text-light px-4 py-2" style="margin-left: 30%; background-color: #13005A;">Rp 100.000</span></p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="event-card">
+          <img src="../img/event-1.png" alt="Event Image">
+          <div class="event-date">September 10th</div>
+          <h5 class="mt-3">Finance Meet-Up</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p> <span><i class="bi bi-geo-alt"></i></span> Surabaya
+            <span class="rounded-pill text-light px-4 py-2" style="margin-left: 30%; background-color: #13005A;">Rp 100.000</span></p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="event-card">
+          <img src="../img/event-1.png" alt="Event Image">
+          <div class="event-date">September 10th</div>
+          <h5 class="mt-3">Finance Meet-Up</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p> <span><i class="bi bi-geo-alt"></i></span> Surabaya
+            <span class="rounded-pill text-light px-4 py-2" style="margin-left: 30%; background-color: #13005A;">Rp 100.000</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-end">
+      <button class="bg-transparent rounded px-3 py-2" style="border-color: #13005A; color: #13005A;">See More</button>
+    </div>
+  </div>
+  <hr class="mb-0">
+
+  <div class="container my-4 post-section" id="post-section">
+    <h4 class="mb-4">Posts</h4>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="post-card d-flex align-items-center">
+                <div class="rounded-circle overflow-hidden me-2" style="width: 50px; height: 50px; background-color: #f0f0f0;">
+                    <img src="../img/cheerful-confident-man-standing-arms-folded-plaid-shirt.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div>
+                    <h6 class="mb-0 text-dark fw-bold">Ray John <span class="text-muted">@johhnyray</span></h6>
+                    <p class="fs-6" style="color: orange; margin-bottom: 0;">> Business</p>
+                </div>
+            </div>
+            <div class="row mb-0 ms-5 mb-2">
+                <div class="col">
+                    <h5 class="mb-0 text-dark">What are the most important things to know about business?</h5>
+                </div>
+            </div>
+            <div class="row mb-0 ms-5">
+                <div class="col">
+                    <p class="mb-0 truncated" style="text-align: justify;">
+                        You've heard it many times before but it’s so true. Without capital, you won’t survive. Be super cheap in the beginning 
+                        as you’ll make a lot of mistakes and then spend a lot once you know you’re right. This goes for everything from hiring 
+                        people to marketing budgets. | used to think corporate culture stuff was fluffy babble until | started a business and 
+                        saw how important it is to have a distinct culture. It’s what binds people together. If a person is not a good cultural fit, 
+                        it’s better they leave than try to “make it work.”It is so super easy to be doing a lot of things and thinking you are 
+                        making progress because it feels good to be busy. Meanwhile, you are addressin....
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="post-card d-flex align-items-center">
+                <div class="rounded-circle overflow-hidden me-2" style="width: 50px; height: 50px; background-color: #f0f0f0;">
+                    <img src="../img/cheerful-confident-man-standing-arms-folded-plaid-shirt.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div>
+                    <h6 class="mb-0 text-dark fw-bold">Ray John <span class="text-muted">@johhnyray</span></h6>
+                    <p class="fs-6" style="color: orange; margin-bottom: 0;">> Business</p>
+                </div>
+            </div>
+            <div class="row mb-0 ms-5 mb-2">
+                <div class="col">
+                    <h5 class="mb-0 text-dark">What are the most important things to know about business?</h5>
+                </div>
+            </div>
+            <div class="row mb-0 ms-5">
+                <div class="col">
+                    <p class="mb-0 truncated" style="text-align: justify;">
+                        You've heard it many times before but it’s so true. Without capital, you won’t survive. Be super cheap in the beginning 
+                        as you’ll make a lot of mistakes and then spend a lot once you know you’re right. This goes for everything from hiring 
+                        people to marketing budgets. | used to think corporate culture stuff was fluffy babble until | started a business and 
+                        saw how important it is to have a distinct culture. It’s what binds people together. If a person is not a good cultural fit, 
+                        it’s better they leave than try to “make it work.”It is so super easy to be doing a lot of things and thinking you are 
+                        making progress because it feels good to be busy. Meanwhile, you are addressin....
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="post-card d-flex align-items-center">
+                <div class="rounded-circle overflow-hidden me-2" style="width: 50px; height: 50px; background-color: #f0f0f0;">
+                    <img src="../img/cheerful-confident-man-standing-arms-folded-plaid-shirt.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div>
+                    <h6 class="mb-0 text-dark fw-bold">Ray John <span class="text-muted">@johhnyray</span></h6>
+                    <p class="fs-6" style="color: orange; margin-bottom: 0;">> Business</p>
+                </div>
+            </div>
+            <div class="row mb-0 ms-5 mb-2">
+                <div class="col">
+                    <h5 class="mb-0 text-dark">What are the most important things to know about business?</h5>
+                </div>
+            </div>
+            <div class="row mb-0 ms-5">
+                <div class="col">
+                    <p class="mb-0 truncated" style="text-align: justify;">
+                        You've heard it many times before but it’s so true. Without capital, you won’t survive. Be super cheap in the beginning 
+                        as you’ll make a lot of mistakes and then spend a lot once you know you’re right. This goes for everything from hiring 
+                        people to marketing budgets. | used to think corporate culture stuff was fluffy babble until | started a business and 
+                        saw how important it is to have a distinct culture. It’s what binds people together. If a person is not a good cultural fit, 
+                        it’s better they leave than try to “make it work.”It is so super easy to be doing a lot of things and thinking you are 
+                        making progress because it feels good to be busy. Meanwhile, you are addressin....
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-end"><button class="bg-transparent rounded px-3 py-2" style="border-color: #13005A; color: #13005A;">See More</button></div>
+    </div>
+  </div>
+  <hr class="mb-0">
+
+   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var toggleButton = document.getElementById('toggleSearch');
+      var searchInput = document.getElementById('searchInput');
+
+      toggleButton.addEventListener('click', function () {
+        var isVisible = searchInput.style.display === 'block';
+        searchInput.style.display = isVisible ? 'none' : 'block';
+
+        if (!isVisible) {
+          searchInput.focus(); // Focus on the input when shown
+        }
+      });
+
+      // Script to handle active class toggle
+      var navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          navLinks.forEach(function (nav) { nav.classList.remove('active'); });
+          this.classList.add('active');
+          var section = this.getAttribute('onclick').split("'")[1];
+          showSection(section);
+        });
+      });
+
+      // Script to show the correct section
+      showSection('all'); // Show all sections initially
+    });
+
+    window.showSection = function (section) {
+      // Get all section containers
+      var userSection = document.querySelector('.user-section');
+      var communitySection = document.querySelector('.community-section');
+      var eventSection = document.querySelector('.event-section');
+      var postSection = document.querySelector('.post-section');
+
+      // Hide all sections
+      userSection.style.display = 'none';
+      communitySection.style.display = 'none';
+      eventSection.style.display = 'none';
+      postSection.style.display = 'none';
+
+      // Show the desired section based on the provided argument
+      switch (section) {
+        case 'user':
+          userSection.style.display = 'block';
+          break;
+        case 'community':
+          communitySection.style.display = 'block';
+          break;
+        case 'event':
+          eventSection.style.display = 'block';
+          break;
+        case 'post':
+          postSection.style.display = 'block';
+          break;
+        case 'all':
+          userSection.style.display = 'block';
+          communitySection.style.display = 'block';
+          eventSection.style.display = 'block';
+          postSection.style.display = 'block';
+          break;
+      }
+    };
+  </script>
+
+</body>
+</html>
