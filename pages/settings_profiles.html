@@ -61,6 +61,33 @@ display: none;
     color: #13005A !important; 
 }
 
+@media (max-width: 768px) {
+    .user-stats {
+        display: none;
+    }
+    .setting-title {
+        text-align: center;
+        color: white;
+        background-color: #13005A;
+        padding: 4%;
+    }
+    .profile-section {
+        display: none;
+    }
+    .navbar-bawah {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .navbar-bawah .nav-item {
+        flex: 0 0 auto;
+    }
+    .navbar-bawah .nav-item.hidden {
+        display: none;
+    }
+}
   </style>
 </head>
 
@@ -76,10 +103,10 @@ display: none;
                 <a class="nav-link text-secondary active text-decoration-underline" style="color: #13005A !important;" href="../index.html">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-secondary" href="./community.html">Community</a>
+                <a class="nav-link text-secondary" href="#">Community</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-secondary" href="./home_events.html">Event & Blog</a>
+                <a class="nav-link text-secondary" href="#">Event & Blog</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-secondary" href="#">E-Learning</a>
@@ -107,7 +134,7 @@ display: none;
                     <a class="nav-link" href="#">
                         <i class="bi bi-bell"></i> 
                     </a>
-                </li>                              
+                </li>                   
                 <li class="nav-item">
                   <div id="profileLink" class="nav-link profile">
                       <div class="rounded-circle overflow-hidden me-2" style="width: 25px; height: 25px; background-color: #f0f0f0;">
@@ -134,7 +161,7 @@ display: none;
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-lg-none">
     <div class="container-fluid">
         <a class="navbar-brand" href="#" style="flex-grow: 1;">
-            <img src="../img/thrivan-logo.png" alt="Thrivian.org" width="150">
+            <img src="../img/Thrivian.org.png" alt="Thrivian.org" width="150">
         </a>
         <a href="#" class="search-icon ms-auto me-4">
             <i class="fas fa-search"></i> 
@@ -198,28 +225,28 @@ display: none;
         </ul>
     </nav>
 
-  <div class="container">
-    <h2 style="margin-top: 69px;">Settings</h2>
-    <ul class="nav justify-content-center navbar-bawah">
-        <li class="nav-item">
-            <a class="nav-link text-secondary active" href="#" style="margin-right: 9px; margin-left: 9px;" onclick="showPosts('editprofile')">Edit Profile</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-secondary" href="#" style="margin-right: 9px; margin-left: 9px;" onclick="showPosts('account')">Account</a>
-        </li>                        
-        <li class="nav-item">
-            <a class="nav-link text-secondary" href="#" style="margin-right: 9px; margin-left: 9px;" onclick="showPosts('notification')">Notification</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-secondary" href="#" style="margin-right: 9px; margin-left: 9px;" onclick="showPosts('privacy')">Privacy & Security</a>
-        </li>
-    </ul>
-</div>
+    <div class="container">
+        <h2 class="setting-title" style="margin-top: 69px;">Settings</h2>
+        <ul class="nav justify-content-center navbar-bawah" id="settings-nav">
+            <li class="nav-item">
+                <a class="nav-link text-secondary active" href="#" style="margin-right: 9px; margin-left: 9px;" onclick="showPosts('editprofile')">Edit Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-secondary" href="#" style="margin-right: 9px; margin-left: 9px;" onclick="showPosts('account')">Account</a>
+            </li>                        
+            <li class="nav-item">
+                <a class="nav-link text-secondary" href="#" style="margin-right: 9px; margin-left: 9px;" onclick="showPosts('notification')">Notification</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-secondary" href="#" style="margin-right: 9px; margin-left: 9px;" onclick="showPosts('privacy')">Privacy</a>
+            </li>
+        </ul>
+    </div>
 
   <main class="container-fluid border" style="margin-top: 4px;">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-5 border-end" style="max-height: 500px; overflow-y: auto;">
+            <div class="col-md-5 border-end profile-section" style="max-height: 500px; overflow-y: auto;">
                 <div class="profile-container">
                     <div class="profile-header bg-light">
                         <div class="d-flex justify-content-center align-items-center pt-5" style="height: 450px; position: relative;">
@@ -699,7 +726,6 @@ display: none;
                         </div>
                     </div>
                 </div>
-                
          </div>
         </div>
       </div>
@@ -707,7 +733,7 @@ display: none;
   </main>
   
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+          document.addEventListener('DOMContentLoaded', function() {
     var toggleButton = document.getElementById('toggleSearch');
     var searchInput = document.getElementById('searchInput');
   
@@ -720,6 +746,34 @@ display: none;
       }
     });
   });
+
+ function showPosts(section) {
+    const items = document.querySelectorAll('.navbar-bawah .nav-item');
+    items.forEach(item => item.classList.add('hidden'));
+
+    switch (section) {
+        case 'account':
+        case 'notification':
+            document.querySelector(`[onclick="showPosts('${section}')"]`).parentNode.classList.remove('hidden');
+            document.querySelector(`[onclick="showPosts('privacy')"]`).parentNode.classList.remove('hidden');
+            if (section === 'account') {
+                document.querySelector(`[onclick="showPosts('notification')"]`).parentNode.classList.remove('hidden');
+            } else {
+                document.querySelector(`[onclick="showPosts('account')"]`).parentNode.classList.remove('hidden');
+            }
+            break;
+        case 'privacy':
+            document.querySelector(`[onclick="showPosts('privacy')"]`).parentNode.classList.remove('hidden');
+            document.querySelector(`[onclick="showPosts('account')"]`).parentNode.classList.remove('hidden');
+            document.querySelector(`[onclick="showPosts('notification')"]`).parentNode.classList.remove('hidden');
+            break;
+        default:
+            document.querySelector(`[onclick="showPosts('editprofile')"]`).parentNode.classList.remove('hidden');
+            document.querySelector(`[onclick="showPosts('account')"]`).parentNode.classList.remove('hidden');
+            document.querySelector(`[onclick="showPosts('notification')"]`).parentNode.classList.remove('hidden');
+            break;
+    }
+}
 // Fungsi untuk menghapus kelas active dari semua elemen nav-link
 function removeActiveClass() {
         var navLinks = document.querySelectorAll('.nav-link');
@@ -744,7 +798,7 @@ function removeActiveClass() {
         });
     });
 
-   function showPosts(category) {
+    function showPosts(category) {
     var profiles = document.getElementsByClassName('edit-profile');
     for (var i = 0; i < profiles.length; i++) {
         var profile = profiles[i];
@@ -755,7 +809,22 @@ function removeActiveClass() {
             profile.style.display = 'none';
         }
     }
+    
+    // Perbarui visibilitas untuk bagian profil pada tampilan mobile
+    var profileSection = document.querySelector('.profile-section');
+    if (window.innerWidth <= 767) { // cek apakah ukuran layar <= 767px (mobile)
+        if (category === 'editprofile') {
+            profileSection.style.display = 'block';
+        } else {
+            profileSection.style.display = 'none';
+        }
+    }
 }
+
+// Panggil fungsi showPosts dengan kategori default saat dokumen dimuat
+document.addEventListener('DOMContentLoaded', function () {
+    showPosts('editprofile');
+});
 
 document.addEventListener('DOMContentLoaded', function () {
         // Ambil elemen input file dan tombol untuk mengubah gambar
