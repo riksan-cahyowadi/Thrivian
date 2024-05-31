@@ -111,12 +111,109 @@ display: none;
             z-index: 1;
         }
 
+        .notification-modal {
+    background: transparent;
+    display: flex;
+    align-items: flex-start; /* Align to the top */
+    justify-content: flex-end; /* Align to the right */
+    position: absolute;
+    top: 50px; /* Adjust this value based on your navbar height */
+    right: 10px; /* Adjust this value for horizontal alignment */
+    width: auto;
+}
+
+        .notification-card {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 15px;
+            border-bottom-right-radius: 90px; /* Bottom-right corner */
+            border-top-right-radius: 0;
+            display: flex;
+            align-items: center;
+            width: 300px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+        }
+
+        .notification-card img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .notification-content {
+            flex-grow: 1;
+        }
+
+        .notification-title {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .notification-message {
+            color: #555;
+            margin: 5px 0;
+        }
+
+        .notification-time {
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        .modal-content {
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+        .modal-body {
+            padding: 0;
+        }
+
+        .notification-card .notification-content {
+        display: flex;
+        flex-direction: column;
+        }
+
+        .notification-icon {
+            position: relative;
+            }
+
+            .notification-icon .red-dot {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            border: 1px solid white;
+            }
+
+            @media (max-width: 991px) {
+            .bottom-nav .notification-icon {
+                position: relative;
+            }
+
+            .bottom-nav .notification-icon .red-dot {
+                top: -8%; 
+                right: 35%; 
+                transform: none; 
+            }
+            }
   </style>
 </head>
 
 <body>
-   <!-- Navbar untuk Desktop -->
-   <nav class="navbar navbar-light bg-light fixed-top d-none d-lg-block">
+<!-- Navbar untuk Desktop -->
+<nav class="navbar navbar-light bg-light fixed-top d-none d-lg-block">
     <div class="container">
         <a class="navbar-brand" href="#">
             <img src="../img/thrivan-logo.png" alt="Thrivian.org" width="180" height="35">
@@ -138,15 +235,9 @@ display: none;
         <div class="navbar-text ms-auto">
             <ul class="nav">
                 <li class="nav-item">
-                    <div class="d-flex">
-                        <!-- Hidden search input -->
-                        <input type="text" class="form-control ms-2" style="display: none;" id="searchInput" placeholder="Type to search...">
-                        
-                        <!-- Button to toggle search input -->
-                        <button id="toggleSearch" class="btn" type="button">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
+                    <a class="nav-link" href="./pages/search.html">
+                        <i class="fas fa-search"></i> 
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">
@@ -154,10 +245,11 @@ display: none;
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-bell"></i> 
+                    <a class="nav-link notification-icon" href="#" data-bs-toggle="modal" data-bs-target="#notificationModal" id="notificationButton">
+                      <i class="bi bi-bell"></i>
+                      <div class="red-dot">3</div>
                     </a>
-                </li>                       
+                  </li>         
                 <li class="nav-item">
                   <div id="profileLink" class="nav-link profile">
                       <div class="rounded-circle overflow-hidden ms-2" style="width: 25px; height: 25px; background-color: #f0f0f0;">
@@ -186,7 +278,7 @@ display: none;
         <a class="navbar-brand" href="#" style="flex-grow: 1;">
             <img src="../img/thrivan-logo.png" alt="Thrivian.org" width="150">
         </a>
-        <a href="#" class="search-icon ms-auto me-4">
+        <a href="search.html" class="search-icon ms-auto me-4">
             <i class="fas fa-search"></i> 
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobileContent" aria-controls="navbarMobileContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -226,27 +318,30 @@ display: none;
     </div>
 </nav>
 
-    <!-- Sticky Bottom Navbar for Mobile -->
-    <nav class="navbar fixed-bottom navbar-expand d-lg-none bottom-nav border border-dark" style="background-color: #fcfafa;">
-        <ul class="navbar-nav nav-justified w-100">
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="../index.html"><i class="fa fa-home"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#"><i class="far fa-envelope"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#"><i class="bell outline icon"></i></a>
-            </li>            
-            <li class="nav-item">
-                <a href="./profile.html">
-                    <div class="rounded-circle overflow-hidden ms-3 mt-1" style="width: 25px; height: 25px; background-color: #f0f0f0;">
-                        <img id="userImage" src="../img/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                </a>
-            </li>
-        </ul>
-    </nav>
+<!-- Sticky Bottom Navbar for Mobile -->
+<nav class="navbar fixed-bottom navbar-expand d-lg-none bottom-nav border border-dark" style="background-color: #fcfafa;">
+    <ul class="navbar-nav nav-justified w-100">
+        <li class="nav-item">
+            <a class="nav-link text-dark" href="../index.html"><i class="fa fa-home"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" href="#"><i class="far fa-envelope"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link notification-icon" href="#" data-bs-toggle="modal" data-bs-target="#notificationModal" id="notificationButton" style="color: black;">
+            <i class="bi bi-bell"></i>
+            <div class="red-dot">3</div>
+            </a>
+        </li>       
+        <li class="nav-item">
+            <a href="./pages/profile.html">
+                <div class="rounded-circle overflow-hidden ms-5 mt-1" style="width: 25px; height: 25px; background-color: #f0f0f0;">
+                    <img id="userImage" src="../img/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </a>
+        </li>
+    </ul>
+</nav>
 
     <main class="container-fluid border" style="margin-top: 69px;">
         <div class="container">
@@ -283,7 +378,7 @@ display: none;
                                         <p class="card-text">Level Up Learners: Elevate your skills, empower your future.</p>
                                         <div class="d-flex justify-content-center mt-3">
                                             <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
-                                            <a href="./community_detail.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
+                                            <a href="join_community.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
                                         </div>
                                     </div>
                                 </div>
@@ -297,7 +392,7 @@ display: none;
                                         <p class="card-text">A supportive network for entrepreneurs to succeed.</p>
                                         <div class="d-flex justify-content-center mt-3">
                                             <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
-                                            <a href="./community_detail.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
+                                            <a href="join_community.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
                                         </div>
                                     </div>
                                 </div>
@@ -311,7 +406,7 @@ display: none;
                                         <p class="card-text">Financial insights and connections for savvy individuals.</p>
                                         <div class="d-flex justify-content-center mt-3">
                                             <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
-                                            <a href="./community_detail.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
+                                            <a href="join_community.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
                                         </div>
                                     </div>
                                 </div>
@@ -333,7 +428,7 @@ display: none;
                                         <p class="card-text">Pioneers shaping the future with bold ideas.</p>
                                         <div class="d-flex justify-content-center mt-3">
                                             <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
-                                            <a href="./community_detail.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
+                                            <a href="join_community.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
                                         </div>
                                     </div>
                                 </div>
@@ -347,7 +442,7 @@ display: none;
                                         <p class="card-text"> Offers a variety of speaking activities</p>
                                         <div class="d-flex justify-content-center mt-3">
                                             <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
-                                            <a href="./community_detail.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
+                                            <a href="join_community.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
                                         </div>
                                     </div>
                                 </div>
@@ -361,7 +456,7 @@ display: none;
                                         <p class="card-text">Uniting changemakers to make a difference</p>
                                         <div class="d-flex justify-content-center mt-3">
                                             <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
-                                            <a href="./community_detail.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
+                                            <a href="join_community.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
                                         </div>
                                     </div>
                                 </div>
@@ -383,7 +478,7 @@ display: none;
                                         <p class="card-text">Mari belajar berbisnis bersama kami</p>
                                         <div class="d-flex justify-content-center mt-3">
                                             <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
-                                            <a href="./community_detail.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
+                                            <a href="join_community.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
                                         </div>
                                     </div>
                                 </div>
@@ -397,7 +492,7 @@ display: none;
                                         <p class="card-text">A supportive network for entrepreneurs to succeed.</p>
                                         <div class="d-flex justify-content-center mt-3">
                                             <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
-                                            <a href="./community_detail.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
+                                            <a href="join_community.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
                                         </div>
                                     </div>
                                 </div>
@@ -411,7 +506,7 @@ display: none;
                                         <p class="card-text">Pioneers shaping the future with bold ideas.</p>
                                         <div class="d-flex justify-content-center mt-3">
                                             <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
-                                            <a href="./community_detail.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
+                                            <a href="join_community.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
                                         </div>
                                     </div>
                                 </div>
@@ -433,7 +528,7 @@ display: none;
                                         <p class="card-text">Wealth Builders - WB: Financial freedom starts here.</p>
                                         <div class="d-flex justify-content-center mt-3">
                                             <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
-                                            <a href="./community_detail.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
+                                            <a href="join_community.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
                                         </div>
                                     </div>
                                 </div>
@@ -447,7 +542,7 @@ display: none;
                                         <p class="card-text">Financial insights and connections for savvy individuals.</p>
                                         <div class="d-flex justify-content-center mt-3">
                                             <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
-                                            <a href="./community_detail.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
+                                            <a href="join_community.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
                                         </div>
                                     </div>
                                 </div>
@@ -461,7 +556,7 @@ display: none;
                                         <p class="card-text">Connecting finance professionals for knowledge and growth.</p>
                                         <div class="d-flex justify-content-center mt-3">
                                             <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
-                                            <a href="./community_detail.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
+                                            <a href="join_community.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
                                         </div>
                                     </div>
                                 </div>
@@ -483,7 +578,7 @@ display: none;
                                         <p class="card-text">Uniting changemakers to make a difference</p>
                                         <div class="d-flex justify-content-center mt-3">
                                             <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
-                                            <a href="./community_detail.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
+                                            <a href="join_community.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
                                         </div>
                                     </div>
                                 </div>
@@ -497,7 +592,7 @@ display: none;
                                         <p class="card-text">Support for ambitious dreamers</p>
                                         <div class="d-flex justify-content-center mt-3">
                                             <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
-                                            <a href="./community_detail.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
+                                            <a href="join_community.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
                                         </div>
                                     </div>
                                 </div>
@@ -511,7 +606,7 @@ display: none;
                                         <p class="card-text">Empowering individuals to rise above.</p>
                                         <div class="d-flex justify-content-center mt-3">
                                             <button type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">About</button>
-                                            <a href="./community_detail.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
+                                            <a href="join_community.html" type="button" class="btn btn-light border-dark me-2 btn-sm" style="border-radius: 10px;">Join Community</a>
                                         </div>
                                     </div>
                                 </div>
@@ -521,40 +616,63 @@ display: none;
                     </div>
                 </div>
                 
-                <div class="col-md-3">
-                    <div class="card mt-3 text-center">
-                        <h5 class="card-header" style="background-color: #B8EDFD;">Invited Community</h5>
-                        <div class="card-body">
-                          <p class="card-text">Look, someone seems to have invited you </p>
-                          <div class="d-flex justify-content-center align-items-center mt-3">
-                            <img src="../img/finance2.jpg" alt="Small Image" class="rounded-circle me-2" style="width: 30px; height: 30px;">
-                            <span><strong>The Financials - TF</strong></span>
-                         </div>
-                          <div class="d-flex justify-content-center mt-3">
-                            <button type="button" class="btn btn-danger border-dark me-2 btn-sm" style="border-radius: 10px;">Reject</button>
-                            <button type="button" class="btn btn-success border-dark me-2 btn-sm" style="border-radius: 10px;">Accept</button>
-                         </div>
+                <div class="col-md-3" style="margin-bottom: 15%;">
+                    <div id="notificationOverlay" class="notification-overlay">
+                        <div class="card mt-3 text-center">
+                          <h5 class="card-header" style="background-color: #B8EDFD;">Invited Community</h5>
+                          <div class="card-body">
+                            <p class="card-text">Look, someone seems to have invited you</p>
+                            <div class="d-flex justify-content-center align-items-center mt-3">
+                              <img src="../img/finance2.jpg" alt="Small Image" class="rounded-circle me-2" style="width: 30px; height: 30px;">
+                              <span><strong>The Financials - TF</strong></span>
+                            </div>
+                            <div class="d-flex justify-content-center mt-3">
+                              <button type="button" class="btn btn-danger border-dark me-2 btn-sm" style="border-radius: 10px;">Reject</button>
+                              <button type="button" class="btn btn-success border-dark me-2 btn-sm" style="border-radius: 10px;">Accept</button>
+                            </div>
+                          </div>
                         </div>
-                    </div>
+                      </div>
                 </div>
             </div>
         </div>
     </main>
-  
+
+<!-- Notification Modal -->
+<div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel" aria-hidden="true">
+    <div class="modal-dialog notification-modal">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="notification-card">
+                    <img src="../img/finance2.jpg" alt="Community Image">
+                    <div class="notification-content">
+                        <div class="notification-title">The Financials</div>
+                        <div class="notification-message">Invited you to join community</div>
+                        <div class="notification-time">1 second ago</div>
+                    </div>
+                </div>
+                <div class="notification-card">
+                    <img src="../img/buisnes3.jpg" alt="Community Image">
+                    <div class="notification-content">
+                        <div class="notification-title">The Bussiness</div>
+                        <div class="notification-message">Invited you to join community</div>
+                        <div class="notification-time">1 second ago</div>
+                    </div>
+                </div>
+                <div class="notification-card">
+                    <img src="../img/self-development.jpg" alt="Community Image">
+                    <div class="notification-content">
+                        <div class="notification-title">The Self Development</div>
+                        <div class="notification-message">Invited you to join community</div>
+                        <div class="notification-time">1 second ago</div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
   <script>
-          document.addEventListener('DOMContentLoaded', function() {
-    var toggleButton = document.getElementById('toggleSearch');
-    var searchInput = document.getElementById('searchInput');
-  
-    toggleButton.addEventListener('click', function() {
-      var isVisible = searchInput.style.display === 'block';
-      searchInput.style.display = isVisible ? 'none' : 'block';
-  
-      if (!isVisible) {
-        searchInput.focus(); // Focus on the input when shown
-      }
-    });
-  });
     // Fungsi untuk menghapus kelas active dari semua elemen nav-link
     function removeActiveClass() {
         var navLinks = document.querySelectorAll('.nav-link');
@@ -591,6 +709,7 @@ display: none;
             }
         }
     }
+    
 </script>
 
 
