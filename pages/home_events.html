@@ -15,7 +15,7 @@
             .banner {
             position: relative;
             width: 100%;
-            height: 200px; /* Adjust the height as needed */
+            height: 200px;
             overflow: hidden;
         }
 
@@ -46,6 +46,56 @@
             padding-right: 20px; /* Adjust padding as needed */
             width: 40%; /* Adjust width as needed */
             text-align: right;
+        }
+
+     .event-card {
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-bottom: 15px;
+      padding: 15px;
+    }
+
+    .event-card img {
+      width: 100%;
+      height: auto;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+
+    .event-date {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.9rem;
+    }
+
+    .event-banner {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: url('../img/banner.jpg') no-repeat center center;
+            background-size: cover;
+        }
+        .event-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 139, 0.8));
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 20px;
+        }
+        .event-content {
+            padding-right: 14%;
+            color: white;
         }
 
         #footer {
@@ -232,160 +282,83 @@
         </div>
     </section>
 
-    <div class="upcoming-events py-5 d-flex justify-content-center" style="margin-left: 7%;">
-        <div class="container mx-auto">
-            <h2 class="text-start mb-4" style="color: #13005A;">Upcoming Events</h2>
-            <div class="row">
-                <!-- Card 1 -->
-                <div class="col-md-4 col-sm-6 mt-3 mb-3">
-                    <a href="./events.html" class="card-link text-dark w-100">
-                        <div class="card custom-card">
-                            <div class="card-img-container">
-                                <img src="../img/event-1.png" class="card-img-top" alt="Finance Meet-Up">
-                                <span class="badge rounded-pill badge-custom">September 10th</span>
-                            </div>
-                            <div class="card-body mt-1">
-                                <h5 class="card-title">Finance Meet-Up</h5>
-                                <p class="card-text text-justify">Join us for an in-depth session on the latest trends in finance, featuring expert speakers from the industry. This event offers networking opportunities and insights into financial strategies and market trends.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="badge rounded-pill badge-secondary">Rp. 100.000</span>
-                                    <div class="d-flex align-items-center">
-                                        <i class="fas fa-map-marker-alt location-icon"></i>
-                                        <span class="ms-1 location-text">Jakarta</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+    <section id="event-section">
+            <div class="container my-4 event-section">
+                <h4 class="mb-4">Upcoming Events</h4>
+                <div class="row d-flex justify-content-between">
+                  <div class="col-md-3">
+                    <div class="event-card">
+                      <img src="../img/event-1.png" alt="Event Image">
+                      <div class="event-date">September 10th</div>
+                      <h5 class="mt-3">Finance Meet-Up</h5>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      <p> <span><i class="bi bi-geo-alt"></i></span> Surabaya
+                        <span class="rounded-pill text-light px-4 py-2" style="margin-left: 30%; background-color: #13005A;">Rp 100.000</span></p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="event-card">
+                      <img src="../img/event-1.png" alt="Event Image">
+                      <div class="event-date">September 10th</div>
+                      <h5 class="mt-3">Programmer Conference 2024</h5>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      <p> <span><i class="bi bi-geo-alt"></i></span> Surabaya
+                        <span class="rounded-pill text-light px-4 py-2" style="margin-left: 30%; background-color: #13005A;">Rp 100.000</span></p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="event-card">
+                      <img src="../img/event-1.png" alt="Event Image">
+                      <div class="event-date">September 10th</div>
+                      <h5 class="mt-3">Smart Business Expo</h5>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                      <p> <span><i class="bi bi-geo-alt"></i></span> Surabaya
+                        <span class="rounded-pill text-light px-4 py-2" style="margin-left: 30%; background-color: #13005A;">Rp 100.000</span></p>
+                    </div>
+                  </div>
                 </div>
-                <!-- Card 2 -->
-                <div class="col-md-4 col-sm-6 mt-3 mb-3">
-                    <a href="./events.html" class="card-link text-dark w-100">
-                        <div class="card custom-card">
-                            <div class="card-img-container">
-                                <img src="../img/event-2.png" class="card-img-top" alt="Tech Innovation Summit">
-                                <span class="badge rounded-pill badge-custom">October 5th</span>
-                            </div>
-                            <div class="card-body mt-1">
-                                <h5 class="card-title">Programmer Conference 2024</h5>
-                                <p class="card-text text-justify">Explore the future of technology at the Tech Innovation Summit. This event will cover cutting-edge innovations, and provide a platform for startups to showcase their ideas.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="badge rounded-pill badge-secondary">Rp. 200.000</span>
-                                    <div class="d-flex align-items-center">
-                                        <i class="fas fa-map-marker-alt location-icon"></i>
-                                        <span class="ms-1 location-text">Bandung</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- Card 3 -->
-                <div class="col-md-4 col-sm-6 mt-3 mb-3">
-                    <a href="./events.html" class="card-link text-dark w-100">
-                        <div class="card custom-card">
-                            <div class="card-img-container">
-                                <img src="../img/event-3.png" class="card-img-top" alt="Health & Wellness Fair">
-                                <span class="badge rounded-pill badge-custom">November 12th</span>
-                            </div>
-                            <div class="card-body mt-1">
-                                <h5 class="card-title">Health & Wellness Fair</h5>
-                                <p class="card-text text-justify">Discover the latest in health and wellness at our fair. Attend workshops and explore a variety of products aimed at enhancing your well-being.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="badge rounded-pill badge-secondary">Rp. 50.000</span>
-                                    <div class="d-flex align-items-center">
-                                        <i class="fas fa-map-marker-alt location-icon"></i>
-                                        <span class="ms-1 location-text">Surabaya</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                 <!-- Card 1 -->
-                 <div class="col-md-4 col-sm-6 mt-3 mb-3">
-                    <a href="./events.html" class="card-link text-dark w-100">
-                        <div class="card custom-card">
-                            <div class="card-img-container">
-                                <img src="../img/event-4.png" class="card-img-top" alt="Finance Meet-Up">
-                                <span class="badge rounded-pill badge-custom">September 10th</span>
-                            </div>
-                            <div class="card-body mt-1">
-                                <h5 class="card-title">Finance Meet-Up</h5>
-                                <p class="card-text text-justify">Join us for an in-depth session on the latest trends in finance, featuring expert speakers from the industry. This event offers networking opportunities.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="badge rounded-pill badge-secondary">Rp. 100.000</span>
-                                    <div class="d-flex align-items-center">
-                                        <i class="fas fa-map-marker-alt location-icon"></i>
-                                        <span class="ms-1 location-text">Jakarta</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- Card 2 -->
-                <div class="col-md-4 col-sm-6 mt-3 mb-3">
-                    <a href="./events.html" class="card-link text-dark w-100">
-                        <div class="card custom-card">
-                            <div class="card-img-container">
-                                <img src="../img/event-5.png" class="card-img-top" alt="Tech Innovation Summit">
-                                <span class="badge rounded-pill badge-custom">October 5th</span>
-                            </div>
-                            <div class="card-body mt-1">
-                                <h5 class="card-title">Tech Innovation Summit</h5>
-                                <p class="card-text text-justify">Explore the future of technology at the Tech Innovation Summit. This event will cover cutting-edge innovations, AI advancements, and provide a platform for startups to showcase their ideas.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="badge rounded-pill badge-secondary">Rp. 200.000</span>
-                                    <div class="d-flex align-items-center">
-                                        <i class="fas fa-map-marker-alt location-icon"></i>
-                                        <span class="ms-1 location-text">Bandung</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <!-- Card 3 -->
-                <div class="col-md-4 col-sm-6 mt-3 mb-3">
-                    <a href="./events.html" class="card-link text-dark w-100">
-                        <div class="card custom-card">
-                            <div class="card-img-container">
-                                <img src="../img/event-6.png" class="card-img-top" alt="Health & Wellness Fair">
-                                <span class="badge rounded-pill badge-custom">November 12th</span>
-                            </div>
-                            <div class="card-body mt-1">
-                                <h5 class="card-title">Health & Wellness Fair</h5>
-                                <p class="card-text text-justify">Discover the latest in health and wellness at our fair. Attend workshops, meet health experts, and explore a variety of products aimed at enhancing your well-being.</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="badge rounded-pill badge-secondary">Rp. 50.000</span>
-                                    <div class="d-flex align-items-center">
-                                        <i class="fas fa-map-marker-alt location-icon"></i>
-                                        <span class="ms-1 location-text">Surabaya</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="d-flex justify-content-center mt-1 mb-4">
-        <a href="../pages/events.html" class="btn btn-outline-secondary" style="margin-left: 9px; color: #13005A;">Load More</a>
-    </div>
 
-    <div class="container-fluid banner">
-        <div class="image-container">
-            <img src="../img/banner.jpg" alt="Banner Image"> 
-        </div>
-        <div class="text mt-5">
-            <div>
-                <h1>Make your own Event</h1>
+                <div class="row d-flex justify-content-between">
+                    <div class="col-md-3">
+                      <div class="event-card">
+                        <img src="../img/event-1.png" alt="Event Image">
+                        <div class="event-date">September 10th</div>
+                        <h5 class="mt-3">Festival Startup</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p> <span><i class="bi bi-geo-alt"></i></span> Surabaya
+                          <span class="rounded-pill text-light px-4 py-2" style="margin-left: 30%; background-color: #13005A;">Rp 100.000</span></p>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="event-card">
+                        <img src="../img/event-1.png" alt="Event Image">
+                        <div class="event-date">September 10th</div>
+                        <h5 class="mt-3">Tech Inovators Conference</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p> <span><i class="bi bi-geo-alt"></i></span> Surabaya
+                          <span class="rounded-pill text-light px-4 py-2" style="margin-left: 30%; background-color: #13005A;">Rp 100.000</span></p>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="event-card">
+                        <img src="../img/event-1.png" alt="Event Image">
+                        <div class="event-date">September 10th</div>
+                        <h5 class="mt-3">Networking Night</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p> <span><i class="bi bi-geo-alt"></i></span> Surabaya
+                          <span class="rounded-pill text-light px-4 py-2" style="margin-left: 30%; background-color: #13005A;">Rp 100.000</span></p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+      </section>
+
+      <div class="event-banner">
+        <div class="event-overlay">
+            <div class="event-content" >
+                <h1 class="mb-4">Make your own Event</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur <br>adipiscing elit, sed do eiusmod tempor <br>incididunt ut labore et dolore magna aliqua.</p>
-                <a href="#" class="d-flex justify-content-center text-align-center button px-5 py-3" style="border-radius: 15px; border: 2px solid black; background-color: #13005A; color: #fff;">
-                    Create Event
-                </a>
+                <a href="#" class="btn btn-primary px-5 mt-3" style="background-color: #5458E5; border: none;">Create Event</a>
             </div>
         </div>
     </div>
@@ -477,7 +450,7 @@
 
 <script>
 // Target tanggal akhir event
-var countdownDate = new Date("May 31, 2024 00:00:00").getTime();
+var countdownDate = new Date("June 15, 2024 00:00:00").getTime();
 
 // Memperbarui penghitung setiap 1 detik
 var x = setInterval(function() {
