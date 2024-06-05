@@ -104,6 +104,111 @@
         border-radius: 50%; 
 }
 
+/* Tambahkan media query untuk memperkecil ukuran di perangkat mobile */
+@media (max-width: 767px) {
+            .navbar-brand img {
+                width: 120px;
+            }
+
+            .nav-link {
+                font-size: 14px;
+            }
+
+            .nav-item .profile-info {
+                font-size: 12px;
+                padding: 5px;
+            }
+
+            .nav-item .profile-info a {
+                font-size: 12px;
+            }
+
+            .profile-info p {
+                font-size: 12px;
+            }
+
+            .icon.user.outline {
+                font-size: 14px;
+            }
+
+            .comments {
+                margin-top: 10px;
+            }
+
+            .comment {
+                padding-bottom: 10px;
+            }
+
+            .comment h6 {
+                font-size: 14px;
+            }
+
+            .comment p {
+                font-size: 12px;
+            }
+
+            .profile-image-container {
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: top;
+            align-self: flex-start;
+            }
+
+            .profile-image {
+                width: 25px;
+                height: 25px;
+            }
+
+            .bottom-nav .nav-link {
+                font-size: 14px;
+            }
+
+            .bottom-nav .nav-item .rounded-circle {
+                width: 20px;
+                height: 20px;
+            }
+
+            .input-group input {
+                font-size: 12px;
+            }
+
+            .input-group button {
+                font-size: 12px;
+            }
+
+            .modal-body label {
+                font-size: 12px;
+            }
+
+            .modal-body textarea {
+                font-size: 12px;
+            }
+
+            .modal-body .form-text {
+                font-size: 10px;
+            }
+
+            .modal-footer button {
+                font-size: 12px;
+            }
+
+            .link-posts i {
+        font-size: 2px; /* Mengurangi ukuran font ikon */
+    }
+
+    .link-posts span {
+        font-size: 10px; /* Mengurangi ukuran font teks */
+        margin-left: 0px; /* Mengurangi margin kiri */
+    }
+
+    .link-posts {
+        margin-right: 0; /* Mengurangi margin kanan */
+        margin-left: 7px;
+    }
+        }
+
     </style>
 </head>
 
@@ -388,11 +493,6 @@
 
                                 <a class="link-posts me-3 me-md-5" href="#">
                                     <i class="bookmark outline black icon" style="font-size: 20px;"></i>
-                                    <span style="margin-left: 5px; color: black;">5</span>
-                                </a>
-
-                                <a class="link-posts me-3 me-md-5" href="#">
-                                    <i class="share black icon" style="font-size: 20px;"></i>
                                     <span style="margin-left: 5px; color: black;">5</span>
                                 </a>
 

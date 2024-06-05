@@ -93,10 +93,19 @@ display: none;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
     }
 
     .card-text {
         flex-grow: 1;
+    }
+
+    .col-md-3 {
+        transition: transform 0.3s, border 0.3s;
+    }
+
+    .col-md-3:hover {
+        transform: scale(1.05);
     }
 
     .badge-custom {
@@ -131,6 +140,7 @@ display: none;
 
         .card-body {
             padding: 10px; /* Mengurangi padding di dalam card */
+            transition: transform 0.3s, border 0.3s;
         }
 
         .card-title {
@@ -139,6 +149,11 @@ display: none;
 
         .card-text {
             font-size: 8px; /* Mengurangi ukuran font deskripsi */
+        }
+
+        .card-body:hover {
+            transform: scale(1.05);
+            border: 2px solid #007bff; /* Ganti warna border sesuai kebutuhan */
         }
 
         .location-icon {
@@ -340,13 +355,13 @@ display: none;
                                     <span class="badge rounded-pill badge-custom">September 10th</span>
                                 </div>
                                 <div class="card-body mt-1">
-                                    <h5 class="card-title">Finance Meet-Up</h5>
+                                    <h5 class="card-title">Business Meetup</h5>
                                     <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                     <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge rounded-pill badge-secondary">Rp. 100.000</span>
+                                        <span class="badge rounded-pill badge-secondary">Rp. 200.000</span>
                                         <div class="d-flex align-items-center">
                                             <i class="fas fa-map-marker-alt location-icon"></i>
-                                            <span class="ms-1 location-text">Surabaya</span>
+                                            <span class="ms-1 location-text">Jakarta</span>
                                         </div>
                                     </div>
                                 </div>
