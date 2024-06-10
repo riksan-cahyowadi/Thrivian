@@ -117,21 +117,22 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-      }
+
+    }
 
       .card-text {
         flex-grow: 1;
       }
 
-      .col-md-3 {
+    .col-md-3 {
         transition: transform 0.3s, border 0.3s;
-      }
+    }
 
-      .col-md-3:hover {
-        transform: scale(1.04);
-      }
+    .col-md-3:hover {
+        transform: scale(1.05);
+    }
 
-      .badge-custom {
+    .badge-custom {
         position: absolute;
         top: 10px; /* Sesuaikan dengan posisi yang diinginkan */
         right: 10px; /* Sesuaikan dengan posisi yang diinginkan */
@@ -233,8 +234,9 @@
           padding: 0.5px;
         }
 
-        .event-date-content {
-          text-align: center;
+        .card-body {
+            padding: 10px; /* Mengurangi padding di dalam card */
+            transition: transform 0.3s, border 0.3s;
         }
 
         .event-date-day {
@@ -248,9 +250,13 @@
           display: block;
         }
 
-        .event-info {
-          padding: 10px;
-          background-color: white;
+        .card-body:hover {
+            transform: scale(1.05);
+            border: 2px solid #007bff; /* Ganti warna border sesuai kebutuhan */
+        }
+
+        .location-icon {
+            font-size: 7px; /* Ukuran font ikon lokasi di layar kecil */
         }
 
         .event-location {
@@ -465,17 +471,392 @@
           <a class="nav-link text-dark" href="#"><i class="bi bi-bell"></i></a>
         </li>
         <li class="nav-item">
-          <a href="./pages/profile.html">
-            <div
-              class="rounded-circle overflow-hidden ms-5 mt-1"
-              style="width: 25px; height: 25px; background-color: #f0f0f0"
-            >
-              <img
-                id="userImage"
-                src="../img/3582.jpg"
-                alt="Profile Image"
-                style="width: 100%; height: 100%; object-fit: cover"
-              />
+            <a href="./pages/profile.html">
+                <div class="rounded-circle overflow-hidden ms-5 mt-1" style="width: 25px; height: 25px; background-color: #f0f0f0;">
+                    <img id="userImage" src="../img/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </a>
+        </li>
+    </ul>
+  </nav>
+
+    <main class="container-fluid" style="margin-top: 69px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form class="d-flex mt-3 mb-3">
+                        <div class="input-group w-50 w-md-25">
+                            <span class="input-group-text" style="border-top-left-radius: 15px; border-bottom-left-radius: 15px; background-color: transparent; border-right: none;">
+                                <i class="fas fa-search"></i>
+                            </span>
+                            <input class="form-control" type="search" placeholder="Search Events..." aria-label="Search" style="border-top-right-radius: 15px; border-bottom-right-radius: 15px; border-left: none;">
+                        </div>
+                        <button class="btn btn-outline-secondary btn-sm ms-2" type="button" style="border-radius: 10px;">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </button>
+                    </form>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 15px; background-color: #13005A;">
+                            <i class="fas fa-bars custom-bars-icon"></i> Filter
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="addCategory('finance')">Finance</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="addCategory('business')">Business</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="addCategory('self-development')">Self Development</a></li>
+                        </ul>
+                        <div id="selectedCategories" class="ms-2 btn-sm"></div>
+                    </div>
+                    <div class="col-auto text-end mb-2">
+                        <div class="dropdown">
+                            <span id="sortByLatest" class="dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" style="color: #13005A;">
+                                Sort by: Latest
+                            </span>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                                <li><a class="dropdown-item" href="#" onclick="selectSort('Latest')">Latest</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="selectSort('Oldest')">Oldest</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="eventCards" class="row">
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance">
+                        <a href="./event_detail.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-1.png" class="card-img-top" alt="Finance Meet-Up">
+                                    <span class="badge rounded-pill badge-custom">September 10th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Business Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 200.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Jakarta</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 bussiness">
+                        <a href="./event_detail.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-2.png" class="card-img-top" alt="Business Meetup">
+                                    <span class="badge rounded-pill badge-custom">October 12th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Business Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 200.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Jakarta</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance business">
+                        <a href="./event_detail.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-3.png" class="card-img-top" alt="Technology Meetup">
+                                    <span class="badge rounded-pill badge-custom">November 14th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Technology Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 300.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Bandung</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 kategori-1 self-development">
+                        <a href="./event_detail.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-4.png" class="card-img-top" alt="Health Meetup">
+                                    <span class="badge rounded-pill badge-custom">December 16th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Health Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 400.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Yogyakarta</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance">
+                        <a href="./event_detail.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-1.png" class="card-img-top" alt="Finance Meet-Up">
+                                    <span class="badge rounded-pill badge-custom">September 10th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Finance Meet-Up</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 100.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Surabaya</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 bussiness">
+                        <a href="./event_detail.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-2.png" class="card-img-top" alt="Business Meetup">
+                                    <span class="badge rounded-pill badge-custom">October 12th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Business Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 200.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Jakarta</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance business">
+                        <a href="./event_detail.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-3.png" class="card-img-top" alt="Technology Meetup">
+                                    <span class="badge rounded-pill badge-custom">November 14th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Technology Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 300.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Bandung</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 kategori-1 self-development">
+                        <a href="./event_detail.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-4.png" class="card-img-top" alt="Health Meetup">
+                                    <span class="badge rounded-pill badge-custom">December 16th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Health Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 400.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Yogyakarta</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance">
+                        <a href="./event_detail.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-1.png" class="card-img-top" alt="Finance Meet-Up">
+                                    <span class="badge rounded-pill badge-custom">September 10th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Finance Meet-Up</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 100.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Surabaya</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 bussiness">
+                        <a href="./event_detail.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-2.png" class="card-img-top" alt="Business Meetup">
+                                    <span class="badge rounded-pill badge-custom">October 12th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Business Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 200.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Jakarta</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance business">
+                        <a href="./event_detail.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-3.png" class="card-img-top" alt="Technology Meetup">
+                                    <span class="badge rounded-pill badge-custom">November 14th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Technology Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 300.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Bandung</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 kategori-1 self-development">
+                        <a href="./event_detail.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-4.png" class="card-img-top" alt="Health Meetup">
+                                    <span class="badge rounded-pill badge-custom">December 16th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Health Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 400.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Yogyakarta</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance">
+                        <a href="halaman_event_1.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-1.png" class="card-img-top" alt="Finance Meet-Up">
+                                    <span class="badge rounded-pill badge-custom">September 10th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Finance Meet-Up</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 100.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Surabaya</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 bussiness">
+                        <a href="halaman_event_2.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-2.png" class="card-img-top" alt="Business Meetup">
+                                    <span class="badge rounded-pill badge-custom">October 12th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Business Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 200.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Jakarta</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance business">
+                        <a href="halaman_event_3.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-3.png" class="card-img-top" alt="Technology Meetup">
+                                    <span class="badge rounded-pill badge-custom">November 14th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Technology Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 300.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Bandung</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mt-3 mb-3 kategori-1 self-development">
+                        <a href="halaman_event_4.html" class="card-link text-dark">
+                            <div class="card custom-card">
+                                <div class="card-img-container">
+                                    <img src="../img/event-4.png" class="card-img-top" alt="Health Meetup">
+                                    <span class="badge rounded-pill badge-custom">December 16th</span>
+                                </div>
+                                <div class="card-body mt-1">
+                                    <h5 class="card-title">Health Meetup</h5>
+                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="badge rounded-pill badge-secondary">Rp. 400.000</span>
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-map-marker-alt location-icon"></i>
+                                            <span class="ms-1 location-text">Yogyakarta</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
           </a>
         </li>
