@@ -12,54 +12,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="../css/style.css">
   <style>
-/* Gaya CSS tambahan */
-.nav-item:hover .nav-link {
-  text-decoration: underline;
-}
-
-.profile-info {
-  display: none;
-  position: absolute;
-  top: 40px;
-  right: 0;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 10px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  z-index: 1;
-}
-
-.nav-item .profile:hover .profile-info {
-  display: block;
-}
-
-.profile-info a {
-  text-decoration: none;
-  color: #333;
-  display: block;
-}
-
-.profile-info a:hover {
-  text-decoration: underline;
-}
-
-.profile-info p {
-  margin: 5px 0;
-  color: #333;
-}
-
-.icon.user.outline {
-  color: black;
-}
-
-.hidden {
-  display: none;
-}
-
-.navbar-bawah .nav-item .nav-link.active {
-  text-decoration: underline;
-  color: #13005A !important;
-}
 
 .nav-link.active {
   color: #13005A !important;
@@ -78,7 +30,7 @@
 }
 
 .hero-section {
-  background: linear-gradient(to right, #d16ba5, #86a8e7, #5ffbf1);
+  background-image: url('../img/intro-banner.png');
   height: 40vh;
   display: flex;
   flex-direction: column;
@@ -165,16 +117,21 @@
 .community-card {
   border: 1px solid #ddd;
   border-radius: 15px;
-  padding: 15px;
+  padding: 10px;
   margin-bottom: 15px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  transition: transform 0.3s ease-in-out; /* Menambahkan animasi */
+}
+
+.community-card:hover {
+  transform: scale(1.09);
 }
 
 .community-bg {
   width: 100%;
-  height: 150px;
+  height: 100px;
   background-size: cover;
   background-position: center;
   border-top-left-radius: 15px;
@@ -183,8 +140,8 @@
 
 .community-avatar {
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   overflow: hidden;
   margin: -50px auto 15px;
   border: 5px solid white;
@@ -198,31 +155,81 @@
   object-fit: cover;
 }
 
-.event-card {
-  border: 1px solid #ddd;
-  border-radius: 15px;
-  overflow: hidden;
-  position: relative;
-  margin-bottom: 15px;
-  padding: 15px;
+.community-info h5 {
+  font-weight: bold;
+  color:#13005A;
 }
 
-.event-card img {
+.event-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-top: 5px;
+  transition: transform 0.3s ease-in-out; /* Menambahkan animasi */
+}
+
+.event-card:hover {
+  transform: scale(1.07); /* Efek zoom saat hover */
+}
+
+.event-image {
   width: 100%;
   height: auto;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
 }
 
 .event-date {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  padding: 5px 5px;
-  border-radius: 15px;
-  font-size: 0.9rem;
+  bottom: 135px;
+  right: 20px;
+  background-color: white;
+  color: #13005A;
+  border-radius: 9px;
+  padding: 7px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.event-date-content {
+  text-align: center;
+}
+
+.event-date-day {
+  font-size: 1.4em;
+  font-weight: bold;
+  display: block;
+}
+
+.event-date-month {
+  font-size: 0.9em;
+  display: block;
+}
+
+.event-info {
+  padding: 10px;
+  background-color: white;
+}
+
+.event-location {
+  font-size: 0.9em;
+  color: #13005A;
+  margin-bottom: 5px;
+}
+
+.event-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.event-community {
+  font-size: 0.9em;
+  color: #999;
+}
+
+.event-price {
+        background-color: #13005A;
+        color: white;
+        font-size: 0.8em;
 }
 
 /* Styles for settings-nav padding in mobile devices */
@@ -231,6 +238,40 @@
     padding-left: 0.5rem !important;
     padding-right: 0.5rem !important;
   }
+  .event-date {
+    bottom: 110px;
+    padding: 7px;
+  }
+  .event-date-day {
+  font-size: 1em;
+}
+.event-date-month {
+  font-size: 0.7em;
+}
+.event-title {
+  font-size: 0.9em;
+}
+.event-location {
+  font-size: 0.7em;
+  margin-bottom: 5px;
+}
+.event-community {
+  font-size: 0.6em;
+}
+.community-card {
+  padding: 7px;
+}
+.community-bg {
+  height: 60px;
+}
+.community-avatar {
+  width: 60px;
+  height: 60px;
+}
+.community-info p {
+  font-size: 0.7rem;
+}
+
 }
 
 /* Styles specifically for mobile devices */
@@ -239,6 +280,14 @@
   .event-section .row {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .user-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 10%;
   }
 
   .community-section .col-md-3,
@@ -291,7 +340,7 @@
           <a class="nav-link text-secondary active" href="../index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-secondary" style="color: #13005A !important;" href="./community.html">Community</a>
+          <a class="nav-link text-secondary" href="./community.html">Community</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-secondary" href="./home_events.html">Events</a>
@@ -443,7 +492,7 @@
   
 
   <section id="user-section">
-    <div class="container user-section" style="margin-left: 2%;">
+    <div class="container user-section" style="margin-left: 5%;">
       <h4 class="mb-4">Users</h4>
       <div class="user-card d-flex align-items-center p-3 border rounded">
         <div class="user-avatar">
@@ -453,9 +502,9 @@
           <h5 class="user-name">Ray John <span class="text-muted">@johnnyray</span></h5>
           <p class="user-description">Founder & CEO at Marika Ikanika x KJUP Indonesia | Head of Research Data Security at PT Marina Indonesia</p>
           <div class="user-tags">
-            <span class="badge badge-pill" style="background-color: #FFA500; color: white; margin-right: 5px;">Business</span>
-            <span class="badge badge-pill" style="background-color: #9747FF; color: white; margin-right: 5px;">Finance</span>
-            <span class="badge badge-pill" style="background-color: #00CC66; color: white;">Self Development</span>
+            <span class="badge badge-pill" style="color: #FFA500; margin-right: 5px;">Business</span>
+            <span class="badge badge-pill" style="color: #9747FF; margin-right: 5px;">Finance</span>
+            <span class="badge badge-pill" style="color: #00CC66;">Self Development</span>
           </div>
         </div>
         <button class="btn btn-outline-primary follow-btn" style="border-color: #13005A; color: #13005A;">Follow</button>
@@ -468,9 +517,9 @@
           <h5 class="user-name">Ray John <span class="text-muted">@johnnyray</span></h5>
           <p class="user-description">Founder & CEO at Marika Ikanika x KJUP Indonesia | Head of Research Data Security at PT Marina Indonesia</p>
           <div class="user-tags">
-            <span class="badge badge-pill" style="background-color: #FFA500; color: white; margin-right: 5px;">Business</span>
-            <span class="badge badge-pill" style="background-color: #9747FF; color: white; margin-right: 5px;">Finance</span>
-            <span class="badge badge-pill" style="background-color: #00CC66; color: white;">Self Development</span>
+            <span class="badge badge-pill" style="color: #FFA500; margin-right: 5px;">Business</span>
+            <span class="badge badge-pill" style="color: #9747FF; margin-right: 5px;">Finance</span>
+            <span class="badge badge-pill" style="color: #00CC66;">Self Development</span>
           </div>
         </div>
         <button class="btn btn-outline-primary follow-btn" style="border-color: #13005A; color: #13005A;">Follow</button>
@@ -483,15 +532,15 @@
           <h5 class="user-name">Ray John <span class="text-muted">@johnnyray</span></h5>
           <p class="user-description">Founder & CEO at Marika Ikanika x KJUP Indonesia | Head of Research Data Security at PT Marina Indonesia</p>
           <div class="user-tags">
-            <span class="badge badge-pill" style="background-color: #FFA500; color: white; margin-right: 5px;">Business</span>
-            <span class="badge badge-pill" style="background-color: #9747FF; color: white; margin-right: 5px;">Finance</span>
-            <span class="badge badge-pill" style="background-color: #00CC66; color: white;">Self Development</span>
+            <span class="badge badge-pill" style="color: #FFA500; margin-right: 5px;">Business</span>
+            <span class="badge badge-pill" style="color: #9747FF; margin-right: 5px;">Finance</span>
+            <span class="badge badge-pill" style="color: #00CC66;">Self Development</span>
           </div>
         </div>
         <button class="btn btn-outline-primary follow-btn" style="border-color: #13005A; color: #13005A;">Follow</button>
       </div>
       <div class="d-flex justify-content-end">
-        <div class="d-flex justify-content-end bg-transparent px-3 py-2" style="border-color: #13005A; color: #13005A; "> <a href="#" class="pe-auto">>  See More</a></div>
+        <a href="#" class="btn btn-outline-primary rounded-btn see-more-button" style="color: #13005A; border-color: #13005A; font-size: 0.7rem;">See More</a>
       </div>
     </div>
     <hr class="mb-0">
@@ -507,13 +556,13 @@
             <div class="community-avatar">
               <img src="../img/Ellipse 37.png" alt="Community Avatar">
             </div>
-            <div class="community-info">
+            <div class="community-info mb-2">
               <h5>Level Up Learners</h5>
               <p>Level Up Learners: Elevate your skills, empower your future.</p>
             </div>
             <div class="d-grid gap-2 d-md-block">
-              <button class="bg-transparent rounded-pill px-2 py-1" style="color: #2F80A3; border-color: #2F80A3; font-size: 0.8rem;">About Community</button>
-              <button class="rounded-pill px-3 py-1" style="background-color: #2F80A3; color: white; font-size: 0.8rem;">Join</button>
+              <button class="bg-transparent rounded-pill px-2 py-1" style="color: #13005A; border-color: #13005A; font-size: 0.8rem;">About Community</button>
+              <button class="rounded-pill px-3 py-1" style="background-color: #13005A; color: white; font-size: 0.8rem;">Join</button>
             </div>
           </div>
         </div>
@@ -523,13 +572,13 @@
             <div class="community-avatar">
               <img src="../img/Ellipse 37.png" alt="Community Avatar">
             </div>
-            <div class="community-info">
+            <div class="community-info mb-2">
               <h5>Level Up Learners</h5>
               <p>Level Up Learners: Elevate your skills, empower your future.</p>
             </div>
             <div class="d-grid gap-2 d-md-block">
-              <button class="bg-transparent rounded-pill px-2 py-1" style="color: #2F80A3; border-color: #2F80A3; font-size: 0.8rem;">About Community</button>
-              <button class="rounded-pill px-3 py-1" style="background-color: #2F80A3; color: white; font-size: 0.8rem;">Join</button>
+              <button class="bg-transparent rounded-pill px-2 py-1" style="color: #13005A; border-color: #13005A; font-size: 0.8rem;">About Community</button>
+              <button class="rounded-pill px-3 py-1" style="background-color: #13005A; color: white; font-size: 0.8rem;">Join</button>
             </div>
           </div>
         </div>
@@ -539,13 +588,13 @@
             <div class="community-avatar">
               <img src="../img/Ellipse 37.png" alt="Community Avatar">
             </div>
-            <div class="community-info">
+            <div class="community-info mb-2">
               <h5>Level Up Learners</h5>
               <p>Level Up Learners: Elevate your skills, empower your future.</p>
             </div>
             <div class="d-grid gap-2 d-md-block">
-              <button class="bg-transparent rounded-pill px-2 py-1" style="color: #2F80A3; border-color: #2F80A3; font-size: 0.8rem;">About Community</button>
-              <button class="rounded-pill px-3 py-1" style="background-color: #2F80A3; color: white; font-size: 0.8rem;">Join</button>
+              <button class="bg-transparent rounded-pill px-2 py-1" style="color: #13005A; border-color: #13005A; font-size: 0.8rem;">About Community</button>
+              <button class="rounded-pill px-3 py-1" style="background-color: #13005A; color: white; font-size: 0.8rem;">Join</button>
             </div>
           </div>
         </div>
@@ -555,19 +604,19 @@
             <div class="community-avatar">
               <img src="../img/Ellipse 37.png" alt="Community Avatar">
             </div>
-            <div class="community-info">
+            <div class="community-info mb-2">
               <h5>Level Up Learners</h5>
               <p>Level Up Learners: Elevate your skills, empower your future.</p>
             </div>
             <div class="d-grid gap-2 d-md-block">
-              <button class="bg-transparent rounded-pill px-2 py-1" style="color: #2F80A3; border-color: #2F80A3; font-size: 0.8rem;">About Community</button>
-              <button class="rounded-pill px-3 py-1" style="background-color: #2F80A3; color: white; font-size: 0.8rem;">Join</button>
+              <button class="bg-transparent rounded-pill px-2 py-1" style="color: #13005A; border-color: #13005A; font-size: 0.8rem;">About Community</button>
+              <button class="rounded-pill px-3 py-1" style="background-color: #13005A; color: white; font-size: 0.8rem;">Join</button>
             </div>
           </div>
         </div>
       </div>
       <div class="d-flex justify-content-end">
-        <div class="d-flex justify-content-end bg-transparent px-3 py-2" style="border-color: #13005A; color: #13005A; "> <a href="#" class="pe-auto">>  See More</a></div>
+        <a href="#" class="btn btn-outline-primary rounded-btn see-more-button" style="color: #13005A; border-color: #13005A; font-size: 0.7rem;">See More</a>
       </div>
     </div>
     <hr class="mb-0">
@@ -575,59 +624,87 @@
 
   <section id="event-section">
     <div class="container my-4 event-section">
-      <h4 class="mb-4">Events</h4>
+      <h4 class="mb-2" style="color: #13005A;">Events</h4>
       <div class="row">
         <div class="col-md-3">
-          <div class="event-card">
-            <img src="../img/event-1.png" alt="Event Image">
-            <div class="event-date">September 10th</div>
-            <h5 class="mt-3">Finance Meet-Up</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p class="text-responsive"> 
-              <span><i class="bi bi-geo-alt"></i></span> Surabaya
-              <span class="rounded-pill text-light px-2 py-1 text-responsive" style="margin-left: 30%; background-color: #13005A;">Rp 100.000</span>
-            </p>
-          </div>
+          <a href="./event_detail.html" class="card-link text-dark">
+            <div class="event-card">
+                <img src="../img/event-1.png" alt="Event Image" class="event-image">
+                <div class="event-date">
+                  <div class="event-date-content">
+                    <span class="event-date-day">10</span>
+                    <span class="event-date-month">Sept</span>
+                  </div>
+                </div>
+                <div class="event-info">
+                  <p class="event-location"><i class="bi bi-geo-alt"></i> Surabaya</p>
+                  <h5 class="event-title">Personal Finance Webinar</h5>
+                  <span class="event-price badge rounded-pill badge-secondary px-2 py-2 my-2">Rp. 200.000</span>
+                  <p class="event-community">Financial Freedom Community</p>
+                </div>
+              </div>
+        </a>
         </div>
         <div class="col-md-3">
-          <div class="event-card">
-            <img src="../img/event-1.png" alt="Event Image">
-            <div class="event-date">September 10th</div>
-            <h5 class="mt-3">Finance Meet-Up</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p class="text-responsive"> 
-              <span><i class="bi bi-geo-alt"></i></span> Surabaya
-              <span class="rounded-pill text-light px-2 py-1 text-responsive" style="margin-left: 30%; background-color: #13005A;">Rp 100.000</span>
-            </p>
-          </div>
+          <a href="./event_detail.html" class="card-link text-dark">
+            <div class="event-card">
+                <img src="../img/event-1.png" alt="Event Image" class="event-image">
+                <div class="event-date">
+                  <div class="event-date-content">
+                    <span class="event-date-day">10</span>
+                    <span class="event-date-month">Sept</span>
+                  </div>
+                </div>
+                <div class="event-info">
+                  <p class="event-location"><i class="bi bi-geo-alt"></i> Surabaya</p>
+                  <h5 class="event-title">Personal Finance Webinar</h5>
+                  <span class="event-price badge rounded-pill badge-secondary px-2 py-2 my-2">Rp. 200.000</span>
+                  <p class="event-community">Financial Freedom Community</p>
+                </div>
+              </div>
+        </a>
         </div>
         <div class="col-md-3">
-          <div class="event-card">
-            <img src="../img/event-1.png" alt="Event Image">
-            <div class="event-date">September 10th</div>
-            <h5 class="mt-3">Finance Meet-Up</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p class="text-responsive"> 
-              <span><i class="bi bi-geo-alt"></i></span> Surabaya
-              <span class="rounded-pill text-light px-2 py-1 text-responsive" style="margin-left: 30%; background-color: #13005A;">Rp 100.000</span>
-            </p>
-          </div>
+          <a href="./event_detail.html" class="card-link text-dark">
+            <div class="event-card">
+                <img src="../img/event-1.png" alt="Event Image" class="event-image">
+                <div class="event-date">
+                  <div class="event-date-content">
+                    <span class="event-date-day">10</span>
+                    <span class="event-date-month">Sept</span>
+                  </div>
+                </div>
+                <div class="event-info">
+                  <p class="event-location"><i class="bi bi-geo-alt"></i> Surabaya</p>
+                  <h5 class="event-title">Personal Finance Webinar</h5>
+                  <span class="event-price badge rounded-pill badge-secondary px-2 py-2 my-2">Rp. 200.000</span>
+                  <p class="event-community">Financial Freedom Community</p>
+                </div>
+              </div>
+        </a>
         </div>
         <div class="col-md-3">
-          <div class="event-card">
-            <img src="../img/event-1.png" alt="Event Image">
-            <div class="event-date">September 10th</div>
-            <h5 class="mt-3">Finance Meet-Up</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p class="text-responsive"> 
-              <span><i class="bi bi-geo-alt"></i></span> Surabaya
-              <span class="rounded-pill text-light px-2 py-1 text-responsive" style="margin-left: 30%; background-color: #13005A;">Rp 100.000</span>
-            </p>
-          </div>
+          <a href="./event_detail.html" class="card-link text-dark">
+            <div class="event-card">
+                <img src="../img/event-1.png" alt="Event Image" class="event-image">
+                <div class="event-date">
+                  <div class="event-date-content">
+                    <span class="event-date-day">10</span>
+                    <span class="event-date-month">Sept</span>
+                  </div>
+                </div>
+                <div class="event-info">
+                  <p class="event-location"><i class="bi bi-geo-alt"></i> Surabaya</p>
+                  <h5 class="event-title">Personal Finance Webinar</h5>
+                  <span class="event-price badge rounded-pill badge-secondary px-2 py-2 my-2">Rp. 200.000</span>
+                  <p class="event-community">Financial Freedom Community</p>
+                </div>
+              </div>
+        </a>
         </div>
       </div>
-      <div class="d-flex justify-content-end">
-        <div class="d-flex justify-content-end bg-transparent px-3 py-2" style="border-color: #13005A; color: #13005A; "> <a href="#" class="pe-auto">>  See More</a></div>
+      <div class="d-flex justify-content-end mt-3">
+        <a href="#" class="btn btn-outline-primary rounded-btn see-more-button" style="color: #13005A; border-color: #13005A; font-size: 0.7rem;">See More</a>
       </div>
     </div>
     <hr class="mb-0">
@@ -668,7 +745,7 @@
       </div>
       <hr>
       
-      <div class="row">
+      <div class="row ">
         <div class="col-md-12">
           <div class="post-card d-flex align-items-center">
             <div class="rounded-circle overflow-hidden me-2" style="width: 50px; height: 50px; background-color: #f0f0f0;">
@@ -698,9 +775,12 @@
           </div>
         </div>
       </div>
-      <div class="d-flex justify-content-end bg-transparent px-3 py-2" style="border-color: #13005A; color: #13005A; "> <a href="#" class="pe-auto">>  See More</a></div>
+      <div class=" d-flex justify-content-end mt-3">
+        <a href="#" class="btn btn-outline-primary rounded-btn see-more-button" style="color: #13005A; border-color: #13005A; font-size: 0.7rem;">See More</a>
+      </div>
     </div>
-    <hr class="mb-0">
+    <hr class=" mb-0">
+    <div class="pt-5"></div>
   </section>
 
   <script>

@@ -26,7 +26,7 @@
 
 .modal-body-custom {
   background-color: #D9E0EB; /* Warna abu-abu */
-  padding: 20px; /* Menambahkan padding */
+  padding: 5px; /* Menambahkan padding */
   border-radius: 5px; /* Menambahkan sedikit border radius */
 }
 .custom-dropdown .dropdown-toggle {
@@ -99,10 +99,10 @@
         </a>
         <ul class="nav me-auto">
             <li class="nav-item">
-                <a class="nav-link text-secondary active text-decoration-underline" style="color: #13005a !important" href="../index.html">Home</a>
+                <a class="nav-link text-secondary" href="../index.html">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-secondary" href="./community.html">Community</a>
+                <a class="nav-link text-secondary  active text-decoration-underline" style="color: #13005A !important;" href="./community.html">Community</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-secondary" href="./home_events.html">Events</a>
@@ -221,7 +221,7 @@
         <main class="container-fluid border" style="margin-top: 5%;">
         <div class="row justify-content-center">
             <div class="col-md-8 border-end border-start mt-5 mt-md-0 mb-5 mb-md-0">
-                <div class="card mb-2 custom-card">
+                <div class="card-join mb-2 custom-card">
                     <img src="../img/Rectangle 50.png" class="card-img-top" alt="Business Club">
                     <div class="card-body">
                         <h2 class="card-title" style="color: #13005A;">Business Club</h2>
@@ -232,12 +232,12 @@
                             <button id="joinButton" type="button" class="btn btn-outline-primary btn-custom-outline px-4" data-bs-toggle="modal" data-bs-target="#communityRulesModal" style="border-radius: 30px;">
                                 Join
                             </button>
-                            <div class="d-flex align-items-center">
+                            <a class="d-flex align-items-center" href="../pages/member_community.html" style="color: black;">
                                 <img src="../img/3582.jpg" class="rounded-circle" alt="Profile" style="width: 30px; height: 30px;">
                                 <img src="../img/culture_replay_ninja_1054462188.jpg" class="rounded-circle" alt="Profile" style="width: 30px; height: 30px; margin-left: -10px;">
                                 <img src="../img/smiling-asian-man-standing-grey-wall.jpg" class="rounded-circle" alt="Profile" style="width: 30px; height: 30px; margin-left: -10px;">
                                 <span class="ms-1"><strong>1k</strong> Followers</span>
-                            </div>
+                            </a>
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-circle text-success" style="font-size: 10px;"></i>
                                 <span class="ms-1">3000 Online</span>
@@ -275,17 +275,18 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="modal-footer d-flex justify-content-between">
-                                        <button id="modalJoinButton" type="button" class="btn btn-outline-primary btn-custom-outline" data-bs-dismiss="modal">Join</button>
+                                    <div class="modal-footer d-flex justify-content-end">
+                                        <button id="modalJoinButton" type="button" class="btn btn-outline-primary btn-custom-outline" data-bs-dismiss="modal" style="border-radius: 30px;">Join</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <hr class="mt-1" style="border-top: 3px solid #E5E5E5;">
                  <!-- Dropdown for Latest -->
                  <div class="dropdown custom-dropdown">
-                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 0.85rem; padding: 5px 10px; border-radius: 20px; background-color: #E9ECEF; color: #495057; border: 1px solid #CED4DA;">
                         Latest
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -297,16 +298,18 @@
                 </div>
                 
                 <div class="posts">
-                    <div class="posts">
-                        <p class="mt-1"><b>Show posts from</b>
-                            <a href="#" id="allBtn" class="badge rounded-pill bg-light text-dark me-1 border border-secondary active" onclick="showPosts('All')">All</a>
-                            <a href="#" id="businessBtn" class="badge rounded-pill bg-light text-dark me-1 border border-secondary" onclick="showPosts('Business')">Business</a>
-                            <a href="#" id="financeBtn" class="badge rounded-pill bg-light text-dark border border-secondary" onclick="showPosts('Finance')">Finance</a>
-                        </p>
+                    <div class="posts mb-2">
+                        <div class="posts mb-2">
+                            <p class="mt-4"><b>Show posts from</b>
+                                <a href="#" id="allBtn" class="badge-post rounded-pill bg-light text-dark me-1 border border-secondary active" onclick="showPosts('All')">All</a>
+                                <a href="#" id="businessBtn" class="badge-post rounded-pill bg-light text-dark me-1 border border-secondary" onclick="showPosts('Business')">Business</a>
+                                <a href="#" id="financeBtn" class="badge-post rounded-pill bg-light text-dark border border-secondary" onclick="showPosts('Finance')">Finance</a>
+                            </p>
+                        </div>
                     </div>
                 </div>                            
                 
-                <div class="all-posts overflow-auto" style="max-height: 1000px;">
+                <div class="all-posts">
                     
                 <div class="post mt-4 me-5" data-category="Business" data-post="Recommended">
                     <div class="d-flex align-items-center mb-2">
@@ -449,7 +452,7 @@
                     <div class="row mb-0 ms-5">
                         <div class="col">
                             <img src="../img/freepik-export-20240423071858bC0K.png" class="img-fluid " style="border-radius: 15px;" alt="Image">
-                            <p class="mb-0 mt-1" style="text-align: justify;">
+                            <p class="mb-0 mt-4" style="text-align: justify;">
                                 Well first off as someone else already mentioned you haven’t made a nickle or lost a nickle until you sell a stock. 
                                 What goes up today can go down tomorrow and the whole market can crash but here are my figures for this year on about 
                                 a 200 grand investment from the closing of the last day o<a href="" class="full-posts" style="text-decoration: none;">....</a>
@@ -504,7 +507,7 @@
                             <img src="../img/pidato.jpg" alt="Gambar Besar" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
                         </div>
                         <div class="col-6">
-                            <div style="padding-bottom: 5px;">
+                            <div style="padding-bottom: 9px;">
                                 <img src="../img/pidato.jpg" alt="Gambar Kecil 1" class="img-fluid" style="width: 100%; height: 25%; object-fit: cover; border-radius: 15px;">
                             </div>
                             <div>
@@ -514,7 +517,7 @@
                     </div>
                     <div class="row mb-0 ms-5">
                         <div class="col">
-                            <p class="mb-0" style="text-align: justify;">
+                            <p class="mb-0 mt-4" style="text-align: justify;">
                                 Continuous Improvement: Personal development encourages individuals to strive for continuous 
                                 improvement. It's about refining skills, acquiring new knowledge, and honing one's abilities to 
                                 become a better version of oneself. Adaptability: In a rapidly changing world, the ability to ada<a href="" class="full-posts" style="text-decoration: none;">....</a>
@@ -673,7 +676,7 @@
                             <img src="../img/business-people-casual-meeting.jpg" alt="Gambar Besar" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
                         </div>
                         <div class="col-6">
-                            <div style="padding-bottom: 5px;">
+                            <div style="padding-bottom: 9px;">
                                 <img src="../img/business-people-casual-meeting.jpg" alt="Gambar Kecil 1" class="img-fluid" style="width: 100%; height: 25%; object-fit: cover; border-radius: 15px;">
                             </div>
                             <div>
@@ -683,7 +686,7 @@
                     </div>
                     <div class="row mb-0 ms-5">
                         <div class="col">
-                            <p class="mb-0" style="text-align: justify;">
+                            <p class="mb-0 mt-4" style="text-align: justify;">
                                 Well, it’s certainly unusual especially with that much disparity. Typically out of the “big three”, 
                                 people will deadlift the most weight, and bench press the least, with squat being somewhere in the 
                                 middle. The only people who will have bench presses higher than their squat or deadlift ar<a href="" class="full-posts" style="text-decoration: none;">....</a>
@@ -720,8 +723,10 @@
             </div>
             </div>
 
-            <div class="col-3 border-start border-end ml-auto d-none d-md-block" style="overflow-y: auto;">
-                <a href="./create_post.html" type="button" class="btn btn-outline-light w-100 mt-2 create-post-btn" style="border-radius: 30px; border-color: #13005A; color: #13005A; display: none;">
+            <!--Side Content-->
+            <div class="col-3 border-start border-end me-1 d-none d-md-block p-0">
+                <div class="container sticky-top mt-3" style="top: 10%;">
+                <a href="./create_post.html" type="button" class="btn btn-outline-light w-100 mt-3 create-post-btn" style="border-radius: 30px; border-color: #13005A; color: #13005A; display: none;">
                     <i class="fas fa-plus-circle" style="font-size: 15px; color: #13005A;"></i>
                     Create New Post
                 </a>
@@ -736,53 +741,66 @@
                 
                 <hr class="my-3" style="border-top: 3px solid #E5E5E5;">
                 
-                <div class="mt-3">
-                    <h4 style="color: #13005A;">Upcoming Events</h4>
-    
-                    <div class="border-radius mb-0">
-                        <img src="../img/pidato.jpg" class="card-img-top img-fluid" style="border-radius: 15px;" alt="Pidato">
+                <div class="mt-3" style="margin-left: 12px;">
+                    <h6 style="color: #13005A; font-weight: bold;">Upcoming Events</h6>
+                
+                    <div class="card mb-3" style="border-radius: 15px; overflow: hidden;">
+                        <div class="position-relative">
+                            <img src="../img/pidato.jpg" class="card-img-top img-fluid" alt="Pidato">
+                            <div class="date-badge">
+                                <span class="badge">
+                                    <div class="day">10</div>
+                                    <div class="month">Sept</div>
+                                </span>
+                            </div>
+                        </div>
                         <div class="card-body">
-                            <h5 class="card-title fs-6">Personal Finance Webinar <span class="badge rounded-pill badge-custom" style="background-color: #13005A;">September 10th</span></h5>
-                            <p class="card-text">
-                                Come reserve your seat at our free gathering and 
-                                sharing online seminar talking about how to manage 
-                                your personal finance today!
-                            </p>
+                            <h5 class="card-title fs-6">Personal Finance Webinar</h5>
+                            <p class="card-text">Financial Freedom Community</p>
                         </div>
                     </div>
-                    
-                    <div class="card-row row align-items-center mb-2">
-                        <div class="col-md-2">
-                            <img src="../img/banner.jpg" alt="..." class="rounded img-card" style="width: 100px; height: 100px;">
-                        </div>
-                        <div class="col-md-10 d-flex align-items-start">
-                            <div class="card-body" style="margin-left: 50px;">
-                                <span class="badge rounded-pill badge-custom mb-2" style="background-color: #13005A;">September 10th</span>
-                                <h6 class="card-title text-sm">Stocks market reope...</h6>
-                                <p class="card-text text-sm">
-                                    Come reserve your seat at 
-                                    our free gathering and<a href="" class="full-posts" style="text-decoration: none;">....</a>
-                                </p>
+                
+                    <div class="card mb-3" style="border-radius: 15px; overflow: hidden;">
+                        <div class="row g-0">
+                            <div class="col-4 position-relative">
+                                <img src="../img/banner.jpg" class="img-fluid rounded-start" alt="Banner">
+                                <div class="date-badge">
+                                    <span class="badge">
+                                        <div class="day">10</div>
+                                        <div class="month">Sept</div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="card-body">
+                                    <h5 class="card-title fs-6">Personal Finance Webinar</h5>
+                                    <p class="card-text">Financial Freedom Community</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                                        
-                    <div class="card-row row align-items-center mb-2">
-                        <div class="col-md-2">
-                            <img src="../img/waiting-room-with-monitors.jpg" alt="..." class="rounded img-card" style="width: 100px; height: 100px;">
-                        </div>
-                        <div class="col-md-10 d-flex align-items-start">
-                            <div class="card-body" style="margin-left: 50px;">
-                                <span class="badge rounded-pill badge-custom mb-2" style="background-color: #13005A;">September 10th</span>
-                                <h6 class="card-title text-sm">Stocks market reope...</h6>
-                                <p class="card-text text-sm">
-                                    Come reserve your seat at 
-                                    our free gathering and<a href="" class="full-posts" style="text-decoration: none;">....</a>
-                                </p>
+                
+                    <div class="card mb-3" style="border-radius: 15px; overflow: hidden;">
+                        <div class="row g-0">
+                            <div class="col-4 position-relative">
+                                <img src="../img/waiting-room-with-monitors.jpg" class="img-fluid rounded-start" alt="Waiting Room">
+                                <div class="date-badge">
+                                    <span class="badge">
+                                        <div class="day">10</div>
+                                        <div class="month">Sept</div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="card-body">
+                                    <h5 class="card-title fs-6">Personal Finance Webinar</h5>
+                                    <p class="card-text">Financial Freedom Community</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                
     
                 <div class="d-flex justify-content-center text-align-center mt-4">
                     <span class="text-muted small fs-9" style="text-align: center; text-decoration: none;">
@@ -794,6 +812,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </main>
 <script>
          document.getElementById('modalJoinButton').addEventListener('click', function() {

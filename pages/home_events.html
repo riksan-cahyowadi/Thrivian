@@ -12,129 +12,202 @@
   <link rel="stylesheet" href="../css/events.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
   <style>
-            .banner {
-            position: relative;
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: blur(0);
-            transition: filter 0.3s;
-        }
-
-        .image-container::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 100%);
-        }
-
-        .text {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #fff; /* Adjust text color as needed */
-            padding-right: 20px; /* Adjust padding as needed */
-            width: 40%; /* Adjust width as needed */
-            text-align: right;
-        }
-
-     .event-card {
-      border: 1px solid #ddd;
-      border-radius: 15px;
-      overflow: hidden;
-      margin-bottom: 15px;
-      padding: 15px;
-    }
-
-    .event-card img {
+    .banner {
+      position: relative;
       width: 100%;
-      height: auto;
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
+      height: 200px;
+      overflow: hidden;
     }
 
-    .event-date {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background-color: rgba(0, 0, 0, 0.7);
-      color: white;
-      padding: 5px 10px;
-      border-radius: 5px;
-      font-size: 0.9rem;
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(0);
+      transition: filter 0.3s;
     }
+
+    .image-container::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 100%);
+    }
+
+    .text {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fff;
+      padding-right: 20px;
+      width: 40%;
+      text-align: right;
+    }
+
+    .event-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-top: 5px;
+  transition: transform 0.3s ease-in-out; /* Menambahkan animasi */
+}
+
+.event-card:hover {
+  transform: scale(1.09); /* Efek zoom saat hover */
+}
+
+.event-image {
+  width: 100%;
+  height: auto;
+}
+
+.event-date {
+  position: absolute;
+  bottom: 110px;
+  right: 10px;
+  background-color: white;
+  color: #13005A;
+  border-radius: 5px;
+  padding: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.event-date-content {
+  text-align: center;
+}
+
+.event-date-day {
+  font-size: 1.4em;
+  font-weight: bold;
+  display: block;
+}
+
+.event-date-month {
+  font-size: 0.9em;
+  display: block;
+}
+
+.event-info {
+  padding: 10px;
+  background-color: white;
+}
+
+.event-location {
+  font-size: 0.9em;
+  color: #13005A;
+  margin-bottom: 5px;
+}
+
+.event-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.event-community {
+  font-size: 0.9em;
+  color: #999;
+}
 
     .event-banner {
-            position: relative;
-            width: 100%;
-            height: 400px;
-            background: url('../img/banner.jpg') no-repeat center center;
-            background-size: cover;
-        }
-        .event-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 139, 0.8));
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding: 20px;
-        }
-        .event-content {
-            padding-right: 14%;
-            color: white;
+      position: relative;
+      width: 100%;
+      height: 400px;
+      background: url('../img/banner.jpg') no-repeat center center;
+      background-size: cover;
+    }
+    .event-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 139, 0.8));
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 20px;
+    }
+    .event-content {
+      padding-right: 14%;
+      color: white;
+    }
+
+    #footer {
+      background-color: #13005A;
+      padding: 2rem 0;
+      color: #fff;
+    }
+    #footer .footer-col {
+      margin-bottom: 1rem;
+    }
+    #footer .footer-col h6 {
+      font-weight: bold;
+    }
+    #footer .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+    #footer .footer-col ul li {
+      margin-bottom: 0.5rem;
+    }
+    #footer .social-icons i {
+      font-size: 1.5rem;
+      margin-right: 0.5rem;
+      color: #fff;
+    }
+    #footer .app-buttons img {
+      height: 40px;
+      margin-right: 0.5rem;
+    }
+    #footer .footer-bottom {
+      border-top: 1px solid #dee2e6;
+      padding-top: 1rem;
+      margin-top: 1rem;
+      text-align: center;
+    }
+    #footer .footer-logo {
+      max-width: 200px;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      .event-card {
+        width: 100%;
+        margin-right: 2%;
+      }
+      .event-card:nth-child(2n) {
+        margin-right: 0;
+      }
+      .event-card h5 {
+            font-size: 1rem; /* Ukuran font lebih kecil untuk judul pada tampilan mobile */
         }
 
-        #footer {
-          background-color: #13005A;
-          padding: 2rem 0;
-          color: #fff;
-      }
-      #footer .footer-col {
-          margin-bottom: 1rem;
-      }
-      #footer .footer-col h6 {
-          font-weight: bold;
-      }
-      #footer .footer-col ul {
-          list-style: none;
-          padding: 0;
-      }
-      #footer .footer-col ul li {
-          margin-bottom: 0.5rem;
-      }
-      #footer .social-icons i {
-          font-size: 1.5rem;
-          margin-right: 0.5rem;
-          color: #fff;
-      }
-      #footer .app-buttons img {
-          height: 40px;
-          margin-right: 0.5rem;
-      }
-      #footer .footer-bottom {
-          border-top: 1px solid #dee2e6;
-          padding-top: 1rem;
-          margin-top: 1rem;
-          text-align: center;
-      }
-      #footer .footer-logo {
-          max-width: 200px;
-          height: auto;
-      }
+        .event-card p {
+            font-size: 0.875rem; /* Ukuran font lebih kecil untuk paragraf pada tampilan mobile */
+        }
+
+        .event-card .rounded-pill {
+    font-size: 0.4rem; /* Ukuran font lebih proporsional */
+    padding: 4px 8px; /* Sesuaikan padding agar proporsional */
+}
+
+.event-card .bi-geo-alt {
+    font-size: 0.75rem; /* Ukuran ikon lebih proporsional */
+}
+
+.event-card .event-location {
+    display: flex;
+    align-items: center;
+    font-size: 0.5rem; /* Ukuran font lebih proporsional */
+}
+
+    }
   </style>
 </head>
 
@@ -147,13 +220,13 @@
             </a>
             <ul class="nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-secondary active text-decoration-underline" style="color: #13005A !important;" href="../index.html">Home</a>
+                    <a class="nav-link text-secondary" href="../index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-secondary" href="./pages/community.html">Community</a>
+                    <a class="nav-link text-secondary" href="./community.html">Community</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-secondary" href="./pages/home_events.html">Events</a>
+                    <a class="nav-link text-secondary active text-decoration-underline" style="color: #13005A !important;" href="./pages/home_events.html">Events</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-secondary" href="#">E-Learning</a>
@@ -244,27 +317,27 @@
         </div>
     </nav>
 
-        <!-- Sticky Bottom Navbar for Mobile -->
-        <nav class="navbar fixed-bottom navbar-expand d-lg-none bottom-nav border border-dark" style="background-color: #fcfafa;">
-            <ul class="navbar-nav nav-justified w-100">
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="/index.html"><i class="fa fa-home"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="#"><i class="far fa-envelope"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="#"><i class="bell outline icon"></i></a>
-                </li>   
-                <li class="nav-item">
-                    <a href="./pages/profile.html">
-                        <div class="rounded-circle overflow-hidden ms-5 mt-1" style="width: 25px; height: 25px; background-color: #f0f0f0;">
-                            <img id="userImage" src="./img/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+    <!-- Sticky Bottom Navbar for Mobile -->
+    <nav class="navbar fixed-bottom navbar-expand d-lg-none bottom-nav border border-dark" style="background-color: #fcfafa;">
+        <ul class="navbar-nav nav-justified w-100">
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="/index.html"><i class="fa fa-home"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#"><i class="far fa-envelope"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" href="#"><i class="bell outline icon"></i></a>
+            </li>   
+            <li class="nav-item">
+                <a href="./pages/profile.html">
+                    <div class="rounded-circle overflow-hidden ms-5 mt-1" style="width: 25px; height: 25px; background-color: #f0f0f0;">
+                        <img id="userImage" src="./img/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </nav>
 
     <section class="hero d-flex align-items-center" style="background-image: url('../img/bg-event.jpg'); background-size: cover; background-position: center;">
         <div class="container">
@@ -273,9 +346,9 @@
                     <div class="text-start bg-overlay p-4"> <!-- Mengubah agar teks menjadi rata kiri -->
                         <h1>THRIVIAN <br> NATIONAL <br>CONFERENCE <br> 2024</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <a href="#" class="btn btn-primary me-md-4">Get Ticket</a>
-                        <a href="#" class="btn btn-secondary" style="margin-left: 9px;">More Info</a>
-                        <div id="countdown"></div>
+                        <a href="#" class="btn btn-primary me-md-4" style="background-color: #5458E5; border-color: #5458E5;">Get Ticket</a>
+                        <a href="#" class="btn btn-secondary" style="margin-left: 9px; border-color: #5458E5;">More Info</a>
+                        <div id="countdown" style="color: #5458E5;"></div>
                     </div>
                 </div>
             </div>
@@ -283,91 +356,168 @@
     </section>
 
     <section id="event-section">
-            <div class="container my-4 event-section">
-                <h4 class="mb-4">Upcoming Events</h4>
-                <div class="row d-flex justify-content-between">
-                    <div class="col-md-3">
-                        <a href="event_detail.html" style="color: black;">
-                      <div class="event-card">
-                        <img src="../img/event-1.png" alt="Event Image">
-                        <div class="event-date">September 10th</div>
-                        <h5 class="mt-3">Tech Inovators Conference</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <p> <span><i class="bi bi-geo-alt"></i></span> Surabaya
-                          <span class="rounded-pill text-light px-4 py-2" style="margin-left: 30%; background-color: #13005A;">Rp 100.000</span></p>
-                      </div>
+        <div class="container my-4 event-section">
+            <h3 class="mb-4" style="color: #13005A;">Upcoming Events</h3>
+            <div class="row">
+                <div class="col-6 col-md-3">
+                    <a href="./event_detail.html" class="card-link text-dark">
+                        <div class="event-card">
+                            <img src="../img/event-1.png" alt="Event Image" class="event-image">
+                            <div class="event-date">
+                              <div class="event-date-content">
+                                <span class="event-date-day">10</span>
+                                <span class="event-date-month">Sept</span>
+                              </div>
+                            </div>
+                            <div class="event-info">
+                              <p class="event-location"><i class="bi bi-geo-alt"></i> Surabaya</p>
+                              <h5 class="event-title">Personal Finance Webinar</h5>
+                              <span class="event-price badge rounded-pill badge-secondary">Rp. 200.000</span>
+                              <p class="event-community">Financial Freedom Community</p>
+                            </div>
+                          </div>
                     </a>
-                    </div>
-                  <div class="col-md-3">
-                    <a href="event_detail.html" style="color: black;">
-                  <div class="event-card">
-                    <img src="../img/event-1.png" alt="Event Image">
-                    <div class="event-date">September 10th</div>
-                    <h5 class="mt-3">Tech Inovators Conference</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <p> <span><i class="bi bi-geo-alt"></i></span> Surabaya
-                      <span class="rounded-pill text-light px-4 py-2" style="margin-left: 30%; background-color: #13005A;">Rp 100.000</span></p>
-                  </div>
-                </a>
                 </div>
-                  <div class="col-md-3">
-                    <a href="event_detail.html" style="color: black;">
-                  <div class="event-card">
-                    <img src="../img/event-1.png" alt="Event Image">
-                    <div class="event-date">September 10th</div>
-                    <h5 class="mt-3">Tech Inovators Conference</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <p> <span><i class="bi bi-geo-alt"></i></span> Surabaya
-                      <span class="rounded-pill text-light px-4 py-2" style="margin-left: 30%; background-color: #13005A;">Rp 100.000</span></p>
-                  </div>
-                </a>
+                <div class="col-6 col-md-3">
+                    <a href="./event_detail.html" class="card-link text-dark">
+                        <div class="event-card">
+                            <img src="../img/event-1.png" alt="Event Image" class="event-image">
+                            <div class="event-date">
+                              <div class="event-date-content">
+                                <span class="event-date-day">10</span>
+                                <span class="event-date-month">Sept</span>
+                              </div>
+                            </div>
+                            <div class="event-info">
+                              <p class="event-location"><i class="bi bi-geo-alt"></i> Surabaya</p>
+                              <h5 class="event-title">Personal Finance Webinar</h5>
+                              <span class="event-price badge rounded-pill badge-secondary">Rp. 200.000</span>
+                              <p class="event-community">Financial Freedom Community</p>
+                            </div>
+                          </div>
+                    </a>
                 </div>
+                <div class="col-6 col-md-3">
+                    <a href="./event_detail.html" class="card-link text-dark">
+                        <div class="event-card">
+                            <img src="../img/event-1.png" alt="Event Image" class="event-image">
+                            <div class="event-date">
+                              <div class="event-date-content">
+                                <span class="event-date-day">10</span>
+                                <span class="event-date-month">Sept</span>
+                              </div>
+                            </div>
+                            <div class="event-info">
+                              <p class="event-location"><i class="bi bi-geo-alt"></i> Surabaya</p>
+                              <h5 class="event-title">Personal Finance Webinar</h5>
+                              <span class="event-price badge rounded-pill badge-secondary">Rp. 200.000</span>
+                              <p class="event-community">Financial Freedom Community</p>
+                            </div>
+                          </div>
+                    </a>
                 </div>
+                <div class="col-6 col-md-3">
+                    <a href="./event_detail.html" class="card-link text-dark">
+                        <div class="event-card">
+                            <img src="../img/event-1.png" alt="Event Image" class="event-image">
+                            <div class="event-date">
+                              <div class="event-date-content">
+                                <span class="event-date-day">10</span>
+                                <span class="event-date-month">Sept</span>
+                              </div>
+                            </div>
+                            <div class="event-info">
+                              <p class="event-location"><i class="bi bi-geo-alt"></i> Surabaya</p>
+                              <h5 class="event-title">Personal Finance Webinar</h5>
+                              <span class="event-price badge rounded-pill badge-secondary">Rp. 200.000</span>
+                              <p class="event-community">Financial Freedom Community</p>
+                            </div>
+                          </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="./event_detail.html" class="card-link text-dark">
+                        <div class="event-card">
+                            <img src="../img/event-1.png" alt="Event Image" class="event-image">
+                            <div class="event-date">
+                              <div class="event-date-content">
+                                <span class="event-date-day">10</span>
+                                <span class="event-date-month">Sept</span>
+                              </div>
+                            </div>
+                            <div class="event-info">
+                              <p class="event-location"><i class="bi bi-geo-alt"></i> Surabaya</p>
+                              <h5 class="event-title">Personal Finance Webinar</h5>
+                              <span class="event-price badge rounded-pill badge-secondary">Rp. 200.000</span>
+                              <p class="event-community">Financial Freedom Community</p>
+                            </div>
+                          </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="./event_detail.html" class="card-link text-dark">
+                        <div class="event-card">
+                            <img src="../img/event-1.png" alt="Event Image" class="event-image">
+                            <div class="event-date">
+                              <div class="event-date-content">
+                                <span class="event-date-day">10</span>
+                                <span class="event-date-month">Sept</span>
+                              </div>
+                            </div>
+                            <div class="event-info">
+                              <p class="event-location"><i class="bi bi-geo-alt"></i> Surabaya</p>
+                              <h5 class="event-title">Personal Finance Webinar</h5>
+                              <span class="event-price badge rounded-pill badge-secondary">Rp. 200.000</span>
+                              <p class="event-community">Financial Freedom Community</p>
+                            </div>
+                          </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="./event_detail.html" class="card-link text-dark">
+                        <div class="event-card">
+                            <img src="../img/event-1.png" alt="Event Image" class="event-image">
+                            <div class="event-date">
+                              <div class="event-date-content">
+                                <span class="event-date-day">10</span>
+                                <span class="event-date-month">Sept</span>
+                              </div>
+                            </div>
+                            <div class="event-info">
+                              <p class="event-location"><i class="bi bi-geo-alt"></i> Surabaya</p>
+                              <h5 class="event-title">Personal Finance Webinar</h5>
+                              <span class="event-price badge rounded-pill badge-secondary">Rp. 200.000</span>
+                              <p class="event-community">Financial Freedom Community</p>
+                            </div>
+                          </div>
+                    </a>
+                </div>
+                <div class="col-6 col-md-3">
+                    <a href="./event_detail.html" class="card-link text-dark">
+                        <div class="event-card">
+                            <img src="../img/event-1.png" alt="Event Image" class="event-image">
+                            <div class="event-date">
+                              <div class="event-date-content">
+                                <span class="event-date-day">10</span>
+                                <span class="event-date-month">Sept</span>
+                              </div>
+                            </div>
+                            <div class="event-info">
+                              <p class="event-location"><i class="bi bi-geo-alt"></i> Surabaya</p>
+                              <h5 class="event-title">Personal Finance Webinar</h5>
+                              <span class="event-price badge rounded-pill badge-secondary">Rp. 200.000</span>
+                              <p class="event-community">Financial Freedom Community</p>
+                            </div>
+                          </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="row d-flex justify-content-between">
-                    <div class="col-md-3">
-                        <a href="event_detail.html" style="color: black;">
-                      <div class="event-card">
-                        <img src="../img/event-1.png" alt="Event Image">
-                        <div class="event-date">September 10th</div>
-                        <h5 class="mt-3">Tech Inovators Conference</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <p> <span><i class="bi bi-geo-alt"></i></span> Surabaya
-                          <span class="rounded-pill text-light px-4 py-2" style="margin-left: 30%; background-color: #13005A;">Rp 100.000</span></p>
-                      </div>
-                    </a>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="event_detail.html" style="color: black;">
-                      <div class="event-card">
-                        <img src="../img/event-1.png" alt="Event Image">
-                        <div class="event-date">September 10th</div>
-                        <h5 class="mt-3">Tech Inovators Conference</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <p> <span><i class="bi bi-geo-alt"></i></span> Surabaya
-                          <span class="rounded-pill text-light px-4 py-2" style="margin-left: 30%; background-color: #13005A;">Rp 100.000</span></p>
-                      </div>
-                    </a>
-                    </div>
-                    <div class="col-md-3">
-                        <a href="event_detail.html" style="color: black;">
-                      <div class="event-card">
-                        <img src="../img/event-1.png" alt="Event Image">
-                        <div class="event-date">September 10th</div>
-                        <h5 class="mt-3">Tech Inovators Conference</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        <p> <span><i class="bi bi-geo-alt"></i></span> Surabaya
-                          <span class="rounded-pill text-light px-4 py-2" style="margin-left: 30%; background-color: #13005A;">Rp 100.000</span></p>
-                      </div>
-                    </a>
-                    </div>
-                  </div>              
-                </div>
-      </section>
-
-      <div class="event-banner">
+    <div class="event-banner">
         <div class="event-overlay">
-            <div class="event-content" >
+            <div class="event-content">
                 <h1 class="mb-4">Make your own Event</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur <br>adipiscing elit, sed do eiusmod tempor <br>incididunt ut labore et dolore magna aliqua.</p>
                 <a href="events.html" class="btn btn-primary px-5 mt-3" style="background-color: #5458E5; border: none;">Find More Events</a>
@@ -379,38 +529,38 @@
         <h2 class="text-2xl font-semibold mb-4" style="color: #13005A;">Our Sponsorship</h2>
         <p style="color: #13005A; margin-bottom: 45px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do <br>eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         <div class="row justify-content-center align-items-start">
-          <!-- Gambar-gambar partner -->
-          <div class="col-6 col-md-4 col-lg-2 partner-col">
-            <img src="../img/spotify.png" alt="Partner 1" class="partner-img">
-          </div>
-          <div class="col-6 col-md-4 col-lg-2 partner-col">
-            <img src="../img/google.png" alt="Partner 2" class="partner-img">
-          </div>
-          <div class="col-6 col-md-4 col-lg-2 partner-col">
-            <img src="../img/yt.png" alt="Partner 3" class="partner-img">
-          </div>
-          <div class="col-6 col-md-4 col-lg-2 partner-col">
-            <img src="../img/microsoft.png" alt="Partner 4" class="partner-img">
-          </div>
-          <div class="col-6 col-md-4 col-lg-2 partner-col">
-            <img src="../img/gojek.png" alt="Partner 5" class="partner-img">
-          </div>
-          <div class="col-6 col-md-4 col-lg-2 partner-col">
-            <img src="../img/zoom.png" alt="Partner 6" class="partner-img">
-          </div>
-          <div class="col-6 col-md-4 col-lg-2 partner-col">
-            <img src="../img/grab.png" alt="Partner 7" class="partner-img">
-          </div>
-          <div class="col-6 col-md-4 col-lg-2 partner-col">
-            <img src="../img/linkedin.png" alt="Partner 8" class="partner-img">
-          </div>
-          <div class="col-6 col-md-4 col-lg-2 partner-col">
-            <img src="../img/indihome.png" alt="Partner 9" class="partner-img">
-          </div>
+            <!-- Gambar-gambar partner -->
+            <div class="col-6 col-md-4 col-lg-2 partner-col">
+                <img src="../img/spotify.png" alt="Partner 1" class="partner-img">
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 partner-col">
+                <img src="../img/google.png" alt="Partner 2" class="partner-img">
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 partner-col">
+                <img src="../img/yt.png" alt="Partner 3" class="partner-img">
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 partner-col">
+                <img src="../img/microsoft.png" alt="Partner 4" class="partner-img">
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 partner-col">
+                <img src="../img/gojek.png" alt="Partner 5" class="partner-img">
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 partner-col">
+                <img src="../img/zoom.png" alt="Partner 6" class="partner-img">
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 partner-col">
+                <img src="../img/grab.png" alt="Partner 7" class="partner-img">
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 partner-col">
+                <img src="../img/linkedin.png" alt="Partner 8" class="partner-img">
+            </div>
+            <div class="col-6 col-md-4 col-lg-2 partner-col">
+                <img src="../img/indihome.png" alt="Partner 9" class="partner-img">
+            </div>
         </div>
-      </div>
+    </div>
 
-      <footer id="footer">
+    <footer id="footer">
         <div class="container">
             <div class="row text-center text-md-start">
                 <div class="col-md-12 d-flex justify-content-center justify-content-md-start align-items-center mb-3">
@@ -457,40 +607,39 @@
                 <p>Thrivian.org @ 2024. All rights reserved.</p>
             </div>
         </div>
-      </footer>
-    
+    </footer>
 
-<script>
-// Target tanggal akhir event
-var countdownDate = new Date("June 15, 2024 00:00:00").getTime();
+    <script>
+        // Target tanggal akhir event
+        var countdownDate = new Date("June 15, 2024 00:00:00").getTime();
 
-// Memperbarui penghitung setiap 1 detik
-var x = setInterval(function() {
-    // Dapatkan tanggal dan waktu sekarang
-    var now = new Date().getTime();
+        // Memperbarui penghitung setiap 1 detik
+        var x = setInterval(function() {
+            // Dapatkan tanggal dan waktu sekarang
+            var now = new Date().getTime();
 
-    // Hitung selisih waktu antara sekarang dan tanggal akhir event
-    var distance = countdownDate - now;
+            // Hitung selisih waktu antara sekarang dan tanggal akhir event
+            var distance = countdownDate - now;
 
-    // Hitung hari, jam, menit, dan detik
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            // Hitung hari, jam, menit, dan detik
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Tampilkan hasil dalam elemen dengan id "countdown"
-    document.getElementById("countdown").innerHTML = "<div style='display: inline-block; text-align: center;'><span class='countdown-number'>" + days + "</span><br>Days</div>" +
-                                                     "<div style='display: inline-block; text-align: center; margin-left: 40px;'><span class='countdown-number'>" + hours + "</span><br>Hours</div>" +
-                                                     "<div style='display: inline-block; text-align: center; margin-left: 40px;'><span class='countdown-number'>" + minutes + "</span><br>Minutes</div>" +
-                                                     "<div style='display: inline-block; text-align: center; margin-left: 40px;'><span class='countdown-number'>" + seconds + "</span><br>Seconds</div>"; // Mengatur ukuran teks countdown dan menempatkan tanda di samping waktu
+            // Tampilkan hasil dalam elemen dengan id "countdown"
+            document.getElementById("countdown").innerHTML = "<div style='display: inline-block; text-align: center;'><span class='countdown-number'>" + days + "</span><br>Days</div>" +
+                "<div style='display: inline-block; text-align: center; margin-left: 40px;'><span class='countdown-number'>" + hours + "</span><br>Hours</div>" +
+                "<div style='display: inline-block; text-align: center; margin-left: 40px;'><span class='countdown-number'>" + minutes + "</span><br>Minutes</div>" +
+                "<div style='display: inline-block; text-align: center; margin-left: 40px;'><span class='countdown-number'>" + seconds + "</span><br>Seconds</div>"; // Mengatur ukuran teks countdown dan menempatkan tanda di samping waktu
 
-    // Jika waktu sudah habis, tampilkan pesan
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("countdown").innerHTML = "<span style='font-size: 40px;'>EXPIRED</span>"; // Mengatur ukuran teks countdown
-    }
-}, 1000);
-</script>
+            // Jika waktu sudah habis, tampilkan pesan
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "<span style='font-size: 40px;'>EXPIRED</span>"; // Mengatur ukuran teks countdown
+            }
+        }, 1000);
+    </script>
 
 </body>
 </html>

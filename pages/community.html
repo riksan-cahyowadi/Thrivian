@@ -13,53 +13,6 @@
   <link rel="stylesheet" href="../css/style.css">
   <script src="../js/index.js"></script>
   <style>
-      /* Gaya CSS tambahan */
-.nav-item:hover .nav-link {
-text-decoration: underline;
-}
-
-.profile-info {
-display: none;
-position: absolute;
-top: 40px;
-right: 0;
-background-color: #fff;
-border: 1px solid #ccc;
-padding: 10px;
-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-z-index: 1;
-}
-
-.nav-item .profile:hover .profile-info {
-display: block;
-}
-
-.profile-info a {
-text-decoration: none;
-color: #333;
-display: block;
-}
-
-.profile-info a:hover {
-text-decoration: underline;
-}
-.profile-info p {
-margin: 5px 0;
-color: #333;
-}
-
-.icon.user.outline {
-color: black;
-}
-
-.hidden {
-display: none;
-}
-
-.navbar-bawah .nav-item .nav-link.active {
-    text-decoration: underline; 
-    color: #13005A !important; 
-}
 
 .col-md-9 {
     background-color: #F4F4F4;
@@ -77,41 +30,42 @@ display: none;
 
 }
 
-        .card-custom {
-            position: relative;
-            overflow: hidden;
-            background-size: cover;
-            background-position: center;
-            height: 95%;
-        }
-        .card-custom .card-body {
-            position: relative;
-            z-index: 2;
-        }
-        .card-custom .card-img-top {
-            border-radius: 50%;
-            width: 90px;
-            height: 90px;
-            object-fit: cover;
-            position: absolute;
-            top: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 3;
-            border: 1px solid white;
-        }
-        .card-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 27%;
-            background-size: cover;
-            background-position: center;
-            z-index: 1;
-        }
+.card-custom {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    }
+.card-custom .card-body {
+position: relative;
+z-index: 2;
+ }
+.card-custom .card-img-top {
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    border: 1px solid white;
+    }
 
-        .notification-modal {
+.card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 27%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    }
+
+    .notification-modal {
     background: transparent;
     display: flex;
     align-items: flex-start; /* Align to the top */
@@ -120,6 +74,10 @@ display: none;
     top: 50px; /* Adjust this value based on your navbar height */
     right: 10px; /* Adjust this value for horizontal alignment */
     width: auto;
+}
+
+.btn:hover {
+    background-color: bisque;
 }
 
         .notification-card {
@@ -196,6 +154,27 @@ display: none;
             font-weight: bold;
             border: 1px solid white;
             }
+
+            .modal-header {
+            border-bottom: none;
+        }
+        .modal-body {
+            padding: 2rem;
+        }
+        .modal-footer {
+            border-top: none;
+            justify-content: flex-end;
+            padding: 1rem 2rem;
+        }
+        .modal-content {
+            border-radius: 10px;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-text {
+            margin-top: 0.5rem;
+        }
 
             @media (max-width: 991px) {
             .bottom-nav .notification-icon {
@@ -352,10 +331,49 @@ display: none;
                             <h2>Welcome to Community Page</h2>
                             <p>Temukan dan ikuti Komunitas yang kamu inginkan</p>
                             <div>
-                                <button type="button" class="btn btn-light w-40 mt-2 me-2" style="border-radius: 10px; border-color: #13005A; color: #13005A;">
+
+                                <!-- Button to Open the Modal -->
+                                <button type="button" class="btn btn-light w-40 mt-2 me-2" data-toggle="modal" data-target="#createCommunityModal" style="border-radius: 10px; border-color: #13005A; color: #13005A;">
                                     <i class="fas fa-plus-circle" style="font-size: 15px; color: #13005A;"></i>
                                     Create New Community
                                 </button>
+
+                                <!-- The Modal -->
+                                <div class="modal fade" id="createCommunityModal">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content bg-white">>
+
+                                            <!-- Modal Header -->
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Create Community</h4>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            </div>
+
+                                            <!-- Modal Body -->
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <label for="communityName">Name<span class="text-danger">*</span></label>
+                                                        <input type="text" class="form-control" id="communityName" placeholder="Ruang Sepi">
+                                                        <small class="form-text text-muted">This can be changed in Community settings.</small>
+                                                        <small class="form-text text-success">This name is available.</small>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="communityDescription">Brief description</label>
+                                                        <textarea class="form-control" id="communityDescription" rows="3" placeholder="Ruang untuk kalian yang kesepian"></textarea>
+                                                        <small class="form-text text-muted">Include a few keywords to show people what to expect if they join.</small>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                            <!-- Modal Footer -->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-primary" style="background-color: #13005A; border-color: #13005A;">Create</button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                                 <button type="button" class="btn btn-light w-45 mt-2 ms-2" style="border-radius: 10px; border-color: #13005A; color: #13005A;">
                                     <i class="fas fa-search" style="font-size: 15px; color: #13005A;"></i>
                                     Find Your Community
@@ -672,6 +690,9 @@ display: none;
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script>
     // Fungsi untuk menghapus kelas active dari semua elemen nav-link
     function removeActiveClass() {

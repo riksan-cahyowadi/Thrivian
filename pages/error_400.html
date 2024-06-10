@@ -3,24 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Error 400</title>
+  <title>Error 404</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden; /* Menghilangkan scroll */
+    }
+
     .error-container {
       display: flex;
+      flex: 1;
       align-items: center;
-      justify-content: left;
-      height: 40vh;
-      position: relative;
-      z-index: 1;
-      padding-left: 10%;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      height: 100vh; /* Memastikan container menempati tinggi penuh */
     }
+
+    .error-container img {
+      max-width: 90%;
+      height: 40%; /* Menyesuaikan tinggi gambar secara proporsional */
+    }
+
     .error-content h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: bold;
+      margin-top: 1rem;
     }
+
     .back-button {
-      font-size: 1rem;
+      font-size: 0.7rem;
       padding: 0.5rem 1.5rem;
       background-color: #3f0071;
       color: white;
@@ -28,88 +44,34 @@
       border-radius: 30px;
       text-decoration: none;
       display: inline-block;
+      margin-top: 0.2rem;
     }
+
     .back-button:hover {
       background-color: #2c0052;
       text-decoration: none;
     }
-    .error-image {
-      font-size: 7rem;
-    }
-
-    .ellipse-container {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      overflow: hidden;
-    }
-
-    .ellipse {
-      position: absolute;
-      background-color: #B6B0CC;
-      border-radius: 50%;
-      z-index: -1;
-    }
-
-    .ellipse1 {
-      width: 280px;
-      height: 450px;
-      bottom: 4px;
-      left: -200px;
-    }
-
-    .ellipse2 {
-      width: 200px;
-      height: 250px;
-      bottom: -25px;
-      left: -60px;
-    }
-
-    .ellipse3 {
-      width: 250px;
-      height: 200px;
-      bottom: -100px;
-      left: 90px;
-    }
 
     @media (max-width: 767px) {
-      .error-container {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding-left: 0;
-      }
-      .error-image {
-        font-size: 5rem;
-        margin: 0 auto;
-      }
       .error-content h1 {
         font-size: 2rem;
+      }
+
+      .back-button {
+        padding: 0.5rem 1rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="ellipse-container">
-    <div class="ellipse ellipse1"></div>
-    <div class="ellipse ellipse2"></div>
-    <div class="ellipse ellipse3"></div>
-  </div>
-
-  <div class="container error-container" style="margin-top: 15%;">
-    <div class="row">
-      <div class="col-md-6 order-md-2 order-1 text-center pt-5">
-        <div class="error-image">(x _ x)</div>
-      </div>
-      <div class="col-md-6 order-md-1 order-2 text-start pt-5 error-content">
-        <h1 class="fw-bold pb-3">Bad Request</h1>
-        <h3>Sorry, this page isn’t working right now</h3>
-        <p>error code: 400</p>
-        <a href="../index.html" class="back-button">Back to homepage</a>
-      </div>
+  <div class="error-container">
+    <img src="../img/error_400.png" alt="Error Image">
+    <div class="error-content">
+      <h1>Ooops!</h1>
+      <p style="font-size: 1rem; font-weight: bold">We can’t seem to find a page you’re looking for</p>
+      <p style="font-size: 0.8rem;">error code: 400</p>
+      <a href="../index.html" class="back-button">Back to homepage</a>
     </div>
   </div>
   

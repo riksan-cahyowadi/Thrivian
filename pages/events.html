@@ -1,701 +1,1071 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>List Events </title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  
-  <style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List Events</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
       /* Gaya CSS tambahan */
-.nav-item:hover .nav-link {
-text-decoration: underline;
-}
+      .nav-item:hover .nav-link {
+        text-decoration: underline;
+      }
 
-.profile-info {
-display: none;
-position: absolute;
-top: 40px;
-right: 0;
-background-color: #fff;
-border: 1px solid #ccc;
-padding: 10px;
-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-z-index: 1;
-}
+      .profile-info {
+        display: none;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+      }
 
-.nav-item .profile:hover .profile-info {
-display: block;
-}
+      .nav-item .profile:hover .profile-info {
+        display: block;
+      }
 
-.profile-info a {
-text-decoration: none;
-color: #333;
-display: block;
-}
+      .profile-info a {
+        text-decoration: none;
+        color: #333;
+        display: block;
+      }
 
-.profile-info a:hover {
-text-decoration: underline;
-}
-.profile-info p {
-margin: 5px 0;
-color: #333;
-}
+      .profile-info a:hover {
+        text-decoration: underline;
+      }
+      .profile-info p {
+        margin: 5px 0;
+        color: #333;
+      }
 
-.icon.user.outline {
-color: black;
-}
+      .icon.user.outline {
+        color: black;
+      }
 
-.hidden {
-display: none;
-}
+      .hidden {
+        display: none;
+      }
 
-.navbar-bawah .nav-item .nav-link.active {
-    text-decoration: underline; 
-    color: #13005A !important; 
-}
+      .navbar-bawah .nav-item .nav-link.active {
+        text-decoration: underline;
+        color: #13005a !important;
+      }
 
-#selectedCategories .btn {
+      #selectedCategories .btn {
         border-radius: 15px;
-    }
+      }
 
-    .custom-card {
+      .custom-card {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 100%; /* Atur tinggi card */
         border-radius: 8px;
         width: 18rem; /* Lebar default card */
-    }
+      }
 
-    .card-img-container {
+      .card-img-container {
         position: relative;
         height: 100%; /* Sesuaikan tinggi gambar */
         overflow: hidden;
         border-top-left-radius: 8px;
         border-top-right-radius: 8px;
-    }
+      }
 
-    .custom-card img {
+      .custom-card img {
         object-fit: cover; /* Atur bagaimana gambar diatur di dalam card */
         width: 100%;
         height: 100%; /* Atur tinggi gambar */
-    }
+      }
 
-    .card-body {
+      .card-body {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-    }
+      }
 
-    .card-text {
+      .card-text {
         flex-grow: 1;
-    }
+      }
 
-    .badge-custom {
+      .col-md-3 {
+        transition: transform 0.3s, border 0.3s;
+      }
+
+      .col-md-3:hover {
+        transform: scale(1.04);
+      }
+
+      .badge-custom {
         position: absolute;
         top: 10px; /* Sesuaikan dengan posisi yang diinginkan */
         right: 10px; /* Sesuaikan dengan posisi yang diinginkan */
         z-index: 1; /* Pastikan badge tampil di atas gambar */
-        background-color: #13005A;
-    }
+        background-color: #13005a;
+      }
 
-    .badge-secondary {
-        background-color: #13005A;
-    }
+      .badge-secondary {
+        background-color: #13005a;
+      }
 
-    /* Media query untuk layar kecil */
-    @media (max-width: 767px) {
+      .event-card {
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 5px;
+        transition: transform 0.3s ease-in-out; /* Menambahkan animasi */
+      }
+
+      .event-card:hover {
+        transform: scale(1.07); /* Efek zoom saat hover */
+      }
+
+      .event-image {
+        width: 100%;
+        height: auto;
+      }
+
+      .event-date {
+        position: absolute;
+        bottom: 115px;
+        right: 20px;
+        background-color: white;
+        color: #13005a;
+        border-radius: 9px;
+        padding: 3px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .event-date-content {
+        text-align: center;
+      }
+
+      .event-date-day {
+        font-size: 1.4em;
+        font-weight: bold;
+        display: block;
+      }
+
+      .event-date-month {
+        font-size: 0.9em;
+        display: block;
+      }
+
+      .event-info {
+        padding: 10px;
+        background-color: white;
+      }
+
+      .event-location {
+        font-size: 0.9em;
+        color: #13005a;
+        margin-bottom: 5px;
+      }
+
+      .event-title {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 0;
+      }
+
+      .event-community {
+        font-size: 0.9em;
+        color: #999;
+      }
+
+      /* Media query untuk layar kecil */
+      @media (max-width: 767px) {
         .col-sm-6 {
-            flex: 0 0 25%;
-            max-width: 50%;
-            padding: 5px; /* Menambahkan jarak antar card */
+          flex: 0 0 25%;
+          max-width: 50%;
+          padding: 5px; /* Menambahkan jarak antar card */
+        }
+        .event-card {
+          margin-top: 5px;
         }
 
-        .custom-card {
-            width: 9rem; /* Lebar card di layar kecil */
-            height: auto; /* Atur tinggi card */
-            margin-bottom: 10px; /* Menambahkan jarak antar card */
+        .event-image {
+          width: 100%;
+          height: 70%;
         }
 
-        .card-img-container {
-            height: 120px; /* Sesuaikan tinggi gambar di mobile */
+        .event-date {
+          position: absolute;
+          bottom: 185px;
+          right: 10px;
+          border-radius: 4px;
+          padding: 0.5px;
         }
 
-        .card-body {
-            padding: 10px; /* Mengurangi padding di dalam card */
+        .event-date-content {
+          text-align: center;
         }
 
-        .card-title {
-            font-size: 10px; /* Mengurangi ukuran font judul */
+        .event-date-day {
+          font-size: 0.8em;
+          font-weight: bold;
+          display: block;
         }
 
-        .card-text {
-            font-size: 8px; /* Mengurangi ukuran font deskripsi */
+        .event-date-month {
+          font-size: 0.5em;
+          display: block;
         }
 
-        .location-icon {
-            font-size: 7px; /* Ukuran font ikon lokasi di layar kecil */
+        .event-info {
+          padding: 10px;
+          background-color: white;
         }
 
-        .location-text {
-            font-size: 7px; /* Ukuran font teks lokasi di layar kecil */
-        }
-        .badge-secondary {
-            font-size: 7px;
+        .event-location {
+          font-size: 0.5em;
+          color: #13005a;
+          margin-bottom: 5px;
         }
 
-        .badge-custom {
-            font-size: 8px;
+        .event-title {
+          font-size: 1em;
+          font-weight: bold;
+          margin: 0;
+        }
+
+        .event-price {
+          font-size: 0.5em;
+        }
+
+        .event-community {
+          font-size: 0.5em;
+          color: #999;
         }
 
         .pagination {
-            padding-bottom: 25%;
+          padding-bottom: 25%;
         }
-    }
-   
-  </style>
-</head>
+      }
 
-<body>
-  <!-- Navbar untuk Desktop -->
-  <nav class="navbar navbar-light bg-light fixed-top d-none d-lg-block">
-    <div class="container">
+      #selectedCategories .badge.bg-secondary {
+        font-size: 0.8rem; /* Menambah ukuran font */
+        padding: 5px 10px; /* Menambah padding */
+        border-radius: 15px; /* Menyamakan border radius dengan tombol filter */
+        background-color: #13005a; /* Menyamakan background color dengan tombol filter */
+        color: white; /* Menyamakan warna teks dengan tombol filter */
+        margin: 2px; /* Menambahkan margin antar tombol */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar untuk Desktop -->
+    <nav class="navbar navbar-light bg-light fixed-top d-none d-lg-block">
+      <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="../img/thrivan-logo.png" alt="Thrivian.org" width="180" height="35" />
+          <img
+            src="../img/thrivan-logo.png"
+            alt="Thrivian.org"
+            width="180"
+            height="35"
+          />
         </a>
         <ul class="nav me-auto">
-            <li class="nav-item">
-                <a class="nav-link text-secondary active text-decoration-underline" style="color: #13005a !important" href="../index.html">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-secondary" href="./community.html">Community</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-secondary" href="./events.html">Events</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-secondary" href="#">E-Learning</a>
-            </li>
+          <li class="nav-item">
+            <a
+              class="nav-link text-secondary active text-decoration-underline"
+              style="color: #13005a !important"
+              href="../index.html"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="./community.html"
+              >Community</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="./events.html">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#">E-Learning</a>
+          </li>
         </ul>
         <div class="navbar-text ms-auto">
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="search.html">
-                        <i class="fas fa-search"></i> 
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-envelope"></i> 
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <i class="bi bi-bell"></i> 
-                    </a>
-                </li>    
-                <li class="nav-item">
-                    <div id="profileLink" class="nav-link profile">
-                        <div class="rounded-circle overflow-hidden me-2" style="width: 25px; height: 25px; background-color: #f0f0f0">
-                            <img id="userImage" src="../img/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover" />
-                        </div>
-                        <div id="profileInfo" class="profile-info">
-                            <p class="username">Christopher Kim</p>
-                            <p class="account">@johhnyray</p>
-                            <a href="./profile.html" class="view-profile">View my profile</a>
-                            <a href="./events.html" class="my-events">My Events</a>
-                            <a href="manage-communities.html" class="manage-communities">Manage your communities</a>
-                            <hr class="my-2" style="border-top: 3px solid #e5e5e5" />
-                            <a href="./settings_profiles.html" class="settings">Settings</a>
-                            <a href="./login.html" class="log-out">Log Out</a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="search.html">
+                <i class="fas fa-search"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bi bi-envelope"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="bi bi-bell"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <div id="profileLink" class="nav-link profile">
+                <div
+                  class="rounded-circle overflow-hidden me-2"
+                  style="width: 25px; height: 25px; background-color: #f0f0f0"
+                >
+                  <img
+                    id="userImage"
+                    src="../img/3582.jpg"
+                    alt="Profile Image"
+                    style="width: 100%; height: 100%; object-fit: cover"
+                  />
+                </div>
+                <div id="profileInfo" class="profile-info">
+                  <p class="username">Christopher Kim</p>
+                  <p class="account">@johhnyray</p>
+                  <a href="./profile.html" class="view-profile"
+                    >View my profile</a
+                  >
+                  <a href="./events.html" class="my-events">My Events</a>
+                  <a href="manage-communities.html" class="manage-communities"
+                    >Manage your communities</a
+                  >
+                  <hr class="my-2" style="border-top: 3px solid #e5e5e5" />
+                  <a href="./settings_profiles.html" class="settings"
+                    >Settings</a
+                  >
+                  <a href="./login.html" class="log-out">Log Out</a>
+                </div>
+              </div>
+            </li>
+          </ul>
         </div>
-    </div>
-  </nav>
+      </div>
+    </nav>
 
-  <!-- Navbar untuk Mobile -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-lg-none">
-    <div class="container-fluid">
+    <!-- Navbar untuk Mobile -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-lg-none"
+    >
+      <div class="container-fluid">
         <a class="navbar-brand" href="#" style="flex-grow: 1">
-            <img src="../img/thrivan-logo.png" alt="Thrivian.org" width="150" />
+          <img src="../img/thrivan-logo.png" alt="Thrivian.org" width="150" />
         </a>
         <a href="search.html" class="search-icon ms-auto me-4">
-            <i class="fas fa-search"></i>
+          <i class="fas fa-search"></i>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobileContent" aria-controls="navbarMobileContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarMobileContent"
+          aria-controls="navbarMobileContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarMobileContent">
-            <ul class="navbar-nav me-auto mb-lg-0 mt-3">
-                <button class="close-button ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobileContent">✖</button>
-                <li class="nav-item">
-                    <a class="nav-link" href="./community.html">Community</a>
-                    <hr class="my-2 custom-hr-mobile" />
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./events.html">Events</a>
-                    <hr class="my-2 custom-hr-mobile" />
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="e-learning.html">E-Learning</a>
-                    <hr class="my-2 custom-hr-mobile" />
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./settings_profiles.html">Settings</a>
-                    <hr class="my-2 custom-hr-mobile" />
-                </li>
-            </ul>
-            <div class="navbar-footer">
-                <div class="d-flex justify-content-center text-align-center mt-4">
-                    <span class="text-muted small fs-9" style="text-align: center; text-decoration: none">
-                        <a href="about_us.html" class="text-muted">About Us</a> •
-                        <a href="privacy_terms.html" class="text-muted">Privacy & Terms</a> •
-                        <a href="more.html" class="text-muted">More</a>
-                        <p class="text-muted fs-9">Thrivian.org © 2024</p>
-                    </span>
-                </div>
+          <ul class="navbar-nav me-auto mb-lg-0 mt-3">
+            <button
+              class="close-button ms-auto"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarMobileContent"
+            >
+              ✖
+            </button>
+            <li class="nav-item">
+              <a class="nav-link" href="./community.html">Community</a>
+              <hr class="my-2 custom-hr-mobile" />
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./events.html">Events</a>
+              <hr class="my-2 custom-hr-mobile" />
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="e-learning.html">E-Learning</a>
+              <hr class="my-2 custom-hr-mobile" />
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./settings_profiles.html">Settings</a>
+              <hr class="my-2 custom-hr-mobile" />
+            </li>
+          </ul>
+          <div class="navbar-footer">
+            <div class="d-flex justify-content-center text-align-center mt-4">
+              <span
+                class="text-muted small fs-9"
+                style="text-align: center; text-decoration: none"
+              >
+                <a href="about_us.html" class="text-muted">About Us</a> •
+                <a href="privacy_terms.html" class="text-muted"
+                  >Privacy & Terms</a
+                >
+                •
+                <a href="more.html" class="text-muted">More</a>
+                <p class="text-muted fs-9">Thrivian.org © 2024</p>
+              </span>
             </div>
+          </div>
         </div>
-    </div>
-  </nav>
+      </div>
+    </nav>
 
-  <!-- Sticky Bottom Navbar for Mobile -->
-  <nav class="navbar fixed-bottom navbar-expand d-lg-none bottom-nav border border-dark" style="background-color: #fcfafa;">
-    <ul class="navbar-nav nav-justified w-100">
+    <!-- Sticky Bottom Navbar for Mobile -->
+    <nav
+      class="navbar fixed-bottom navbar-expand d-lg-none bottom-nav border border-dark"
+      style="background-color: #fcfafa"
+    >
+      <ul class="navbar-nav nav-justified w-100">
         <li class="nav-item">
-            <a class="nav-link text-dark" href="../index.html"><i class="fa fa-home"></i></a>
+          <a class="nav-link text-dark" href="../index.html"
+            ><i class="fa fa-home"></i
+          ></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark" href="#"><i class="far fa-envelope"></i></a>
+          <a class="nav-link text-dark" href="#"
+            ><i class="far fa-envelope"></i
+          ></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark" href="#"><i class="bi bi-bell"></i></a>
+          <a class="nav-link text-dark" href="#"><i class="bi bi-bell"></i></a>
         </li>
         <li class="nav-item">
-            <a href="./pages/profile.html">
-                <div class="rounded-circle overflow-hidden ms-5 mt-1" style="width: 25px; height: 25px; background-color: #f0f0f0;">
-                    <img id="userImage" src="../img/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-            </a>
-        </li>
-    </ul>
-  </nav>
-
-    <main class="container-fluid" style="margin-top: 69px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <form class="d-flex mt-3 mb-3">
-                        <div class="input-group w-50 w-md-25">
-                            <span class="input-group-text" style="border-top-left-radius: 15px; border-bottom-left-radius: 15px; background-color: transparent; border-right: none;">
-                                <i class="fas fa-search"></i>
-                            </span>
-                            <input class="form-control" type="search" placeholder="Search Events..." aria-label="Search" style="border-top-right-radius: 15px; border-bottom-right-radius: 15px; border-left: none;">
-                        </div>
-                        <button class="btn btn-outline-secondary btn-sm ms-2" type="button" style="border-radius: 10px;">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </button>
-                    </form>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 15px; background-color: #13005A;">
-                            <i class="fas fa-bars custom-bars-icon"></i> Filter
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#" onclick="addCategory('finance')">Finance</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="addCategory('business')">Business</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="addCategory('self-development')">Self Development</a></li>
-                        </ul>
-                        <div id="selectedCategories" class="ms-2 btn-sm"></div>
-                    </div>
-                    <div class="col-auto text-end mb-2">
-                        <div class="dropdown">
-                            <span id="sortByLatest" class="dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" style="color: #13005A;">
-                                Sort by: Latest
-                            </span>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
-                                <li><a class="dropdown-item" href="#" onclick="selectSort('Latest')">Latest</a></li>
-                                <li><a class="dropdown-item" href="#" onclick="selectSort('Oldest')">Oldest</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <div id="eventCards" class="row">
-                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance">
-                        <a href="./event_detail.html" class="card-link text-dark">
-                            <div class="card custom-card">
-                                <div class="card-img-container">
-                                    <img src="../img/event-1.png" class="card-img-top" alt="Finance Meet-Up">
-                                    <span class="badge rounded-pill badge-custom">September 10th</span>
-                                </div>
-                                <div class="card-body mt-1">
-                                    <h5 class="card-title">Finance Meet-Up</h5>
-                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge rounded-pill badge-secondary">Rp. 100.000</span>
-                                        <div class="d-flex align-items-center">
-                                            <i class="fas fa-map-marker-alt location-icon"></i>
-                                            <span class="ms-1 location-text">Surabaya</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mt-3 mb-3 bussiness">
-                        <a href="./event_detail.html" class="card-link text-dark">
-                            <div class="card custom-card">
-                                <div class="card-img-container">
-                                    <img src="../img/event-2.png" class="card-img-top" alt="Business Meetup">
-                                    <span class="badge rounded-pill badge-custom">October 12th</span>
-                                </div>
-                                <div class="card-body mt-1">
-                                    <h5 class="card-title">Business Meetup</h5>
-                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge rounded-pill badge-secondary">Rp. 200.000</span>
-                                        <div class="d-flex align-items-center">
-                                            <i class="fas fa-map-marker-alt location-icon"></i>
-                                            <span class="ms-1 location-text">Jakarta</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance business">
-                        <a href="./event_detail.html" class="card-link text-dark">
-                            <div class="card custom-card">
-                                <div class="card-img-container">
-                                    <img src="../img/event-3.png" class="card-img-top" alt="Technology Meetup">
-                                    <span class="badge rounded-pill badge-custom">November 14th</span>
-                                </div>
-                                <div class="card-body mt-1">
-                                    <h5 class="card-title">Technology Meetup</h5>
-                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge rounded-pill badge-secondary">Rp. 300.000</span>
-                                        <div class="d-flex align-items-center">
-                                            <i class="fas fa-map-marker-alt location-icon"></i>
-                                            <span class="ms-1 location-text">Bandung</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mt-3 mb-3 kategori-1 self-development">
-                        <a href="./event_detail.html" class="card-link text-dark">
-                            <div class="card custom-card">
-                                <div class="card-img-container">
-                                    <img src="../img/event-4.png" class="card-img-top" alt="Health Meetup">
-                                    <span class="badge rounded-pill badge-custom">December 16th</span>
-                                </div>
-                                <div class="card-body mt-1">
-                                    <h5 class="card-title">Health Meetup</h5>
-                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge rounded-pill badge-secondary">Rp. 400.000</span>
-                                        <div class="d-flex align-items-center">
-                                            <i class="fas fa-map-marker-alt location-icon"></i>
-                                            <span class="ms-1 location-text">Yogyakarta</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance">
-                        <a href="./event_detail.html" class="card-link text-dark">
-                            <div class="card custom-card">
-                                <div class="card-img-container">
-                                    <img src="../img/event-1.png" class="card-img-top" alt="Finance Meet-Up">
-                                    <span class="badge rounded-pill badge-custom">September 10th</span>
-                                </div>
-                                <div class="card-body mt-1">
-                                    <h5 class="card-title">Finance Meet-Up</h5>
-                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge rounded-pill badge-secondary">Rp. 100.000</span>
-                                        <div class="d-flex align-items-center">
-                                            <i class="fas fa-map-marker-alt location-icon"></i>
-                                            <span class="ms-1 location-text">Surabaya</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mt-3 mb-3 bussiness">
-                        <a href="./event_detail.html" class="card-link text-dark">
-                            <div class="card custom-card">
-                                <div class="card-img-container">
-                                    <img src="../img/event-2.png" class="card-img-top" alt="Business Meetup">
-                                    <span class="badge rounded-pill badge-custom">October 12th</span>
-                                </div>
-                                <div class="card-body mt-1">
-                                    <h5 class="card-title">Business Meetup</h5>
-                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge rounded-pill badge-secondary">Rp. 200.000</span>
-                                        <div class="d-flex align-items-center">
-                                            <i class="fas fa-map-marker-alt location-icon"></i>
-                                            <span class="ms-1 location-text">Jakarta</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance business">
-                        <a href="./event_detail.html" class="card-link text-dark">
-                            <div class="card custom-card">
-                                <div class="card-img-container">
-                                    <img src="../img/event-3.png" class="card-img-top" alt="Technology Meetup">
-                                    <span class="badge rounded-pill badge-custom">November 14th</span>
-                                </div>
-                                <div class="card-body mt-1">
-                                    <h5 class="card-title">Technology Meetup</h5>
-                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge rounded-pill badge-secondary">Rp. 300.000</span>
-                                        <div class="d-flex align-items-center">
-                                            <i class="fas fa-map-marker-alt location-icon"></i>
-                                            <span class="ms-1 location-text">Bandung</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mt-3 mb-3 kategori-1 self-development">
-                        <a href="./event_detail.html" class="card-link text-dark">
-                            <div class="card custom-card">
-                                <div class="card-img-container">
-                                    <img src="../img/event-4.png" class="card-img-top" alt="Health Meetup">
-                                    <span class="badge rounded-pill badge-custom">December 16th</span>
-                                </div>
-                                <div class="card-body mt-1">
-                                    <h5 class="card-title">Health Meetup</h5>
-                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge rounded-pill badge-secondary">Rp. 400.000</span>
-                                        <div class="d-flex align-items-center">
-                                            <i class="fas fa-map-marker-alt location-icon"></i>
-                                            <span class="ms-1 location-text">Yogyakarta</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance">
-                        <a href="./event_detail.html" class="card-link text-dark">
-                            <div class="card custom-card">
-                                <div class="card-img-container">
-                                    <img src="../img/event-1.png" class="card-img-top" alt="Finance Meet-Up">
-                                    <span class="badge rounded-pill badge-custom">September 10th</span>
-                                </div>
-                                <div class="card-body mt-1">
-                                    <h5 class="card-title">Finance Meet-Up</h5>
-                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge rounded-pill badge-secondary">Rp. 100.000</span>
-                                        <div class="d-flex align-items-center">
-                                            <i class="fas fa-map-marker-alt location-icon"></i>
-                                            <span class="ms-1 location-text">Surabaya</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mt-3 mb-3 bussiness">
-                        <a href="./event_detail.html" class="card-link text-dark">
-                            <div class="card custom-card">
-                                <div class="card-img-container">
-                                    <img src="../img/event-2.png" class="card-img-top" alt="Business Meetup">
-                                    <span class="badge rounded-pill badge-custom">October 12th</span>
-                                </div>
-                                <div class="card-body mt-1">
-                                    <h5 class="card-title">Business Meetup</h5>
-                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge rounded-pill badge-secondary">Rp. 200.000</span>
-                                        <div class="d-flex align-items-center">
-                                            <i class="fas fa-map-marker-alt location-icon"></i>
-                                            <span class="ms-1 location-text">Jakarta</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance business">
-                        <a href="./event_detail.html" class="card-link text-dark">
-                            <div class="card custom-card">
-                                <div class="card-img-container">
-                                    <img src="../img/event-3.png" class="card-img-top" alt="Technology Meetup">
-                                    <span class="badge rounded-pill badge-custom">November 14th</span>
-                                </div>
-                                <div class="card-body mt-1">
-                                    <h5 class="card-title">Technology Meetup</h5>
-                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge rounded-pill badge-secondary">Rp. 300.000</span>
-                                        <div class="d-flex align-items-center">
-                                            <i class="fas fa-map-marker-alt location-icon"></i>
-                                            <span class="ms-1 location-text">Bandung</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mt-3 mb-3 kategori-1 self-development">
-                        <a href="./event_detail.html" class="card-link text-dark">
-                            <div class="card custom-card">
-                                <div class="card-img-container">
-                                    <img src="../img/event-4.png" class="card-img-top" alt="Health Meetup">
-                                    <span class="badge rounded-pill badge-custom">December 16th</span>
-                                </div>
-                                <div class="card-body mt-1">
-                                    <h5 class="card-title">Health Meetup</h5>
-                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge rounded-pill badge-secondary">Rp. 400.000</span>
-                                        <div class="d-flex align-items-center">
-                                            <i class="fas fa-map-marker-alt location-icon"></i>
-                                            <span class="ms-1 location-text">Yogyakarta</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance">
-                        <a href="halaman_event_1.html" class="card-link text-dark">
-                            <div class="card custom-card">
-                                <div class="card-img-container">
-                                    <img src="../img/event-1.png" class="card-img-top" alt="Finance Meet-Up">
-                                    <span class="badge rounded-pill badge-custom">September 10th</span>
-                                </div>
-                                <div class="card-body mt-1">
-                                    <h5 class="card-title">Finance Meet-Up</h5>
-                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge rounded-pill badge-secondary">Rp. 100.000</span>
-                                        <div class="d-flex align-items-center">
-                                            <i class="fas fa-map-marker-alt location-icon"></i>
-                                            <span class="ms-1 location-text">Surabaya</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mt-3 mb-3 bussiness">
-                        <a href="halaman_event_2.html" class="card-link text-dark">
-                            <div class="card custom-card">
-                                <div class="card-img-container">
-                                    <img src="../img/event-2.png" class="card-img-top" alt="Business Meetup">
-                                    <span class="badge rounded-pill badge-custom">October 12th</span>
-                                </div>
-                                <div class="card-body mt-1">
-                                    <h5 class="card-title">Business Meetup</h5>
-                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge rounded-pill badge-secondary">Rp. 200.000</span>
-                                        <div class="d-flex align-items-center">
-                                            <i class="fas fa-map-marker-alt location-icon"></i>
-                                            <span class="ms-1 location-text">Jakarta</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mt-3 mb-3 finance business">
-                        <a href="halaman_event_3.html" class="card-link text-dark">
-                            <div class="card custom-card">
-                                <div class="card-img-container">
-                                    <img src="../img/event-3.png" class="card-img-top" alt="Technology Meetup">
-                                    <span class="badge rounded-pill badge-custom">November 14th</span>
-                                </div>
-                                <div class="card-body mt-1">
-                                    <h5 class="card-title">Technology Meetup</h5>
-                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge rounded-pill badge-secondary">Rp. 300.000</span>
-                                        <div class="d-flex align-items-center">
-                                            <i class="fas fa-map-marker-alt location-icon"></i>
-                                            <span class="ms-1 location-text">Bandung</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mt-3 mb-3 kategori-1 self-development">
-                        <a href="halaman_event_4.html" class="card-link text-dark">
-                            <div class="card custom-card">
-                                <div class="card-img-container">
-                                    <img src="../img/event-4.png" class="card-img-top" alt="Health Meetup">
-                                    <span class="badge rounded-pill badge-custom">December 16th</span>
-                                </div>
-                                <div class="card-body mt-1">
-                                    <h5 class="card-title">Health Meetup</h5>
-                                    <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge rounded-pill badge-secondary">Rp. 400.000</span>
-                                        <div class="d-flex align-items-center">
-                                            <i class="fas fa-map-marker-alt location-icon"></i>
-                                            <span class="ms-1 location-text">Yogyakarta</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+          <a href="./pages/profile.html">
+            <div
+              class="rounded-circle overflow-hidden ms-5 mt-1"
+              style="width: 25px; height: 25px; background-color: #f0f0f0"
+            >
+              <img
+                id="userImage"
+                src="../img/3582.jpg"
+                alt="Profile Image"
+                style="width: 100%; height: 100%; object-fit: cover"
+              />
             </div>
-            
-            <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center" style="padding-bottom: 20%;">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main class="container-fluid" style="margin-top: 69px">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <form class="d-flex mt-3 mb-3">
+              <div class="input-group w-50 w-md-25">
+                <span
+                  class="input-group-text"
+                  style="
+                    border-top-left-radius: 15px;
+                    border-bottom-left-radius: 15px;
+                    background-color: transparent;
+                    border-right: none;
+                  "
+                >
+                  <i class="fas fa-search"></i>
+                </span>
+                <input
+                  class="form-control"
+                  type="search"
+                  placeholder="Search Events..."
+                  aria-label="Search"
+                  style="
+                    border-top-right-radius: 15px;
+                    border-bottom-right-radius: 15px;
+                    border-left: none;
+                  "
+                />
+              </div>
+              <button
+                class="btn btn-outline-secondary btn-sm ms-2"
+                type="button"
+                style="border-radius: 10px"
+              >
+                <i class="fas fa-map-marker-alt"></i>
+              </button>
+            </form>
+            <div class="btn-group">
+              <button
+                type="button"
+                class="btn btn-secondary btn-sm dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style="border-radius: 15px; background-color: #13005a"
+              >
+                <i class="fas fa-bars custom-bars-icon"></i> Filter
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    onclick="addCategory('finance')"
+                    >Finance</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    onclick="addCategory('business')"
+                    >Business</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    onclick="addCategory('self-development')"
+                    >Self Development</a
+                  >
+                </li>
+              </ul>
+              <div id="selectedCategories" class="ms-2 btn-sm"></div>
+            </div>
+            <div class="col-auto text-end mb-2">
+              <div class="dropdown">
+                <span
+                  id="sortByLatest"
+                  class="dropdown-toggle"
+                  role="button"
+                  id="dropdownMenuLink"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style="color: #13005a"
+                >
+                  Sort by: Latest
+                </span>
+                <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="dropdownMenuLink"
+                >
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="selectSort('Latest')"
+                      >Latest</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="selectSort('Oldest')"
+                      >Oldest</a
+                    >
+                  </li>
                 </ul>
-            </nav>
-        
+              </div>
+            </div>
+          </div>
+
+          <div id="eventCards" class="row">
+            <div class="col-md-3 col-sm-6 mt-3 mb-3 finance">
+              <a href="./event_detail.html" class="card-link text-dark">
+                <div class="event-card">
+                  <img
+                    src="../img/event-1.png"
+                    alt="Event Image"
+                    class="event-image"
+                  />
+                  <div class="event-date">
+                    <div class="event-date-content">
+                      <span class="event-date-day">10</span>
+                      <span class="event-date-month">Sept</span>
+                    </div>
+                  </div>
+                  <div class="event-info">
+                    <p class="event-location">
+                      <i class="bi bi-geo-alt"></i> Surabaya
+                    </p>
+                    <h5 class="event-title">Personal Finance Webinar</h5>
+                    <span class="event-price badge rounded-pill badge-secondary"
+                      >Rp. 200.000</span
+                    >
+                    <p class="event-community">Financial Freedom Community</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-3 mb-3 bussiness">
+              <a href="./event_detail.html" class="card-link text-dark">
+                <div class="event-card">
+                  <img
+                    src="../img/event-1.png"
+                    alt="Event Image"
+                    class="event-image"
+                  />
+                  <div class="event-date">
+                    <div class="event-date-content">
+                      <span class="event-date-day">19</span>
+                      <span class="event-date-month">Oct</span>
+                    </div>
+                  </div>
+                  <div class="event-info">
+                    <p class="event-location">
+                      <i class="bi bi-geo-alt"></i> Jakarta
+                    </p>
+                    <h5 class="event-title">Personal Finance Webinar</h5>
+                    <span class="event-price badge rounded-pill badge-secondary"
+                      >Rp. 250.000</span
+                    >
+                    <p class="event-community">Financial Freedom Community</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-3 mb-3 finance business">
+              <a href="./event_detail.html" class="card-link text-dark">
+                <div class="event-card">
+                  <img
+                    src="../img/event-1.png"
+                    alt="Event Image"
+                    class="event-image"
+                  />
+                  <div class="event-date">
+                    <div class="event-date-content">
+                      <span class="event-date-day">19</span>
+                      <span class="event-date-month">Oct</span>
+                    </div>
+                  </div>
+                  <div class="event-info">
+                    <p class="event-location">
+                      <i class="bi bi-geo-alt"></i> Jakarta
+                    </p>
+                    <h5 class="event-title">Personal Finance Webinar</h5>
+                    <span class="event-price badge rounded-pill badge-secondary"
+                      >Rp. 250.000</span
+                    >
+                    <p class="event-community">Financial Freedom Community</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div
+              class="col-md-3 col-sm-6 mt-3 mb-3 kategori-1 self-development"
+            >
+              <a href="./event_detail.html" class="card-link text-dark">
+                <div class="event-card">
+                  <img
+                    src="../img/event-1.png"
+                    alt="Event Image"
+                    class="event-image"
+                  />
+                  <div class="event-date">
+                    <div class="event-date-content">
+                      <span class="event-date-day">10</span>
+                      <span class="event-date-month">Sept</span>
+                    </div>
+                  </div>
+                  <div class="event-info">
+                    <p class="event-location">
+                      <i class="bi bi-geo-alt"></i> Surabaya
+                    </p>
+                    <h5 class="event-title">Personal Finance Webinar</h5>
+                    <span class="event-price badge rounded-pill badge-secondary"
+                      >Rp. 200.000</span
+                    >
+                    <p class="event-community">Financial Freedom Community</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-3 mb-3 finance">
+              <a href="./event_detail.html" class="card-link text-dark">
+                <div class="event-card">
+                  <img
+                    src="../img/event-1.png"
+                    alt="Event Image"
+                    class="event-image"
+                  />
+                  <div class="event-date">
+                    <div class="event-date-content">
+                      <span class="event-date-day">10</span>
+                      <span class="event-date-month">Sept</span>
+                    </div>
+                  </div>
+                  <div class="event-info">
+                    <p class="event-location">
+                      <i class="bi bi-geo-alt"></i> Surabaya
+                    </p>
+                    <h5 class="event-title">Personal Finance Webinar</h5>
+                    <span class="event-price badge rounded-pill badge-secondary"
+                      >Rp. 200.000</span
+                    >
+                    <p class="event-community">Financial Freedom Community</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-3 mb-3 bussiness">
+              <a href="./event_detail.html" class="card-link text-dark">
+                <div class="event-card">
+                  <img
+                    src="../img/event-1.png"
+                    alt="Event Image"
+                    class="event-image"
+                  />
+                  <div class="event-date">
+                    <div class="event-date-content">
+                      <span class="event-date-day">10</span>
+                      <span class="event-date-month">Sept</span>
+                    </div>
+                  </div>
+                  <div class="event-info">
+                    <p class="event-location">
+                      <i class="bi bi-geo-alt"></i> Surabaya
+                    </p>
+                    <h5 class="event-title">Personal Finance Webinar</h5>
+                    <span class="event-price badge rounded-pill badge-secondary"
+                      >Rp. 200.000</span
+                    >
+                    <p class="event-community">Financial Freedom Community</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-3 mb-3 finance business">
+              <a href="./event_detail.html" class="card-link text-dark">
+                <div class="event-card">
+                  <img
+                    src="../img/event-1.png"
+                    alt="Event Image"
+                    class="event-image"
+                  />
+                  <div class="event-date">
+                    <div class="event-date-content">
+                      <span class="event-date-day">10</span>
+                      <span class="event-date-month">Sept</span>
+                    </div>
+                  </div>
+                  <div class="event-info">
+                    <p class="event-location">
+                      <i class="bi bi-geo-alt"></i> Surabaya
+                    </p>
+                    <h5 class="event-title">Personal Finance Webinar</h5>
+                    <span class="event-price badge rounded-pill badge-secondary"
+                      >Rp. 200.000</span
+                    >
+                    <p class="event-community">Financial Freedom Community</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div
+              class="col-md-3 col-sm-6 mt-3 mb-3 kategori-1 self-development"
+            >
+              <a href="./event_detail.html" class="card-link text-dark">
+                <div class="event-card">
+                  <img
+                    src="../img/event-1.png"
+                    alt="Event Image"
+                    class="event-image"
+                  />
+                  <div class="event-date">
+                    <div class="event-date-content">
+                      <span class="event-date-day">10</span>
+                      <span class="event-date-month">Sept</span>
+                    </div>
+                  </div>
+                  <div class="event-info">
+                    <p class="event-location">
+                      <i class="bi bi-geo-alt"></i> Surabaya
+                    </p>
+                    <h5 class="event-title">Personal Finance Webinar</h5>
+                    <span class="event-price badge rounded-pill badge-secondary"
+                      >Rp. 200.000</span
+                    >
+                    <p class="event-community">Financial Freedom Community</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-3 mb-3 finance">
+              <a href="./event_detail.html" class="card-link text-dark">
+                <div class="event-card">
+                  <img
+                    src="../img/event-1.png"
+                    alt="Event Image"
+                    class="event-image"
+                  />
+                  <div class="event-date">
+                    <div class="event-date-content">
+                      <span class="event-date-day">10</span>
+                      <span class="event-date-month">Sept</span>
+                    </div>
+                  </div>
+                  <div class="event-info">
+                    <p class="event-location">
+                      <i class="bi bi-geo-alt"></i> Surabaya
+                    </p>
+                    <h5 class="event-title">Personal Finance Webinar</h5>
+                    <span class="event-price badge rounded-pill badge-secondary"
+                      >Rp. 200.000</span
+                    >
+                    <p class="event-community">Financial Freedom Community</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-3 mb-3 bussiness">
+              <a href="./event_detail.html" class="card-link text-dark">
+                <div class="event-card">
+                  <img
+                    src="../img/event-1.png"
+                    alt="Event Image"
+                    class="event-image"
+                  />
+                  <div class="event-date">
+                    <div class="event-date-content">
+                      <span class="event-date-day">19</span>
+                      <span class="event-date-month">Oct</span>
+                    </div>
+                  </div>
+                  <div class="event-info">
+                    <p class="event-location">
+                      <i class="bi bi-geo-alt"></i> Jakarta
+                    </p>
+                    <h5 class="event-title">Personal Finance Webinar</h5>
+                    <span class="event-price badge rounded-pill badge-secondary"
+                      >Rp. 250.000</span
+                    >
+                    <p class="event-community">Financial Freedom Community</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-3 mb-3 finance business">
+              <a href="./event_detail.html" class="card-link text-dark">
+                <div class="event-card">
+                  <img
+                    src="../img/event-1.png"
+                    alt="Event Image"
+                    class="event-image"
+                  />
+                  <div class="event-date">
+                    <div class="event-date-content">
+                      <span class="event-date-day">19</span>
+                      <span class="event-date-month">Oct</span>
+                    </div>
+                  </div>
+                  <div class="event-info">
+                    <p class="event-location">
+                      <i class="bi bi-geo-alt"></i> Jakarta
+                    </p>
+                    <h5 class="event-title">Personal Finance Webinar</h5>
+                    <span class="event-price badge rounded-pill badge-secondary"
+                      >Rp. 250.000</span
+                    >
+                    <p class="event-community">Financial Freedom Community</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div
+              class="col-md-3 col-sm-6 mt-3 mb-3 kategori-1 self-development"
+            >
+              <a href="./event_detail.html" class="card-link text-dark">
+                <div class="event-card">
+                  <img
+                    src="../img/event-1.png"
+                    alt="Event Image"
+                    class="event-image"
+                  />
+                  <div class="event-date">
+                    <div class="event-date-content">
+                      <span class="event-date-day">10</span>
+                      <span class="event-date-month">Sept</span>
+                    </div>
+                  </div>
+                  <div class="event-info">
+                    <p class="event-location">
+                      <i class="bi bi-geo-alt"></i> Surabaya
+                    </p>
+                    <h5 class="event-title">Personal Finance Webinar</h5>
+                    <span class="event-price badge rounded-pill badge-secondary"
+                      >Rp. 200.000</span
+                    >
+                    <p class="event-community">Financial Freedom Community</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-3 mb-3 finance">
+              <a href="./event_detail.html" class="card-link text-dark">
+                <div class="event-card">
+                  <img
+                    src="../img/event-1.png"
+                    alt="Event Image"
+                    class="event-image"
+                  />
+                  <div class="event-date">
+                    <div class="event-date-content">
+                      <span class="event-date-day">10</span>
+                      <span class="event-date-month">Sept</span>
+                    </div>
+                  </div>
+                  <div class="event-info">
+                    <p class="event-location">
+                      <i class="bi bi-geo-alt"></i> Surabaya
+                    </p>
+                    <h5 class="event-title">Personal Finance Webinar</h5>
+                    <span class="event-price badge rounded-pill badge-secondary"
+                      >Rp. 200.000</span
+                    >
+                    <p class="event-community">Financial Freedom Community</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-3 mb-3 bussiness">
+              <a href="./event_detail.html" class="card-link text-dark">
+                <div class="event-card">
+                  <img
+                    src="../img/event-1.png"
+                    alt="Event Image"
+                    class="event-image"
+                  />
+                  <div class="event-date">
+                    <div class="event-date-content">
+                      <span class="event-date-day">10</span>
+                      <span class="event-date-month">Sept</span>
+                    </div>
+                  </div>
+                  <div class="event-info">
+                    <p class="event-location">
+                      <i class="bi bi-geo-alt"></i> Surabaya
+                    </p>
+                    <h5 class="event-title">Personal Finance Webinar</h5>
+                    <span class="event-price badge rounded-pill badge-secondary"
+                      >Rp. 200.000</span
+                    >
+                    <p class="event-community">Financial Freedom Community</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-3 col-sm-6 mt-3 mb-3 finance business">
+              <a href="./event_detail.html" class="card-link text-dark">
+                <div class="event-card">
+                  <img
+                    src="../img/event-1.png"
+                    alt="Event Image"
+                    class="event-image"
+                  />
+                  <div class="event-date">
+                    <div class="event-date-content">
+                      <span class="event-date-day">10</span>
+                      <span class="event-date-month">Sept</span>
+                    </div>
+                  </div>
+                  <div class="event-info">
+                    <p class="event-location">
+                      <i class="bi bi-geo-alt"></i> Surabaya
+                    </p>
+                    <h5 class="event-title">Personal Finance Webinar</h5>
+                    <span class="event-price badge rounded-pill badge-secondary"
+                      >Rp. 200.000</span
+                    >
+                    <p class="event-community">Financial Freedom Community</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div
+              class="col-md-3 col-sm-6 mt-3 mb-3 kategori-1 self-development"
+            >
+              <a href="./event_detail.html" class="card-link text-dark">
+                <div class="event-card">
+                  <img
+                    src="../img/event-1.png"
+                    alt="Event Image"
+                    class="event-image"
+                  />
+                  <div class="event-date">
+                    <div class="event-date-content">
+                      <span class="event-date-day">10</span>
+                      <span class="event-date-month">Sept</span>
+                    </div>
+                  </div>
+                  <div class="event-info">
+                    <p class="event-location">
+                      <i class="bi bi-geo-alt"></i> Surabaya
+                    </p>
+                    <h5 class="event-title">Personal Finance Webinar</h5>
+                    <span class="event-price badge rounded-pill badge-secondary"
+                      >Rp. 200.000</span
+                    >
+                    <p class="event-community">Financial Freedom Community</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
+
+        <nav aria-label="Page navigation example">
+          <ul
+            class="pagination justify-content-center"
+            style="padding-bottom: 20%"
+          >
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </main>
-    
+
     <script>
       // Array untuk menyimpan kategori yang dipilih
       let selectedCategories = [];
-    
+
       // Fungsi untuk menambah kategori
       function addCategory(category) {
         if (!selectedCategories.includes(category)) {
@@ -704,47 +1074,51 @@ display: none;
           filterCards();
         }
       }
-    
+
       // Fungsi untuk menghapus kategori
       function removeCategory(category) {
-        selectedCategories = selectedCategories.filter(cat => cat !== category);
+        selectedCategories = selectedCategories.filter(
+          (cat) => cat !== category
+        );
         updateSelectedCategories();
         filterCards();
       }
-    
+
       // Fungsi untuk memperbarui tampilan kategori yang dipilih
       function updateSelectedCategories() {
-        const selectedCategoriesContainer = document.getElementById('selectedCategories');
-        selectedCategoriesContainer.innerHTML = '';
-        selectedCategories.forEach(category => {
-          const categoryBadge = document.createElement('span');
-          categoryBadge.className = 'badge bg-secondary me-2';
-          categoryBadge.style.cursor = 'pointer';
+        const selectedCategoriesContainer =
+          document.getElementById("selectedCategories");
+        selectedCategoriesContainer.innerHTML = "";
+        selectedCategories.forEach((category) => {
+          const categoryBadge = document.createElement("span");
+          categoryBadge.className = "badge bg-secondary me-2";
+          categoryBadge.style.cursor = "pointer";
           categoryBadge.innerHTML = `${category} <i class="fas fa-times"></i>`;
           categoryBadge.onclick = () => removeCategory(category);
           selectedCategoriesContainer.appendChild(categoryBadge);
         });
       }
-    
+
       // Fungsi untuk menyaring kartu berdasarkan kategori yang dipilih
       function filterCards() {
-        const cards = document.querySelectorAll('#eventCards .col-md-3');
-        cards.forEach(card => {
+        const cards = document.querySelectorAll("#eventCards .col-md-3");
+        cards.forEach((card) => {
           const cardCategories = Array.from(card.classList);
-          const hasCategory = selectedCategories.some(category => cardCategories.includes(category));
+          const hasCategory = selectedCategories.some((category) =>
+            cardCategories.includes(category)
+          );
           if (hasCategory || selectedCategories.length === 0) {
-            card.style.display = 'block';
+            card.style.display = "block";
           } else {
-            card.style.display = 'none';
+            card.style.display = "none";
           }
         });
       }
-    
+
       // Inisialisasi filter pada saat halaman dimuat
-      document.addEventListener('DOMContentLoaded', () => {
+      document.addEventListener("DOMContentLoaded", () => {
         filterCards();
       });
     </script>
-    
-</body>
+  </body>
 </html>
