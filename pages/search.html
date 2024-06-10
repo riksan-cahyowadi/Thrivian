@@ -395,7 +395,7 @@
   </nav>
 
   <!-- Navbar untuk Mobile -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-lg-none">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-lg-none pe-3">
     <div class="container-fluid">
       <a class="navbar-brand" href="#" style="flex-grow: 1;">
         <img src="../img/thrivan-logo.png" alt="Thrivian.org" width="150">
@@ -731,7 +731,7 @@
           </div>
           <div class="row mb-0 ms-5">
             <div class="col">
-              <p class="mb-0 truncated" style="text-align: justify;">
+              <p class="mb-3 truncated" style="text-align: justify;">
                 You've heard it many times before but it’s so true. Without capital, you won’t survive. Be super cheap in the beginning 
                 as you’ll make a lot of mistakes and then spend a lot once you know you’re right. This goes for everything from hiring 
                 people to marketing budgets. | used to think corporate culture stuff was fluffy babble until | started a business and 
@@ -813,40 +813,53 @@
     });
 
     window.showSection = function (section) {
-      // Get all section containers
-      var userSection = document.querySelector('.user-section');
-      var communitySection = document.querySelector('.community-section');
-      var eventSection = document.querySelector('.event-section');
-      var postSection = document.querySelector('.post-section');
+  // Get all section containers
+  var userSection = document.querySelector('.user-section');
+  var communitySection = document.querySelector('.community-section');
+  var eventSection = document.querySelector('.event-section');
+  var postSection = document.querySelector('.post-section');
 
-      // Hide all sections
-      userSection.style.display = 'none';
-      communitySection.style.display = 'none';
-      eventSection.style.display = 'none';
-      postSection.style.display = 'none';
+  // Get all hr elements
+  var hrElements = document.querySelectorAll('hr');
 
-      // Show the desired section based on the provided argument
-      switch (section) {
-        case 'user':
-          userSection.style.display = 'block';
-          break;
-        case 'community':
-          communitySection.style.display = 'block';
-          break;
-        case 'event':
-          eventSection.style.display = 'block';
-          break;
-        case 'post':
-          postSection.style.display = 'block';
-          break;
-        case 'all':
-          userSection.style.display = 'block';
-          communitySection.style.display = 'block';
-          eventSection.style.display = 'block';
-          postSection.style.display = 'block';
-          break;
-      }
-    };
+  // Hide all sections and hr elements
+  userSection.style.display = 'none';
+  communitySection.style.display = 'none';
+  eventSection.style.display = 'none';
+  postSection.style.display = 'none';
+  hrElements.forEach(function (hr) {
+    hr.style.display = 'none';
+  });
+
+  // Show the desired section and hr elements based on the provided argument
+  switch (section) {
+    case 'user':
+      userSection.style.display = 'block';
+      hrElements[0].style.display = 'block'; // Show the first hr element
+      break;
+    case 'community':
+      communitySection.style.display = 'block';
+      hrElements[1].style.display = 'block'; // Show the second hr element
+      break;
+    case 'event':
+      eventSection.style.display = 'block';
+      hrElements[2].style.display = 'block'; // Show the third hr element
+      break;
+    case 'post':
+      postSection.style.display = 'block';
+      hrElements[3].style.display = 'block'; // Show the fourth hr element
+      break;
+    case 'all':
+      userSection.style.display = 'block';
+      communitySection.style.display = 'block';
+      eventSection.style.display = 'block';
+      postSection.style.display = 'block';
+      hrElements.forEach(function (hr) {
+        hr.style.display = 'block'; // Show all hr elements
+      });
+      break;
+  }
+};
   </script>
 </body>
 </html>
