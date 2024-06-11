@@ -46,12 +46,29 @@
 .icon.user.outline {
   color: black;
 }
-        #banner-home {
-            position: relative;
-            height: 60vh;
-            width: 100%;
-            background: url('../img/intro-banner.png') no-repeat center center/cover;
-        }
+#banner-home {
+    position: relative;
+    height: 60vh;
+    width: 100%;
+    background: url('../img/intro-banner.png') no-repeat center center/cover;
+}
+
+#banner-home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Mengatur kegelapan, sesuaikan nilainya */
+    z-index: 1;
+}
+
+#banner-home * {
+    position: relative;
+    z-index: 2;
+}
+
         #banner-home .banner-content {
             position: absolute;
             top: 50%;
@@ -60,21 +77,32 @@
             text-align: center;
             padding: 2rem;
         }
-        #banner2, #banner3, #banner4, #register-section {
-            padding: 5rem 0;
-        }
-        #banner3 {
-            background-color: #13005A;
-            color: white;
-        }
-        #banner3 .text-content {
-            padding-left: 7rem;
+        #banner2 {
+            padding: 4rem 0;
         }
         #register-section {
-            background: url('../img/intro-banner.png') no-repeat center center/cover;
-            color: white;
-            text-align: center;
-        }
+    position: relative;
+    background: url('../img/intro-banner.png') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+#register-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Adjust opacity to make it darker or lighter */
+    z-index: -1;
+}
+
         #footer {
             background-color: #f8f9fa;
             padding: 2rem 0;
@@ -111,7 +139,7 @@
             max-width: 200px;
             height: auto;
         }
-        @media (max-width: 767.98px) {
+        @media (max-width: 768px) {
             #banner-home {
                 height: auto;
                 padding: 2rem 0;
@@ -127,6 +155,10 @@
                 justify-content: center;
                 
             }
+            #register-section {
+                height: auto;
+                padding: 4rem 0;
+            }
             #footer .footer-bottom {
                 text-align: center;
             }
@@ -135,6 +167,10 @@
             }
             #footer .footer-logo {
                 margin-bottom: 1rem;
+            }
+            .container, .container-fluid {
+                padding-right: 15px;
+                padding-left: 15px;
             }
         }
     </style>
@@ -154,67 +190,58 @@
     <div class="container-fluid p-0" style="margin-top: 60px;">
         <section id="banner-home" class="mt-5">
             <div class="banner-content">
-                <h1 class="text-light fw-600 mb-4" style="font-size: 48px">Selamat Datang di Thrivian!</h1>
+                <h4 class="text-light fw-600 mb-4" style="font-size: 28px">Selamat Datang di Thrivian!</h4>
                 <p class="pa-5 text-light fw-500 mb-5">Bukan Sekedar Komunitas biasa, Ini tempat yang Mendukung Mimpi dan Mendorongmu Maju,
                     Dapatkan Dukungan dan Motivasi yang Tak Terbatas dalam Perjalananmu Mencapai Tujuan
                     Mari terhubung dan temukan lebih banyak hal yang menginspirasi di dunia sosial, bisnis, kesehatan, pendidikan, teknologi dan masih banyak lagi.
                 </p>
                 <div class="d-flex flex-column flex-md-row justify-content-center">
                     <a href="login.html" class="button px-5 py-3 rounded-pill" style=" background-color: #fff; color: #13005A;">
-                        Sign Up Now !
+                       <strong> Sign In Now !</strong>
                     </a>
                 </div>
             </div>
         </section>
 
-        <section id="banner2">
+        <section id="banner2" class="d-flex align-items-center justify-content-center text-center">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-6 text-content">
-                        <h2 class="fw-bold">Bosan Berkarya Sendirian? <br>Merasa Terjebak dalam Rutinitas?</h2>
-                        <p>Di sini, kamu akan menemukan komunitas yang <br>mengerti kebutuhanmu dan siap mendukungmu dalam <br>mencapai mimpi-mimpimu.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="../img/banner2-introduction.png" alt="Community Image" class="img-fluid">
+                <div class="row justify-content-center">
+                    <div class="col-md-8" style="color: #13005A;">
+                        <h2 class="fw-bold">Bosan Berkarya Sendirian? Merasa Terjebak dalam Rutinitas?</h2>
+                        <p>Di sini, kamu akan menemukan komunitas yang mengerti kebutuhanmu dan siap mendukungmu dalam mencapai mimpi-mimpimu.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="banner3">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                        <img src="../img/banner3-introduction.png" alt="Community Image" class="img-fluid">
-                    </div>
-                    <div class="col-md-6 text-content">
-                        <h2 class="fw-bold">Temukan peluang, inspirasi, dan <br>alat yang Anda butuhkan untuk <br>kesuksesan dalam dunia bisnis.</h2>
+        <section id="banner3" class="d-flex">
+            <div class="container-fluid p-0">
+                <div class="row no-gutters">
+                    <div class="col-12">
+                        <img src="../img/banner-tiga.png" alt="Community Image" class="img-fluid w-100">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="banner4">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-6 text-content">
-                        <h2 class="fw-bold ms-3">Jalin hubungan baru, dan <br>terlibat dalam komunitas yang <br>peduli dan bersemangat.</h2>
-                    </div>
-                    <div class="col-md-6">
-                        <img src="../img/banner4-introduction.png" alt="Community Image" class="img-fluid">
+        <section id="banner4" class="d-flex">
+            <div class="container-fluid p-0">
+                <div class="row no-gutters">
+                    <div class="col-12">
+                        <img src="../img/banner-4.png" alt="Community Image" class="img-fluid w-100">
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="register-section">
-            <div class="container d-flex flex-column align-items-center py-5">
+            <div class="container d-flex flex-column align-items-center">
                 <div class="row align-items-center">
                     <div class="col text-content text-center">
-                        <h2 class="fw-bold mb-5">Belum bergabung dengan Thrivian?</h2>
+                        <h2 class="fw-bold">Belum bergabung dengan Thrivian?</h2>
                         <h3 class="mb-5 fw-normal">Jangan lewatkan kesempatan untuk terhubung dengan ribuan orang yang memiliki minat dan tujuan serupa. Daftar sekarang dan mulai <br>petualangan baru Anda bersama kami!</h3>
-                        <a href="#" class="button px-5 py-3 rounded-pill" style=" background-color: #5458E5; color: #fff;">
-                            Make Your Journey Now !
+                        <a href="#" class="button px-5 py-3 rounded-pill" style=" background-color: #fff; color:#13005A;">
+                            <strong>Make Your Journey Now !</strong>
                         </a>
                     </div>
                 </div>
