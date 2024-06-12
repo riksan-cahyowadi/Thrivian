@@ -29,12 +29,14 @@
       height: 40%; /* Menyesuaikan tinggi gambar secara proporsional */
     }
 
+     /* Menyesuaikan tampilan font */
     .error-content h1 {
       font-size: 2.5rem;
       font-weight: bold;
       margin-top: 1rem;
     }
 
+      /* Style button untuk kembali ke halaman sebelumnya */
     .back-button {
       font-size: 0.7rem;
       padding: 0.5rem 1.5rem;
@@ -52,6 +54,7 @@
       text-decoration: none;
     }
 
+    /* Responsive style untuk macam-macam device */
     @media (max-width: 767px) {
       .error-content h1 {
         font-size: 2rem;
@@ -66,8 +69,11 @@
 <body>
 
   <div class="error-container">
+    <!-- Gambar yang ditampilkan ke layar -->
     <img src="../img/error_303.png" alt="Error Image">
     <div class="error-content">
+
+      <!-- Informasi error yang dialami user -->
       <h1>Ooops!</h1>
       <p style="font-size: 1rem; font-weight: bold">We can’t seem to find a page you’re looking for</p>
       <p style="font-size: 0.8rem;">error code: 303</p>
