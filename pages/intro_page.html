@@ -102,6 +102,24 @@
     background: rgba(0, 0, 0, 0.4); /* Adjust opacity to make it darker or lighter */
     z-index: -1;
 }
+#banner-home,
+#banner2,
+#banner3,
+#banner4,
+#register-section {
+    animation: fadeUpAnimation 1s ease-in-out forwards;
+}
+
+@keyframes fadeUpAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
         #footer {
             background-color: #f8f9fa;
@@ -297,5 +315,25 @@
             </div>
         </div>
     </footer>
+
+    <script>
+  window.addEventListener('load', function() {
+    const animatedElements = document.querySelectorAll('#banner-home .banner-content, #banner2, #banner3, #banner4, #register-section');
+
+    function animateOnScroll() {
+      animatedElements.forEach(function(element) {
+        const elementPosition = element.getBoundingClientRect().top;
+        const viewportHeight = window.innerHeight;
+
+        if (elementPosition < viewportHeight) {
+          element.classList.add('animate');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Call the function initially to handle elements already in view
+  });
+</script>
 </body>
 </html>
