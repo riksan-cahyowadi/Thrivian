@@ -14,20 +14,20 @@
   <style>
 
 .nav-link.active {
-  color: #13005A !important;
-  position: relative;
-}
+    color: #13005A !important;
+    position: relative;
+  }
 
-.nav-link.active::after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: #13005A;
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-}
+  .nav-link.active::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #13005A;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+  }
 
 .hero-section {
   background-image: url('../img/intro-banner.png');
@@ -131,6 +131,7 @@
   transform: scale(1.09);
 }
 
+
 .community-bg {
   width: 100%;
   height: 100px;
@@ -162,77 +163,72 @@
   color:#13005A;
 }
 
-.event-card {
-  position: relative;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin-top: 5px;
-  transition: transform 0.3s ease-in-out; /* Menambahkan animasi */
+.custom-button:hover {
+  color: white; /* Warna teks ketika di-hover */
+  background-color: #015AAA; /* Warna background ketika di-hover */
+  border-color: #8E98A8; /* Warna border ketika di-hover */
 }
 
-.event-card:hover {
-  transform: scale(1.07); /* Efek zoom saat hover */
-}
+    .grow-card {
+      transition: transform 0.3s ease;
+    }
 
-.event-image {
-  width: 100%;
-  height: auto;
-}
+    .grow-card:hover {
+      transform: scale(1.05);
+    }
 
-.event-date {
-  position: absolute;
-  bottom: 135px;
-  right: 20px;
-  background-color: white;
-  color: #13005A;
-  border-radius: 9px;
-  padding: 7px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
+      .card-img-top {
+      height: 170px;
+      object-fit: cover;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+    }
+    .card-date {
+      position: absolute;
+      top: -90px;
+      right: 10px;
+      color: #015AAA;
+      background-color: white;
+      padding: 2px 10px;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .card-date h5 {
+      margin: 0;
+      font-size: 24px;
+    }
+    .card-date p {
+      margin: 0;
+      font-size: 14px;
+    }
+    .card-body {
+      position: relative;
+    }
+    .location-badge {
+      width: 100%;
+      position: absolute;
+      top: -29px;
+      left: 0;
+      background-color: #015AAA;
+      color: white;
+      padding: 5px 10px;
+    }
+    .price-badge {
+      background-color: #015AAA;
+      color: white;
+      padding: 5px 10px;
+      width: 50%;
+      border-radius: 0px 40px 40px 0px;
+      display: inline-block;
+    }
 
-.event-date-content {
-  text-align: center;
-}
-
-.event-date-day {
-  font-size: 1.4em;
-  font-weight: bold;
-  display: block;
-}
-
-.event-date-month {
-  font-size: 0.9em;
-  display: block;
-}
-
-.event-info {
-  padding: 10px;
-  background-color: white;
-}
-
-.event-location {
-  font-size: 0.9em;
-  color: #13005A;
-  margin-bottom: 5px;
-}
-
-.event-title {
-  font-size: 1.2em;
-  font-weight: bold;
-  margin: 0;
-}
-
-.event-community {
-  font-size: 0.9em;
-  color: #999;
-}
-
-.event-price {
-        background-color: #13005A;
-        color: white;
-        font-size: 0.8em;
-}
+    .event-banner {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      background: url('../img/banner.jpg') no-repeat center center;
+      background-size: cover;
+    }
 
 /* Styles for settings-nav padding in mobile devices */
 @media (max-width: 768px) {
@@ -332,7 +328,32 @@
     overflow-x: hidden;
   }
 }
+@media (max-width: 767px) {
+  .location-badge {
+    width: 600px;
+    left: -10%;
+  }
 
+  .user-avatar {
+    width: 90px;
+    height: 45px;
+    margin: auto;
+  }
+
+  .community-card {
+    margin: auto;
+    flex-wrap: wrap;
+  }
+  .location-badge {
+    top: -40%;
+  }
+  .card-body{
+    margin-top: 10%;
+  }
+  .card-date h5{
+    font-size: 12px;
+  }
+}
   </style>
 </head>
 
@@ -340,12 +361,12 @@
   <!-- Navbar untuk Desktop -->
   <nav class="navbar navbar-light bg-light fixed-top d-none d-lg-block">
     <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="../img/thrivan-logo.png" alt="Thrivian.org" width="180" height="35" />
-        </a>
+      <a class="navbar-brand" href="#">
+        <img src="../img/Thrivian Logo_OK.png" alt="Thrivian.org" width="60" height="45" />
+        </a>
         <ul class="nav me-auto">
             <li class="nav-item">
-                <a class="nav-link text-secondary active text-decoration-underline" style="color: #13005a !important" href="../index.html">Home</a>
+                <a class="nav-link text-secondary" href="../index.html">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-secondary" href="./community.html">Community</a>
@@ -399,9 +420,9 @@
   <!-- Navbar untuk Mobile -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-lg-none">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#" style="flex-grow: 1">
-            <img src="../img/thrivan-logo.png" alt="Thrivian.org" width="150" />
-        </a>
+      <a class="navbar-brand" href="#" style="flex-grow: 1">
+        <img src="../img/Thrivian Logo_OK.png" alt="Thrivian.org" width="50" />
+      </a>
         <a href="search.html" class="search-icon ms-auto me-4">
             <i class="fas fa-search"></i>
         </a>
@@ -464,6 +485,7 @@
     </ul>
   </nav>
 
+  <!-- Hero section dan fitur searching -->
   <section class="hero-section">
     <h1>Discover What You Need!</h1>
     <div class="search-bar d-flex">
@@ -472,6 +494,7 @@
     </div>
   </section>
 
+  <!-- Pilihan filter untuk konten search (All. User, Communities, Event, Post) -->
   <div class="container">
     <ul class="nav justify-content-center pt-3" id="settings-nav">
       <li class="nav-item">
@@ -492,10 +515,10 @@
     </ul>
   </div>
   
-
+  <!-- Tampilan search untuk Kategori User -->
   <section id="user-section">
     <div class="container user-section" style="margin-left: 5%;">
-      <h4 class="mb-4">Users</h4>
+      <h4 class="mb-4" style="color: #015AAA;">Users</h4>
       <div class="user-card d-flex align-items-center p-3 border rounded">
         <div class="user-avatar">
           <img src="../img/cheerful-confident-man-standing-arms-folded-plaid-shirt.jpg" alt="User Avatar" class="rounded-circle user-avatar-img">
@@ -509,7 +532,7 @@
             <span class="badge badge-pill" style="color: #00CC66;">Self Development</span>
           </div>
         </div>
-        <button class="btn btn-outline-primary follow-btn" style="border-color: #13005A; color: #13005A;">Follow</button>
+        <button class="btn btn-outline-primary follow-btn px-5" style="border-color: #015AAA; color: #015AAA;">Follow</button>
       </div>
       <div class="user-card d-flex align-items-center p-3 border rounded">
         <div class="user-avatar">
@@ -524,7 +547,7 @@
             <span class="badge badge-pill" style="color: #00CC66;">Self Development</span>
           </div>
         </div>
-        <button class="btn btn-outline-primary follow-btn" style="border-color: #13005A; color: #13005A;">Follow</button>
+        <button class="btn btn-outline-primary follow-btn px-5" style="border-color: #015AAA; color: #015AAA;">Follow</button>
       </div>
       <div class="user-card d-flex align-items-center p-3 border rounded">
         <div class="user-avatar">
@@ -539,18 +562,19 @@
             <span class="badge badge-pill" style="color: #00CC66;">Self Development</span>
           </div>
         </div>
-        <button class="btn btn-outline-primary follow-btn" style="border-color: #13005A; color: #13005A;">Follow</button>
+        <button class="btn btn-outline-primary follow-btn px-5" style="border-color: #015AAA; color: #015AAA;">Follow</button>
       </div>
       <div class="d-flex justify-content-end">
-        <a href="#" class="btn btn-outline-primary rounded-btn see-more-button" style="color: #13005A; border-color: #13005A; font-size: 0.7rem;">See More</a>
+        <a href="#" class="btn btn-outline-primary see-more-button" style="color: #015AAA; border-color: #015AAA; border-radius: 10px; font-size: 0.7rem;">See More</a>
       </div>
     </div>
     <hr class="mb-0">
   </section>
 
+    <!-- Tampilan search untuk Kategori Communities -->
   <section id="community-section">
     <div class="container my-4 community-section">
-      <h4 class="mb-4">Communities</h4>
+      <h4 class="mb-4" style="color: #015AAA;">Communities</h4>
       <div class="row">
         <div class="col-md-3">
           <div class="community-card">
@@ -563,8 +587,26 @@
               <p>Level Up Learners: Elevate your skills, empower your future.</p>
             </div>
             <div class="d-grid gap-2 d-md-block">
-              <button class="bg-transparent rounded-pill px-2 py-1" style="color: #13005A; border-color: #13005A; font-size: 0.8rem;">About Community</button>
-              <button class="rounded-pill px-3 py-1" style="background-color: #13005A; color: white; font-size: 0.8rem;">Join</button>
+              <a href="join_community.html">
+                <button class="custom-button border border-secondary w-100 rounded-pill px-2 py-2" style=" border-color: #8E98A8; font-size: 0.8rem;">About Community</button>
+                </a>            
+              </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="community-card">
+            <div class="community-bg" style="background-image: url('../img/Rectangle\ 25.png');"></div>
+            <div class="community-avatar">
+              <img src="../img/Ellipse 37.png" alt="Community Avatar">
+            </div>
+            <div class="community-info mb-2">
+              <h5>Level Up Learners</h5>
+              <p>Level Up Learners: Elevate your skills, empower your future.</p>
+            </div>
+            <div class="d-grid gap-2 d-md-block">
+                <a href="join_community.html">
+                  <button class="custom-button border border-secondary w-100 rounded-pill px-2 py-2" style=" border-color: #8E98A8; font-size: 0.8rem;">About Community</button>
+                </a>
             </div>
           </div>
         </div>
@@ -579,9 +621,10 @@
               <p>Level Up Learners: Elevate your skills, empower your future.</p>
             </div>
             <div class="d-grid gap-2 d-md-block">
-              <button class="bg-transparent rounded-pill px-2 py-1" style="color: #13005A; border-color: #13005A; font-size: 0.8rem;">About Community</button>
-              <button class="rounded-pill px-3 py-1" style="background-color: #13005A; color: white; font-size: 0.8rem;">Join</button>
-            </div>
+              <a href="join_community.html">
+                <button class="custom-button border border-secondary w-100 rounded-pill px-2 py-2" style=" border-color: #8E98A8; font-size: 0.8rem;">About Community</button>
+                </a>            
+              </div>
           </div>
         </div>
         <div class="col-md-3">
@@ -595,126 +638,121 @@
               <p>Level Up Learners: Elevate your skills, empower your future.</p>
             </div>
             <div class="d-grid gap-2 d-md-block">
-              <button class="bg-transparent rounded-pill px-2 py-1" style="color: #13005A; border-color: #13005A; font-size: 0.8rem;">About Community</button>
-              <button class="rounded-pill px-3 py-1" style="background-color: #13005A; color: white; font-size: 0.8rem;">Join</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="community-card">
-            <div class="community-bg" style="background-image: url('../img/Rectangle\ 25.png');"></div>
-            <div class="community-avatar">
-              <img src="../img/Ellipse 37.png" alt="Community Avatar">
-            </div>
-            <div class="community-info mb-2">
-              <h5>Level Up Learners</h5>
-              <p>Level Up Learners: Elevate your skills, empower your future.</p>
-            </div>
-            <div class="d-grid gap-2 d-md-block">
-              <button class="bg-transparent rounded-pill px-2 py-1" style="color: #13005A; border-color: #13005A; font-size: 0.8rem;">About Community</button>
-              <button class="rounded-pill px-3 py-1" style="background-color: #13005A; color: white; font-size: 0.8rem;">Join</button>
+              <a href="join_community.html">
+                <button class="custom-button border border-secondary w-100 rounded-pill px-2 py-2" style=" border-color: #8E98A8; font-size: 0.8rem;">About Community</button>
+              </a>
             </div>
           </div>
         </div>
       </div>
       <div class="d-flex justify-content-end">
-        <a href="#" class="btn btn-outline-primary rounded-btn see-more-button" style="color: #13005A; border-color: #13005A; font-size: 0.7rem;">See More</a>
+        <a href="#" class="btn btn-outline-primary see-more-button" style="color: #015AAA; border-color: #015AAA; border-radius: 10px; font-size: 0.7rem;">See More</a>
       </div>
     </div>
     <hr class="mb-0">
   </section>
 
-  <section id="event-section">
+    <!-- Tampilan search untuk Kategori Event -->
+  <section id="event-section d-flex flex-wrap">
     <div class="container my-4 event-section">
-      <h4 class="mb-2" style="color: #13005A;">Events</h4>
-      <div class="row">
-        <div class="col-md-3">
-          <a href="./event_detail.html" class="card-link text-dark">
-            <div class="event-card">
-                <img src="../img/event-1.png" alt="Event Image" class="event-image">
-                <div class="event-date">
-                  <div class="event-date-content">
-                    <span class="event-date-day">10</span>
-                    <span class="event-date-month">Sept</span>
+        <h3 class="mb-4" style="color: #015AAA;">Upcoming Events</h3>
+        <!-- Card ditampilkan secara format baris dari kiri ke kanan -->
+        <div class="row">
+            <!-- Card  1-->
+            <div class="col-6 col-md-3 mt-3 mb-3">
+              <a href="event_detail.html">
+              <div class="card shadow grow-card" style="width: 100%; border-radius: 15px;">
+                <img src="../img/card event.png" class="card-img-top" alt="Event Image">
+                <div class="card-body">
+                  <div class="location-badge">
+                    <i class="bi bi-geo-alt"></i> Surabaya
                   </div>
-                </div>
-                <div class="event-info">
-                  <p class="event-location"><i class="bi bi-geo-alt"></i> Surabaya</p>
-                  <h5 class="event-title">Personal Finance Webinar</h5>
-                  <span class="event-price badge rounded-pill badge-secondary px-2 py-2 my-2">Rp. 200.000</span>
-                  <p class="event-community">Financial Freedom Community</p>
+                  <div class="card-date">
+                    <h5>10</h5>
+                    <p>Sept</p>
+                  </div>
+                  <h5 class="card-title py-2" style="margin-top: -3%;">Personal Finance Webinar</h5>
+                  <p class="price-badge d-flex justify-content-center">Rp 100.000</p>
+                  <p class="card-text text-secondary">Financial Freedom Community</p>
                 </div>
               </div>
-        </a>
-        </div>
-        <div class="col-md-3">
-          <a href="./event_detail.html" class="card-link text-dark">
-            <div class="event-card">
-                <img src="../img/event-1.png" alt="Event Image" class="event-image">
-                <div class="event-date">
-                  <div class="event-date-content">
-                    <span class="event-date-day">10</span>
-                    <span class="event-date-month">Sept</span>
+            </a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-6 col-md-3 mt-3 mb-3">
+              <a href="event_detail.html">
+              <div class="card shadow grow-card" style="width: 100%; border-radius: 15px;">
+                <img src="../img/card event.png" class="card-img-top" alt="Event Image">
+                <div class="card-body">
+                  <div class="location-badge">
+                    <i class="bi bi-geo-alt"></i> Surabaya
                   </div>
-                </div>
-                <div class="event-info">
-                  <p class="event-location"><i class="bi bi-geo-alt"></i> Surabaya</p>
-                  <h5 class="event-title">Personal Finance Webinar</h5>
-                  <span class="event-price badge rounded-pill badge-secondary px-2 py-2 my-2">Rp. 200.000</span>
-                  <p class="event-community">Financial Freedom Community</p>
+                  <div class="card-date">
+                    <h5>10</h5>
+                    <p>Sept</p>
+                  </div>
+                  <h5 class="card-title py-2" style="margin-top: -3%;">Personal Finance Webinar</h5>
+                  <p class="price-badge d-flex justify-content-center">Rp 100.000</p>
+                  <p class="card-text text-secondary">Financial Freedom Community</p>
                 </div>
               </div>
-        </a>
-        </div>
-        <div class="col-md-3">
-          <a href="./event_detail.html" class="card-link text-dark">
-            <div class="event-card">
-                <img src="../img/event-1.png" alt="Event Image" class="event-image">
-                <div class="event-date">
-                  <div class="event-date-content">
-                    <span class="event-date-day">10</span>
-                    <span class="event-date-month">Sept</span>
+            </a>
+            </div>
+          
+            <!-- Card 3 -->
+            <div class="col-6 col-md-3 mt-3 mb-3">
+              <a href="event_detail.html">
+              <div class="card shadow grow-card" style="width: 100%; border-radius: 15px;">
+                <img src="../img/card event.png" class="card-img-top" alt="Event Image">
+                <div class="card-body">
+                  <div class="location-badge">
+                    <i class="bi bi-geo-alt"></i> Surabaya
                   </div>
-                </div>
-                <div class="event-info">
-                  <p class="event-location"><i class="bi bi-geo-alt"></i> Surabaya</p>
-                  <h5 class="event-title">Personal Finance Webinar</h5>
-                  <span class="event-price badge rounded-pill badge-secondary px-2 py-2 my-2">Rp. 200.000</span>
-                  <p class="event-community">Financial Freedom Community</p>
+                  <div class="card-date">
+                    <h5>10</h5>
+                    <p>Sept</p>
+                  </div>
+                  <h5 class="card-title py-2" style="margin-top: -3%;">Personal Expo Webinar</h5>
+                  <p class="price-badge d-flex justify-content-center">Rp 100.000</p>
+                  <p class="card-text text-secondary">Financial Freedom Community</p>
                 </div>
               </div>
-        </a>
-        </div>
-        <div class="col-md-3">
-          <a href="./event_detail.html" class="card-link text-dark">
-            <div class="event-card">
-                <img src="../img/event-1.png" alt="Event Image" class="event-image">
-                <div class="event-date">
-                  <div class="event-date-content">
-                    <span class="event-date-day">10</span>
-                    <span class="event-date-month">Sept</span>
+            </a>
+            </div>
+          
+            <!-- Card 4 -->
+            <div class="col-6 col-md-3 mt-3 mb-3">
+            <a href="event_detail.html">
+              <div class="card shadow grow-card" style="width: 100%; border-radius: 15px;">
+                <img src="../img/card event.png" class="card-img-top" alt="Event Image">
+                <div class="card-body">
+                  <div class="location-badge">
+                    <i class="bi bi-geo-alt"></i> Surabaya
                   </div>
-                </div>
-                <div class="event-info">
-                  <p class="event-location"><i class="bi bi-geo-alt"></i> Surabaya</p>
-                  <h5 class="event-title">Personal Finance Webinar</h5>
-                  <span class="event-price badge rounded-pill badge-secondary px-2 py-2 my-2">Rp. 200.000</span>
-                  <p class="event-community">Financial Freedom Community</p>
+                  <div class="card-date">
+                    <h5>10</h5>
+                    <p>Sept</p>
+                  </div>
+                  <h5 class="card-title py-2" style="margin-top: -3%;">Personal Finance Webinar</h5>
+                  <p class="price-badge d-flex justify-content-center">Rp 100.000</p>
+                  <p class="card-text text-secondary">Financial Freedom Community</p>
                 </div>
               </div>
-        </a>
+            </a>
+            </div>
+            <div class="d-flex justify-content-end">
+              <a href="#" class="btn btn-outline-primary see-more-button" style="color: #015AAA; border-color: #015AAA; border-radius: 10px; font-size: 0.7rem;">See More</a>
+            </div>
         </div>
-      </div>
-      <div class="d-flex justify-content-end mt-3">
-        <a href="#" class="btn btn-outline-primary rounded-btn see-more-button" style="color: #13005A; border-color: #13005A; font-size: 0.7rem;">See More</a>
-      </div>
     </div>
     <hr class="mb-0">
-  </section>
+</section>
 
+    <!-- Tampilan search untuk Kategori Post -->
   <section id="post-section">
     <div class="container my-4 post-section">
-      <h4 class="mb-4">Posts</h4>
+      <h4 class="mb-4" style="color: #015AAA;">Posts</h4>
       <div class="row">
         <div class="col-md-12">
           <div class="post-card d-flex align-items-center">
@@ -778,7 +816,7 @@
         </div>
       </div>
       <div class=" d-flex justify-content-end mt-3">
-        <a href="#" class="btn btn-outline-primary rounded-btn see-more-button" style="color: #13005A; border-color: #13005A; font-size: 0.7rem;">See More</a>
+        <a href="#" class="btn btn-outline-primary see-more-button" style="color: #015AAA; border-color: #015AAA; border-radius: 10px; font-size: 0.7rem;">See More</a>
       </div>
     </div>
     <hr class=" mb-0">
@@ -786,45 +824,74 @@
   </section>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var toggleButton = document.getElementById('toggleSearch');
-      var searchInput = document.getElementById('searchInput');
+  document.addEventListener('DOMContentLoaded', function () {
+    var toggleButton = document.getElementById('toggleSearch');
+    var searchInput = document.getElementById('searchInput');
 
+    if (toggleButton && searchInput) {
       toggleButton.addEventListener('click', function () {
         var isVisible = searchInput.style.display === 'block';
         searchInput.style.display = isVisible ? 'none' : 'block';
 
         if (!isVisible) {
-          searchInput.focus(); // Focus on the input when shown
+          searchInput.focus(); // Fokus pada input saat ditampilkan
         }
       });
+    }
 
-      // Script to handle active class toggle
-      var navLinks = document.querySelectorAll('.nav-link');
-      navLinks.forEach(function (link) {
-        link.addEventListener('click', function () {
-          navLinks.forEach(function (nav) { nav.classList.remove('active'); });
-          this.classList.add('active');
-          var section = this.getAttribute('onclick').split("'")[1];
-          showSection(section);
-        });
+    // Skrip untuk menangani peralihan kelas aktif
+    var navLinks = document.querySelectorAll('.nav-link');
+    var indicator = document.querySelector('.indicator');
+
+    navLinks.forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        event.preventDefault(); 
+        navLinks.forEach(function (nav) { nav.classList.remove('active'); });
+        this.classList.add('active');
+        moveIndicator(this);
       });
-
-      // Script to show the correct section
-      showSection('all'); // Show all sections initially
     });
 
+    function moveIndicator(activeLink) {
+      var activeLinkRect = activeLink.getBoundingClientRect();
+      var containerRect = document.querySelector('.container').getBoundingClientRect();
+      indicator.style.width = `${activeLinkRect.width}px`;
+      indicator.style.left = `${activeLinkRect.left - containerRect.left}px`;
+    }
+
+// Inisialisasi posisi indikator
+    var initialActiveLink = document.querySelector('.nav-link.active');
+    if (initialActiveLink) {
+      moveIndicator(initialActiveLink);
+    }
+
+    // Skrip untuk menampilkan bagian yang benar
+    showSection('all', initialActiveLink); // Tampilkan semua bagian pada awalnya
+  });
+
+  function showSection(section, link) {
+    console.log('Section to show: ' + section);
+
+    // Menangani pergerakan indikator tautan aktif
+    if (link) {
+      var navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(function (nav) { nav.classList.remove('active'); });
+      link.classList.add('active');
+      moveIndicator(link);
+    }
+  }
+
     window.showSection = function (section) {
-  // Get all section containers
+  // Dapatkan semua wadah bagian
   var userSection = document.querySelector('.user-section');
   var communitySection = document.querySelector('.community-section');
   var eventSection = document.querySelector('.event-section');
   var postSection = document.querySelector('.post-section');
 
-  // Get all hr elements
+  // Dapatkan semua elemen hr
   var hrElements = document.querySelectorAll('hr');
 
-  // Hide all sections and hr elements
+  // Sembunyikan semua bagian dan elemen hr
   userSection.style.display = 'none';
   communitySection.style.display = 'none';
   eventSection.style.display = 'none';
@@ -833,23 +900,23 @@
     hr.style.display = 'none';
   });
 
-  // Show the desired section and hr elements based on the provided argument
+  // Menampilkan bagian yang diinginkan dan elemen jam berdasarkan argumen yang disediakan
   switch (section) {
     case 'user':
       userSection.style.display = 'block';
-      hrElements[0].style.display = 'block'; // Show the first hr element
+      hrElements[0].style.display = 'block'; // Tampilkan elemen hr pertama
       break;
     case 'community':
       communitySection.style.display = 'block';
-      hrElements[1].style.display = 'block'; // Show the second hr element
+      hrElements[1].style.display = 'block'; // Tampilkan elemen jam kedua
       break;
     case 'event':
       eventSection.style.display = 'block';
-      hrElements[2].style.display = 'block'; // Show the third hr element
+      hrElements[2].style.display = 'block';// Tampilkan elemen jam ketiga
       break;
     case 'post':
       postSection.style.display = 'block';
-      hrElements[3].style.display = 'block'; // Show the fourth hr element
+      hrElements[3].style.display = 'block';// Tampilkan elemen jam keempat
       break;
     case 'all':
       userSection.style.display = 'block';
@@ -857,7 +924,7 @@
       eventSection.style.display = 'block';
       postSection.style.display = 'block';
       hrElements.forEach(function (hr) {
-        hr.style.display = 'block'; // Show all hr elements
+        hr.style.display = 'block'; // Tampilkan semua elemen hr
       });
       break;
   }
