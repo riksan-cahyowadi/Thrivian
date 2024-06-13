@@ -33,11 +33,11 @@
   <nav class="navbar navbar-light bg-light fixed-top d-none d-lg-block">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="../img/thrivan-logo.png" alt="Thrivian.org" width="180" height="35" />
+            <img src="../img/Thrivian Logo_OK.png" alt="Thrivian.org" width="60" height="45" />
         </a>
         <ul class="nav me-auto">
             <li class="nav-item">
-                <a class="nav-link text-secondary active text-decoration-underline" style="color: #13005a !important" href="../index.html">Home</a>
+                <a class="nav-link text-secondary" href="../index.html">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-secondary" href="./community.html">Community</a>
@@ -92,7 +92,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-lg-none">
     <div class="container-fluid">
         <a class="navbar-brand" href="#" style="flex-grow: 1">
-            <img src="../img/thrivan-logo.png" alt="Thrivian.org" width="150" />
+            <img src="../img/Thrivian Logo_OK.png" alt="Thrivian.org" width="50" />
         </a>
         <a href="search.html" class="search-icon ms-auto me-4">
             <i class="fas fa-search"></i>
@@ -156,11 +156,13 @@
     </ul>
   </nav>
 
-    <div class="container" style="margin-top: 10%;">
+  <!-- Section Create Community -->
+    <div class="container" style="margin-top: 7%;">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title text-center">Create New Community</h5>
                 <form>
+                    <!-- add thumbnail -->
                     <div class="mb-3">
                         <label for="thumbnail" class="form-label">Thumbnail</label>
                         <input class="form-control" type="file" id="thumbnail">
@@ -169,6 +171,7 @@
                             <div class="thumbnail-remove" id="thumbnail-remove">×</div>
                         </div>
                     </div>
+                    <!-- pilih kategori community -->
                     <div class="mb-3 mt-4">
                         <label for="category" class="form-label">Category</label>
                         <select class="form-select " id="category">
@@ -177,14 +180,17 @@
                             <option value="2">Self Development</option>
                         </select>
                     </div>
+                    <!-- Input nama community -->
                     <div class="mb-3 mt-4">
                         <label for="nameCommunity" class="form-label">Name Community</label>
                         <input type="text" class="form-control" id="nameCommunity" placeholder="Enter community name">
                     </div>
+                    <!-- Deskripsi tentang Community -->
                     <div class="mb-3">
                         <label for="description" class="form-label">Description About Your Community</label>
                         <textarea class="form-control" id="description" rows="10"></textarea>
                     </div>
+                    <!-- button submit create community -->
                     <button type="submit" class="btn btn-primary w-50 mx-auto d-block">Save Community</button>
                 </form>
             </div>

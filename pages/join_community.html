@@ -15,12 +15,12 @@
     <script src="../js/index.js"></script>
     <style>
 .btn-custom-outline {
-  border-color: #13005A;
-  color: #13005A;
+  border-color: #015AAA;
+  color: #015AAA;
 }
 
 .btn-custom-outline:hover {
-  background-color: #13005A;
+  background-color: #015AAA;
   color: white;
 }
 
@@ -95,11 +95,11 @@
   <nav class="navbar navbar-light bg-light fixed-top d-none d-lg-block">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="../img/thrivan-logo.png" alt="Thrivian.org" width="180" height="35" />
+            <img src="../img/Thrivian Logo_OK.png" alt="Thrivian.org" width="60" height="45" />
         </a>
         <ul class="nav me-auto">
             <li class="nav-item">
-                <a class="nav-link text-secondary active text-decoration-underline" style="color: #13005a !important" href="../index.html">Home</a>
+                <a class="nav-link text-secondary active text-decoration-underline" style="color: #015AAA !important" href="../index.html">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-secondary" href="./community.html">Community</a>
@@ -154,7 +154,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-lg-none">
     <div class="container-fluid">
         <a class="navbar-brand" href="#" style="flex-grow: 1">
-            <img src="../img/thrivan-logo.png" alt="Thrivian.org" width="150" />
+            <img src="../img/Thrivian Logo_OK.png" alt="Thrivian.org" width="50" />
         </a>
         <a href="search.html" class="search-icon ms-auto me-4">
             <i class="fas fa-search"></i>
@@ -220,39 +220,48 @@
 
         <main class="container-fluid border" style="margin-top: 5%;">
         <div class="row justify-content-center">
+            <!-- Kolom kiri join community -->
             <div class="col-md-8 border-end border-start mt-5 mt-md-0 mb-5 mb-md-0">
+                <!-- Card untuk konten join community -->
                 <div class="card-join mb-2 custom-card">
+                    <!-- image community -->
                     <img src="../img/Rectangle 50.png" class="card-img-top" alt="Business Club">
                     <div class="card-body">
-                        <h2 class="card-title" style="color: #13005A;">Business Club</h2>
+                        <!-- nama community -->
+                        <h2 class="card-title" style="color: #015AAA;">Business Club</h2>
+                        <!-- deskripsi community -->
                         <p class="card-text">
                             A place where you can connect with professionals and entrepreneurs, an online business community enables the exchange of insights, collaboration, and networking. Members share industry knowledge, seek advice, and foster innovation, creating opportunities for growth and support within a vibrant, connected digital environment.
                         </p>
                         <div class="d-flex align-items-center custom-elements" style="gap: 10px;">
+                            <!-- button join community -->
                             <button id="joinButton" type="button" class="btn btn-outline-primary btn-custom-outline px-4" data-bs-toggle="modal" data-bs-target="#communityRulesModal" style="border-radius: 30px;">
                                 Join
                             </button>
+                            <!-- jumlah member dalam community dan mengarah ke halaman member community -->
                             <a class="d-flex align-items-center" href="../pages/member_community.html" style="color: black;">
                                 <img src="../img/3582.jpg" class="rounded-circle" alt="Profile" style="width: 30px; height: 30px;">
                                 <img src="../img/culture_replay_ninja_1054462188.jpg" class="rounded-circle" alt="Profile" style="width: 30px; height: 30px; margin-left: -10px;">
                                 <img src="../img/smiling-asian-man-standing-grey-wall.jpg" class="rounded-circle" alt="Profile" style="width: 30px; height: 30px; margin-left: -10px;">
                                 <span class="ms-1"><strong>1k</strong> Followers</span>
                             </a>
+                            <!-- jumlah online di dalam community -->
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-circle text-success" style="font-size: 10px;"></i>
                                 <span class="ms-1">3000 Online</span>
                             </div>
-                            <button type="button" class="btn btn-link" style="text-decoration: none; color: #13005A;">
+                            <!-- button share community -->
+                            <button type="button" class="btn btn-link" style="text-decoration: none; color: #015AAA;">
                                 <i class="fas fa-share-alt"></i> Share Community
                             </button>
                         </div>
             
-                        <!-- Agreement Modal -->
+                        <!-- Modal persetujuan join community -->
                         <div class="modal fade" id="communityRulesModal" tabindex="-1" aria-labelledby="communityRulesModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h4 class="modal-title" id="communityRulesModalLabel" style="color: #13005A;">Read and Agree to Community Rules</h4>
+                                        <h4 class="modal-title" id="communityRulesModalLabel" style="color: #015AAA;">Read and Agree to Community Rules</h4>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body modal-body-custom">
@@ -270,11 +279,12 @@
                                         </ol>
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" id="agreeRulesCheckbox">
-                                            <label class="form-check-label" for="agreeRulesCheckbox" style="color: #13005A;">
+                                            <label class="form-check-label" for="agreeRulesCheckbox" style="color: #015AAA;">
                                                 I agree to all the rules above
                                             </label>
                                         </div>
                                     </div>
+                                    <!-- button join -->
                                     <div class="modal-footer d-flex justify-content-end">
                                         <button id="modalJoinButton" type="button" class="btn btn-outline-primary btn-custom-outline" data-bs-dismiss="modal" style="border-radius: 30px;">Join</button>
                                     </div>
@@ -284,9 +294,9 @@
                     </div>
                 </div>
                 <hr class="mt-1" style="border-top: 3px solid #E5E5E5;">
-                 <!-- Dropdown for Latest -->
+                 <!-- Dropdown untuk kategori community -->
                  <div class="dropdown custom-dropdown">
-                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 0.85rem; padding: 5px 10px; border-radius: 20px; background-color: #E9ECEF; color: #495057; border: 1px solid #CED4DA;">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 0.85rem; padding: 5px 10px; border-radius: 20px; background-color: #E9ECEF; color: #015AAA; border: 1px solid #CED4DA;">
                         Latest
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -297,6 +307,7 @@
                     </ul>
                 </div>
                 
+                <!-- kategori untuk post -->
                 <div class="posts">
                     <div class="posts mb-2">
                         <div class="posts mb-2">
@@ -308,9 +319,10 @@
                         </div>
                     </div>
                 </div>                            
-                
+                <!-- section post -->
                 <div class="all-posts">
-                    
+                
+                    <!-- post untuk kategori recommended -->
                 <div class="post mt-4 me-5" data-category="Business" data-post="Recommended">
                     <div class="d-flex align-items-center mb-2">
                         <div class="rounded-circle overflow-hidden me-2" style="width: 50px; height: 50px; background-color: #f0f0f0;">
@@ -349,6 +361,7 @@
                         </div>
                     </div>
 
+                    <!-- icon konten post -->
                     <div class="row justify-content-end mt-3 me-2">
                         <div class="col-auto">
                             <a class="link-posts me-3 me-md-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
@@ -374,64 +387,9 @@
                         </div>
                     </div>                                                           
                     <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
-
-                     <div class="comments">
-                        <div class="row mb-0 ms-0 mt-3">
-                            <a href="./index.html" class="close-comment" style="text-decoration: none;"><i class="close icon"></i></a>
-                            <div class="col">
-                                <div class="row mb-3 mt-3">
-                                    <div class="col">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Write your comment" aria-label="Write your comment" style="border-radius: 25px;">
-                                            <!-- <button class="btn btn-primary" type="button">Post</button> -->
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex align-items-center mb-2">
-                                    <div class="rounded-circle overflow-hidden me-2" style="width: 50px; height: 50px; background-color: #f0f0f0;">
-                                        <img src="../img/culture_replay_ninja_1054462188.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-0 text-dark fw-bold">Chanatip Singkrasong <span class="text-muted"> @chanasing • 2 hours ago</span></h6>
-                                    </div>
-                                </div>
-                                <div class="row mb-0 ms-5">
-                                    <div class="col">
-                                        <p class="mb-0 mt-1" style="text-align: justify;">
-                                            Well first off as someone else already mentioned you haven’t made a nickle or lost a nickle until you sell a stock. 
-                                            What goes up today can go down tomorrow and the whole market can crash but here are my figures for this year on about 
-                                            a 200 grand investment from the closing of the last day
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
-
-                                <div class="d-flex align-items-center mb-2">
-                                    <div class="rounded-circle overflow-hidden me-2" style="width: 50px; height: 50px; background-color: #f0f0f0;">
-                                        <img src="../img/culture_replay_ninja_1054462188.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
-                                    </div>
-                                    <div>
-                                        <h6 class="mb-0 text-dark fw-bold">Chanatip Singkrasong <span class="text-muted"> @chanasing • 2 hours ago</span></h6>
-                                    </div>
-                                </div>
-                                <div class="row mb-0 ms-5">
-                                    <div class="col">
-                                        <p class="mb-0 mt-1" style="text-align: justify;">
-                                            Well first off as someone else already mentioned you haven’t made a nickle or lost a nickle until you sell a stock. 
-                                            What goes up today can go down tomorrow and the whole market can crash but here are my figures for this year on about 
-                                            a 200 grand investment from the closing of the last day
-                                        </p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
+                <!-- post untuk kategori top -->
                 <div class="post mt-4 me-5" data-category="Finance" data-post="Top">
                     <div class="d-flex align-items-center mb-2">
                         <div class="rounded-circle overflow-hidden me-2" style="width: 50px; height: 50px; background-color: #f0f0f0;">
@@ -552,6 +510,7 @@
                     <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
                 </div>
 
+                <!-- post untuk kategori top -->
                 <div class="post mt-4 me-5" data-category="Finance" data-post="Top">
                     <div class="d-flex align-items-center mb-2">
                         <div class="rounded-circle overflow-hidden me-2" style="width: 50px; height: 50px; background-color: #f0f0f0;">
@@ -723,17 +682,19 @@
             </div>
             </div>
 
-            <!--Side Content-->
+            <!-- kolom bagian kanan join community-->
             <div class="col-3 border-start border-end me-1 d-none d-md-block p-0">
                 <div class="container sticky-top mt-3" style="top: 10%;">
-                <a href="./create_post.html" type="button" class="btn btn-outline-light w-100 mt-3 create-post-btn" style="border-radius: 30px; border-color: #13005A; color: #13005A; display: none;">
-                    <i class="fas fa-plus-circle" style="font-size: 15px; color: #13005A;"></i>
+                    <!-- button create new post saat sudah join community -->
+                <a href="./create_post.html" type="button" class="btn btn-outline-light w-100 mt-3 create-post-btn" style="border-radius: 30px; border-color: #015AAA; color: #015AAA; display: none;">
+                    <i class="fas fa-plus-circle" style="font-size: 15px; color: #015AAA;"></i>
                     Create New Post
                 </a>
                 <hr class="my-3" style="border-top: 3px solid #E5E5E5;">
+                <!-- About community -->
                 <div class="container mt-3">
                     <div class="about-section">
-                        <h4 style="color: #13005A;"><strong>About this community</strong></h4>
+                        <h4 style="color: #015AAA;"><strong>About this community</strong></h4>
                         <p style="font-size: 0.875rem;">Share, Explain and Discuss with other Figma Developers<br>
                         Figma: The Collaborative Interface Design Tool. Figma is a vector graphics editor and prot... <a href="#" class="community-link">Lihat selengkapnya</a></p>
                     </div>
@@ -741,9 +702,11 @@
                 
                 <hr class="my-3" style="border-top: 3px solid #E5E5E5;">
                 
+                <!-- Upcoming events untuk community tersebut -->
                 <div class="mt-3" style="margin-left: 12px;">
-                    <h6 style="color: #13005A; font-weight: bold;">Upcoming Events</h6>
+                    <h6 style="color: #015AAA; font-weight: bold;">Upcoming Events</h6>
                 
+                    <!-- upcoming events -->
                     <div class="card mb-3" style="border-radius: 15px; overflow: hidden;">
                         <div class="position-relative">
                             <img src="../img/pidato.jpg" class="card-img-top img-fluid" alt="Pidato">
@@ -760,6 +723,7 @@
                         </div>
                     </div>
                 
+                    <!-- upcoming events -->
                     <div class="card mb-3" style="border-radius: 15px; overflow: hidden;">
                         <div class="row g-0">
                             <div class="col-4 position-relative">
@@ -780,6 +744,7 @@
                         </div>
                     </div>
                 
+                    <!-- upcoming events -->
                     <div class="card mb-3" style="border-radius: 15px; overflow: hidden;">
                         <div class="row g-0">
                             <div class="col-4 position-relative">
@@ -801,7 +766,7 @@
                     </div>
                 </div>
                 
-    
+                <!-- footer kolom kanan -->
                 <div class="d-flex justify-content-center text-align-center mt-4">
                     <span class="text-muted small fs-9" style="text-align: center; text-decoration: none;">
                         <a href="about_us.html" class="text-muted">About Us</a> • 
@@ -821,9 +786,9 @@
                 joinButton.textContent = 'Joined';
                 joinButton.classList.remove('btn-outline-primary');
                 joinButton.classList.add('btn-primary');
-                joinButton.style.backgroundColor = '#13005A';
+                joinButton.style.backgroundColor = '#015AAA';
                 joinButton.style.color = '#ffffff';
-                joinButton.style.borderColor = '#13005A';
+                joinButton.style.borderColor = '#015AAA';
 
                 // Create the leave button
                 var leaveButton = document.createElement('button');
@@ -871,9 +836,9 @@ document.getElementById('modalJoinButton').addEventListener('click', function() 
         joinButton.textContent = 'Joined';
         joinButton.classList.remove('btn-outline-primary');
         joinButton.classList.add('btn-primary');
-        joinButton.style.backgroundColor = '#13005A'; // Warna ungu yang dimaksud
+        joinButton.style.backgroundColor = '#015AAA'; // Warna ungu yang dimaksud
         joinButton.style.color = '#ffffff'; // Warna teks putih
-        joinButton.style.borderColor = '#13005A'; // Warna border ungu
+        joinButton.style.borderColor = '#015AAA'; // Warna border ungu
 
 
         // Add the leave button next to the joined button

@@ -58,7 +58,7 @@ display: none;
 
 .navbar-bawah .nav-item .nav-link.active {
     text-decoration: underline; 
-    color: #13005A !important; 
+    color: #015AAA !important; 
 }
 
 @media (max-width: 768px) {
@@ -68,7 +68,7 @@ display: none;
     .setting-title {
         text-align: center;
         color: white;
-        background-color: #13005A;
+        background-color: #015AAA;
         padding: 4%;
     }
     .profile-section {
@@ -109,11 +109,11 @@ display: none;
   <nav class="navbar navbar-light bg-light fixed-top d-none d-lg-block">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="../img/thrivan-logo.png" alt="Thrivian.org" width="180" height="35" />
+            <img src="../img/Thrivian Logo_OK.png" alt="Thrivian.org" width="60" height="45" />
         </a>
         <ul class="nav me-auto">
             <li class="nav-item">
-                <a class="nav-link text-secondary active text-decoration-underline" style="color: #13005a !important" href="../index.html">Home</a>
+                <a class="nav-link text-secondary active text-decoration-underline" style="color: #015AAA !important" href="../index.html">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-secondary" href="./community.html">Community</a>
@@ -168,7 +168,7 @@ display: none;
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-lg-none">
     <div class="container-fluid">
         <a class="navbar-brand" href="#" style="flex-grow: 1">
-            <img src="../img/thrivan-logo.png" alt="Thrivian.org" width="150" />
+            <img src="../img/Thrivian Logo_OK.png" alt="Thrivian.org" width="50" />
         </a>
         <a href="search.html" class="search-icon ms-auto me-4">
             <i class="fas fa-search"></i>
@@ -232,6 +232,7 @@ display: none;
     </ul>
   </nav>
 
+  <!-- navbar settings -->
     <div class="container">
         <h2 class="setting-title" style="margin-top: 69px;">Settings</h2>
         <ul class="nav justify-content-center navbar-bawah" id="settings-nav">
@@ -253,13 +254,15 @@ display: none;
   <main class="container-fluid" style="margin-top: 4px;">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-5 profile-section" style="max-height: 500px; overflow-y: auto;">
+            <!-- konten kiri profile yang edit image dll -->
+            <div class="col-md-5 profile-section" style="max-height: 450px;">
                 <div class="profile-container">
                     <div class="profile-header bg-light">
                         <div class="d-flex justify-content-center align-items-center pt-5" style="height: 450px; position: relative;">
                             <div style="position: relative; text-align: center; z-index: 1;">
                                 <h2>Profile</h2>
                                 <div style="position: relative; display: inline-block;">
+                                    <!-- edit profile image -->
                                     <div class="rounded-circle overflow-hidden border border-dark shadow" style="width: 140px; height: 140px;">
                                         <img id="profileImage" src="../img/3582.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
                                     </div>
@@ -268,8 +271,8 @@ display: none;
                                     </button>                                    
                                     <input type="file" id="imageInput" accept="image/*" style="display: none;">
                                 </div>
-                                
-                                <div style="text-align: center; margin-top: 20px;"> <!-- Adjusted margin-top to push the content below the centered profile picture -->
+                                <!-- Profile nama -->
+                                <div style="text-align: center; margin-top: 20px;">
                                     <h2 class="mt-3 mb-2">Christoper Kim</h2>
                                     <span class="mt-3 mb-2">@stoperkim</span>
                                     <p class="fs-6 mt-2 mb-2">
@@ -279,19 +282,19 @@ display: none;
                                         <div class="d-flex justify-content-center fs-6" style="margin-top: 30px;">
                                             <div style="padding: 0 8px; border-right: 2px solid black;">
                                                 <div class="mb-2">4</div>
-                                                <div style="color: #13005A;">Posts</div>
+                                                <div style="color: #015AAA;">Posts</div>
                                             </div>
                                             <div style="padding: 0 8px; border-right: 2px solid black;">
                                                 <div class="mb-2">270</div>
-                                                <div style="color: #13005A;">Followers</div>
+                                                <div style="color: #015AAA;">Followers</div>
                                             </div>
                                             <div style="padding: 0 8px; border-right: 2px solid black;">
                                                 <div class="mb-2">40</div>
-                                                <div style="color: #13005A;">Following</div>
+                                                <div style="color: #015AAA;">Following</div>
                                             </div>
                                             <div style="padding: 0 8px;">
                                                 <div class="mb-2">3</div>
-                                                <div style="color: #13005A;">Communities</div>
+                                                <div style="color: #015AAA;">Communities</div>
                                             </div>
                                         </div>
                                     </div>
@@ -304,12 +307,13 @@ display: none;
             </div>
             
             <div class="col-md-7">
-
+                <!-- Bagian edit profile -->
                 <div class="edit-profile" style="margin-bottom: 40px;" data-category="editprofile">
                     <h2 style="margin-top: 40px; margin-left: 40px;">Edit Profile</h2>
                     <hr class="mt-1" style="border-top: 4px solid #E5E5E5; width: 80%; margin-left: 40px;">
 
                     <div style="display: flex; align-items: center; margin-left: 40px; margin-top: 25px;">
+                        <!-- edit nama -->
                         <div style="flex: 1;">
                             <span style="font-weight: bold;">Name</span>
                         </div>
@@ -343,6 +347,7 @@ display: none;
                     </div>
 
                     <div class="edit-account" style="display: flex; align-items: center; margin-left: 40px; margin-top: 15px;">
+                         <!-- edit usernama -->
                         <div style="flex: 1;">
                             <span style="font-weight: bold;">Username</span>
                         </div>
@@ -352,6 +357,7 @@ display: none;
                                 <i class="angle right icon" style="margin-left: 10px;"></i>
                             </button>
                         </div>
+                         <!-- modal edit usernama -->
                         <div class="modal fade" id="usernameModal" tabindex="-1" aria-labelledby="usernameModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
@@ -375,6 +381,7 @@ display: none;
                     </div>
 
                     <div style="display: flex; align-items: center; margin-left: 40px; margin-top: 15px;">
+                         <!-- edit interest -->
                         <div style="flex: 1;">
                             <span style="font-weight: bold;">Interest</span>
                         </div>
@@ -410,6 +417,7 @@ display: none;
                     </div>
 
                     <div style="display: flex; align-items: center; margin-left: 40px; margin-top: 15px;">
+                         <!-- edit bio -->
                         <div style="flex: 1;">
                             <span style="font-weight: bold;">Bio</span>
                         </div>
@@ -441,6 +449,7 @@ display: none;
                     </div>
 
                     <div style="display: flex; align-items: center; margin-left: 40px; margin-top: 15px;">
+                         <!-- edit gender -->
                         <div style="flex: 1;">
                             <span style="font-weight: bold;">Gender</span>
                         </div>
@@ -476,11 +485,13 @@ display: none;
                     </div>
                 </div>
 
+                 <!-- edit account -->
                 <div class="edit-profile" style="margin-bottom: 40px; display: none;" data-category="account">
                     <h2 style="margin-top: 40px; margin-left: 40px;">Edit Account</h2>
                     <hr class="mt-1" style="border-top: 4px solid #E5E5E5; width: 80%; margin-left: 40px;">
 
                     <div style="display: flex; align-items: center; margin-left: 40px; margin-top: 25px;">
+                         <!-- edit email -->
                         <div style="flex: 1;">
                             <span style="font-weight: bold;">Email</span>
                         </div>
@@ -490,6 +501,7 @@ display: none;
                                 <i class="angle right icon" style="margin-left: 10px;"></i>
                             </button>
                         </div>
+                         <!-- modal edit email -->
                         <div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="emailModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
@@ -511,6 +523,7 @@ display: none;
                     </div>
                 
                     <div style="display: flex; align-items: center; margin-left: 40px; margin-top: 15px;">
+                         <!-- edit password -->
                         <div style="flex: 1;">
                             <span style="font-weight: bold;">Password</span>
                         </div>
@@ -520,6 +533,7 @@ display: none;
                                 <i class="angle right icon" style="margin-left: 10px;"></i>
                             </button>
                         </div>
+                         <!-- modal edit password -->
                         <div class="modal fade" id="passwordModal" tabindex="-1" aria-labelledby="passwordModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
@@ -541,6 +555,7 @@ display: none;
                     </div>
 
                     <div style="display: flex; align-items: center; margin-left: 40px; margin-top: 15px;">
+                         <!-- edit phone number -->
                         <div style="flex: 1;">
                             <span style="font-weight: bold;">Phone Number</span>
                         </div>
@@ -550,6 +565,7 @@ display: none;
                                 <i class="angle right icon" style="margin-left: 10px;"></i>
                             </button>
                         </div>
+                         <!-- modal edit phone number -->
                         <div class="modal fade" id="phoneModal" tabindex="-1" aria-labelledby="phoneModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
@@ -571,6 +587,7 @@ display: none;
                     </div>
                 
                     <div style="display: flex; align-items: center; margin-left: 40px; margin-top: 15px;">
+                         <!-- edit date of birth -->
                         <div style="flex: 1;">
                             <span style="font-weight: bold;">Date of Birth</span>
                         </div>
@@ -580,6 +597,7 @@ display: none;
                                 <i class="angle right icon" style="margin-left: 10px;"></i>
                             </button>
                         </div>
+                         <!-- modal edit date of birth -->
                         <div class="modal fade" id="dobModal" tabindex="-1" aria-labelledby="dobModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
@@ -601,6 +619,7 @@ display: none;
                     </div>
                 
                     <div style="display: flex; align-items: center; margin-left: 40px; margin-top: 15px;">
+                         <!-- edit location -->
                         <div style="flex: 1;">
                             <span style="font-weight: bold;">Location</span>
                         </div>
@@ -609,7 +628,8 @@ display: none;
                                 <span id="userLocation">New York, USA</span>
                                 <i class="angle right icon" style="margin-left: 10px;"></i>
                             </button>
-                        </div>
+                        </div>  
+                        <!-- modal edit location -->
                         <div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="locationModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
@@ -629,16 +649,19 @@ display: none;
                             </div>
                         </div>                    
                     </div>
+                     <!-- button delete akun -->
                     <div class="d-flex justify-content-center" style="margin-top: 20px;">
                         <button type="button" class="btn btn-danger" style="border-radius: 10px;">Delete Account</button>
                     </div>
                     
                 </div>
                 
+                 <!-- edit notification -->
                 <div class="edit-profile" style="margin-bottom: 40px; display: none;" data-category="notification">
                     <h2 style="margin-top: 40px; margin-left: 40px;">Notification</h2>
                     <hr class="mt-1" style="border-top: 4px solid #E5E5E5; width: 80%; margin-left: 40px;">
                     <div style="display: flex; align-items: center; margin-left: 40px; margin-top: 25px;">
+                         <!-- edit diskon -->
                         <div style="flex: 1;">
                             <span style="font-weight: bold;">Discount Notification</span>
                         </div>
@@ -650,6 +673,7 @@ display: none;
                     </div>                    
 
                     <div style="display: flex; align-items: center; margin-left: 40px; margin-top: 15px;">
+                         <!-- notif kursus baru -->
                         <div style="flex: 1;">
                             <span style="font-weight: bold;">New Course Notification</span>
                         </div>
@@ -661,6 +685,7 @@ display: none;
                     </div>
 
                     <div style="display: flex; align-items: center; margin-left: 40px; margin-top: 15px;">
+                         <!-- notif pengingat -->
                         <div style="flex: 1;">
                             <span style="font-weight: bold;">Reminder Notification</span>
                         </div>
@@ -673,10 +698,12 @@ display: none;
 
                 </div>
 
+                 <!-- edit privacy -->
                 <div class="edit-profile" style="margin-bottom: 40px; display: none;" data-category="privacy">
                     <h2 style="margin-top: 40px; margin-left: 40px;">Privacy & Settings</h2>
                     <hr class="mt-1" style="border-top: 4px solid #E5E5E5; width: 80%; margin-left: 40px;">
                     <div style="display: flex; align-items: center; margin-left: 40px; margin-top: 25px;">
+                         <!-- verify email -->
                         <div style="flex: 1;">
                             <span style="font-weight: bold;">Verifiy your Email</span>
                         </div>
@@ -688,6 +715,7 @@ display: none;
                     </div>
 
                     <div style="display: flex; align-items: center; margin-left: 40px; margin-top: 15px;">
+                         <!-- terima publik lihat profile -->
                         <div style="flex: 1;">
                             <span style="font-weight: bold;">Allow public seen my profile</span>
                         </div>
@@ -699,6 +727,7 @@ display: none;
                     </div>
 
                     <div style="display: flex; align-items: center; margin-left: 40px; margin-top: 15px;">
+                         <!-- dua step verifikasi -->
                         <div style="flex: 1;">
                             <span style="font-weight: bold;">Two Step Verification</span>
                         </div>
@@ -710,6 +739,7 @@ display: none;
                     </div>
 
                     <div style="display: flex; align-items: center; margin-left: 40px; margin-top: 15px;">
+                         <!-- terima publik mengundang community -->
                         <div style="flex: 1;">
                             <span style="font-weight: bold;">Allow Public Invite to Community</span>
                         </div>
