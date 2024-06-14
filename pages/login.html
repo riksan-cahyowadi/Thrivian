@@ -18,6 +18,25 @@
         ::placeholder {
             font-size: 16px;
         }
+        .line-with-text {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #777;
+        width: 400px; /* Menyesuaikan dengan panjang tombol login / Sign Up*/
+        margin: 1rem auto; /* Menambahkan jarak vertikal */
+    }
+
+    .line-with-text::before,
+    .line-with-text::after {
+        content: "";
+        flex: 1;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .line-with-text span {
+        padding: 0 10px;
+    }
 
         @media (max-width: 576px) {
         .or-divider {
@@ -33,7 +52,7 @@
             <nav class="navbar navbar-light bg-light fixed-top">
                 <div class="container d-flex justify-content-center"> <!-- Menggunakan flexbox untuk pengaturan posisi -->
                     <a class="navbar-brand" href="#">
-                        <img src="../img/thrivan-logo.png" alt="" width="180" height="40" style="display: block; margin: 0 auto;">
+                        <img src="../img/Thrivian Logo_OK.png" alt="" width="80" height="75" style="display: block; margin: 0 auto;">
                     </a>
                 </div>
             </nav>
@@ -43,8 +62,8 @@
             <div class="col-md-6 mx-auto" id="loginForm">
                 <div class="row align-items-center">
                     <div class="header-text mb-4 text-center">
-                        <h2>Welcome Back</h2>
-                        <small>Don't have an account? <a href="#" id="showSignUp">Sign Up</a></small>
+                        <h1 style="color: #015AAA;">Welcome Back</h1>
+                        <small style="color: #015AAA;">Don't have an account? <a href="#" id="showSignUp" style="color: black; text-decoration: underline;">Sign Up</a></small>
                     </div>  
                     <div class="input-group mb-3 mx-auto" style="width: 400px;">
                         <span class="input-group-text"><i class="bi bi-person"></i></span>
@@ -80,17 +99,17 @@
                     <div class="input-group mb-3 mx-auto" style="width: 400px">
                         <button class="btn btn-lg btn-primary w-100 fs-6" style="border-radius: 30px;">Login</button>
                     </div>
-                    <div class="my-4 ms-0 ms-md-1 text-sm text-start or-divider" style="padding-left: 22%;">
-                        ---------------- or continue with ----------------
-                    </div>                    
+                    <div class="line-with-text">
+                        <span>or continue with</span>
+                      </div>                
                     <div class="input-group mb-3 mx-auto" style="width: 400px">
-                        <button class="btn btn-lg btn-light w-100 fs-6 border-dark" style="border-radius: 30px;"><img src="../img/logo-google.png" style="width:20px" class="me-2"><small>Log In with Google</small></button>
+                        <button class="btn btn-lg btn-light w-100 fs-6 border-secondary" style="border-radius: 30px;"><img src="../img/logo-google.png" style="width:20px" class="me-2"><small>Log In with Google</small></button>
                     </div>
                     <div class="input-group mb-3 mx-auto" style="width: 400px">
-                        <button class="btn btn-lg btn-light w-100 fs-6 border-dark" style="border-radius: 30px;"><img src="../img/logo-facebook.png" style="width:20px" class="me-2"><small>Log In with Facebook</small></button>
+                        <button class="btn btn-lg btn-light w-100 fs-6 border-secondary" style="border-radius: 30px;"><img src="../img/logo-facebook.png" style="width:20px" class="me-2"><small>Log In with Facebook</small></button>
                     </div>
                     <div class="input-group mb-3 mx-auto" style="width: 400px">
-                        <button class="btn btn-lg btn-light w-100 fs-6 border-dark" style="border-radius: 30px;"><img src="../img/apple-logo.png" style="width:20px" class="me-2"><small>Log In with Apple</small></button>
+                        <button class="btn btn-lg btn-light w-100 fs-6 border-secondary" style="border-radius: 30px;"><img src="../img/apple-logo.png" style="width:20px" class="me-2"><small>Log In with Apple</small></button>
                     </div>
                     <footer>
                         <div class="d-flex justify-content-center text-align-center ">
@@ -107,8 +126,8 @@
             <div class="col-md-6 mx-auto" id="signUpForm" style="display: none;">
                 <div class="row align-items-center">
                     <div class="header-text mb-3 text-center">
-                        <h2>Sign Up</h2>
-                        <small>Already have an account? <a href="#" id="showLogin">Log In</a></small>
+                        <h1 style="color: #015AAA;">Sign Up</h1>
+                        <small style="color: #015AAA;">Already have an account? <a href="#" id="showLogin" style="color: black; text-decoration: underline;">Log In</a></small>
                     </div>
                     <div class="input-group mb-3 mx-auto" style="width: 400px;">
                         <span class="input-group-text"><i class="bi bi-person"></i></span>
@@ -142,17 +161,17 @@
                     <div class="input-group mb-3 mx-auto" style="width: 400px">
                         <button class="btn btn-lg btn-primary w-100 fs-6" style="border-radius: 30px;">Sign Up</button>
                     </div>
-                    <div class="my-4 ms-0 ms-md-1 text-sm text-start or-divider" style="padding-left: 22%;">
-                        ---------------- or continue with ----------------
+                    <div class="line-with-text">
+                        <span>or continue with</span>
+                      </div>   
+                    <div class="input-group mb-3 mx-auto" style="width: 400px">
+                        <button class="btn btn-lg btn-light w-100 fs-6 border-secondary" style="border-radius: 30px;"><img src="../img/logo-google.png" style="width:20px" class="me-2"><small>Sign Up with Google</small></button>
                     </div>
                     <div class="input-group mb-3 mx-auto" style="width: 400px">
-                        <button class="btn btn-lg btn-light w-100 fs-6 border-dark" style="border-radius: 30px;"><img src="../img/logo-google.png" style="width:20px" class="me-2"><small>Sign Up with Google</small></button>
+                        <button class="btn btn-lg btn-light w-100 fs-6 border-secondary" style="border-radius: 30px;"><img src="../img/logo-facebook.png" style="width:20px" class="me-2"><small>Sign Up with Facebook</small></button>
                     </div>
                     <div class="input-group mb-3 mx-auto" style="width: 400px">
-                        <button class="btn btn-lg btn-light w-100 fs-6 border-dark" style="border-radius: 30px;"><img src="../img/logo-facebook.png" style="width:20px" class="me-2"><small>Sign Up with Facebook</small></button>
-                    </div>
-                    <div class="input-group mb-3 mx-auto" style="width: 400px">
-                        <button class="btn btn-lg btn-light w-100 fs-6 border-dark" style="border-radius: 30px;"><img src="../img/apple-logo.png" style="width:20px" class="me-2"><small>Sign Up with Apple</small></button>
+                        <button class="btn btn-lg btn-light w-100 fs-6 border-secondary" style="border-radius: 30px;"><img src="../img/apple-logo.png" style="width:20px" class="me-2"><small>Sign Up with Apple</small></button>
                     </div>
                     <footer>
                         <div class="d-flex justify-content-center text-align-center ">
