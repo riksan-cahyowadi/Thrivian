@@ -229,3 +229,26 @@
       font-size: 12px; /* Mengecilkan ukuran font link */
   }
 }
+
+/* Floating Button for Mobile */
+.floating-btn {
+  position: fixed;
+  bottom: 60px;
+  right: 25px;
+  background-color: #015AAA;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  text-decoration: none;
+}
+
+.floating-btn i {
+  font-size: 20px;
+  color: white;
+}
+
