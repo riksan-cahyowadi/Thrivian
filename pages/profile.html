@@ -284,6 +284,11 @@ display: none;
     </ul>
   </nav>
 
+  <!-- Floating Button for Mobile -->
+  <a href="./create_post.html" class="floating-btn d-lg-none">
+    <i class="fas fa-pencil-alt"></i>
+</a>
+
   <main class="container-fluid" style="margin-top: 69px;">
     <div class="container">
         <div class="row justify-content-center">
@@ -417,13 +422,13 @@ display: none;
                 </div>
 
                 <div class="row justify-content-end mt-3 me-2">
-                    <div class="col-auto">
+                    <div class="col-auto d-flex">
                         <a class="link-posts me-3 me-md-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
                             <i id="likeIconOutline_6" class="thumbs up outline black icon" style="font-size: 20px;"></i>
                             <i id="likeIconSolid_6" class="thumbs up black icon" style="font-size: 20px; display: none;"></i>
                             <span id="likeCount_6" style="margin-left: 5px; color: black;">5</span>
-                        </a>                            
-                        
+                        </a>
+                
                         <a class="link-posts me-3 me-md-5" href="#">
                             <i class="comment alternate outline black icon" style="font-size: 20px;"></i>
                             <span style="margin-left: 5px; color: black;">5</span>
@@ -434,12 +439,20 @@ display: none;
                             <span style="margin-left: 5px; color: black;">5</span>
                         </a>
                 
-                        <a class="link-posts me-1" href="#">
-                            <i class="share black icon" style="font-size: 20px;"></i>
-                            <span style="margin-left: 5px; color: black;">5</span>
-                        </a>
+                        <div class="dropdown link-posts me-1">
+                            <a href="#" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-ellipsis-h" style="font-size: 20px; color: black;"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                <div class="text-center">
+                                    <button class="btn btn-outline-danger" type="button">Delete</button>
+                                </div>
+                                <!-- Add more menu items if needed -->
+                            </div>
+                        </div>  
                     </div>
-                </div>       
+                </div>
+                
                 <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
             </div>
 
@@ -472,13 +485,13 @@ display: none;
                 </div>
 
                 <div class="row justify-content-end mt-3 me-2">
-                    <div class="col-auto">
+                    <div class="col-auto d-flex">
                         <a class="link-posts me-3 me-md-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
                             <i id="likeIconOutline_6" class="thumbs up outline black icon" style="font-size: 20px;"></i>
                             <i id="likeIconSolid_6" class="thumbs up black icon" style="font-size: 20px; display: none;"></i>
                             <span id="likeCount_6" style="margin-left: 5px; color: black;">5</span>
-                        </a>                            
-                        
+                        </a>
+                
                         <a class="link-posts me-3 me-md-5" href="#">
                             <i class="comment alternate outline black icon" style="font-size: 20px;"></i>
                             <span style="margin-left: 5px; color: black;">5</span>
@@ -489,12 +502,20 @@ display: none;
                             <span style="margin-left: 5px; color: black;">5</span>
                         </a>
                 
-                        <a class="link-posts me-1" href="#">
-                            <i class="share black icon" style="font-size: 20px;"></i>
-                            <span style="margin-left: 5px; color: black;">5</span>
-                        </a>
+                        <div class="dropdown link-posts me-1">
+                            <a href="#" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-ellipsis-h" style="font-size: 20px; color: black;"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                <div class="text-center">
+                                    <button class="btn btn-outline-danger" type="button">Delete</button>
+                                </div>
+                                <!-- Add more menu items if needed -->
+                            </div>
+                        </div>  
                     </div>
-                </div>    
+                </div>
+                  
                 <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
             </div>
 
@@ -526,13 +547,13 @@ display: none;
                 </div>
 
                 <div class="row justify-content-end mt-3 me-2">
-                    <div class="col-auto">
+                    <div class="col-auto d-flex">
                         <a class="link-posts me-3 me-md-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
                             <i id="likeIconOutline_6" class="thumbs up outline black icon" style="font-size: 20px;"></i>
                             <i id="likeIconSolid_6" class="thumbs up black icon" style="font-size: 20px; display: none;"></i>
                             <span id="likeCount_6" style="margin-left: 5px; color: black;">5</span>
-                        </a>                            
-                        
+                        </a>
+                
                         <a class="link-posts me-3 me-md-5" href="#">
                             <i class="comment alternate outline black icon" style="font-size: 20px;"></i>
                             <span style="margin-left: 5px; color: black;">5</span>
@@ -543,12 +564,20 @@ display: none;
                             <span style="margin-left: 5px; color: black;">5</span>
                         </a>
                 
-                        <a class="link-posts me-1" href="#">
-                            <i class="share black icon" style="font-size: 20px;"></i>
-                            <span style="margin-left: 5px; color: black;">5</span>
-                        </a>
+                        <div class="dropdown link-posts me-1">
+                            <a href="#" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-ellipsis-h" style="font-size: 20px; color: black;"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                <div class="text-center">
+                                    <button class="btn btn-outline-danger" type="button">Delete</button>
+                                </div>
+                                <!-- Add more menu items if needed -->
+                            </div>
+                        </div>  
                     </div>
-                </div>    
+                </div>
+                
                 <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
             </div>
 
@@ -580,29 +609,37 @@ display: none;
                 </div>
 
                 <div class="row justify-content-end mt-3 me-2">
-                    <div class="col-auto">
+                    <div class="col-auto d-flex">
                         <a class="link-posts me-3 me-md-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
-                            <i id="likeIconOutline_6" class="thumbs up icon" style="font-size: 20px; color: #015AAA;"></i>
+                            <i id="likeIconOutline_6" class="thumbs up outline black icon" style="font-size: 20px;"></i>
                             <i id="likeIconSolid_6" class="thumbs up black icon" style="font-size: 20px; display: none;"></i>
                             <span id="likeCount_6" style="margin-left: 5px; color: black;">5</span>
-                        </a>                            
-                        
+                        </a>
+                
                         <a class="link-posts me-3 me-md-5" href="#">
                             <i class="comment alternate outline black icon" style="font-size: 20px;"></i>
                             <span style="margin-left: 5px; color: black;">5</span>
                         </a>
                 
                         <a class="link-posts me-3 me-md-5" href="#">
-                            <i class="bookmark icon" style="font-size: 20px; color: orange;"></i>
+                            <i class="bookmark outline black icon" style="font-size: 20px;"></i>
                             <span style="margin-left: 5px; color: black;">5</span>
                         </a>
                 
-                        <a class="link-posts me-1" href="#">
-                            <i class="share black icon" style="font-size: 20px;"></i>
-                            <span style="margin-left: 5px; color: black;">5</span>
-                        </a>
+                        <div class="dropup link-posts me-1">
+                            <a href="#" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-ellipsis-h" style="font-size: 20px; color: black;"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                <div class="text-center">
+                                    <button class="btn btn-outline-danger" type="button">Delete</button>
+                                </div>
+                                <!-- Add more menu items if needed -->
+                            </div>
+                        </div>  
                     </div>
-                </div>   
+                </div>
+                
                 <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
             </div>
 
@@ -636,29 +673,37 @@ display: none;
                 </div>
 
                 <div class="row justify-content-end mt-3 me-2">
-                    <div class="col-auto">
+                    <div class="col-auto d-flex">
                         <a class="link-posts me-3 me-md-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
-                            <i id="likeIconOutline_6" class="thumbs up icon" style="font-size: 20px; color: #015AAA;"></i>
+                            <i id="likeIconOutline_6" class="thumbs up outline black icon" style="font-size: 20px;"></i>
                             <i id="likeIconSolid_6" class="thumbs up black icon" style="font-size: 20px; display: none;"></i>
                             <span id="likeCount_6" style="margin-left: 5px; color: black;">5</span>
-                        </a>                            
-                        
+                        </a>
+                
                         <a class="link-posts me-3 me-md-5" href="#">
                             <i class="comment alternate outline black icon" style="font-size: 20px;"></i>
                             <span style="margin-left: 5px; color: black;">5</span>
                         </a>
                 
                         <a class="link-posts me-3 me-md-5" href="#">
-                            <i class="bookmark icon" style="font-size: 20px; color: orange;"></i>
+                            <i class="bookmark outline black icon" style="font-size: 20px;"></i>
                             <span style="margin-left: 5px; color: black;">5</span>
                         </a>
                 
-                        <a class="link-posts me-1" href="#">
-                            <i class="share black icon" style="font-size: 20px;"></i>
-                            <span style="margin-left: 5px; color: black;">5</span>
-                        </a>
+                        <div class="dropdown link-posts dropup me-1">
+                            <a href="#" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-ellipsis-h" style="font-size: 20px; color: black;"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                <div class="d-flex justify-content-center">
+                                    <button class="btn btn-outline-danger" type="button">Delete</button>
+                                </div>
+                                <!-- Add more menu items if needed -->
+                            </div>
+                        </div>
                     </div>
-                </div>     
+                </div>
+                  
                 <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
             </div>
 
@@ -689,29 +734,37 @@ display: none;
                 </div>
 
                 <div class="row justify-content-end mt-3 me-2">
-                    <div class="col-auto">
+                    <div class="col-auto d-flex">
                         <a class="link-posts me-3 me-md-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
                             <i id="likeIconOutline_6" class="thumbs up outline black icon" style="font-size: 20px;"></i>
                             <i id="likeIconSolid_6" class="thumbs up black icon" style="font-size: 20px; display: none;"></i>
                             <span id="likeCount_6" style="margin-left: 5px; color: black;">5</span>
-                        </a>                            
-                        
+                        </a>
+                
                         <a class="link-posts me-3 me-md-5" href="#">
                             <i class="comment alternate outline black icon" style="font-size: 20px;"></i>
                             <span style="margin-left: 5px; color: black;">5</span>
                         </a>
                 
                         <a class="link-posts me-3 me-md-5" href="#">
-                            <i class="bookmark icon" style="font-size: 20px; color: orange;"></i>
+                            <i class="bookmark outline black icon" style="font-size: 20px;"></i>
                             <span style="margin-left: 5px; color: black;">5</span>
                         </a>
                 
-                        <a class="link-posts me-1" href="#">
-                            <i class="share black icon" style="font-size: 20px;"></i>
-                            <span style="margin-left: 5px; color: black;">5</span>
-                        </a>
+                        <div class="dropdown link-posts dropup me-1">
+                            <a href="#" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-ellipsis-h" style="font-size: 20px; color: black;"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                <div class="text-center">
+                                    <button class="btn btn-outline-danger" type="button">Delete</button>
+                                </div>
+                                <!-- Add more menu items if needed -->
+                            </div>
+                        </div>                                           
                     </div>
-                </div>   
+                </div>
+                 
                 <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
             </div>
 
@@ -742,34 +795,42 @@ display: none;
                 </div>
 
                 <div class="row justify-content-end mt-3 me-2">
-                    <div class="col-auto">
+                    <div class="col-auto d-flex">
                         <a class="link-posts me-3 me-md-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
                             <i id="likeIconOutline_6" class="thumbs up outline black icon" style="font-size: 20px;"></i>
                             <i id="likeIconSolid_6" class="thumbs up black icon" style="font-size: 20px; display: none;"></i>
                             <span id="likeCount_6" style="margin-left: 5px; color: black;">5</span>
-                        </a>                            
-                        
+                        </a>
+                
                         <a class="link-posts me-3 me-md-5" href="#">
                             <i class="comment alternate outline black icon" style="font-size: 20px;"></i>
                             <span style="margin-left: 5px; color: black;">5</span>
                         </a>
                 
                         <a class="link-posts me-3 me-md-5" href="#">
-                            <i class="bookmark icon" style="font-size: 20px; color: orange;"></i>
+                            <i class="bookmark outline black icon" style="font-size: 20px;"></i>
                             <span style="margin-left: 5px; color: black;">5</span>
                         </a>
                 
-                        <a class="link-posts me-1" href="#">
-                            <i class="share black icon" style="font-size: 20px;"></i>
-                            <span style="margin-left: 5px; color: black;">5</span>
-                        </a>
+                        <div class="dropdown link-posts me-1">
+                            <a href="#" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-ellipsis-h" style="font-size: 20px; color: black;"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                                <div class="text-center">
+                                    <button class="btn btn-outline-danger" type="button">Delete</button>
+                                </div>
+                                <!-- Add more menu items if needed -->
+                            </div>
+                        </div>                        
                     </div>
-                </div>    
+                </div>
+                
                 <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
             </div>
 
             <!-- post dengan kategori events -->
-            <div class="post mt-4 me-5" data-category="Events">
+            <div class="post mt-4 me-5" style="display: none;" data-category="Events">
                 <div class="card mb-4">
                     <div class="row g-0">
                         <div class="col-md-4">
@@ -788,7 +849,7 @@ display: none;
             </div>
 
             <!-- post dengan kategori events -->
-            <div class="post mt-4 me-5" data-category="Events">
+            <div class="post mt-4 me-5" style="display: none;" data-category="Events">
                 <div class="card mb-4">
                     <div class="row g-0">
                         <div class="col-md-4">
@@ -807,7 +868,7 @@ display: none;
             </div>
 
             <!-- post dengan kategori events -->
-            <div class="post mt-4 me-5" style="margin-bottom: 15%;" data-category="Events">
+            <div class="post mt-4 me-5" style="margin-bottom: 15%; display: none;" data-category="Events">
                 <div class="card mb-4">
                     <div class="row g-0">
                         <div class="col-md-4">
