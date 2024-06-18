@@ -48,12 +48,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="./pages/messages.html">
                             <i class="bi bi-envelope"></i> 
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="./pages/notification.html">
                             <i class="bi bi-bell"></i> 
                         </a>
                     </li>                    
@@ -288,14 +288,14 @@
                     <div class="d-flex align-items-center mb-2">
                         <!-- image profile -->
                         <div class="rounded-circle overflow-hidden me-2" style="width: 50px; height: 50px; background-color: #f0f0f0;">
+                            <a href="pages/people_profile.html">
                             <img src="./img/cheerful-confident-man-standing-arms-folded-plaid-shirt.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                            </a>
                         </div>
                         <!-- nama post -->
                         <div>
-                            <a href="javascript:void(0);" class="full-post" style="text-decoration: none;">
-                            <a href="pages/people_profile.html"><h6 class="mb-0 text-dark fw-bold">Ray John <span class="text-muted"> @johhnyray • 3 minutes ago</span></h6></a>
+                            <h6 class="mb-0 text-dark fw-bold">Ray John <span class="text-muted"> @johhnyray • 3 minutes ago</span></h6>
                             <p class="fs-6" style="color: orange; margin-bottom: 0;"> > Business</p>
-                        </a>
                         </div>
                         <!-- judul post -->
                     </div>
@@ -326,98 +326,44 @@
                         </div>
                     </div>
 
+                    <!-- button like dll -->
                     <div class="row justify-content-end mt-3 me-2">
                         <div class="col-auto">
-                            <a class="link-posts me-3 me-md-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
-                                <i id="likeIconOutline_6" class="thumbs up outline black icon like-icon"></i>
-                                <i id="likeIconSolid_6" class="thumbs up black icon like-icon" style="display: none;"></i>
-                                <span id="likeCount_6" class="like-count">5</span>
-                            </a>                            
+                            <a class="link-posts me-2 me-md-5 test" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_1', 'likeIconSolid_1', 'likeCount_1')">
+                                <i id="likeIconOutline_1" class=" thumbs up outline icon like-icon"></i>
+                                <i id="likeIconSolid_1" class=" thumbs up icon like-icon" style="display: none;"></i>
+                                <span id="likeCount_1" class=" like-count ">5</span>
+                            </a>                        
                             
-                            <a class="link-posts me-3 me-md-5" href="./pages/post_detail.html">
-                                <i class="comment alternate outline black icon like-icon"></i>
+                            <a class="link-posts me-2 me-md-5 test" href="./pages/post_detail.html">
+                                <i class="comment alternate outline icon like-icon"></i>
                                 <span class="like-count">5</span>
                             </a>
                     
-                            <a class="link-posts me-3 me-md-5" href="#">
-                                <i class="bookmark outline black icon like-icon"></i>
-                                <span class="like-count">5</span>
+                            <a class="link-posts me-2 me-md-5 test" href="javascript:void(0)" onclick="toggleBookmark(event, 'bookmarkIcon_1', 'bookmarkCount_1')">
+                                <i id="bookmarkIcon_1" class="bookmark outline icon like-icon"></i>
+                                <span id="bookmarkCount_1" class="like-count">5</span>
                             </a>
                     
-                            <a class="link-posts me-1" href="#">
-                                <i class="share black icon like-icon"></i>
+                            <a class="link-posts me-1 test" href="#">
+                                <i class="share icon like-icon"></i>
                                 <span class="like-count">5</span>
                             </a>
                         </div>
+                        <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
                     </div>                                                          
-                    <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
-
-                     <div class="comments">
-                        <div class="row mb-0 ms-0 mt-3">
-                            <a href="./index.html" class="close-comment" style="text-decoration: none;"><i class="close icon"></i></a>
-                            <div class="col">
-                                <div class="row mb-3 mt-3">
-                                    <div class="col">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Write your comment" aria-label="Write your comment" style="border-radius: 25px;">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="d-flex align-items-center mb-2">
-                                    <div class="rounded-circle overflow-hidden me-2" style="width: 50px; height: 50px; background-color: #f0f0f0;">
-                                        <img src="./img/culture_replay_ninja_1054462188.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
-                                    </div>
-                                    <div>
-                                        <a href="pages/people_profile.html"><h6 class="mb-0 text-dark fw-bold">Chanatip Singkrasong <span class="text-muted"> @chanasing • 2 hours ago</span></h6></a>
-                                    </div>
-                                </div>
-                                <div class="row mb-0 ms-5">
-                                    <div class="col">
-                                        <p class="mb-0 mt-1" style="text-align: justify;">
-                                            Well first off as someone else already mentioned you haven’t made a nickle or lost a nickle until you sell a stock. 
-                                            What goes up today can go down tomorrow and the whole market can crash but here are my figures for this year on about 
-                                            a 200 grand investment from the closing of the last day
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
-
-                                <div class="d-flex align-items-center mb-2">
-                                    <div class="rounded-circle overflow-hidden me-2" style="width: 50px; height: 50px; background-color: #f0f0f0;">
-                                        <img src="./img/culture_replay_ninja_1054462188.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
-                                    </div>
-                                    <div>
-                                        <a href="pages/people_profile.html"><h6 class="mb-0 text-dark fw-bold">Chanatip Singkrasong <span class="text-muted"> @chanasing • 2 hours ago</span></h6></a>
-                                    </div>
-                                </div>
-                                <div class="row mb-0 ms-5">
-                                    <div class="col">
-                                        <p class="mb-0 mt-1" style="text-align: justify;">
-                                            Well first off as someone else already mentioned you haven’t made a nickle or lost a nickle until you sell a stock. 
-                                            What goes up today can go down tomorrow and the whole market can crash but here are my figures for this year on about 
-                                            a 200 grand investment from the closing of the last day
-                                        </p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
 
                 <div class="post mt-4 me-5" data-category="Finance">
                     <div class="d-flex align-items-center mb-2">
                         <div class="rounded-circle overflow-hidden me-2" style="width: 50px; height: 50px; background-color: #f0f0f0;">
+                            <a href="pages/people_profile.html">
                             <img src="./img/culture_replay_ninja_1054462188.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                            </a>
                         </div>
                         <div>
-                            <a href="javascript:void(0);" class="full-post" style="text-decoration: none;">
-                            <a href="pages/people_profile.html"><h6 class="mb-0 text-dark fw-bold">Chanatip Singkrasong <span class="text-muted"> @chanasing • 2 hours ago</span></h6></a>
+                            <h6 class="mb-0 text-dark fw-bold">Chanatip Singkrasong <span class="text-muted"> @chanasing • 2 hours ago</span></h6>
                             <p class="fs-6" style="color: #9747FF; margin-bottom: 0;"> > Finance</p>
-                            </a>
                         </div>
                     </div>
                     <div class="row mb-0 ms-5 mb-2">
@@ -439,24 +385,24 @@
                     <!-- button like dll -->
                     <div class="row justify-content-end mt-3 me-2">
                         <div class="col-auto">
-                            <a class="link-posts me-3 me-md-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
-                                <i id="likeIconOutline_6" class="thumbs up outline black icon like-icon"></i>
-                                <i id="likeIconSolid_6" class="thumbs up black icon like-icon" style="display: none;"></i>
-                                <span id="likeCount_6" class="like-count">5</span>
-                            </a>                            
+                            <a class="link-posts me-2 me-md-5 test" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_2', 'likeIconSolid_2', 'likeCount_2')">
+                                <i id="likeIconOutline_2" class=" thumbs up outline icon like-icon"></i>
+                                <i id="likeIconSolid_2" class=" thumbs up icon like-icon" style="display: none;"></i>
+                                <span id="likeCount_2" class=" like-count ">5</span>
+                            </a>                        
                             
-                            <a class="link-posts me-3 me-md-5" href="./pages/post_detail.html">
-                                <i class="comment alternate outline black icon like-icon"></i>
+                            <a class="link-posts me-2 me-md-5 test" href="./pages/post_detail.html">
+                                <i class="comment alternate outline icon like-icon"></i>
                                 <span class="like-count">5</span>
                             </a>
                     
-                            <a class="link-posts me-3 me-md-5" href="#">
-                                <i class="bookmark outline black icon like-icon"></i>
-                                <span class="like-count">5</span>
+                            <a class="link-posts me-2 me-md-5 test" href="javascript:void(0)" onclick="toggleBookmark(event, 'bookmarkIcon_2', 'bookmarkCount_2')">
+                                <i id="bookmarkIcon_2" class="bookmark outline icon like-icon"></i>
+                                <span id="bookmarkCount_2" class="like-count">5</span>
                             </a>
                     
-                            <a class="link-posts me-1" href="#">
-                                <i class="share black icon like-icon"></i>
+                            <a class="link-posts me-1 test" href="#">
+                                <i class="share icon like-icon"></i>
                                 <span class="like-count">5</span>
                             </a>
                         </div>
@@ -469,11 +415,13 @@
                     <div class="d-flex align-items-center mb-2">
                         <!-- image profile -->
                         <div class="rounded-circle overflow-hidden me-2" style="width: 50px; height: 50px; background-color: #f0f0f0;">
+                            <a href="pages/people_profile.html">
                             <img src="./img/shroud-4f375e-2.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                            </a>
                         </div>
                         <!-- name profile -->
                         <div>
-                            <a href="pages/people_profile.html"><h6 class="mb-0">Zeno Hurricane <span class="text-muted"> @zenhrcn • 3 minutes ago</span></h6></a>
+                            <h6 class="mb-0 text-dark fw-bold">Zeno Hurricane <span class="text-muted"> @zenhrcn • 3 minutes ago</span></h6>
                             <p class="fs-6" style="color: #1877F2; margin-bottom: 0;"> > Personal Development</p>
                         </div>
                     </div>
@@ -486,14 +434,14 @@
                     <!-- tiga gambar post -->
                     <div class="row ms-5 mt-2">
                         <div class="col-6" style="padding-right: 1px;">
-                            <img src="./img/pidato.jpg" alt="Gambar Besar" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                            <img src="./img/pidato.jpg" alt="image-1 class="img-fluid" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
                         </div>
                         <div class="col-6">
                             <div style="padding-bottom: 10px;">
-                                <img src="./img/pidato.jpg" alt="Gambar Kecil 1" class="img-fluid" style="width: 100%; height: 25%; object-fit: cover; border-radius: 15px;">
+                                <img src="./img/pidato.jpg" alt="image-2" class="img-fluid" style="width: 100%; height: 25%; object-fit: cover; border-radius: 15px;">
                             </div>
                             <div>
-                                <img src="./img/pidato.jpg" alt="Gambar Kecil 2" class="img-fluid" style="width: 100%; height: 25%; object-fit: cover; border-radius: 15px;">
+                                <img src="./img/pidato.jpg" alt="image-3" class="img-fluid" style="width: 100%; height: 25%; object-fit: cover; border-radius: 15px;">
                             </div>
                         </div>
                     </div>
@@ -511,41 +459,42 @@
                     <!-- button like dll -->
                     <div class="row justify-content-end mt-3 me-2">
                         <div class="col-auto">
-                            <a class="link-posts me-3 me-md-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
-                                <i id="likeIconOutline_6" class="thumbs up outline black icon like-icon"></i>
-                                <i id="likeIconSolid_6" class="thumbs up black icon like-icon" style="display: none;"></i>
-                                <span id="likeCount_6" class="like-count">5</span>
-                            </a>                            
+                            <a class="link-posts me-2 me-md-5 test" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_3', 'likeIconSolid_3', 'likeCount_3')">
+                                <i id="likeIconOutline_3" class=" thumbs up outline icon like-icon"></i>
+                                <i id="likeIconSolid_3" class=" thumbs up icon like-icon" style="display: none;"></i>
+                                <span id="likeCount_3" class=" like-count ">5</span>
+                            </a>                        
                             
-                            <a class="link-posts me-3 me-md-5" href="./pages/post_detail.html">
-                                <i class="comment alternate outline black icon like-icon"></i>
+                            <a class="link-posts me-2 me-md-5 test" href="./pages/post_detail.html">
+                                <i class="comment alternate outline icon like-icon"></i>
                                 <span class="like-count">5</span>
                             </a>
                     
-                            <a class="link-posts me-3 me-md-5" href="#">
-                                <i class="bookmark outline black icon like-icon"></i>
-                                <span class="like-count">5</span>
+                            <a class="link-posts me-2 me-md-5 test" href="javascript:void(0)" onclick="toggleBookmark(event, 'bookmarkIcon_3', 'bookmarkCount_3')">
+                                <i id="bookmarkIcon_3" class="bookmark outline icon like-icon"></i>
+                                <span id="bookmarkCount_1" class="like-count">5</span>
                             </a>
                     
-                            <a class="link-posts me-1" href="#">
-                                <i class="share black icon like-icon"></i>
+                            <a class="link-posts me-1 test" href="#">
+                                <i class="share icon like-icon"></i>
                                 <span class="like-count">5</span>
                             </a>
                         </div>
-                    </div>        
-                    <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
-                </div>
+                        <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
+                    </div>
 
                 <!-- kategori finance -->
-                <div class="post mt-4 me-5" data-category="Finance">
+                <div class="post mt-4 me-3" data-category="Finance">
                     <div class="d-flex align-items-center mb-2">
                         <!-- image profile -->
                         <div class="rounded-circle overflow-hidden me-2" style="width: 50px; height: 50px; background-color: #f0f0f0;">
+                            <a href="pages/people_profile.html">
                             <img src="./img/smiling-young-asian-businessman-with-crossed-arms.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                            </a>
                         </div>
                         <!-- name profile -->
                         <div>
-                            <a href="pages/people_profile.html"><h6 class="mb-0">Mikael Angel <span class="text-muted"> @mikangelo • 2 hours ago</span></h6></a>
+                            <h6 class="mb-0 text-dark fw-bold">Mikael Angel <span class="text-muted"> @mikangelo • 2 hours ago</span></h6>
                             <p class="fs-6" style="color: #9747FF; margin-bottom: 0;"> > Finance</p>
                         </div>
                     </div>
@@ -567,43 +516,44 @@
                     </div>
 
                     <!-- button like dll -->
-                    <div class="row justify-content-end mt-3 me-2">
+                    <div class="row justify-content-end mt-3">
                         <div class="col-auto">
-                            <a class="link-posts me-3 me-md-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
-                                <i id="likeIconOutline_6" class="thumbs up outline black icon like-icon"></i>
-                                <i id="likeIconSolid_6" class="thumbs up black icon like-icon" style="display: none;"></i>
-                                <span id="likeCount_6" class="like-count">5</span>
-                            </a>                            
+                            <a class="link-posts me-2 me-md-5 test" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_4', 'likeIconSolid_4', 'likeCount_4')">
+                                <i id="likeIconOutline_4" class=" thumbs up outline icon like-icon"></i>
+                                <i id="likeIconSolid_4" class=" thumbs up icon like-icon" style="display: none;"></i>
+                                <span id="likeCount_4" class=" like-count ">5</span>
+                            </a>                        
                             
-                            <a class="link-posts me-3 me-md-5" href="./pages/post_detail.html">
-                                <i class="comment alternate outline black icon like-icon"></i>
+                            <a class="link-posts me-2 me-md-5 test" href="./pages/post_detail.html">
+                                <i class="comment alternate outline icon like-icon"></i>
                                 <span class="like-count">5</span>
                             </a>
                     
-                            <a class="link-posts me-3 me-md-5" href="#">
-                                <i class="bookmark outline black icon like-icon"></i>
-                                <span class="like-count">5</span>
+                            <a class="link-posts me-2 me-md-5 test" href="javascript:void(0)" onclick="toggleBookmark(event, 'bookmarkIcon_4', 'bookmarkCount_4')">
+                                <i id="bookmarkIcon_4" class="bookmark outline icon like-icon"></i>
+                                <span id="bookmarkCount_1" class="like-count">5</span>
                             </a>
                     
-                            <a class="link-posts me-1" href="#">
-                                <i class="share black icon like-icon"></i>
+                            <a class="link-posts me-1 test" href="#">
+                                <i class="share icon like-icon"></i>
                                 <span class="like-count">5</span>
                             </a>
                         </div>
                     </div>
                     <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
-                </div>
 
                 <!-- kategori business -->
-                <div class="post mt-4 me-5" data-category="Business">
+                <div class="post mt-4 me-3" data-category="Business">
                     <div class="d-flex align-items-center mb-2">
                         <!-- image profile -->
                         <div class="rounded-circle overflow-hidden me-2" style="width: 50px; height: 50px; background-color: #f0f0f0;">
+                            <a href="pages/people_profile.html">
                             <img src="./img/s1mple.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                            </a>
                         </div>
                         <!-- name profile -->
                         <div>
-                           <a href="pages/people_profile.html"><h6 class="mb-0">Ryan Reynolds<span class="text-muted"> @reynoldishere • 2 hours ago</span></h6></a>
+                            <h6 class="mb-0 text-dark fw-bold">Ryan Reynolds<span class="text-muted"> @reynoldishere • 2 hours ago</span></h6>
                             <p class="fs-6" style="color: orange; margin-bottom: 0;"> > Business</p>
                         </div>
                     </div>
@@ -625,43 +575,44 @@
                     </div>
 
                     <!-- button like dll -->
-                    <div class="row justify-content-end mt-3 me-2">
+                    <div class="row justify-content-end mt-3">
                         <div class="col-auto">
-                            <a class="link-posts me-3 me-md-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
-                                <i id="likeIconOutline_6" class="thumbs up outline black icon like-icon"></i>
-                                <i id="likeIconSolid_6" class="thumbs up black icon like-icon" style="display: none;"></i>
-                                <span id="likeCount_6" class="like-count">5</span>
-                            </a>                            
+                            <a class="link-posts me-2 me-md-5 test" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_5', 'likeIconSolid_5', 'likeCount_5')">
+                                <i id="likeIconOutline_5" class=" thumbs up outline icon like-icon"></i>
+                                <i id="likeIconSolid_5" class=" thumbs up icon like-icon" style="display: none;"></i>
+                                <span id="likeCount_5" class=" like-count ">5</span>
+                            </a>                        
                             
-                            <a class="link-posts me-3 me-md-5" href="./pages/post_detail.html">
-                                <i class="comment alternate outline black icon like-icon"></i>
+                            <a class="link-posts me-2 me-md-5 test" href="./pages/post_detail.html">
+                                <i class="comment alternate outline icon like-icon"></i>
                                 <span class="like-count">5</span>
                             </a>
                     
-                            <a class="link-posts me-3 me-md-5" href="#">
-                                <i class="bookmark outline black icon like-icon"></i>
-                                <span class="like-count">5</span>
+                            <a class="link-posts me-2 me-md-5 test" href="javascript:void(0)" onclick="toggleBookmark(event, 'bookmarkIcon_5', 'bookmarkCount_5')">
+                                <i id="bookmarkIcon_5" class="bookmark outline icon like-icon"></i>
+                                <span id="bookmarkCount_1" class="like-count">5</span>
                             </a>
                     
-                            <a class="link-posts me-1" href="#">
-                                <i class="share black icon like-icon"></i>
+                            <a class="link-posts me-1 test" href="#">
+                                <i class="share icon like-icon"></i>
                                 <span class="like-count">5</span>
                             </a>
                         </div>
                     </div>
                     <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
-                </div>
 
                 <!-- kategori business -->
-                <div class="post mt-4 me-5" data-category="Business">
+                <div class="post mt-4 me-3" data-category="Business">
                     <div class="d-flex align-items-center mb-2">
                         <!-- image profile -->
                         <div class="rounded-circle overflow-hidden me-2" style="width: 50px; height: 50px; background-color: #f0f0f0;">
+                            <a href="pages/people_profile.html">
                             <img src="./img/confident-asian-businessman-suit-posing-office.jpg" alt="Profile Image" style="width: 100%; height: 100%; object-fit: cover;">
+                            </a>
                         </div>
                         <!-- name profile -->
                         <div>
-                            <a href="pages/people_profile.html"><h6 class="mb-0">Bruno Herald<span class="text-muted"> @brunogotyou • 2 hours ago</span></h6></a>
+                            <h6 class="mb-0 text-dark fw-bold">Bruno Herald<span class="text-muted"> @brunogotyou • 2 hours ago</span></h6>
                             <p class="fs-6" style="color: orange; margin-bottom: 0;"> > Business</p>
                         </div>
                     </div>
@@ -674,14 +625,14 @@
                     <!-- konten tiga gambar post -->
                     <div class="row ms-5 mt-2">
                         <div class="col-6" style="padding-right: 1px;">
-                            <img src="./img/business-people-casual-meeting.jpg" alt="Gambar Besar" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                            <img src="./img/business-people-casual-meeting.jpg" alt="image-1" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
                         </div>
                         <div class="col-6">
                             <div style="padding-bottom: 10px;">
-                                <img src="./img/business-people-casual-meeting.jpg" alt="Gambar Kecil 1" class="img-fluid" style="width: 100%; height: 25%; object-fit: cover; border-radius: 15px;">
+                                <img src="./img/business-people-casual-meeting.jpg" alt="image-2" class="img-fluid" style="width: 100%; height: 25%; object-fit: cover; border-radius: 15px;">
                             </div>
                             <div>
-                                <img src="./img/business-people-casual-meeting.jpg" alt="Gambar Kecil 2" class="img-fluid" style="width: 100%; height: 25%; object-fit: cover; border-radius: 15px;">
+                                <img src="./img/business-people-casual-meeting.jpg" alt="image-3" class="img-fluid" style="width: 100%; height: 25%; object-fit: cover; border-radius: 15px;">
                             </div>
                         </div>
                     </div>
@@ -696,32 +647,33 @@
                         </div>
                     </div>
                     <!-- button like dll -->
-                    <div class="row justify-content-end mt-3 me-2 mb-5">
+                    <div class="row justify-content-end mt-3">
                         <div class="col-auto">
-                            <a class="link-posts me-3 me-md-5" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
-                                <i id="likeIconOutline_6" class="thumbs up outline black icon" style="font-size: 20px;"></i>
-                                <i id="likeIconSolid_6" class="thumbs up black icon" style="font-size: 20px; display: none;"></i>
-                                <span id="likeCount_6" style="margin-left: 5px; color: black;">5</span>
-                            </a>                            
+                            <a class="link-posts me-2 me-md-5 test" href="javascript:void(0)" onclick="toggleIcon(event, 'likeIconOutline_6', 'likeIconSolid_6', 'likeCount_6')">
+                                <i id="likeIconOutline_6" class=" thumbs up outline icon like-icon"></i>
+                                <i id="likeIconSolid_6" class=" thumbs up icon like-icon" style="display: none;"></i>
+                                <span id="likeCount_6" class=" like-count ">5</span>
+                            </a>                        
                             
-                            <a class="link-posts me-3 me-md-5" href="#">
-                                <i class="comment alternate outline black icon" style="font-size: 20px;"></i>
-                                <span style="margin-left: 5px; color: black;">5</span>
+                            <a class="link-posts me-2 me-md-5 test" href="./pages/post_detail.html">
+                                <i class="comment alternate outline icon like-icon"></i>
+                                <span class="like-count">5</span>
                             </a>
                     
-                            <a class="link-posts me-3 me-md-5" href="#">
-                                <i class="bookmark outline black icon" style="font-size: 20px;"></i>
-                                <span style="margin-left: 5px; color: black;">5</span>
+                            <a class="link-posts me-2 me-md-5 test" href="javascript:void(0)" onclick="toggleBookmark(event, 'bookmarkIcon_6', 'bookmarkCount_6')">
+                                <i id="bookmarkIcon_6" class="bookmark outline icon like-icon"></i>
+                                <span id="bookmarkCount_6" class="like-count">5</span>
                             </a>
                     
-                            <a class="link-posts me-1" href="#">
-                                <i class="share black icon" style="font-size: 20px;"></i>
-                                <span style="margin-left: 5px; color: black;">5</span>
+                            <a class="link-posts me-1 test" href="#">
+                                <i class="share icon like-icon"></i>
+                                <span class="like-count">5</span>
                             </a>
                         </div>
-                    </div>                     
+                    </div>
                     <hr class="mt-3" style="border-top: 3px solid #E5E5E5;">
                 </div>
+                
             </div>
             </div>
         </div>
