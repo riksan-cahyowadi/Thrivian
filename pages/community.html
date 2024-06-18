@@ -73,6 +73,7 @@ display: none;
 
 }
 
+/* Hero Section */
 .hero-section {
   background-image: url('../img/comunity_new_banner.png');
   background-size: cover;
@@ -86,6 +87,7 @@ display: none;
   margin-top: 60px; /* Tambahkan margin atas */
 }
 
+/* Search Bar */
 .search-bar {
   width: 50%;
   max-width: 600px;
@@ -104,197 +106,266 @@ display: none;
   border-radius: 0 25px 25px 0;
 }
 
-
-        .card-custom {
-            position: relative;
-            overflow: hidden;
-            background-size: cover;
-            background-position: center;
-            height: 100%;
-        }
-        .card-custom .card-body {
-            position: relative;
-            z-index: 2;
-        }
-        .card-custom .card-img-top {
-            border-radius: 50%;
-            width: 90px;
-            height: 90px;
-            object-fit: cover;
-            position: absolute;
-            top: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 3;
-            border: 1px solid white;
-        }
-        .card-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 27%;
-            background-size: cover;
-            background-position: center;
-            z-index: 1;
-        }
-
-        .notification-modal {
-    background: transparent;
-    display: flex;
-    align-items: flex-start; /* Align to the top */
-    justify-content: flex-end; /* Align to the right */
-    position: absolute;
-    top: 50px; /* Adjust this value based on your navbar height */
-    right: 10px; /* Adjust this value for horizontal alignment */
-    width: auto;
+/* Custom Card */
+.card-custom {
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
 }
 
-        .notification-card {
-            background-color: #f0f0f0;
-            padding: 10px;
-            border-radius: 15px;
-            border-bottom-right-radius: 90px; /* Bottom-right corner */
-            border-top-right-radius: 0;
-            display: flex;
-            align-items: center;
-            width: 300px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin: 10px;
-        }
+.card-custom .card-body {
+  position: relative;
+  z-index: 2;
+}
 
-        .notification-card img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 15px;
-        }
+.card-custom .card-img-top {
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  border: 1px solid white;
+}
 
-        .notification-content {
-            flex-grow: 1;
-        }
+.card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 27%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
 
-        .notification-title {
-            font-weight: bold;
-            font-size: 16px;
-        }
+/* Notification Modal */
+.notification-modal {
+  background: transparent;
+  display: flex;
+  align-items: flex-start; /* Align to the top */
+  justify-content: flex-end; /* Align to the right */
+  position: absolute;
+  top: 50px; /* Adjust this value based on your navbar height */
+  right: 10px; /* Adjust this value for horizontal alignment */
+  width: auto;
+}
 
-        .notification-message {
-            color: #555;
-            margin: 5px 0;
-        }
+.notification-card {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 15px;
+  border-bottom-right-radius: 90px; /* Bottom-right corner */
+  border-top-right-radius: 0;
+  display: flex;
+  align-items: center;
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
 
-        .notification-time {
-            font-size: 12px;
-            color: #aaa;
-        }
+.notification-card img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
 
-        .modal-content {
-            background: transparent;
-            border: none;
-            box-shadow: none;
-        }
+.notification-content {
+  flex-grow: 1;
+}
 
-        .modal-body {
-            padding: 0;
-        }
+.notification-title {
+  font-weight: bold;
+  font-size: 16px;
+}
 
-        .notification-card .notification-content {
-        display: flex;
-        flex-direction: column;
-        }
+.notification-message {
+  color: #555;
+  margin: 5px 0;
+}
 
-        .notification-icon {
-            position: relative;
-            }
+.notification-time {
+  font-size: 12px;
+  color: #aaa;
+}
 
-            .notification-icon .red-dot {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            width: 20px;
-            height: 20px;
-            background-color: red;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: bold;
-            border: 1px solid white;
-            }
+.modal-content {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
 
-            .modal-header {
-            border-bottom: none;
-        }
-        .modal-body {
-            padding: 2rem;
-        }
-        .modal-footer {
-            border-top: none;
-            justify-content: flex-end;
-            padding: 1rem 2rem;
-        }
-        .modal-content {
-            border-radius: 10px;
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        .form-text {
-            margin-top: 0.5rem;
-        }
+.modal-body {
+  padding: 0;
+}
 
-        .sidebar-right {
-            left: 20px;
-            width: 200px;
-            height: 400px;
-            border-radius: 9px;
-                }
-        
-        .border-custom {
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        overflow: hidden;
-    }
+.notification-card .notification-content {
+  display: flex;
+  flex-direction: column;
+}
 
-    .btn:hover{
-        background-color: navajowhite;
-    }
+.notification-icon {
+  position: relative;
+}
 
-    .no-padding {
-        padding: 5%;
-        border: none;
-        border-radius: 0;
-    }
+.notification-icon .red-dot {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  border: 1px solid white;
+}
 
-    .content {
-        padding: 16px; /* Add padding for the content inside the sidebar */
-    }
+.modal-header {
+  border-bottom: none;
+}
 
-    .text-muted {
-        color: #adb5bd;
-    }
+.modal-body {
+  padding: 2rem;
+}
 
-    .text-center {
-        text-align: center;
-    }
+.modal-footer {
+  border-top: none;
+  justify-content: flex-end;
+  padding: 1rem 2rem;
+}
 
-    .mb-2 {
-        margin-bottom: .5rem;
-    }
-            @media (max-width: 991px) {
-            .bottom-nav .notification-icon {
-                position: relative;
-            }
+.modal-content {
+  border-radius: 10px;
+}
 
-            .bottom-nav .notification-icon .red-dot {
-                top: -8%; 
-                right: 35%; 
-                transform: none; 
-            }
-            }
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-text {
+  margin-top: 0.5rem;
+}
+
+/* Sidebar Right */
+.sidebar-right {
+  left: 20px;
+  width: 200px;
+  height: 400px;
+  border-radius: 9px;
+}
+
+.border-custom {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.btn:hover {
+  background-color: navajowhite;
+}
+
+.no-padding {
+  padding: 5%;
+  border: none;
+  border-radius: 0;
+}
+
+.content {
+  padding: 16px; /* Add padding for the content inside the sidebar */
+}
+
+.text-muted {
+  color: #adb5bd;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-2 {
+  margin-bottom: .5rem;
+}
+
+/* Media Queries */
+@media (max-width: 1199px) {
+  .bottom-nav .notification-icon {
+    position: relative;
+  }
+
+  .bottom-nav .notification-icon .red-dot {
+    top: -8%;
+    right: 35%;
+    transform: none;
+  }
+
+  .hero-section {
+    margin-top: 70px;
+  }
+
+  .search-bar {
+    width: 60%;
+    max-width: 400px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+  }
+}
+
+@media (max-width: 991px) {
+  /* Mobile View */
+  .card-columns {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card-custom {
+    flex: 0 0 48%; /* 2 cards side by side with some gap */
+    margin: 1%;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Smaller Mobile View */
+  .card-custom {
+    flex: 0 0 100%; /* Single card on smaller screens */
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Tablet View */
+  .card-custom {
+    flex: 0 0 48%; /* Smaller size for tablet view */
+    margin: 1%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Small Desktop View */
+  .card-custom {
+    flex: 0 0 32%; /* Smaller size for small desktop view */
+    margin: 1%;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Large Desktop View */
+  .card-custom {
+    flex: 0 0 24%; /* Default size for large desktop view */
+    margin: 1%;
+  }
+}
+
   </style>
 </head>
 
@@ -430,7 +501,10 @@ display: none;
     </ul>
 </nav>
 
-
+<!-- Floating Button for Mobile -->
+<a href="./create-community.html" class="floating-btn d-lg-none">
+    <i class="fas fa-pencil-alt"></i>
+</a>
 
 <!-- Tampilan untuk welcome community -->
 <section class="hero-section">
