@@ -87,7 +87,6 @@
   transition: transform 0.3s ease-in-out;
 }
 
-
 .card-body {
   padding: 15px;
 }
@@ -130,6 +129,14 @@
   border-radius: 8px;
   display: inline-block;
   text-align: center;
+}
+
+.grow-card {
+  transition: transform 0.3s ease;
+  }
+
+  .grow-card:hover {
+  transform: scale(1.05);
 }
 
 @media (min-width: 992px) {
