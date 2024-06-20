@@ -82,7 +82,6 @@ display: none;
     white-space: nowrap;
 }
 
-/* Hide scrollbar for WebKit (Chrome, Safari, etc.) */
 .navbar-bawah::-webkit-scrollbar {
     display: none;
 }
@@ -94,11 +93,16 @@ display: none;
     .navbar-bawah .nav-item.hidden {
         display: none;
     }
-
     .edit-account {
         margin-right: 10px !important; /* Sesuaikan dengan jumlah margin yang Anda inginkan */
     }
-    
+
+    .angle.right.icon {
+        position: absolute;
+        overflow: hidden;
+        margin-left: 0;
+        vertical-align: top;
+    }
 }
 
   </style>
@@ -354,7 +358,7 @@ display: none;
                         <div class="edit-account" style="flex: 1; text-align: right; margin-right: 70px;">
                             <button type="button" class="btn btn-link text-dark" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#usernameModal">
                                 <span id="usernameSpan">@stoper_kim</span>
-                                <i class="angle right icon" style="margin-left: 10px;"></i>
+                                <i class="ms-4 angle right icon" style="margin-left: 90px;"></i>
                             </button>
                         </div>
                          <!-- modal edit usernama -->
