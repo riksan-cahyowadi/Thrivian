@@ -169,6 +169,15 @@
   border-color: #8E98A8; /* Warna border ketika di-hover */
 }
 
+.indicator {
+  height: 2px;
+  background-color: #13005A;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: left 0.3s ease, width 0.3s ease;
+}
+
     .grow-card {
       transition: transform 0.3s ease;
     }
@@ -230,128 +239,157 @@
       background-size: cover;
     }
 
-/* Styles for settings-nav padding in mobile devices */
+    @media (max-width: 576px) {
+  .user-section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px; /* Add some padding for small screens */
+  }
+
+  .user-card {
+    width: 100%; /* Make the user cards take full width on small screens */
+    flex-direction: column; /* Stack the user card elements vertically */
+    align-items: center; /* Center the elements horizontally */
+  }
+
+  .user-avatar {
+    margin-right: 0; /* Remove the right margin on the avatar */
+    margin-bottom: 10px; /* Add some space between the avatar and info */
+  }
+
+  .user-info {
+    margin-left: 0; /* Remove the left margin on the info section */
+    text-align: center; /* Center the text */
+  }
+
+  .user-tags {
+    justify-content: center; /* Center the tags */
+  }
+
+  .follow-btn {
+    margin-top: 10px; /* Add some space between the tags and follow button */
+  }
+
+  .see-more-button {
+    margin-top: 20px; /* Add some space between the last user card and see more button */
+  }
+}
+
+/* Styles for mobile devices */
 @media (max-width: 768px) {
   #settings-nav .nav-link {
     padding-left: 0.5rem !important;
     padding-right: 0.5rem !important;
   }
+
   .event-date {
     bottom: 110px;
     padding: 7px;
   }
+
   .event-date-day {
-  font-size: 1em;
-}
-.event-date-month {
-  font-size: 0.7em;
-}
-.event-title {
-  font-size: 0.9em;
-}
-.event-location {
-  font-size: 0.7em;
-  margin-bottom: 5px;
-}
-.event-community {
-  font-size: 0.6em;
-}
-.community-card {
-  padding: 7px;
-}
-.community-bg {
-  height: 60px;
-}
-.community-avatar {
-  width: 60px;
-  height: 60px;
-}
-.community-info p {
-  font-size: 0.7rem;
-}
-
-}
-
-/* Styles specifically for mobile devices */
-@media (max-width: 562px) {
-  .community-section .row,
-  .event-section .row {
-    display: flex;
-    flex-wrap: wrap;
+    font-size: 1em;
   }
 
-  .user-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 0;
-    padding-right: 10%;
+  .event-date-month {
+    font-size: 0.7em;
   }
 
-  .community-section .col-md-3,
-  .event-section .col-md-3 {
-    flex: 0 0 50%;
-    max-width: 50%;
+  .event-title {
+    font-size: 0.9em;
   }
 
-  .text-responsive {
-    font-size: 0.6rem;
+  .event-location {
+    font-size: 0.7em;
+    margin-bottom: 5px;
   }
 
-  .user-avatar-img {
-    width: 40px;
-    height: 40px;
-    object-fit: cover;
-    border-radius: 50%;
+  .event-community {
+    font-size: 0.6em;
   }
 
-  .user-name {
-    font-size: 1rem;
+  .community-card {
+    padding: 7px;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 20px;
   }
 
-  .user-description {
-    font-size: 0.8rem;
+  .community-bg {
+    height: 60px;
   }
 
-  .user-tags .badge {
+  .community-avatar {
+    width: 60px;
+    height: 60px;
+  }
+
+  .community-info p {
     font-size: 0.7rem;
   }
 
   .follow-btn {
+    margin-top: 10px;
+    margin-left: 0;
     font-size: 0.8rem;
     padding: 5px 10px;
   }
-}
 
-@media (max-width: 576px) {
-  body {
-    overflow-x: hidden;
+  .see-more-button {
+    width: 18%;
+    margin-top: 10px;
+    text-align: center;
   }
-}
-@media (max-width: 767px) {
+
+  .event-section .row {
+    justify-content: center;
+  }
+
+  .event-section .col-md-3,
+  .community-section .col-md-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
   .location-badge {
     width: 600px;
-    left: -10%;
+    left: -12%;
+    top: -27%;
   }
-
-  .user-avatar {
-    width: 90px;
-    height: 45px;
-    margin: auto;
+  .search-custom{
+    width: 85%;
   }
-
-  .community-card {
-    margin: auto;
-    flex-wrap: wrap;
+  .card-desc{
+    margin-left: -18%;
   }
-  .location-badge {
-    top: -40%;
+  .price-badge {
+    width: 70%;
   }
-  .card-body{
+  .card-date {
+    top: -60%;
+  }
+  .card-body {
     margin-top: 10%;
   }
-  .card-date h5{
+  .card-date h5 {
     font-size: 12px;
+  }
+}
+
+@media (max-width: 987px) {
+  #eventCards .card {
+    width: calc(50% - 60px); /* Menghitung lebar card agar mempertahankan bentuknya */
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+  #eventCards .card:first-child {
+    margin-left: 0;
+  }
+
+  #eventCards .card:last-child {
+    margin-right: 0;
   }
 }
   </style>
@@ -419,7 +457,7 @@
 
   <!-- Navbar untuk Mobile -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-lg-none">
-    <div class="container-fluid">
+    <div class="container">
       <a class="navbar-brand" href="#" style="flex-grow: 1">
         <img src="../img/Thrivian Logo_OK.png" alt="Thrivian.org" width="50" />
       </a>
@@ -470,10 +508,10 @@
             <a class="nav-link text-dark" href="../index.html"><i class="fa fa-home"></i></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark" href="messages.html"><i class="far fa-envelope"></i></a>
+            <a class="nav-link text-dark" href="./messages.html"><i class="far fa-envelope"></i></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-dark" href="notification.html"><i class="bi bi-bell"></i></a>
+            <a class="nav-link text-dark" href="./notification.html"><i class="bi bi-bell"></i></a>
         </li>
         <li class="nav-item">
             <a href="./profile.html">
@@ -488,7 +526,7 @@
   <!-- Hero section dan fitur searching -->
   <section class="hero-section">
     <h1>Discover What You Need!</h1>
-    <div class="search-bar d-flex">
+    <div class="search-bar d-flex search-custom">
       <input type="text" class="form-control py-3" placeholder="Search...">
       <button class="btn btn-light"><i class="fas fa-search"></i></button>
     </div>
@@ -513,59 +551,64 @@
         <a class="nav-link text-secondary px-5 px-md-3" href="#" onclick="showSection('post')">Post</a>
       </li>
     </ul>
+    <div class="indicator"></div>
   </div>
   
   <!-- Tampilan search untuk Kategori User -->
   <section id="user-section">
-    <div class="container user-section" style="margin-left: 5%;">
-      <h4 class="mb-4" style="color: #015AAA;">Users</h4>
-      <div class="user-card d-flex align-items-center p-3 border rounded">
-        <div class="user-avatar">
-          <img src="../img/cheerful-confident-man-standing-arms-folded-plaid-shirt.jpg" alt="User Avatar" class="rounded-circle user-avatar-img">
-        </div>
-        <div class="user-info flex-grow-1 ml-3">
-          <a href="people_profile.html"><h5 class="user-name">Ray John <span class="text-muted">@johnnyray</span></h5></a>
-          <p class="user-description">Founder & CEO at Marika Ikanika x KJUP Indonesia | Head of Research Data Security at PT Marina Indonesia</p>
-          <div class="user-tags">
-            <span class="badge badge-pill" style="color: #FFA500; margin-right: 5px;">Business</span>
-            <span class="badge badge-pill" style="color: #9747FF; margin-right: 5px;">Finance</span>
-            <span class="badge badge-pill" style="color: #00CC66;">Self Development</span>
+    <div class="user-section-container">
+      <div class="container user-section" style="margin-left: 5%;">
+        <h4 class="mb-4" style="color: #015AAA;">Users</h4>
+        <div class="user-card d-flex align-items-center p-3 border rounded">
+          <div class="user-avatar">
+              <img src="../img/cheerful-confident-man-standing-arms-folded-plaid-shirt.jpg" alt="User Avatar" class="rounded-circle user-avatar-img">
           </div>
-        </div>
-        <button class="btn btn-outline-primary follow-btn px-5" style="border-color: #015AAA; color: #015AAA;">Follow</button>
-      </div>
-      <div class="user-card d-flex align-items-center p-3 border rounded">
-        <div class="user-avatar">
-          <img src="../img/cheerful-confident-man-standing-arms-folded-plaid-shirt.jpg" alt="User Avatar" class="rounded-circle user-avatar-img">
-        </div>
-        <div class="user-info flex-grow-1 ml-3">
-          <a href="people_profile.html"><h5 class="user-name">Ray John <span class="text-muted">@johnnyray</span></h5></a>
-          <p class="user-description">Founder & CEO at Marika Ikanika x KJUP Indonesia | Head of Research Data Security at PT Marina Indonesia</p>
-          <div class="user-tags">
-            <span class="badge badge-pill" style="color: #FFA500; margin-right: 5px;">Business</span>
-            <span class="badge badge-pill" style="color: #9747FF; margin-right: 5px;">Finance</span>
-            <span class="badge badge-pill" style="color: #00CC66;">Self Development</span>
+          <div class="user-info flex-grow-1 ml-3">
+              <a href="people_profile.html"><h5 class="user-name">Ray John <span class="text-muted">@johnnyray</span></h5></a>
+              <p class="user-description">Founder & CEO at Marika Ikanika x KJUP Indonesia | Head of Research Data Security at PT Marina Indonesia</p>
+              <div class="user-tags">
+                  <span class="badge badge-pill" style="color: #FFA500; margin-right: 5px;">Business</span>
+                  <span class="badge badge-pill" style="color: #9747FF; margin-right: 5px;">Finance</span>
+                  <span class="badge badge-pill" style="color: #00CC66;">Self Development</span>
+              </div>
           </div>
-        </div>
-        <button class="btn btn-outline-primary follow-btn px-5" style="border-color: #015AAA; color: #015AAA;">Follow</button>
+          <button class="btn btn-outline-primary follow-btn px-5" style="border-color: #015AAA; color: #015AAA;">Follow</button>
       </div>
-      <div class="user-card d-flex align-items-center p-3 border rounded">
-        <div class="user-avatar">
-          <img src="../img/cheerful-confident-man-standing-arms-folded-plaid-shirt.jpg" alt="User Avatar" class="rounded-circle user-avatar-img">
-        </div>
-        <div class="user-info flex-grow-1 ml-3">
-          <a href="people_profile.html"><h5 class="user-name">Ray John <span class="text-muted">@johnnyray</span></h5></a>
-          <p class="user-description">Founder & CEO at Marika Ikanika x KJUP Indonesia | Head of Research Data Security at PT Marina Indonesia</p>
-          <div class="user-tags">
-            <span class="badge badge-pill" style="color: #FFA500; margin-right: 5px;">Business</span>
-            <span class="badge badge-pill" style="color: #9747FF; margin-right: 5px;">Finance</span>
-            <span class="badge badge-pill" style="color: #00CC66;">Self Development</span>
+
+        <div class="user-card d-flex align-items-center p-3 border rounded">
+          <div class="user-avatar">
+            <img src="../img/cheerful-confident-man-standing-arms-folded-plaid-shirt.jpg" alt="User Avatar" class="rounded-circle user-avatar-img">
           </div>
+          <div class="user-info flex-grow-1 ml-3">
+            <a href="people_profile.html"><h5 class="user-name">Ray John <span class="text-muted">@johnnyray</span></h5></a>
+            <p class="user-description">Founder & CEO at Marika Ikanika x KJUP Indonesia | Head of Research Data Security at PT Marina Indonesia</p>
+            <div class="user-tags">
+              <span class="badge badge-pill" style="color: #FFA500; margin-right: 5px;">Business</span>
+              <span class="badge badge-pill" style="color: #9747FF; margin-right: 5px;">Finance</span>
+              <span class="badge badge-pill" style="color: #00CC66;">Self Development</span>
+            </div>
+          </div>
+          <button class="btn btn-outline-primary follow-btn px-5" style="border-color: #015AAA; color: #015AAA;">Follow</button>
         </div>
-        <button class="btn btn-outline-primary follow-btn px-5" style="border-color: #015AAA; color: #015AAA;">Follow</button>
-      </div>
-      <div class="d-flex justify-content-end">
-        <a href="#" class="btn btn-outline-primary see-more-button" style="color: #015AAA; border-color: #015AAA; border-radius: 10px; font-size: 0.7rem;">See More</a>
+
+        <div class="user-card d-flex align-items-center p-3 border rounded">
+          <div class="user-avatar">
+            <img src="../img/cheerful-confident-man-standing-arms-folded-plaid-shirt.jpg" alt="User Avatar" class="rounded-circle user-avatar-img">
+          </div>
+          <div class="user-info flex-grow-1 ml-3">
+            <a href="people_profile.html"><h5 class="user-name">Ray John <span class="text-muted">@johnnyray</span></h5></a>
+            <p class="user-description">Founder & CEO at Marika Ikanika x KJUP Indonesia | Head of Research Data Security at PT Marina Indonesia</p>
+            <div class="user-tags">
+              <span class="badge badge-pill" style="color: #FFA500; margin-right: 5px;">Business</span>
+              <span class="badge badge-pill" style="color: #9747FF; margin-right: 5px;">Finance</span>
+              <span class="badge badge-pill" style="color: #00CC66;">Self Development</span>
+            </div>
+          </div>
+          <button class="btn btn-outline-primary follow-btn px-5" style="border-color: #015AAA; color: #015AAA;">Follow</button>
+        </div>
+        <div class="d-flex justify-content-end">
+          <a href="#" class="btn btn-outline-primary see-more-button" style="color: #015AAA; border-color: #015AAA; border-radius: 10px; font-size: 0.7rem;">See More</a>
+        </div>
       </div>
     </div>
     <hr class="mb-0">
@@ -576,6 +619,7 @@
     <div class="container my-4 community-section">
       <h4 class="mb-4" style="color: #015AAA;">Communities</h4>
       <div class="row">
+
         <div class="col-md-3">
           <div class="community-card">
             <div class="community-bg" style="background-image: url('../img/Rectangle\ 25.png');"></div>
@@ -588,11 +632,12 @@
             </div>
             <div class="d-grid gap-2 d-md-block">
               <a href="join_community.html">
-                <button class="custom-button border border-secondary w-100 rounded-pill px-2 py-2" style=" border-color: #8E98A8; font-size: 0.8rem;">About Community</button>
+                <button class="custom-button border border-secondary w-100 rounded-pill px-2 py-2" style=" border-color: #8E98A8; font-size: 1rem;">About Community</button>
                 </a>            
               </div>
           </div>
         </div>
+
         <div class="col-md-3">
           <div class="community-card">
             <div class="community-bg" style="background-image: url('../img/Rectangle\ 25.png');"></div>
@@ -605,11 +650,12 @@
             </div>
             <div class="d-grid gap-2 d-md-block">
                 <a href="join_community.html">
-                  <button class="custom-button border border-secondary w-100 rounded-pill px-2 py-2" style=" border-color: #8E98A8; font-size: 0.8rem;">About Community</button>
+                  <button class="custom-button border border-secondary w-100 rounded-pill px-2 py-2" style=" border-color: #8E98A8; font-size: 1rem;">About Community</button>
                 </a>
             </div>
           </div>
         </div>
+
         <div class="col-md-3">
           <div class="community-card">
             <div class="community-bg" style="background-image: url('../img/Rectangle\ 25.png');"></div>
@@ -622,11 +668,12 @@
             </div>
             <div class="d-grid gap-2 d-md-block">
               <a href="join_community.html">
-                <button class="custom-button border border-secondary w-100 rounded-pill px-2 py-2" style=" border-color: #8E98A8; font-size: 0.8rem;">About Community</button>
+                <button class="custom-button border border-secondary w-100 rounded-pill px-2 py-2" style=" border-color: #8E98A8; font-size: 1rem;">About Community</button>
                 </a>            
               </div>
           </div>
         </div>
+        
         <div class="col-md-3">
           <div class="community-card">
             <div class="community-bg" style="background-image: url('../img/Rectangle\ 25.png');"></div>
@@ -639,7 +686,7 @@
             </div>
             <div class="d-grid gap-2 d-md-block">
               <a href="join_community.html">
-                <button class="custom-button border border-secondary w-100 rounded-pill px-2 py-2" style=" border-color: #8E98A8; font-size: 0.8rem;">About Community</button>
+                <button class="custom-button border border-secondary w-100 rounded-pill px-2 py-2" style=" border-color: #8E98A8; font-size: 1rem;">About Community</button>
               </a>
             </div>
           </div>
@@ -671,9 +718,11 @@
                     <h5>10</h5>
                     <p>Sept</p>
                   </div>
+                  <div class="card-desc">
                   <h5 class="card-title py-2" style="margin-top: -3%;">Personal Finance Webinar</h5>
                   <p class="price-badge d-flex justify-content-center">Rp 100.000</p>
                   <p class="card-text text-secondary">Financial Freedom Community</p>
+                </div>
                 </div>
               </div>
             </a>
@@ -692,9 +741,11 @@
                     <h5>10</h5>
                     <p>Sept</p>
                   </div>
+                  <div class="card-desc">
                   <h5 class="card-title py-2" style="margin-top: -3%;">Personal Finance Webinar</h5>
                   <p class="price-badge d-flex justify-content-center">Rp 100.000</p>
                   <p class="card-text text-secondary">Financial Freedom Community</p>
+                </div>
                 </div>
               </div>
             </a>
@@ -713,9 +764,11 @@
                     <h5>10</h5>
                     <p>Sept</p>
                   </div>
-                  <h5 class="card-title py-2" style="margin-top: -3%;">Personal Expo Webinar</h5>
-                  <p class="price-badge d-flex justify-content-center">Rp 100.000</p>
-                  <p class="card-text text-secondary">Financial Freedom Community</p>
+                  <div class="card-desc">
+                    <h5 class="card-title py-2" style="margin-top: -3%;">Personal Expo Webinar</h5>
+                    <p class="price-badge d-flex justify-content-center">Rp 100.000</p>
+                    <p class="card-text text-secondary">Financial Freedom Community</p>
+                  </div>
                 </div>
               </div>
             </a>
@@ -734,9 +787,11 @@
                     <h5>10</h5>
                     <p>Sept</p>
                   </div>
-                  <h5 class="card-title py-2" style="margin-top: -3%;">Personal Finance Webinar</h5>
-                  <p class="price-badge d-flex justify-content-center">Rp 100.000</p>
-                  <p class="card-text text-secondary">Financial Freedom Community</p>
+                  <div class="card-desc">
+                    <h5 class="card-title py-2" style="margin-top: -3%;">Personal Finance Webinar</h5>
+                    <p class="price-badge d-flex justify-content-center">Rp 100.000</p>
+                    <p class="card-text text-secondary">Financial Freedom Community</p>
+                  </div>
                 </div>
               </div>
             </a>
@@ -824,50 +879,61 @@
   </section>
 
   <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var toggleButton = document.getElementById('toggleSearch');
-    var searchInput = document.getElementById('searchInput');
+// Mengambil saemua link navigasi
+const navLinks = document.querySelectorAll('.nav-link');
+const indicator = document.querySelector('.indicator');
 
-    if (toggleButton && searchInput) {
-      toggleButton.addEventListener('click', function () {
-        var isVisible = searchInput.style.display === 'block';
-        searchInput.style.display = isVisible ? 'none' : 'block';
+// menambahkan klik event listener pada setiap navigasi link
+navLinks.forEach((link, index) => {
+  link.addEventListener('click', (event) => {
+    const currentPage = window.location.pathname.split('/').pop();
+    const clickedPage = link.getAttribute('href').split('/').pop();
 
-        if (!isVisible) {
-          searchInput.focus(); // Fokus pada input saat ditampilkan
-        }
-      });
+    if (currentPage === clickedPage) {
+      event.preventDefault(); 
+      setActiveLink(link, index);
+    } else {
+      // Jika bukan halaman saat ini, hapus kelas aktif dari semua link
+      removeActiveLinks();
+      setActiveLink(link, index);
+      // Izinkan perilaku default (navigasi)
+      window.location.href = link.getAttribute('href');
     }
-
-    // Skrip untuk menangani peralihan kelas aktif
-    var navLinks = document.querySelectorAll('.nav-link');
-    var indicator = document.querySelector('.indicator');
-
-    navLinks.forEach(function (link) {
-      link.addEventListener('click', function (event) {
-        event.preventDefault(); 
-        navLinks.forEach(function (nav) { nav.classList.remove('active'); });
-        this.classList.add('active');
-        moveIndicator(this);
-      });
-    });
-
-    function moveIndicator(activeLink) {
-      var activeLinkRect = activeLink.getBoundingClientRect();
-      var containerRect = document.querySelector('.container').getBoundingClientRect();
-      indicator.style.width = `${activeLinkRect.width}px`;
-      indicator.style.left = `${activeLinkRect.left - containerRect.left}px`;
-    }
-
-// Inisialisasi posisi indikator
-    var initialActiveLink = document.querySelector('.nav-link.active');
-    if (initialActiveLink) {
-      moveIndicator(initialActiveLink);
-    }
-
-    // Skrip untuk menampilkan bagian yang benar
-    showSection('all', initialActiveLink); // Tampilkan semua bagian pada awalnya
   });
+});
+
+// Fungsi untuk mengatur link aktif dan memindahkan indikator
+function setActiveLink(link, index) {
+  removeActiveLinks();
+  link.classList.add('active');
+  moveIndicator(index);
+}
+
+// Fungsi untuk menghapus kelas aktif dari semua link
+function removeActiveLinks() {
+  navLinks.forEach((link) => {
+    link.classList.remove('active');
+  });
+}
+
+// Fungsi untuk indikator berpindah
+function moveIndicator(index) {
+  if (indicator) {
+    const linkWidth = navLinks[index].offsetWidth;
+    const linkPosition = Array.from(navLinks).slice(0, index).reduce((acc, cur) => acc + cur.offsetWidth, 0);
+    indicator.style.left = `${linkPosition}px`;
+    indicator.style.width = `${linkWidth}px`;
+  }
+}
+
+// Memanggil fungsi moveIndicator fketika halaman dimuat
+document.addEventListener('DOMContentLoaded', () => {
+  const initialActiveLink = document.querySelector('.nav-link.active');
+  if (initialActiveLink) {
+    const initialIndex = Array.from(navLinks).indexOf(initialActiveLink);
+    moveIndicator(initialIndex);
+  }
+});
 
   function showSection(section, link) {
     console.log('Section to show: ' + section);
@@ -900,7 +966,7 @@
     hr.style.display = 'none';
   });
 
-  // Menampilkan bagian yang diinginkan dan elemen jam berdasarkan argumen yang disediakan
+  // Menampilkan bagian yang diinginkan dan elemen hr berdasarkan argumen yang disediakan
   switch (section) {
     case 'user':
       userSection.style.display = 'block';
