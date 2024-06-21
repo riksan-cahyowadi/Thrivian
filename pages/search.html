@@ -456,7 +456,7 @@
   </nav>
 
   <!-- Navbar untuk Mobile -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-lg-none">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top d-lg-none" style="padding-right: 2%;">
     <div class="container">
       <a class="navbar-brand" href="#" style="flex-grow: 1">
         <img src="../img/Thrivian Logo_OK.png" alt="Thrivian.org" width="50" />
@@ -914,16 +914,6 @@ function removeActiveLinks() {
   navLinks.forEach((link) => {
     link.classList.remove('active');
   });
-}
-
-// Fungsi untuk indikator berpindah
-function moveIndicator(index) {
-  if (indicator) {
-    const linkWidth = navLinks[index].offsetWidth;
-    const linkPosition = Array.from(navLinks).slice(0, index).reduce((acc, cur) => acc + cur.offsetWidth, 0);
-    indicator.style.left = `${linkPosition}px`;
-    indicator.style.width = `${linkWidth}px`;
-  }
 }
 
 // Memanggil fungsi moveIndicator fketika halaman dimuat
