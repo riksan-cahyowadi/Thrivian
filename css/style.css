@@ -168,10 +168,16 @@
   height: 100%;
   background-color: white;
   display: flex;
+  flex-direction: column; /* Agar ikon loading berada di bawah logo */
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
+
+.loading-icon {
+  margin-top: 5%; /* Jarak antara logo dan ikon loading */
+}
+
 
 .logo {
   width: 150px;
